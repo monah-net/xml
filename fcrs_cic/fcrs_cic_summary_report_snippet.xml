@@ -352,7 +352,7 @@
                             <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
                         </set_url_condition_to_model>
                         <open_page>
-                            <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info" add_condition="true"/>
+                            <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info_snippet" add_condition="true"/>
                         </open_page>
                     </action_chain>
                     <composite_enable_condition/>

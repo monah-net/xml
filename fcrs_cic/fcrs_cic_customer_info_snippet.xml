@@ -9,10 +9,28 @@
             </separate_instance_selector>
         </h_section>
     <h_section>
-        <dropdown id="DD_TEST">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary" type="DataSource"/>
+        <dropdown id="Customer_Details">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
             <value field="customer_number"/>
+            <instance>
+                <instance_selector_ref reference="cic_instance_selector"/>
+            </instance>
             <composite_read_only_condition/>
         </dropdown>
+        <grid id="">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
+            <instance>
+                <instance_selector_ref reference="cic_instance_selector"/>
+            </instance>
+            <column id="customer_detail_1" title="Customer Number">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="customer_number"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+        </grid>
     </h_section>
 </page>
