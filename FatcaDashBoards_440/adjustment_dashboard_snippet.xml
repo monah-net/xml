@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="adjustment_dashboard_snippet">
+	<v_section id="section_grid_sub_all" width="100%">
+		<h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
+			<separate_instance_selector id="adjustment_instance_selectr" width="60%" use_description_for_name="true">
+				<data_source project="FATCA_ENRICHMENT" branch="2019_v03" source="Aggregation[rpt_legal_entity]" type="DataModel"/>
+			</separate_instance_selector>
+		</h_section>
+		<h_section height="200px" align="MIDDLE_LEFT">
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Message Header" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_message_header"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Legal Entity" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_legal_entity"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Doc Spec" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_doc_spec"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Pool Report(only for FATCA)" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_pool_report"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+          		</h_section>
+		<h_section height="200px" align="MIDDLE_LEFT">
+          <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Account Holder" image="edit_18.svg" >
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_acct_holder"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Account Information" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_acct_info"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Account Transaction" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_acct_transaction"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="TIN" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_tin"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+			<h_section height="100px" width="300px" align="MIDDLE_LEFT">
+				<drilldown_button id="drilldown_button" text="Address" image="edit_18.svg">
+					<object_type>
+						<string_value value="Aggregation"/>
+					</object_type>
+					<object_address>
+						<string_value value="FATCA_ENRICHMENT!2019_v03:rpt_address"/>
+					</object_address>
+					<instance>
+						<instance_selector_ref reference="adjustment_instance_selectr"/>
+					</instance>
+				</drilldown_button>  
+			</h_section>
+					</h_section>
+	</v_section>
+</page>

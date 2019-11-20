@@ -1,0 +1,4493 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="actionConfig" type="chartAction"/>
+
+  <xs:element name="action_chain" type="actionChainConfig"/>
+
+  <xs:element name="active_chart" type="activeChartWidgetConfig"/>
+
+  <xs:element name="app_grid_page_ref" type="appGridPageRef"/>
+
+  <xs:element name="app_page_ref" type="appPageRef"/>
+
+  <xs:element name="appversion_label" type="appVersionLabelConfig"/>
+
+  <xs:element name="as_of_date" type="asOfDateProvider"/>
+
+  <xs:element name="attributeGridColumnConfigImpl" type="attributeGridColumnConfigImpl"/>
+
+  <xs:element name="attributeLabelComponentImpl" type="attributeLabelComponentImpl"/>
+
+  <xs:element name="attributeSignOffConfig" type="attributeSignOffConfig"/>
+
+  <xs:element name="attribute_sign_off_action" type="attributeSignOffActionConfig"/>
+
+  <xs:element name="attribute_sign_off_button" type="attributeSignOffButtonConfig"/>
+
+  <xs:element name="attribute_sign_off_grid" type="attributeSignOffGridConfig"/>
+
+  <xs:element name="auto_configurable_read_only_grid_config" type="autoConfigurableReadOnlyGridConfig"/>
+
+  <xs:element name="back_url_ref" type="backURLRef"/>
+
+  <xs:element name="bpm" type="bpmWidgetConfig"/>
+
+  <xs:element name="bpm_action" type="bpmActionConfig"/>
+
+  <xs:element name="bpm_task" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="bpm_value" type="bpmValue"/>
+
+  <xs:element name="bulk_sign_off_button_config" type="bulkSignOffButtonConfig"/>
+
+  <xs:element name="button" type="buttonConfig"/>
+
+  <xs:element name="callbackAction" type="callbackAction"/>
+
+  <xs:element name="cfo_attestation" type="cfoAttestationConfig"/>
+
+  <xs:element name="chart" type="chartConfig"/>
+
+  <xs:element name="chart_selection_action" type="chartActionSelectionConfig"/>
+
+  <xs:element name="chartjs" type="chartConfigJS"/>
+
+  <xs:element name="check_box" type="checkBoxConfig"/>
+
+  <xs:element name="check_box_integer_value" type="checkBoxIntValue"/>
+
+  <xs:element name="check_box_string_value" type="checkBoxStringValue"/>
+
+  <xs:element name="check_box_value" type="checkBoxValue"/>
+
+  <xs:element name="colors_palette" type="colorsPaletteConfig"/>
+
+  <xs:element name="comment" type="actionCommentConfig"/>
+
+  <xs:element name="component" type="gridComponentImpl"/>
+
+  <xs:element name="composite_enable_condition" type="compositeEnableConditionConfig"/>
+
+  <xs:element name="composite_read_only_condition" type="compositeReadOnlyConditionConfig"/>
+
+  <xs:element name="composite_visibility_condition" type="compositeVisibilityConditionConfig"/>
+
+  <xs:element name="config_name_label" type="configurationNameLabelConfig"/>
+
+  <xs:element name="context" type="context"/>
+
+  <xs:element name="contextVariable" type="contextVariable"/>
+
+  <xs:element name="copy_url_button" type="copyUrlToBufferButtonConfig"/>
+
+  <xs:element name="csv_export" type="csvExportDataProvider"/>
+
+  <xs:element name="dataSourceField" type="dataSourceField"/>
+
+  <xs:element name="dataValueProviderImpl" type="dataValueProviderImpl"/>
+
+  <xs:element name="data_object_value" type="dataObjectValue"/>
+
+  <xs:element name="data_object_var" type="dataObjectVariable"/>
+
+  <xs:element name="data_source" type="dataSource"/>
+
+  <xs:element name="data_source_rows_update" type="dataSourceRowsUpdateActionConfig"/>
+
+  <xs:element name="data_source_update" type="dataSourceUpdateActionConfig"/>
+
+  <xs:element name="datePickerDefaultValue" type="datePickerDefaultValue"/>
+
+  <xs:element name="date_picker" type="datePickerConfig"/>
+
+  <xs:element name="date_value" type="dateValue"/>
+
+  <xs:element name="date_var" type="dateVariable"/>
+
+  <xs:element name="dcf" type="dcfConfig"/>
+
+  <xs:element name="dcf_grid_page_ref" type="dcfGridPageRef"/>
+
+  <xs:element name="dcf_page_ref" type="dcfPageRef"/>
+
+  <xs:element name="dimension" type="dimension"/>
+
+  <xs:element name="dimensions" type="dimensions"/>
+
+  <xs:element name="displayTypeWrapper" type="displayTypeWrapper"/>
+
+  <xs:element name="display_type_enum" type="displayTypeEnumValue"/>
+
+  <xs:element name="dm_download" type="actionDocumentManagementDownloadConfig"/>
+
+  <xs:element name="double_value" type="doubleValue"/>
+
+  <xs:element name="double_var" type="doubleVariable"/>
+
+  <xs:element name="download_button" type="downloadButtonConfig"/>
+
+  <xs:element name="download_component_file_name" type="downloadComponentFileName"/>
+
+  <xs:element name="drillDownConditionConfig" type="drillDownConditionConfig"/>
+
+  <xs:element name="drillDownConditionField" type="drillDownConditionField"/>
+
+  <xs:element name="drillDownDataValueProvider" type="drillDownDataValueProvider"/>
+
+  <xs:element name="drilldown_button" type="drillDownButtonConfig"/>
+
+  <xs:element name="drilldown_component" type="drillDownComponentConfig"/>
+
+  <xs:element name="dropdown" type="dropDownConfig"/>
+
+  <xs:element name="dropdown_menu" type="dropDownMenuConfig"/>
+
+  <xs:element name="dropdown_value" type="dropDownValue"/>
+
+  <xs:element name="dynamicCaptionConfigs" type="dynamicCaptionConfigs"/>
+
+  <xs:element name="dynamicCaptionMappingConfig" type="dynamicCaptionMappingConfig"/>
+
+  <xs:element name="dynamicConditionCaptionConfigs" type="dynamicConditionCaptionConfigs"/>
+
+  <xs:element name="dynamicConditionCaptionMappingConfig" type="dynamicConditionCaptionMappingConfig"/>
+
+  <xs:element name="dynamic_caption" type="dynamicCaptionConfig"/>
+
+  <xs:element name="dynamic_category" type="dynamicCategory"/>
+
+  <xs:element name="dynamic_composite_condition" type="dynamicCompositeCondition"/>
+
+  <xs:element name="dynamic_condition_caption" type="dynamicConditionCaptionConfig"/>
+
+  <xs:element name="dynamic_image" type="dynamicIconCaptionConfig"/>
+
+  <xs:element name="dynamic_image_style" type="captionMappingConfig"/>
+
+  <xs:element name="dynamic_label" type="dynamicLabelConfig"/>
+
+  <xs:element name="dynamic_selection_key" type="enumOutputValueKey"/>
+
+  <xs:element name="dynamic_y" type="dynamicYConfig"/>
+
+  <xs:element name="emailLinkConfig" type="emailLinkConfig"/>
+
+  <xs:element name="enable_condition" type="enableConditionConfig"/>
+
+  <xs:element name="env_label" type="environmentNameLabelConfig"/>
+
+  <xs:element name="equals" type="equals"/>
+
+  <xs:element name="error_action" type="errorActionConfig"/>
+
+  <xs:element name="error_widget" type="errorConfig"/>
+
+  <xs:element name="exportProvider" type="exportProvider"/>
+
+  <xs:element name="export_data_button" type="exportDataButtonConfig"/>
+
+  <xs:element name="export_grid_button" type="exportGridButtonConfig"/>
+
+  <xs:element name="exporting" type="exporting"/>
+
+  <xs:element name="favorites" type="favoritesConfig"/>
+
+  <xs:element name="field" type="field"/>
+
+  <xs:element name="fieldMappingConfig" type="fieldMappingConfig"/>
+
+  <xs:element name="field_value" type="fieldValue"/>
+
+  <xs:element name="field_var" type="fieldVariable"/>
+
+  <xs:element name="fields" type="staticSeries"/>
+
+  <xs:element name="file_exists_condition" type="fileExistsConditionConfig"/>
+
+  <xs:element name="file_operation" type="fileOperationActionConfig"/>
+
+  <xs:element name="file_operation_value" type="fileOperationValue"/>
+
+  <xs:element name="filter" type="filterConfig"/>
+
+  <xs:element name="filterOn" type="filterOn"/>
+
+  <xs:element name="filter_value" type="filterValue"/>
+
+  <xs:element name="form" type="formConfig"/>
+
+  <xs:element name="formButtonConfig" type="formButtonConfig"/>
+
+  <xs:element name="form_check_box_field" type="checkBoxFormConfig"/>
+
+  <xs:element name="form_date_picker" type="datePickerFormConfig"/>
+
+  <xs:element name="form_drop_down" type="dropDownFormConfig"/>
+
+  <xs:element name="form_field" type="formFieldConfig"/>
+
+  <xs:element name="form_hidden_field" type="hiddenFieldFormConfig"/>
+
+  <xs:element name="form_label" type="labelFormConfig"/>
+
+  <xs:element name="form_static_drop_down" type="staticDropDownFormConfig"/>
+
+  <xs:element name="form_text_area" type="textAreaFormConfig"/>
+
+  <xs:element name="form_text_field" type="textFieldFormConfig"/>
+
+  <xs:element name="form_upload_button" type="uploadButtonFormConfig"/>
+
+  <xs:element name="format_field_value" type="formatFieldValue"/>
+
+  <xs:element name="freeFormParams" type="freeFormParams"/>
+
+  <xs:element name="function_value" type="functionValue"/>
+
+  <xs:element name="greater_or_equals" type="greaterOrEquals"/>
+
+  <xs:element name="greater_than" type="greaterThan"/>
+
+  <xs:element name="gridCaptionImpl" type="gridCaptionImpl"/>
+
+  <xs:element name="gridColumnConfigImpl" type="gridColumnConfigImpl"/>
+
+  <xs:element name="gridDynamicColumnConfigImpl" type="gridDynamicColumnConfigImpl"/>
+
+  <xs:element name="grid_attribute_label_component" type="attributeLabelComponentConfig"/>
+
+  <xs:element name="grid_button_component" type="buttonComponentConfig"/>
+
+  <xs:element name="grid_check_box_component" type="checkBoxComponentConfig"/>
+
+  <xs:element name="grid_check_box_integer_value" type="gridCheckBoxIntValue"/>
+
+  <xs:element name="grid_check_box_string_value" type="gridCheckBoxStringValue"/>
+
+  <xs:element name="grid_check_box_value" type="gridCheckBoxValue"/>
+
+  <xs:element name="grid_dm_upload_component" type="documentManagementUploadComponentConfig"/>
+
+  <xs:element name="grid_download_component" type="downloadComponentConfig"/>
+
+  <xs:element name="grid_email_component" type="emailLinkComponentConfig"/>
+
+  <xs:element name="grid_label_component" type="labelComponentConfig"/>
+
+  <xs:element name="grid_open_page" type="actionOpenPageConfig"/>
+
+  <xs:element name="grid_progress_bar_component" type="progressBarComponentConfig"/>
+
+  <xs:element name="grid_upload_component" type="uploadComponentConfig"/>
+
+  <xs:element name="grid_url_component" type="urlLinkComponentConfig"/>
+
+  <xs:element name="h_section" type="horizontalLayoutConfig"/>
+
+  <xs:element name="include" type="includeConfig"/>
+
+  <xs:element name="initPageParamsConfig" type="initPageParamsConfig"/>
+
+  <xs:element name="input_model" type="inputModelConfig"/>
+
+  <xs:element name="instance" type="instance"/>
+
+  <xs:element name="instance_provider" type="instanceProvider"/>
+
+  <xs:element name="instance_selector" type="instanceSelectorConfig"/>
+
+  <xs:element name="instance_selector_as_of_date_value" type="instanceSelectorAsOfDateValue"/>
+
+  <xs:element name="instance_selector_map_var" type="instanceSelectorMapVariable"/>
+
+  <xs:element name="instance_selector_ref" type="instanceSelectorRef"/>
+
+  <xs:element name="instance_selector_var" type="instanceSelectorVariable"/>
+
+  <xs:element name="instruction_button" type="instructionButtonConfig"/>
+
+  <xs:element name="integer_value" type="integerValue"/>
+
+  <xs:element name="integer_var" type="integerVariable"/>
+
+  <xs:element name="is_empty" type="isEmpty"/>
+
+  <xs:element name="is_not_empty" type="isNotEmpty"/>
+
+  <xs:element name="label" type="labelConfig"/>
+
+  <xs:element name="less_or_equals" type="lessOrEquals"/>
+
+  <xs:element name="less_than" type="lessThan"/>
+
+  <xs:element name="load_all_rows_grid_button" type="loadAllRowsGridButtonConfig"/>
+
+  <xs:element name="login_label" type="loginLabelConfig"/>
+
+  <xs:element name="logout_procedure" type="logoutActionConfig"/>
+
+  <xs:element name="mappingConfig" type="mappingConfig"/>
+
+  <xs:element name="mapping_value" type="mappingValue"/>
+
+  <xs:element name="matches_regexp" type="matchesRegexp"/>
+
+  <xs:element name="measure" type="measure"/>
+
+  <xs:element name="measures" type="measures"/>
+
+  <xs:element name="model_value" type="modelValue"/>
+
+  <xs:element name="model_var" type="modelVariable"/>
+
+  <xs:element name="multi_select_dynamic_column_grid_config" type="multiSelectDynamicColumnGridConfig"/>
+
+  <xs:element name="multi_selectable_grid" type="multiSelectGridConfig"/>
+
+  <xs:element name="multiselection_var" type="multiSelectionVariable"/>
+
+  <xs:element name="no_select_dynamic_column_grid_config" type="noSelectDynamicColumnGridConfig"/>
+
+  <xs:element name="no_selectable_grid" type="noSelectGridConfig"/>
+
+  <xs:element name="not_equals" type="notEquals"/>
+
+  <xs:element name="not_matches_regexp" type="notMatchesRegexp"/>
+
+  <xs:element name="notificationConfig" type="notificationConfig"/>
+
+  <xs:element name="notification_button" type="notificationButtonConfig"/>
+
+  <xs:element name="notification_condition" type="notificationConditionConfig"/>
+
+  <xs:element name="notification_count_button" type="notificationCountButtonConfig"/>
+
+  <xs:element name="object_exists_condition" type="objectExistsConditionConfig"/>
+
+  <xs:element name="open_page" type="openPageActionConfig"/>
+
+  <xs:element name="open_popup_window" type="openPopupWindowActionConfig"/>
+
+  <xs:element name="outputChartValue" type="outputChartValue"/>
+
+  <xs:element name="page" type="pageConfig"/>
+
+  <xs:element name="pageRestriction" type="pageRestriction"/>
+
+  <xs:element name="page_title" type="pageTitleConfig"/>
+
+  <xs:element name="path" type="path"/>
+
+  <xs:element name="permissionServiceConfig" type="permissionServiceConfig"/>
+
+  <xs:element name="permission_enable_condition" type="permissionEnableConditionConfig"/>
+
+  <xs:element name="permission_read_only_condition" type="permissionReadOnlyConditionConfig"/>
+
+  <xs:element name="permission_visibility_condition" type="permissionVisibilityConditionConfig"/>
+
+  <xs:element name="pie" type="pieSpecials"/>
+
+  <xs:element name="predefined_series_type" type="predefinedSeriesType"/>
+
+  <xs:element name="print_button" type="printButtonConfig"/>
+
+  <xs:element name="progress_bar_level" type="progressBarLevelConfig"/>
+
+  <xs:element name="progress_bar_value" type="progressBarValueConfig"/>
+
+  <xs:element name="read_only" type="readOnlyConfig"/>
+
+  <xs:element name="refresh_component" type="refreshComponentActionConfig"/>
+
+  <xs:element name="remove_model_property" type="removeModelPropertyActionConfig"/>
+
+  <xs:element name="remove_row" type="actionRemoveRowConfig"/>
+
+  <xs:element name="reset_form" type="resetFormActionConfig"/>
+
+  <xs:element name="role_condition" type="roleConditionConfig"/>
+
+  <xs:element name="rollout_condition" type="rolloutConditionConfig"/>
+
+  <xs:element name="rollupConfig" type="rollupConfig"/>
+
+  <xs:element name="rollup_condition" type="rollupConditionConfig"/>
+
+  <xs:element name="run_approve_reject_adjustments_wf" type="actionRunApproveRejectWFConfig"/>
+
+  <xs:element name="run_remove_adjustments_wf" type="actionRunRemoveAdjustmentsWFConfig"/>
+
+  <xs:element name="run_submit_for_approval_wf" type="runSubmitAdjustmentsWFActionConfig"/>
+
+  <xs:element name="run_udf" type="runUdfActionConfig"/>
+
+  <xs:element name="run_workflow" type="runWorkflowActionConfig"/>
+
+  <xs:element name="run_workflow_button" type="runWorkflowButtonConfig"/>
+
+  <xs:element name="run_workflow_icon" type="runWorkflowIcon"/>
+
+  <xs:element name="search" type="searchConfig"/>
+
+  <xs:element name="selectable_style" type="selectableStyleProvider"/>
+
+  <xs:element name="selection_output" type="selectionOutput"/>
+
+  <xs:element name="selector" type="dynamicSeries"/>
+
+  <xs:element name="separate_instance_selector" type="separateInstanceSelectorConfig"/>
+
+  <xs:element name="separate_task_source" type="separateTaskAddress"/>
+
+  <xs:element name="series" type="seriesConfig"/>
+
+  <xs:element name="series_dropdown" type="seriesDropDownConfig"/>
+
+  <xs:element name="series_dropdown_value" type="seriesDropDownValue"/>
+
+  <xs:element name="set_model_property" type="setModelPropertyActionConfig"/>
+
+  <xs:element name="set_model_property_value" type="setModelPropertyActionValue"/>
+
+  <xs:element name="set_url_condition" type="setUrlCondition"/>
+
+  <xs:element name="set_url_condition_to_model" type="setUrlConditionToModelConfig"/>
+
+  <xs:element name="set_url_instance" type="setUrlInstance"/>
+
+  <xs:element name="show_favorite_action" type="favoriteWidgetConfig"/>
+
+  <xs:element name="show_point_info" type="chartActionShowPointInfoConfig"/>
+
+  <xs:element name="signOff_state" type="signOffStateConfig"/>
+
+  <xs:element name="signoff" type="actionSignOffConfig"/>
+
+  <xs:element name="single_select_dynamic_column_grid_config" type="singleSelectDynamicColumnGridConfig"/>
+
+  <xs:element name="single_selectable_grid" type="singleSelectGridConfig"/>
+
+  <xs:element name="sourceAddress" type="sourceAddress"/>
+
+  <xs:element name="spacer" type="spacerConfig"/>
+
+  <xs:element name="specials" type="specials"/>
+
+  <xs:element name="static_caption" type="staticCaptionConfig"/>
+
+  <xs:element name="static_category" type="staticCategory"/>
+
+  <xs:element name="static_dropdown" type="staticDropDownConfig"/>
+
+  <xs:element name="static_dropdown_value" type="staticDropDownValue"/>
+
+  <xs:element name="static_image" type="iconCaptionConfig"/>
+
+  <xs:element name="static_label" type="staticLabelConfig"/>
+
+  <xs:element name="static_selection_key" type="staticOutputValueKey"/>
+
+  <xs:element name="static_text" type="textCaptionConfig"/>
+
+  <xs:element name="static_y" type="staticYConfig"/>
+
+  <xs:element name="status" type="styledCaptionConfig"/>
+
+  <xs:element name="streamsProvider" type="streamsProvider"/>
+
+  <xs:element name="string_concat_value" type="stringConcatValue"/>
+
+  <xs:element name="string_concat_values" type="stringConcatValues"/>
+
+  <xs:element name="string_value" type="stringValue"/>
+
+  <xs:element name="string_var" type="stringVariable"/>
+
+  <xs:element name="submit_adjustments_enable_provider" type="submitAdjustmentEnableProviderConfig"/>
+
+  <xs:element name="sumConfig" type="sumConfig"/>
+
+  <xs:element name="sums" type="sumsConfig"/>
+
+  <xs:element name="tabConfig" type="tabConfig"/>
+
+  <xs:element name="tab_container" type="tabContainerConfig"/>
+
+  <xs:element name="task" type="taskObject"/>
+
+  <xs:element name="task_exists_condition" type="taskExistsConditionConfig"/>
+
+  <xs:element name="task_source" type="taskAddress"/>
+
+  <xs:element name="task_starter" type="actionTaskStarterConfig"/>
+
+  <xs:element name="task_status" type="taskStatusCaptionConfig"/>
+
+  <xs:element name="text_area" type="textAreaConfig"/>
+
+  <xs:element name="text_field" type="textFieldConfig"/>
+
+  <xs:element name="text_popup" type="actionTextPopupConfig"/>
+
+  <xs:element name="text_with_icon" type="textWithIconCaptionConfig"/>
+
+  <xs:element name="totalSumConfig" type="totalSumConfig"/>
+
+  <xs:element name="trendDropDownEndDate" type="trendDropDownEndDate"/>
+
+  <xs:element name="trend_dropdown" type="trendDropDownConfig"/>
+
+  <xs:element name="trend_dropdown_value" type="trendDropDownValue"/>
+
+  <xs:element name="udfResultRef" type="udfResultRef"/>
+
+  <xs:element name="updateField" type="updateField"/>
+
+  <xs:element name="updateFields" type="updateFields"/>
+
+  <xs:element name="upload_action" type="uploadAction"/>
+
+  <xs:element name="upload_button" type="uploadButtonConfig"/>
+
+  <xs:element name="upload_component_file_folder" type="uploadComponentFileFolder"/>
+
+  <xs:element name="url_ref" type="urlRef"/>
+
+  <xs:element name="url_value" type="urlConfig"/>
+
+  <xs:element name="user_dropdown" type="userDropDownConfig"/>
+
+  <xs:element name="v_section" type="verticalLayoutConfig"/>
+
+  <xs:element name="value" type="dcfValue"/>
+
+  <xs:element name="value_based_read_only_provider" type="valueBasedReadOnlyProviderConfig"/>
+
+  <xs:element name="variablesProvider" type="variablesProvider"/>
+
+  <xs:element name="view_adjustments_enable_provider" type="viewAdjustmentsEnableProviderConfig"/>
+
+  <xs:element name="visibility_condition" type="visibilityConditionConfig"/>
+
+  <xs:element name="waterfall" type="waterfallSpecials"/>
+
+  <xs:element name="waterfall_chart" type="waterfallChartConfig"/>
+
+  <xs:element name="workFlowDataProviderImpl" type="workFlowDataProviderImpl"/>
+
+  <xs:element name="workflow" type="workflow"/>
+
+  <xs:element name="workflow_state_condition" type="workflowStateConditionConfig"/>
+
+  <xs:element name="xAxisConfigW" type="xAxisConfigW"/>
+
+  <xs:element name="x_axis" type="xAxisConfig"/>
+
+  <xs:element name="xlsx_export" type="xlsxExportDataProvider"/>
+
+  <xs:element name="y_axis" type="yAxisConfig"/>
+
+  <xs:complexType name="attributeSignOffActionConfig">
+    <xs:sequence>
+      <xs:element name="info_data_source" type="dataSource"/>
+      <xs:element name="history_address" type="sourceAddress"/>
+      <xs:element name="unique_id" type="fieldValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dataSource">
+    <xs:sequence/>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+    <xs:attribute name="source" type="xs:string" use="required"/>
+    <xs:attribute name="type" type="dataSourceType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="sourceAddress">
+    <xs:sequence/>
+    <xs:attribute name="project" type="xs:string"/>
+    <xs:attribute name="branch" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="fieldValue">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="setUrlInstance">
+    <xs:sequence>
+      <xs:element ref="instance"/>
+    </xs:sequence>
+    <xs:attribute name="to_ref" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="instance">
+    <xs:choice>
+      <xs:element ref="instance_selector_ref"/>
+      <xs:element ref="instance_provider"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="instanceSelectorRef">
+    <xs:sequence/>
+    <xs:attribute name="reference" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="instanceProvider">
+    <xs:sequence>
+      <xs:element ref="as_of_date"/>
+      <xs:element name="keys" type="variablesProvider" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="asOfDateProvider">
+    <xs:choice>
+      <xs:element ref="date_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="instance_selector_as_of_date_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="dateValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:dateTime" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="modelValue">
+    <xs:sequence/>
+    <xs:attribute name="reference" type="xs:string" use="required"/>
+    <xs:attribute name="raw" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dataObjectValue">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="field"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="field">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="filterConfig">
+    <xs:sequence>
+      <xs:element ref="filter_value"/>
+      <xs:element name="filter_mapping" type="filterOn" maxOccurs="unbounded"/>
+      <xs:element name="empty_value_policy" type="emptyValuePolicy" default="ALL" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="filterValue">
+    <xs:choice>
+      <xs:element ref="model_value"/>
+      <xs:element ref="string_value"/>
+    </xs:choice>
+    <xs:attribute name="caption" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="stringValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="filterOn">
+    <xs:sequence>
+      <xs:element name="filter_on" type="field"/>
+    </xs:sequence>
+    <xs:attribute name="key" type="xs:string"/>
+    <xs:attribute name="operator" type="operator"/>
+    <xs:attribute name="specific_value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="instanceSelectorAsOfDateValue">
+    <xs:sequence/>
+    <xs:attribute name="reference" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="variablesProvider">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="string_var"/>
+        <xs:element ref="integer_var"/>
+        <xs:element ref="double_var"/>
+        <xs:element ref="date_var"/>
+        <xs:element ref="field_var"/>
+        <xs:element ref="model_var"/>
+        <xs:element ref="instance_selector_var"/>
+        <xs:element ref="multiselection_var"/>
+        <xs:element ref="data_object_var"/>
+        <xs:element ref="instance_selector_map_var"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stringVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="integerVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="doubleVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:double" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="dateVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:dateTime" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="fieldVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="modelVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="reference" type="xs:string" use="required"/>
+    <xs:attribute name="raw" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="instanceSelectorVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="instance_reference" type="xs:string" use="required"/>
+    <xs:attribute name="key" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="multiSelectionVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="reference" type="xs:string" use="required"/>
+    <xs:attribute name="as_string" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dataObjectVariable">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="field_value"/>
+      <xs:element name="conditions" type="filterConfig" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="instanceSelectorMapVariable">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="instance_reference" type="xs:string" use="required"/>
+    <xs:attribute name="key" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="runWorkflowIcon">
+    <xs:sequence/>
+    <xs:attribute name="status_value" type="xs:string" use="required"/>
+    <xs:attribute name="icon_value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxConfig">
+    <xs:sequence>
+      <xs:element name="mapping_value" type="checkBoxValue"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:boolean"/>
+    <xs:attribute name="read_only" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxValue">
+    <xs:choice>
+      <xs:element ref="check_box_string_value"/>
+      <xs:element ref="check_box_integer_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxStringValue">
+    <xs:sequence/>
+    <xs:attribute name="true_value" type="xs:string" use="required"/>
+    <xs:attribute name="false_value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxIntValue">
+    <xs:sequence/>
+    <xs:attribute name="true_value" type="xs:int" use="required"/>
+    <xs:attribute name="false_value" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="valueBasedReadOnlyProviderConfig">
+    <xs:sequence/>
+    <xs:attribute name="listen_path" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="compositeReadOnlyConditionConfig">
+    <xs:sequence>
+      <xs:element ref="permission_read_only_condition" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="permissionReadOnlyConditionConfig">
+    <xs:sequence/>
+    <xs:attribute name="context_id" type="xs:string"/>
+    <xs:attribute name="permission" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dataValueProviderImpl">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="double_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="string_concat_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="doubleValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:double" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="integerValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="functionValue">
+    <xs:sequence/>
+    <xs:attribute name="function" type="function" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="stringConcatValue">
+    <xs:sequence>
+      <xs:element name="value" type="stringConcatValues" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stringConcatValues">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="double_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="function_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="dropDownMenuConfig">
+    <xs:sequence>
+      <xs:element name="menu_items" type="menuItemConfig" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="menuItemConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="button"/>
+        <xs:element ref="download_button"/>
+        <xs:element ref="upload_button"/>
+        <xs:element ref="drilldown_button"/>
+        <xs:element ref="label"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buttonConfig">
+    <xs:sequence>
+      <xs:element ref="selectable_style" minOccurs="0"/>
+      <xs:choice>
+        <xs:element ref="run_remove_adjustments_wf"/>
+        <xs:element ref="grid_open_page"/>
+        <xs:element ref="run_workflow"/>
+        <xs:element ref="refresh_component"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="open_popup_window"/>
+        <xs:element ref="file_operation"/>
+        <xs:element ref="logout_procedure"/>
+        <xs:element ref="run_submit_for_approval_wf"/>
+        <xs:element ref="set_model_property"/>
+        <xs:element ref="run_approve_reject_adjustments_wf"/>
+        <xs:element ref="task_starter"/>
+        <xs:element ref="show_favorite_action"/>
+        <xs:element ref="dm_download"/>
+        <xs:element ref="data_source_rows_update"/>
+        <xs:element ref="reset_form"/>
+        <xs:element ref="open_page"/>
+        <xs:element ref="signoff"/>
+        <xs:element ref="set_url_condition_to_model"/>
+        <xs:element ref="remove_model_property"/>
+        <xs:element ref="bpm_action"/>
+        <xs:element ref="run_udf"/>
+        <xs:element ref="action_chain"/>
+        <xs:element ref="text_popup"/>
+        <xs:element ref="data_source_update"/>
+        <xs:element ref="remove_row"/>
+        <xs:element ref="error_action"/>
+      </xs:choice>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="selectableStyleProvider">
+    <xs:sequence>
+      <xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="actionRunRemoveAdjustmentsWFConfig">
+    <xs:sequence>
+      <xs:element name="adjustmentIdField" type="dcfValue"/>
+      <xs:element name="wfCompletedRefreshComponentId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="wfCompletedRefreshPath" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+    <xs:attribute name="workflow" type="xs:string" use="required"/>
+    <xs:attribute name="restartAllModules" type="xs:boolean"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dcfValue">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="field_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="actionOpenPageConfig">
+    <xs:sequence>
+      <xs:element name="title" type="dcfValue" minOccurs="0"/>
+      <xs:choice>
+        <xs:element ref="dcf_grid_page_ref"/>
+        <xs:element ref="app_grid_page_ref"/>
+      </xs:choice>
+      <xs:element name="init_page_params" type="initPageParamsConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="from_instance_id" type="xs:string" minOccurs="0"/>
+      <xs:element name="to_instance_id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="open_in_new_tab" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dcfGridPageRef">
+    <xs:sequence>
+      <xs:element name="project_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="branch_name" type="xs:string" minOccurs="0"/>
+      <xs:element name="page_id" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="appGridPageRef">
+    <xs:sequence>
+      <xs:element name="app_name" type="dcfValue" minOccurs="0"/>
+      <xs:element name="page_id" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initPageParamsConfig">
+    <xs:sequence>
+      <xs:element name="fieldMapping" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="modelRef" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="runWorkflowActionConfig">
+    <xs:sequence>
+      <xs:element ref="workflow"/>
+      <xs:element ref="instance"/>
+      <xs:element name="variables" type="variablesProvider" minOccurs="0"/>
+      <xs:element name="non_key_variables" type="variablesProvider" minOccurs="0"/>
+      <xs:element name="streams" type="streamsProvider" minOccurs="0"/>
+      <xs:element name="positive_result_action" type="callbackAction" minOccurs="0"/>
+      <xs:element name="negative_result_action" type="callbackAction" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="restart_all_modules" type="xs:boolean"/>
+    <xs:attribute name="status_path" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="workflow">
+    <xs:sequence>
+      <xs:element name="project" type="workFlowDataProviderImpl"/>
+      <xs:element name="branch" type="workFlowDataProviderImpl"/>
+      <xs:element name="name" type="workFlowDataProviderImpl"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workFlowDataProviderImpl">
+    <xs:choice>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="string_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="streamsProvider">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="string_var"/>
+        <xs:element ref="field_var"/>
+        <xs:element ref="model_var"/>
+        <xs:element ref="data_object_var"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="callbackAction">
+    <xs:choice>
+      <xs:element ref="run_remove_adjustments_wf"/>
+      <xs:element ref="grid_open_page"/>
+      <xs:element ref="run_workflow"/>
+      <xs:element ref="refresh_component"/>
+      <xs:element ref="comment"/>
+      <xs:element ref="open_popup_window"/>
+      <xs:element ref="file_operation"/>
+      <xs:element ref="logout_procedure"/>
+      <xs:element ref="run_submit_for_approval_wf"/>
+      <xs:element ref="set_model_property"/>
+      <xs:element ref="run_approve_reject_adjustments_wf"/>
+      <xs:element ref="task_starter"/>
+      <xs:element ref="show_favorite_action"/>
+      <xs:element ref="dm_download"/>
+      <xs:element ref="data_source_rows_update"/>
+      <xs:element ref="reset_form"/>
+      <xs:element ref="open_page"/>
+      <xs:element ref="signoff"/>
+      <xs:element ref="set_url_condition_to_model"/>
+      <xs:element ref="remove_model_property"/>
+      <xs:element ref="bpm_action"/>
+      <xs:element ref="run_udf"/>
+      <xs:element ref="action_chain"/>
+      <xs:element ref="text_popup"/>
+      <xs:element ref="data_source_update"/>
+      <xs:element ref="remove_row"/>
+      <xs:element ref="error_action"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="refreshComponentActionConfig">
+    <xs:sequence/>
+    <xs:attribute name="component_id" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="actionCommentConfig">
+    <xs:sequence>
+      <xs:element name="title" type="dcfValue" minOccurs="0"/>
+      <xs:element name="unique_id" type="dcfValue" minOccurs="0"/>
+      <xs:element name="write_source" type="sourceAddress" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="seen_flag" type="dcfValue" minOccurs="0"/>
+      <xs:element name="notification_config" type="notificationConfig" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="notificationConfig">
+    <xs:sequence>
+      <xs:element name="notification" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="notificationRoles" type="dcfValue" minOccurs="0"/>
+      <xs:element name="configProjectName" type="xs:string"/>
+      <xs:element name="configBranchName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="openPopupWindowActionConfig">
+    <xs:choice>
+      <xs:element ref="copy_url_button"/>
+      <xs:element ref="text_area"/>
+      <xs:element ref="check_box"/>
+      <xs:element ref="dropdown_menu"/>
+      <xs:element ref="env_label"/>
+      <xs:element ref="multi_select_dynamic_column_grid_config"/>
+      <xs:element ref="waterfall_chart"/>
+      <xs:element ref="include"/>
+      <xs:element ref="single_selectable_grid"/>
+      <xs:element ref="error_widget"/>
+      <xs:element ref="no_selectable_grid"/>
+      <xs:element ref="button"/>
+      <xs:element ref="tab_container"/>
+      <xs:element ref="login_label"/>
+      <xs:element ref="dynamic_label"/>
+      <xs:element ref="spacer"/>
+      <xs:element ref="auto_configurable_read_only_grid_config"/>
+      <xs:element ref="page"/>
+      <xs:element ref="series_dropdown"/>
+      <xs:element ref="run_workflow_button"/>
+      <xs:element ref="load_all_rows_grid_button"/>
+      <xs:element ref="download_button"/>
+      <xs:element ref="instance_selector"/>
+      <xs:element ref="multi_selectable_grid"/>
+      <xs:element ref="static_label"/>
+      <xs:element ref="single_select_dynamic_column_grid_config"/>
+      <xs:element ref="trend_dropdown"/>
+      <xs:element ref="separate_instance_selector"/>
+      <xs:element ref="bpm"/>
+      <xs:element ref="v_section"/>
+      <xs:element ref="bulk_sign_off_button_config"/>
+      <xs:element ref="dropdown"/>
+      <xs:element ref="date_picker"/>
+      <xs:element ref="form"/>
+      <xs:element ref="user_dropdown"/>
+      <xs:element ref="page_title"/>
+      <xs:element ref="no_select_dynamic_column_grid_config"/>
+      <xs:element ref="instruction_button"/>
+      <xs:element ref="chartjs"/>
+      <xs:element ref="label"/>
+      <xs:element ref="config_name_label"/>
+      <xs:element ref="notification_count_button"/>
+      <xs:element ref="attribute_sign_off_grid"/>
+      <xs:element ref="search"/>
+      <xs:element ref="static_dropdown"/>
+      <xs:element ref="favorites"/>
+      <xs:element ref="h_section"/>
+      <xs:element ref="export_grid_button"/>
+      <xs:element ref="print_button"/>
+      <xs:element ref="appversion_label"/>
+      <xs:element ref="upload_button"/>
+      <xs:element ref="drilldown_button"/>
+      <xs:element ref="dcf"/>
+      <xs:element ref="active_chart"/>
+      <xs:element ref="attribute_sign_off_button"/>
+      <xs:element ref="text_field"/>
+      <xs:element ref="cfo_attestation"/>
+      <xs:element ref="chart"/>
+      <xs:element ref="notification_button"/>
+      <xs:element ref="export_data_button"/>
+    </xs:choice>
+    <xs:attribute name="height" type="xs:string" use="required"/>
+    <xs:attribute name="width" type="xs:string" use="required"/>
+    <xs:attribute name="popup_title" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="closePath" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="copyUrlToBufferButtonConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="submitAdjustmentEnableProviderConfig">
+    <xs:sequence>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="roleName" type="xs:string"/>
+    <xs:attribute name="manualRefreshPath" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="viewAdjustmentsEnableProviderConfig">
+    <xs:sequence>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="key" type="fieldValue"/>
+      <xs:element name="value" type="filterConfig"/>
+    </xs:sequence>
+    <xs:attribute name="widget_id" type="xs:string" use="required"/>
+    <xs:attribute name="roleName" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="compositeEnableConditionConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="rollup_condition"/>
+        <xs:element ref="rollout_condition"/>
+        <xs:element ref="enable_condition"/>
+        <xs:element ref="task_exists_condition"/>
+        <xs:element ref="role_condition"/>
+        <xs:element ref="object_exists_condition"/>
+        <xs:element ref="workflow_state_condition"/>
+        <xs:element ref="file_exists_condition"/>
+        <xs:element ref="permission_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rollupConditionConfig">
+    <xs:sequence>
+      <xs:element name="can_signOff" type="fieldValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rolloutConditionConfig">
+    <xs:sequence>
+      <xs:element name="stateConfigs" type="signOffStateConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="parentStatus" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="signOffStateConfig">
+    <xs:sequence>
+      <xs:element name="state_name" type="xs:string"/>
+      <xs:element name="is_comment_enable" type="xs:boolean"/>
+      <xs:element name="is_comment_mandatory" type="xs:boolean"/>
+      <xs:element name="is_display" type="xs:boolean"/>
+      <xs:element name="status_caption_toolTip" type="xs:string" minOccurs="0"/>
+      <xs:element name="is_signOff_identifier" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enableConditionConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="string_value"/>
+        <xs:element ref="integer_value"/>
+        <xs:element ref="model_value"/>
+        <xs:element ref="function_value"/>
+        <xs:element ref="field_value"/>
+        <xs:element ref="data_object_value"/>
+        <xs:element ref="date_value"/>
+        <xs:element ref="double_value"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element ref="is_not_empty"/>
+        <xs:element ref="is_empty"/>
+        <xs:element ref="equals"/>
+        <xs:element ref="not_equals"/>
+        <xs:element ref="matches_regexp"/>
+        <xs:element ref="not_matches_regexp"/>
+        <xs:element ref="less_or_equals"/>
+        <xs:element ref="less_than"/>
+        <xs:element ref="greater_or_equals"/>
+        <xs:element ref="greater_than"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isNotEmpty">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="isEmpty">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="equals">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="notEquals">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="matchesRegexp">
+    <xs:sequence>
+      <xs:element name="value" type="dataValueProviderImpl"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="notMatchesRegexp">
+    <xs:sequence>
+      <xs:element name="value" type="dataValueProviderImpl"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lessOrEquals">
+    <xs:choice>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="double_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="lessThan">
+    <xs:choice>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="double_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="greaterOrEquals">
+    <xs:choice>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="double_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="greaterThan">
+    <xs:choice>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="double_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="taskExistsConditionConfig">
+    <xs:sequence>
+      <xs:element name="task_source" type="taskObject" minOccurs="0"/>
+      <xs:element name="instanceDate" type="dcfValue" minOccurs="0"/>
+      <xs:element name="instanceKeys" type="dcfValue" minOccurs="0"/>
+      <xs:element name="streamKeys" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="taskObject">
+    <xs:sequence>
+      <xs:element name="taskAddress" type="dcfValue" minOccurs="0"/>
+      <xs:element name="taskType" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="roleConditionConfig">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="objectExistsConditionConfig">
+    <xs:sequence>
+      <xs:element name="task_source" type="taskObject" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="workflowStateConditionConfig">
+    <xs:sequence/>
+    <xs:attribute name="status_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="fileExistsConditionConfig">
+    <xs:sequence>
+      <xs:element name="file_name" type="path"/>
+      <xs:element name="file_folder" type="path"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="path">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="string_value"/>
+        <xs:element ref="model_value"/>
+        <xs:element ref="data_object_value"/>
+        <xs:element ref="field_value"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="permissionEnableConditionConfig">
+    <xs:sequence/>
+    <xs:attribute name="context_id" type="xs:string"/>
+    <xs:attribute name="permission" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="compositeVisibilityConditionConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="permission_visibility_condition"/>
+        <xs:element ref="visibility_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="hide_panel" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="permissionVisibilityConditionConfig">
+    <xs:sequence/>
+    <xs:attribute name="context_id" type="xs:string"/>
+    <xs:attribute name="permission" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="visibilityConditionConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="string_value"/>
+        <xs:element ref="integer_value"/>
+        <xs:element ref="model_value"/>
+        <xs:element ref="function_value"/>
+        <xs:element ref="field_value"/>
+        <xs:element ref="data_object_value"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element ref="is_not_empty"/>
+        <xs:element ref="is_empty"/>
+        <xs:element ref="equals"/>
+        <xs:element ref="not_equals"/>
+        <xs:element ref="matches_regexp"/>
+        <xs:element ref="not_matches_regexp"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="textAreaConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="read_only" type="xs:boolean"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="label_position" type="labelPosition"/>
+  </xs:complexType>
+
+  <xs:complexType name="environmentNameLabelConfig">
+    <xs:sequence/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="multiSelectDynamicColumnGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="unique_id" type="fieldValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="grid_selector_property" type="xs:string"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="selection_output" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridDynamicColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="selectionOutput">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="property_path" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridDynamicColumnConfigImpl">
+    <xs:sequence>
+      <xs:element ref="component" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="unique_id" type="xs:string" use="required"/>
+    <xs:attribute name="display" type="xs:boolean"/>
+    <xs:attribute name="sort" type="sortOrder"/>
+    <xs:attribute name="freeze" type="xs:boolean"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="alignment" type="columnAlign"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridComponentImpl">
+    <xs:choice>
+      <xs:element ref="grid_url_component"/>
+      <xs:element ref="grid_dm_upload_component"/>
+      <xs:element ref="grid_check_box_component"/>
+      <xs:element ref="grid_button_component"/>
+      <xs:element ref="drilldown_component"/>
+      <xs:element ref="grid_download_component"/>
+      <xs:element ref="grid_progress_bar_component"/>
+      <xs:element ref="grid_upload_component"/>
+      <xs:element ref="grid_label_component"/>
+      <xs:element ref="grid_email_component"/>
+      <xs:element ref="grid_attribute_label_component"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="urlLinkComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:element name="url" type="dcfValue" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="in_new_tab" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="styledCaptionConfig">
+    <xs:sequence>
+      <xs:element ref="value" minOccurs="0"/>
+      <xs:element name="style_mapping" type="captionMappingConfig" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="format" type="xs:string"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="captionMappingConfig">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="textCaptionConfig">
+    <xs:sequence>
+      <xs:element ref="value" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="format" type="xs:string"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticCaptionConfig">
+    <xs:sequence/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="icon" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="alignment" type="columnAlign"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicConditionCaptionConfig">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue"/>
+      <xs:element name="captions" type="dynamicConditionCaptionConfigs" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+    <xs:attribute name="format" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicConditionCaptionConfigs">
+    <xs:sequence>
+      <xs:element name="caption" type="dynamicConditionCaptionMappingConfig" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicConditionCaptionMappingConfig">
+    <xs:sequence>
+      <xs:element name="composite_condition" type="dynamicCompositeCondition"/>
+    </xs:sequence>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="icon" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="captionIconAlignment"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicCompositeCondition">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="rollup_condition"/>
+        <xs:element ref="rollout_condition"/>
+        <xs:element ref="enable_condition"/>
+        <xs:element ref="task_exists_condition"/>
+        <xs:element ref="role_condition"/>
+        <xs:element ref="object_exists_condition"/>
+        <xs:element ref="workflow_state_condition"/>
+        <xs:element ref="file_exists_condition"/>
+        <xs:element ref="permission_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="iconCaptionConfig">
+    <xs:sequence>
+      <xs:element ref="value" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="textWithIconCaptionConfig">
+    <xs:sequence>
+      <xs:element name="icon_value" type="dcfValue" minOccurs="0"/>
+      <xs:element ref="value" minOccurs="0"/>
+      <xs:element name="icon_mapping" type="captionMappingConfig" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="iconAlignment" type="iconAlign"/>
+    <xs:attribute name="format" type="xs:string"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicIconCaptionConfig">
+    <xs:sequence>
+      <xs:element ref="value"/>
+      <xs:element name="icon_mapping" type="captionMappingConfig" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="taskStatusCaptionConfig">
+    <xs:sequence>
+      <xs:element name="style_mapping" type="captionMappingConfig" maxOccurs="unbounded"/>
+      <xs:element name="taskObject" type="taskObject" minOccurs="0"/>
+      <xs:element name="instanceDate" type="dcfValue" minOccurs="0"/>
+      <xs:element name="instanceKeys" type="dcfValue" minOccurs="0"/>
+      <xs:element name="streamKeys" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="format" type="xs:string"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicCaptionConfig">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue"/>
+      <xs:element name="captions" type="dynamicCaptionConfigs" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="isFiltered" type="xs:boolean"/>
+    <xs:attribute name="format" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicCaptionConfigs">
+    <xs:sequence>
+      <xs:element name="caption" type="dynamicCaptionMappingConfig" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicCaptionMappingConfig">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:string"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="icon" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="captionIconAlignment"/>
+  </xs:complexType>
+
+  <xs:complexType name="documentManagementUploadComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:element name="unique_id" type="dcfValue"/>
+      <xs:element name="source_address" type="sourceAddress"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="file_folder" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxComponentConfig">
+    <xs:sequence>
+      <xs:element name="mapping_value" type="gridCheckBoxValue"/>
+      <xs:element name="value_field" type="gridCheckBoxFieldValue"/>
+      <xs:element name="unique_field" type="gridCheckBoxFieldValue"/>
+    </xs:sequence>
+    <xs:attribute name="selection_table_path" type="xs:string" use="required"/>
+    <xs:attribute name="alignment" type="columnAlign"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridCheckBoxValue">
+    <xs:choice>
+      <xs:element ref="grid_check_box_string_value"/>
+      <xs:element ref="grid_check_box_integer_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="gridCheckBoxStringValue">
+    <xs:sequence/>
+    <xs:attribute name="true_value" type="xs:string" use="required"/>
+    <xs:attribute name="false_value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridCheckBoxIntValue">
+    <xs:sequence/>
+    <xs:attribute name="true_value" type="xs:int" use="required"/>
+    <xs:attribute name="false_value" type="xs:int" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridCheckBoxFieldValue">
+    <xs:sequence>
+      <xs:element name="field" type="fieldValue"/>
+    </xs:sequence>
+    <xs:attribute name="save_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="buttonComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element ref="run_remove_adjustments_wf"/>
+        <xs:element ref="grid_open_page"/>
+        <xs:element ref="run_workflow"/>
+        <xs:element ref="refresh_component"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="open_popup_window"/>
+        <xs:element ref="file_operation"/>
+        <xs:element ref="logout_procedure"/>
+        <xs:element ref="run_submit_for_approval_wf"/>
+        <xs:element ref="set_model_property"/>
+        <xs:element ref="run_approve_reject_adjustments_wf"/>
+        <xs:element ref="task_starter"/>
+        <xs:element ref="show_favorite_action"/>
+        <xs:element ref="dm_download"/>
+        <xs:element ref="data_source_rows_update"/>
+        <xs:element ref="reset_form"/>
+        <xs:element ref="open_page"/>
+        <xs:element ref="signoff"/>
+        <xs:element ref="set_url_condition_to_model"/>
+        <xs:element ref="remove_model_property"/>
+        <xs:element ref="bpm_action"/>
+        <xs:element ref="run_udf"/>
+        <xs:element ref="action_chain"/>
+        <xs:element ref="text_popup"/>
+        <xs:element ref="data_source_update"/>
+        <xs:element ref="remove_row"/>
+        <xs:element ref="error_action"/>
+      </xs:choice>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fileOperationActionConfig">
+    <xs:sequence>
+      <xs:element name="source_file_folder" type="fileOperationValue"/>
+      <xs:element name="source_file_name" type="fileOperationValue"/>
+      <xs:element name="destination_file_folder" type="fileOperationValue" minOccurs="0"/>
+      <xs:element name="destination_file_name" type="fileOperationValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="operation" type="fileIOperationType" use="required"/>
+    <xs:attribute name="overwrite" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="fileOperationValue">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="logoutActionConfig">
+    <xs:sequence/>
+    <xs:attribute name="dummy" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="runSubmitAdjustmentsWFActionConfig">
+    <xs:sequence>
+      <xs:element name="wfCompletedRefreshComponentId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="wfCompletedRefreshPath" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="adjustments_grid" type="xs:string" use="required"/>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="setModelPropertyActionConfig">
+    <xs:sequence>
+      <xs:element name="value" type="setModelPropertyActionValue"/>
+    </xs:sequence>
+    <xs:attribute name="property_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="setModelPropertyActionValue">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="function_value"/>
+      <xs:element ref="model_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="actionRunApproveRejectWFConfig">
+    <xs:sequence>
+      <xs:element name="asOfDateField" type="dcfValue"/>
+      <xs:element name="scenarioField" type="dcfValue"/>
+      <xs:element name="adjustmentIdField" type="dcfValue"/>
+      <xs:element name="wfCompletedRefreshComponentId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+    <xs:attribute name="workflow" type="xs:string" use="required"/>
+    <xs:attribute name="restartAllModules" type="xs:boolean"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="action" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="actionTaskStarterConfig">
+    <xs:sequence>
+      <xs:element name="task_object" type="taskObject" minOccurs="0"/>
+      <xs:element name="instance_date" type="dcfValue" minOccurs="0"/>
+      <xs:element name="instance_keys" type="dcfValue" minOccurs="0"/>
+      <xs:element name="stream_keys" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="favoriteWidgetConfig">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="actionDocumentManagementDownloadConfig">
+    <xs:sequence>
+      <xs:element name="title" type="dcfValue" minOccurs="0"/>
+      <xs:element name="unique_id" type="dcfValue"/>
+      <xs:element name="source_address" type="sourceAddress"/>
+      <xs:element ref="instance" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="file_folder" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="dataSourceRowsUpdateActionConfig">
+    <xs:sequence>
+      <xs:element name="source_path" type="sourceAddress"/>
+      <xs:element name="fields" type="updateFields"/>
+      <xs:element ref="instance" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="selection_table_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="updateFields">
+    <xs:sequence>
+      <xs:element name="field" type="updateField" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateField">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="path_to_value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="resetFormActionConfig">
+    <xs:sequence>
+      <xs:element name="key" type="mappingValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element name="mappings" type="fieldMappingConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mappingValue">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+    <xs:attribute name="map_to" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="fieldMappingConfig">
+    <xs:sequence>
+      <xs:element name="mapping" type="mappingValue" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="openPageActionConfig">
+    <xs:choice>
+      <xs:element ref="dcf_page_ref"/>
+      <xs:element ref="app_page_ref"/>
+      <xs:element ref="url_ref"/>
+      <xs:element ref="back_url_ref"/>
+    </xs:choice>
+    <xs:attribute name="open_in_new_tab" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="dcfPageRef">
+    <xs:sequence/>
+    <xs:attribute name="project_name" type="xs:string" use="required"/>
+    <xs:attribute name="branch_name" type="xs:string" use="required"/>
+    <xs:attribute name="page_id" type="xs:string" use="required"/>
+    <xs:attribute name="add_condition" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="appPageRef">
+    <xs:sequence/>
+    <xs:attribute name="app_name" type="xs:string"/>
+    <xs:attribute name="page_id" type="xs:string"/>
+    <xs:attribute name="add_condition" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="urlRef">
+    <xs:sequence>
+      <xs:element ref="url_value" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="urlConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="string_value"/>
+        <xs:element ref="model_value"/>
+        <xs:element ref="data_object_value"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="backURLRef">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="actionSignOffConfig">
+    <xs:sequence>
+      <xs:element name="unique_id" type="dcfValue" minOccurs="0"/>
+      <xs:element name="title" type="dcfValue" minOccurs="0"/>
+      <xs:element name="status" type="dcfValue" minOccurs="0"/>
+      <xs:element name="signOffStates" type="signOffStateConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="historySourceAddress" type="sourceAddress" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="signOffStatement" type="dcfValue" minOccurs="0"/>
+      <xs:element name="notification_config" type="notificationConfig" minOccurs="0"/>
+      <xs:element name="rollup_config" type="rollupConfig" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rollupConfig">
+    <xs:sequence>
+      <xs:element name="dataSource" type="dataSource" minOccurs="0"/>
+      <xs:element name="signOffHistory" type="sourceAddress" minOccurs="0"/>
+      <xs:element name="parentId" type="fieldValue" minOccurs="0"/>
+      <xs:element name="signOffStatus" type="fieldValue" minOccurs="0"/>
+      <xs:element name="mandatorySignOffFlag" type="fieldValue" minOccurs="0"/>
+      <xs:element name="parentSignOffHistory" type="sourceAddress" minOccurs="0"/>
+      <xs:element name="listenSignOffHistory" type="sourceAddress" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setUrlConditionToModelConfig">
+    <xs:sequence>
+      <xs:element name="instance" type="setUrlInstance" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="condition" type="setUrlCondition" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setUrlCondition">
+    <xs:sequence/>
+    <xs:attribute name="from_ref" type="xs:string" use="required"/>
+    <xs:attribute name="to_ref" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="removeModelPropertyActionConfig">
+    <xs:sequence/>
+    <xs:attribute name="property_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="bpmActionConfig">
+    <xs:sequence>
+      <xs:element name="states_source" type="sourceAddress"/>
+      <xs:element name="config_data_source" type="dataSource"/>
+      <xs:element name="item_id" type="bpmValue"/>
+      <xs:element name="workflow_id" type="bpmValue"/>
+      <xs:element name="comment" type="bpmValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="task_id" type="xs:string" use="required"/>
+    <xs:attribute name="action" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="bpmValue">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="model_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="runUdfActionConfig">
+    <xs:sequence>
+      <xs:element name="result_target" type="udfResultRef" minOccurs="0"/>
+      <xs:element name="arguments" type="variablesProvider" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+    <xs:attribute name="udf_name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="udfResultRef">
+    <xs:choice>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="actionChainConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="run_remove_adjustments_wf"/>
+        <xs:element ref="grid_open_page"/>
+        <xs:element ref="run_workflow"/>
+        <xs:element ref="refresh_component"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="open_popup_window"/>
+        <xs:element ref="file_operation"/>
+        <xs:element ref="logout_procedure"/>
+        <xs:element ref="run_submit_for_approval_wf"/>
+        <xs:element ref="set_model_property"/>
+        <xs:element ref="run_approve_reject_adjustments_wf"/>
+        <xs:element ref="task_starter"/>
+        <xs:element ref="show_favorite_action"/>
+        <xs:element ref="dm_download"/>
+        <xs:element ref="data_source_rows_update"/>
+        <xs:element ref="reset_form"/>
+        <xs:element ref="open_page"/>
+        <xs:element ref="signoff"/>
+        <xs:element ref="set_url_condition_to_model"/>
+        <xs:element ref="remove_model_property"/>
+        <xs:element ref="bpm_action"/>
+        <xs:element ref="run_udf"/>
+        <xs:element ref="action_chain"/>
+        <xs:element ref="text_popup"/>
+        <xs:element ref="data_source_update"/>
+        <xs:element ref="remove_row"/>
+        <xs:element ref="error_action"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="break_on_errors" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="actionTextPopupConfig">
+    <xs:sequence>
+      <xs:element name="title" type="dcfValue"/>
+      <xs:element name="text" type="dcfValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dataSourceUpdateActionConfig">
+    <xs:sequence>
+      <xs:element name="source_path" type="sourceAddress"/>
+      <xs:element name="fields" type="mappingConfig"/>
+      <xs:element name="keys" type="mappingConfig" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mappingConfig">
+    <xs:sequence>
+      <xs:element name="field" type="dataSourceField" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dataSourceField">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="double_value"/>
+      <xs:element ref="integer_value"/>
+      <xs:element ref="date_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+      <xs:element ref="function_value"/>
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="actionRemoveRowConfig">
+    <xs:sequence>
+      <xs:element name="source_address" type="sourceAddress" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="unique_id" type="fieldValue" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="errorActionConfig">
+    <xs:sequence/>
+    <xs:attribute name="className" type="xs:string"/>
+    <xs:attribute name="exception" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="drillDownComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element ref="task_source"/>
+        <xs:element ref="separate_task_source"/>
+      </xs:choice>
+      <xs:element name="instance_date" type="dcfValue"/>
+      <xs:element name="instance_keys" type="dcfValue" minOccurs="0"/>
+      <xs:element name="stream_keys" type="dcfValue" minOccurs="0"/>
+      <xs:element name="cell_name" type="dcfValue" minOccurs="0"/>
+      <xs:element name="cell_index" type="dcfValue" minOccurs="0"/>
+      <xs:element name="column_number" type="dcfValue" minOccurs="0"/>
+      <xs:element name="row_number" type="dcfValue" minOccurs="0"/>
+      <xs:element name="sheet_name" type="dcfValue" minOccurs="0"/>
+      <xs:element name="condition" type="drillDownConditionConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="taskAddress">
+    <xs:sequence>
+      <xs:element name="taskAddress" type="dcfValue"/>
+      <xs:element name="taskType" type="dcfValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="separateTaskAddress">
+    <xs:sequence>
+      <xs:element name="taskProject" type="dcfValue"/>
+      <xs:element name="taskBranch" type="dcfValue"/>
+      <xs:element name="taskObjectName" type="dcfValue"/>
+      <xs:element name="taskType" type="dcfValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="drillDownConditionConfig">
+    <xs:sequence>
+      <xs:element name="condition_field" type="drillDownConditionField"/>
+      <xs:element name="field_mapping" type="dcfValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="drillDownConditionField">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="downloadComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:element name="file_name" type="downloadComponentFileName"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="file_folder" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="downloadComponentFileName">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="progressBarComponentConfig">
+    <xs:sequence>
+      <xs:element name="value" type="progressBarValueConfig"/>
+      <xs:element name="level" type="progressBarLevelConfig" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="max_value" type="xs:double"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="hide_label" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="progressBarValueConfig">
+    <xs:choice>
+      <xs:element ref="double_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="integer_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="progressBarLevelConfig">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:double" use="required"/>
+    <xs:attribute name="style" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="uploadComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:element name="file_folder" type="uploadComponentFileFolder"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:element ref="run_remove_adjustments_wf"/>
+        <xs:element ref="grid_open_page"/>
+        <xs:element ref="run_workflow"/>
+        <xs:element ref="refresh_component"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="open_popup_window"/>
+        <xs:element ref="file_operation"/>
+        <xs:element ref="logout_procedure"/>
+        <xs:element ref="run_submit_for_approval_wf"/>
+        <xs:element ref="set_model_property"/>
+        <xs:element ref="run_approve_reject_adjustments_wf"/>
+        <xs:element ref="task_starter"/>
+        <xs:element ref="show_favorite_action"/>
+        <xs:element ref="dm_download"/>
+        <xs:element ref="data_source_rows_update"/>
+        <xs:element ref="reset_form"/>
+        <xs:element ref="open_page"/>
+        <xs:element ref="signoff"/>
+        <xs:element ref="set_url_condition_to_model"/>
+        <xs:element ref="remove_model_property"/>
+        <xs:element ref="bpm_action"/>
+        <xs:element ref="run_udf"/>
+        <xs:element ref="action_chain"/>
+        <xs:element ref="text_popup"/>
+        <xs:element ref="data_source_update"/>
+        <xs:element ref="remove_row"/>
+        <xs:element ref="error_action"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="path_to_uploaded_file" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="uploadComponentFileFolder">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="field_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="labelComponentConfig">
+    <xs:choice>
+      <xs:element ref="status"/>
+      <xs:element ref="static_text"/>
+      <xs:element ref="static_caption"/>
+      <xs:element ref="dynamic_condition_caption"/>
+      <xs:element ref="static_image"/>
+      <xs:element ref="text_with_icon"/>
+      <xs:element ref="dynamic_image"/>
+      <xs:element ref="task_status"/>
+      <xs:element ref="dynamic_caption"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="emailLinkComponentConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="status"/>
+        <xs:element ref="static_text"/>
+        <xs:element ref="static_caption"/>
+        <xs:element ref="dynamic_condition_caption"/>
+        <xs:element ref="static_image"/>
+        <xs:element ref="text_with_icon"/>
+        <xs:element ref="dynamic_image"/>
+        <xs:element ref="task_status"/>
+        <xs:element ref="dynamic_caption"/>
+      </xs:choice>
+      <xs:element name="email_link" type="emailLinkConfig" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="emailLinkConfig">
+    <xs:sequence>
+      <xs:element name="sendTo" type="dcfValue" minOccurs="0"/>
+      <xs:element name="sendCC" type="dcfValue" minOccurs="0"/>
+      <xs:element name="sendBCC" type="dcfValue" minOccurs="0"/>
+      <xs:element name="subject" type="dcfValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="attributeLabelComponentConfig">
+    <xs:sequence>
+      <xs:element name="attribute_caption" type="textCaptionConfig" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="waterfallChartConfig">
+    <xs:sequence>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="x_axis" type="xAxisConfigW"/>
+      <xs:element name="y_axis" type="field"/>
+      <xs:element ref="sums"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="x_axis_title" type="xs:string"/>
+    <xs:attribute name="y_axis_title" type="xs:string"/>
+    <xs:attribute name="y_axis_format" type="xs:string"/>
+    <xs:attribute name="point_label_format" type="xs:string"/>
+    <xs:attribute name="point_tooltip_format" type="xs:string"/>
+    <xs:attribute name="grow_color" type="xs:string"/>
+    <xs:attribute name="fall_color" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="xAxisConfigW">
+    <xs:sequence>
+      <xs:element name="value" type="field"/>
+      <xs:element name="label" type="field" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sumsConfig">
+    <xs:sequence>
+      <xs:element name="sum" type="sumConfig" maxOccurs="unbounded"/>
+      <xs:element name="total_sum" type="totalSumConfig" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sumConfig">
+    <xs:sequence/>
+    <xs:attribute name="cutoff_dimension_value" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string" use="required"/>
+    <xs:attribute name="color" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="totalSumConfig">
+    <xs:sequence/>
+    <xs:attribute name="label" type="xs:string" use="required"/>
+    <xs:attribute name="color" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="includeConfig">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="singleSelectGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="unique_id" type="fieldValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="selection_output" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="unselectable" type="xs:boolean"/>
+    <xs:attribute name="selectFirstRow" type="xs:boolean"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridColumnConfigImpl">
+    <xs:sequence>
+      <xs:element ref="component" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="display" type="xs:boolean"/>
+    <xs:attribute name="sort" type="sortOrder"/>
+    <xs:attribute name="freeze" type="xs:boolean"/>
+    <xs:attribute name="alignment" type="columnAlign"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="errorConfig">
+    <xs:sequence/>
+    <xs:attribute name="message" type="xs:string"/>
+    <xs:attribute name="className" type="xs:string"/>
+    <xs:attribute name="exception" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="noSelectGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="tabContainerConfig">
+    <xs:sequence>
+      <xs:element name="tab" type="tabConfig" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="tab_id_selector_property" type="xs:string" use="required"/>
+    <xs:attribute name="default_tab_id" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="tabConfig">
+    <xs:choice>
+      <xs:element ref="copy_url_button"/>
+      <xs:element ref="text_area"/>
+      <xs:element ref="check_box"/>
+      <xs:element ref="dropdown_menu"/>
+      <xs:element ref="env_label"/>
+      <xs:element ref="multi_select_dynamic_column_grid_config"/>
+      <xs:element ref="waterfall_chart"/>
+      <xs:element ref="include"/>
+      <xs:element ref="single_selectable_grid"/>
+      <xs:element ref="error_widget"/>
+      <xs:element ref="no_selectable_grid"/>
+      <xs:element ref="button"/>
+      <xs:element ref="tab_container"/>
+      <xs:element ref="login_label"/>
+      <xs:element ref="dynamic_label"/>
+      <xs:element ref="spacer"/>
+      <xs:element ref="auto_configurable_read_only_grid_config"/>
+      <xs:element ref="page"/>
+      <xs:element ref="series_dropdown"/>
+      <xs:element ref="run_workflow_button"/>
+      <xs:element ref="load_all_rows_grid_button"/>
+      <xs:element ref="download_button"/>
+      <xs:element ref="instance_selector"/>
+      <xs:element ref="multi_selectable_grid"/>
+      <xs:element ref="static_label"/>
+      <xs:element ref="single_select_dynamic_column_grid_config"/>
+      <xs:element ref="trend_dropdown"/>
+      <xs:element ref="separate_instance_selector"/>
+      <xs:element ref="bpm"/>
+      <xs:element ref="v_section"/>
+      <xs:element ref="bulk_sign_off_button_config"/>
+      <xs:element ref="dropdown"/>
+      <xs:element ref="date_picker"/>
+      <xs:element ref="form"/>
+      <xs:element ref="user_dropdown"/>
+      <xs:element ref="page_title"/>
+      <xs:element ref="no_select_dynamic_column_grid_config"/>
+      <xs:element ref="instruction_button"/>
+      <xs:element ref="chartjs"/>
+      <xs:element ref="label"/>
+      <xs:element ref="config_name_label"/>
+      <xs:element ref="notification_count_button"/>
+      <xs:element ref="attribute_sign_off_grid"/>
+      <xs:element ref="search"/>
+      <xs:element ref="static_dropdown"/>
+      <xs:element ref="favorites"/>
+      <xs:element ref="h_section"/>
+      <xs:element ref="export_grid_button"/>
+      <xs:element ref="print_button"/>
+      <xs:element ref="appversion_label"/>
+      <xs:element ref="upload_button"/>
+      <xs:element ref="drilldown_button"/>
+      <xs:element ref="dcf"/>
+      <xs:element ref="active_chart"/>
+      <xs:element ref="attribute_sign_off_button"/>
+      <xs:element ref="text_field"/>
+      <xs:element ref="cfo_attestation"/>
+      <xs:element ref="chart"/>
+      <xs:element ref="notification_button"/>
+      <xs:element ref="export_data_button"/>
+    </xs:choice>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="recreate" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="loginLabelConfig">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicLabelConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="field"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="spacerConfig">
+    <xs:sequence/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="autoConfigurableReadOnlyGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="pageConfig">
+    <xs:sequence>
+      <xs:element ref="context" minOccurs="0"/>
+      <xs:element name="permission_service" type="permissionServiceConfig" minOccurs="0"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="copy_url_button"/>
+        <xs:element ref="text_area"/>
+        <xs:element ref="check_box"/>
+        <xs:element ref="dropdown_menu"/>
+        <xs:element ref="env_label"/>
+        <xs:element ref="multi_select_dynamic_column_grid_config"/>
+        <xs:element ref="waterfall_chart"/>
+        <xs:element ref="include"/>
+        <xs:element ref="single_selectable_grid"/>
+        <xs:element ref="error_widget"/>
+        <xs:element ref="no_selectable_grid"/>
+        <xs:element ref="button"/>
+        <xs:element ref="tab_container"/>
+        <xs:element ref="login_label"/>
+        <xs:element ref="dynamic_label"/>
+        <xs:element ref="spacer"/>
+        <xs:element ref="auto_configurable_read_only_grid_config"/>
+        <xs:element ref="page"/>
+        <xs:element ref="series_dropdown"/>
+        <xs:element ref="run_workflow_button"/>
+        <xs:element ref="load_all_rows_grid_button"/>
+        <xs:element ref="download_button"/>
+        <xs:element ref="instance_selector"/>
+        <xs:element ref="multi_selectable_grid"/>
+        <xs:element ref="static_label"/>
+        <xs:element ref="single_select_dynamic_column_grid_config"/>
+        <xs:element ref="trend_dropdown"/>
+        <xs:element ref="separate_instance_selector"/>
+        <xs:element ref="bpm"/>
+        <xs:element ref="v_section"/>
+        <xs:element ref="bulk_sign_off_button_config"/>
+        <xs:element ref="dropdown"/>
+        <xs:element ref="date_picker"/>
+        <xs:element ref="form"/>
+        <xs:element ref="user_dropdown"/>
+        <xs:element ref="page_title"/>
+        <xs:element ref="no_select_dynamic_column_grid_config"/>
+        <xs:element ref="instruction_button"/>
+        <xs:element ref="chartjs"/>
+        <xs:element ref="label"/>
+        <xs:element ref="config_name_label"/>
+        <xs:element ref="notification_count_button"/>
+        <xs:element ref="attribute_sign_off_grid"/>
+        <xs:element ref="search"/>
+        <xs:element ref="static_dropdown"/>
+        <xs:element ref="favorites"/>
+        <xs:element ref="h_section"/>
+        <xs:element ref="export_grid_button"/>
+        <xs:element ref="print_button"/>
+        <xs:element ref="appversion_label"/>
+        <xs:element ref="upload_button"/>
+        <xs:element ref="drilldown_button"/>
+        <xs:element ref="dcf"/>
+        <xs:element ref="active_chart"/>
+        <xs:element ref="attribute_sign_off_button"/>
+        <xs:element ref="text_field"/>
+        <xs:element ref="cfo_attestation"/>
+        <xs:element ref="chart"/>
+        <xs:element ref="notification_button"/>
+        <xs:element ref="export_data_button"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="context">
+    <xs:sequence>
+      <xs:element name="variable" type="contextVariable" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contextVariable">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:string"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="permissionServiceConfig">
+    <xs:sequence>
+      <xs:element name="page_restriction" type="pageRestriction" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="project" type="xs:string" use="required"/>
+    <xs:attribute name="branch" type="xs:string" use="required"/>
+    <xs:attribute name="source" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="pageRestriction">
+    <xs:sequence/>
+    <xs:attribute name="page_id" type="xs:string" use="required"/>
+    <xs:attribute name="permission" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="seriesDropDownConfig">
+    <xs:sequence>
+      <xs:element name="value" type="seriesDropDownValue" maxOccurs="unbounded"/>
+      <xs:element ref="read_only"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="no_selection_label" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="seriesDropDownValue">
+    <xs:sequence/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="readOnlyConfig">
+    <xs:sequence/>
+    <xs:attribute name="listen_property_path" type="xs:string" use="required"/>
+    <xs:attribute name="listen_value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="runWorkflowButtonConfig">
+    <xs:sequence>
+      <xs:element name="icon" type="runWorkflowIcon" maxOccurs="unbounded"/>
+      <xs:element name="workflow_action" type="runWorkflowActionConfig"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="status_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="loadAllRowsGridButtonConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="grid_id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="downloadButtonConfig">
+    <xs:sequence>
+      <xs:element name="file_name" type="path"/>
+      <xs:element name="file_folder" type="path"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="instanceSelectorConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="label_position" type="labelPosition"/>
+  </xs:complexType>
+
+  <xs:complexType name="multiSelectGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="unique_id" type="fieldValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="selection_output" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticLabelConfig">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="singleSelectDynamicColumnGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="unique_id" type="fieldValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="grid_selector_property" type="xs:string"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="selection_output" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridDynamicColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="unselectable" type="xs:boolean"/>
+    <xs:attribute name="selectFirstRow" type="xs:boolean"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="trendDropDownConfig">
+    <xs:sequence>
+      <xs:element name="end_date" type="trendDropDownEndDate"/>
+      <xs:element name="value" type="trendDropDownValue" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="trendDropDownEndDate">
+    <xs:choice>
+      <xs:element ref="instance_selector_as_of_date_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="function_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="trendDropDownValue">
+    <xs:sequence/>
+    <xs:attribute name="period" type="xs:int" use="required"/>
+    <xs:attribute name="unit_period" type="unitPeriod" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="separateInstanceSelectorConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="use_description_for_name" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="bpmWidgetConfig">
+    <xs:sequence>
+      <xs:element name="states_source" type="sourceAddress"/>
+      <xs:element name="config_data_source" type="sourceAddress"/>
+      <xs:element name="item_id" type="bpmValue"/>
+      <xs:element name="workflow_id" type="bpmValue"/>
+      <xs:element name="tasks" type="bpmTaskList" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="title" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="bpmTaskList">
+    <xs:sequence>
+      <xs:element name="task" type="bpmTask" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bpmTask">
+    <xs:choice>
+      <xs:element ref="run_remove_adjustments_wf"/>
+      <xs:element ref="grid_open_page"/>
+      <xs:element ref="run_workflow"/>
+      <xs:element ref="refresh_component"/>
+      <xs:element ref="comment"/>
+      <xs:element ref="open_popup_window"/>
+      <xs:element ref="file_operation"/>
+      <xs:element ref="logout_procedure"/>
+      <xs:element ref="run_submit_for_approval_wf"/>
+      <xs:element ref="set_model_property"/>
+      <xs:element ref="run_approve_reject_adjustments_wf"/>
+      <xs:element ref="task_starter"/>
+      <xs:element ref="show_favorite_action"/>
+      <xs:element ref="dm_download"/>
+      <xs:element ref="data_source_rows_update"/>
+      <xs:element ref="reset_form"/>
+      <xs:element ref="open_page"/>
+      <xs:element ref="signoff"/>
+      <xs:element ref="set_url_condition_to_model"/>
+      <xs:element ref="remove_model_property"/>
+      <xs:element ref="bpm_action"/>
+      <xs:element ref="run_udf"/>
+      <xs:element ref="action_chain"/>
+      <xs:element ref="text_popup"/>
+      <xs:element ref="data_source_update"/>
+      <xs:element ref="remove_row"/>
+      <xs:element ref="error_action"/>
+    </xs:choice>
+    <xs:attribute name="task_id" type="xs:string" use="required"/>
+    <xs:attribute name="task_status" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="verticalLayoutConfig">
+    <xs:sequence>
+      <xs:element name="composite_visibility_provider" type="compositeVisibilityConditionConfig" minOccurs="0"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="copy_url_button"/>
+        <xs:element ref="text_area"/>
+        <xs:element ref="check_box"/>
+        <xs:element ref="dropdown_menu"/>
+        <xs:element ref="env_label"/>
+        <xs:element ref="multi_select_dynamic_column_grid_config"/>
+        <xs:element ref="waterfall_chart"/>
+        <xs:element ref="include"/>
+        <xs:element ref="single_selectable_grid"/>
+        <xs:element ref="error_widget"/>
+        <xs:element ref="no_selectable_grid"/>
+        <xs:element ref="button"/>
+        <xs:element ref="tab_container"/>
+        <xs:element ref="login_label"/>
+        <xs:element ref="dynamic_label"/>
+        <xs:element ref="spacer"/>
+        <xs:element ref="auto_configurable_read_only_grid_config"/>
+        <xs:element ref="page"/>
+        <xs:element ref="series_dropdown"/>
+        <xs:element ref="run_workflow_button"/>
+        <xs:element ref="load_all_rows_grid_button"/>
+        <xs:element ref="download_button"/>
+        <xs:element ref="instance_selector"/>
+        <xs:element ref="multi_selectable_grid"/>
+        <xs:element ref="static_label"/>
+        <xs:element ref="single_select_dynamic_column_grid_config"/>
+        <xs:element ref="trend_dropdown"/>
+        <xs:element ref="separate_instance_selector"/>
+        <xs:element ref="bpm"/>
+        <xs:element ref="v_section"/>
+        <xs:element ref="bulk_sign_off_button_config"/>
+        <xs:element ref="dropdown"/>
+        <xs:element ref="date_picker"/>
+        <xs:element ref="form"/>
+        <xs:element ref="user_dropdown"/>
+        <xs:element ref="page_title"/>
+        <xs:element ref="no_select_dynamic_column_grid_config"/>
+        <xs:element ref="instruction_button"/>
+        <xs:element ref="chartjs"/>
+        <xs:element ref="label"/>
+        <xs:element ref="config_name_label"/>
+        <xs:element ref="notification_count_button"/>
+        <xs:element ref="attribute_sign_off_grid"/>
+        <xs:element ref="search"/>
+        <xs:element ref="static_dropdown"/>
+        <xs:element ref="favorites"/>
+        <xs:element ref="h_section"/>
+        <xs:element ref="export_grid_button"/>
+        <xs:element ref="print_button"/>
+        <xs:element ref="appversion_label"/>
+        <xs:element ref="upload_button"/>
+        <xs:element ref="drilldown_button"/>
+        <xs:element ref="dcf"/>
+        <xs:element ref="active_chart"/>
+        <xs:element ref="attribute_sign_off_button"/>
+        <xs:element ref="text_field"/>
+        <xs:element ref="cfo_attestation"/>
+        <xs:element ref="chart"/>
+        <xs:element ref="notification_button"/>
+        <xs:element ref="export_data_button"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="align" type="verticalLayoutAlignment"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="bulkSignOffButtonConfig">
+    <xs:sequence>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="role" type="dcfValue" minOccurs="0"/>
+      <xs:element name="rollup_config" type="rollupConfig" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="unique_id" type="field"/>
+      <xs:element name="sign_off_group_name" type="signOffStateConfig" maxOccurs="unbounded"/>
+      <xs:element ref="data_source"/>
+      <xs:element name="history_address" type="sourceAddress"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="signoff_statement" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dropDownConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="value" type="dropDownValue"/>
+      <xs:element name="caption" type="field" minOccurs="0"/>
+      <xs:element name="sort_by" type="field" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="sort_order" type="sortOrder"/>
+    <xs:attribute name="all_supported" type="xs:boolean"/>
+    <xs:attribute name="dynamic_update" type="xs:boolean"/>
+    <xs:attribute name="label_position" type="labelPosition"/>
+  </xs:complexType>
+
+  <xs:complexType name="dropDownValue">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+    <xs:attribute name="default" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="datePickerConfig">
+    <xs:sequence>
+      <xs:element name="default_value" type="datePickerDefaultValue" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="date_resolution" type="dateResolution" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="datePickerDefaultValue">
+    <xs:choice>
+      <xs:element ref="date_value"/>
+      <xs:element ref="function_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="formConfig">
+    <xs:sequence>
+      <xs:element name="form_fields" type="formFieldConfig"/>
+      <xs:element ref="input_model" minOccurs="0"/>
+      <xs:element name="form_button" type="formButtonConfig" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="border" type="xs:boolean"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="formFieldConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="form_label"/>
+        <xs:element ref="form_text_field"/>
+        <xs:element ref="form_date_picker"/>
+        <xs:element ref="form_text_area"/>
+        <xs:element ref="form_check_box_field"/>
+        <xs:element ref="form_upload_button"/>
+        <xs:element ref="form_drop_down"/>
+        <xs:element ref="form_static_drop_down"/>
+        <xs:element ref="form_hidden_field"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="labelFormConfig">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="textFieldFormConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:string"/>
+    <xs:attribute name="read_only" type="xs:boolean"/>
+    <xs:attribute name="input_type" type="inputType"/>
+  </xs:complexType>
+
+  <xs:complexType name="datePickerFormConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="date_resolution" type="dateResolution" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="textAreaFormConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="read_only" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="checkBoxFormConfig">
+    <xs:sequence>
+      <xs:element name="mapping_value" type="checkBoxValue"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:boolean"/>
+    <xs:attribute name="readOnly" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="uploadButtonFormConfig">
+    <xs:sequence>
+      <xs:element name="file_folder" type="path"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="dropDownFormConfig">
+    <xs:sequence>
+      <xs:element name="dataSource" type="dataSource"/>
+      <xs:element name="value" type="dropDownValue"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="allSupported" type="xs:boolean"/>
+    <xs:attribute name="dynamicUpdate" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticDropDownFormConfig">
+    <xs:sequence>
+      <xs:element name="value" type="staticDropDownValue" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="no_selection_label" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticDropDownValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="default" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="hiddenFieldFormConfig">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="inputModelConfig">
+    <xs:sequence>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element name="mappings" type="fieldMappingConfig"/>
+      <xs:element name="key" type="mappingValue"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="formButtonConfig">
+    <xs:choice>
+      <xs:element ref="run_remove_adjustments_wf"/>
+      <xs:element ref="grid_open_page"/>
+      <xs:element ref="run_workflow"/>
+      <xs:element ref="refresh_component"/>
+      <xs:element ref="comment"/>
+      <xs:element ref="open_popup_window"/>
+      <xs:element ref="file_operation"/>
+      <xs:element ref="logout_procedure"/>
+      <xs:element ref="run_submit_for_approval_wf"/>
+      <xs:element ref="set_model_property"/>
+      <xs:element ref="run_approve_reject_adjustments_wf"/>
+      <xs:element ref="task_starter"/>
+      <xs:element ref="show_favorite_action"/>
+      <xs:element ref="dm_download"/>
+      <xs:element ref="data_source_rows_update"/>
+      <xs:element ref="reset_form"/>
+      <xs:element ref="open_page"/>
+      <xs:element ref="signoff"/>
+      <xs:element ref="set_url_condition_to_model"/>
+      <xs:element ref="remove_model_property"/>
+      <xs:element ref="bpm_action"/>
+      <xs:element ref="run_udf"/>
+      <xs:element ref="action_chain"/>
+      <xs:element ref="text_popup"/>
+      <xs:element ref="data_source_update"/>
+      <xs:element ref="remove_row"/>
+      <xs:element ref="error_action"/>
+    </xs:choice>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="userDropDownConfig">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="role_name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="pageTitleConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="unique_id" type="field"/>
+      <xs:element name="title" type="field"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="noSelectDynamicColumnGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="grid_selector_property" type="xs:string"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="gridDynamicColumnConfigImpl" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="instructionButtonConfig">
+    <xs:sequence>
+      <xs:element ref="data_object_value"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="chartConfigJS">
+    <xs:sequence>
+      <xs:element ref="exporting" minOccurs="0"/>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="measures" minOccurs="0"/>
+      <xs:element ref="dimensions" minOccurs="0"/>
+      <xs:element ref="x_axis"/>
+      <xs:element ref="y_axis"/>
+      <xs:element ref="specials" minOccurs="0"/>
+      <xs:element name="display_type" type="displayTypeWrapper" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="color_palette" type="colorsPaletteConfig" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="subtitle" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="show_legend" type="xs:boolean"/>
+    <xs:attribute name="thousands_separator" type="xs:string"/>
+    <xs:attribute name="decimal_point" type="xs:string"/>
+    <xs:attribute name="no_data_message" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="exporting">
+    <xs:sequence/>
+    <xs:attribute name="width" type="xs:int"/>
+    <xs:attribute name="height" type="xs:int"/>
+    <xs:attribute name="scale" type="xs:int"/>
+    <xs:attribute name="max_print_width" type="xs:int"/>
+    <xs:attribute name="show_filters" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="measures">
+    <xs:sequence>
+      <xs:element ref="measure" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="measure">
+    <xs:sequence>
+      <xs:element ref="field"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="axis_format" type="xs:string"/>
+    <xs:attribute name="aggregation_function" type="aggregationFunction"/>
+  </xs:complexType>
+
+  <xs:complexType name="dimensions">
+    <xs:sequence>
+      <xs:element ref="dimension" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dimension">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue"/>
+      <xs:element name="label" type="fieldValue" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="xAxisConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="dynamic_category"/>
+        <xs:element ref="static_category"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="rotation" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicCategory">
+    <xs:sequence/>
+    <xs:attribute name="propertyPath" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticCategory">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue"/>
+      <xs:element name="label" type="fieldValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="yAxisConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="dynamic_y"/>
+        <xs:element ref="static_y"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicYConfig">
+    <xs:sequence>
+      <xs:element ref="series" minOccurs="0"/>
+      <xs:element name="action" type="chartAction" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="legend_label" type="xs:string" use="required"/>
+    <xs:attribute name="selector" type="xs:string" use="required"/>
+    <xs:attribute name="display_type" type="displayType"/>
+    <xs:attribute name="point_label_format" type="xs:string"/>
+    <xs:attribute name="point_label_pie_format" type="xs:string"/>
+    <xs:attribute name="point_label_series_format" type="xs:string"/>
+    <xs:attribute name="point_label_align" type="xs:string"/>
+    <xs:attribute name="point_label_rotation" type="xs:int"/>
+    <xs:attribute name="point_label_shift_x" type="xs:int"/>
+    <xs:attribute name="point_label_shift_y" type="xs:int"/>
+    <xs:attribute name="point_tooltip_format" type="xs:string"/>
+    <xs:attribute name="point_tooltip_pie_format" type="xs:string"/>
+    <xs:attribute name="point_tooltip_series_format" type="xs:string"/>
+    <xs:attribute name="axis_format" type="xs:string"/>
+    <xs:attribute name="position" type="position"/>
+    <xs:attribute name="axis_type" type="axisType"/>
+    <xs:attribute name="point_width" type="xs:int"/>
+    <xs:attribute name="max_point_width" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="seriesConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="selector"/>
+        <xs:element ref="fields"/>
+      </xs:choice>
+      <xs:element name="predefined_type" type="predefinedSeriesType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dynamicSeries">
+    <xs:sequence/>
+    <xs:attribute name="property_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticSeries">
+    <xs:sequence>
+      <xs:element name="value" type="fieldValue"/>
+      <xs:element name="series_label" type="fieldValue" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="predefinedSeriesType">
+    <xs:sequence>
+      <xs:element name="point_label_format" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="series_name" type="xs:string" use="required"/>
+    <xs:attribute name="display_type" type="displayType"/>
+    <xs:attribute name="color" type="xs:string"/>
+    <xs:attribute name="point_label_align" type="xs:string"/>
+    <xs:attribute name="point_label_rotation" type="xs:int"/>
+    <xs:attribute name="point_label_shift_x" type="xs:int"/>
+    <xs:attribute name="point_label_shift_y" type="xs:int"/>
+    <xs:attribute name="point_tooltip_format" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="chartAction">
+    <xs:choice>
+      <xs:element ref="show_point_info"/>
+      <xs:element ref="chart_selection_action"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="chartActionShowPointInfoConfig">
+    <xs:sequence/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="chartActionSelectionConfig">
+    <xs:sequence>
+      <xs:element name="selection_value" type="outputChartValue" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="property_path" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="outputChartValue">
+    <xs:choice>
+      <xs:element ref="static_selection_key"/>
+      <xs:element ref="dynamic_selection_key"/>
+    </xs:choice>
+    <xs:attribute name="value" type="outputValueType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticOutputValueKey">
+    <xs:sequence/>
+    <xs:attribute name="key" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="enumOutputValueKey">
+    <xs:sequence/>
+    <xs:attribute name="type" type="outputValueKeyType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticYConfig">
+    <xs:sequence>
+      <xs:element ref="field_value"/>
+      <xs:element ref="series" minOccurs="0"/>
+      <xs:element name="action" type="chartAction" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="legend_label" type="xs:string" use="required"/>
+    <xs:attribute name="axis_title" type="xs:string" use="required"/>
+    <xs:attribute name="display_type" type="displayType"/>
+    <xs:attribute name="point_label_format" type="xs:string"/>
+    <xs:attribute name="point_label_pie_format" type="xs:string"/>
+    <xs:attribute name="point_label_series_format" type="xs:string"/>
+    <xs:attribute name="point_label_align" type="xs:string"/>
+    <xs:attribute name="point_label_rotation" type="xs:int"/>
+    <xs:attribute name="point_label_shift_x" type="xs:int"/>
+    <xs:attribute name="point_label_shift_y" type="xs:int"/>
+    <xs:attribute name="point_tooltip_format" type="xs:string"/>
+    <xs:attribute name="point_tooltip_pie_format" type="xs:string"/>
+    <xs:attribute name="point_tooltip_series_format" type="xs:string"/>
+    <xs:attribute name="axis_format" type="xs:string"/>
+    <xs:attribute name="aggregation_function" type="aggregationFunction"/>
+    <xs:attribute name="position" type="position"/>
+    <xs:attribute name="axis_type" type="axisType"/>
+    <xs:attribute name="point_width" type="xs:int"/>
+    <xs:attribute name="max_point_width" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="specials">
+    <xs:sequence>
+      <xs:element ref="pie" minOccurs="0"/>
+      <xs:element ref="waterfall" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pieSpecials">
+    <xs:sequence/>
+    <xs:attribute name="size" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="waterfallSpecials">
+    <xs:sequence>
+      <xs:element ref="sums"/>
+    </xs:sequence>
+    <xs:attribute name="grow_color" type="xs:string"/>
+    <xs:attribute name="fall_color" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="displayTypeWrapper">
+    <xs:choice>
+      <xs:element ref="model_value"/>
+      <xs:element ref="display_type_enum"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="displayTypeEnumValue">
+    <xs:sequence/>
+    <xs:attribute name="value" type="displayType" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="colorsPaletteConfig">
+    <xs:sequence>
+      <xs:element name="color" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="labelConfig">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="string_value"/>
+        <xs:element ref="model_value"/>
+        <xs:element ref="data_object_value"/>
+        <xs:element ref="field_value"/>
+        <xs:element ref="function_value"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="configurationNameLabelConfig">
+    <xs:sequence/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="notificationCountButtonConfig">
+    <xs:sequence>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="data_source"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice>
+        <xs:element ref="run_remove_adjustments_wf"/>
+        <xs:element ref="grid_open_page"/>
+        <xs:element ref="run_workflow"/>
+        <xs:element ref="refresh_component"/>
+        <xs:element ref="comment"/>
+        <xs:element ref="open_popup_window"/>
+        <xs:element ref="file_operation"/>
+        <xs:element ref="logout_procedure"/>
+        <xs:element ref="run_submit_for_approval_wf"/>
+        <xs:element ref="set_model_property"/>
+        <xs:element ref="run_approve_reject_adjustments_wf"/>
+        <xs:element ref="task_starter"/>
+        <xs:element ref="show_favorite_action"/>
+        <xs:element ref="dm_download"/>
+        <xs:element ref="data_source_rows_update"/>
+        <xs:element ref="reset_form"/>
+        <xs:element ref="open_page"/>
+        <xs:element ref="signoff"/>
+        <xs:element ref="set_url_condition_to_model"/>
+        <xs:element ref="remove_model_property"/>
+        <xs:element ref="bpm_action"/>
+        <xs:element ref="run_udf"/>
+        <xs:element ref="action_chain"/>
+        <xs:element ref="text_popup"/>
+        <xs:element ref="data_source_update"/>
+        <xs:element ref="remove_row"/>
+        <xs:element ref="error_action"/>
+      </xs:choice>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="icon" type="xs:string"/>
+    <xs:attribute name="no_messages_icon" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="attributeSignOffGridConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="attribute_sign_off_unique_id" type="attributeSignOffActionConfig"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="column" type="attributeGridColumnConfigImpl" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="show_columns" type="xs:int"/>
+    <xs:attribute name="show_rows" type="xs:int"/>
+    <xs:attribute name="listened_data" type="xs:boolean"/>
+    <xs:attribute name="show_records_loaded" type="xs:boolean"/>
+    <xs:attribute name="show_line_numbers" type="xs:boolean"/>
+    <xs:attribute name="pagination" type="xs:boolean"/>
+    <xs:attribute name="search" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="attributeGridColumnConfigImpl">
+    <xs:sequence>
+      <xs:element name="component" type="attributeLabelComponentImpl" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="unique_id" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="display" type="xs:boolean"/>
+    <xs:attribute name="sort" type="sortOrder"/>
+    <xs:attribute name="freeze" type="xs:boolean"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="alignment" type="columnAlign"/>
+  </xs:complexType>
+
+  <xs:complexType name="attributeLabelComponentImpl">
+    <xs:sequence>
+      <xs:element name="attribute_label" type="attributeLabelComponentConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="searchConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="tool_tip" type="xs:string"/>
+    <xs:attribute name="icon" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="staticDropDownConfig">
+    <xs:sequence>
+      <xs:element name="value" type="staticDropDownValue" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="label" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="sort_by" type="sortBy"/>
+    <xs:attribute name="no_selection_label" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="favoritesConfig">
+    <xs:sequence/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="attach_at" type="alignment" use="required"/>
+    <xs:attribute name="attachment_point" type="alignment"/>
+  </xs:complexType>
+
+  <xs:complexType name="horizontalLayoutConfig">
+    <xs:sequence>
+      <xs:element name="composite_visibility_provider" type="compositeVisibilityConditionConfig" minOccurs="0"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="copy_url_button"/>
+        <xs:element ref="text_area"/>
+        <xs:element ref="check_box"/>
+        <xs:element ref="dropdown_menu"/>
+        <xs:element ref="env_label"/>
+        <xs:element ref="multi_select_dynamic_column_grid_config"/>
+        <xs:element ref="waterfall_chart"/>
+        <xs:element ref="include"/>
+        <xs:element ref="single_selectable_grid"/>
+        <xs:element ref="error_widget"/>
+        <xs:element ref="no_selectable_grid"/>
+        <xs:element ref="button"/>
+        <xs:element ref="tab_container"/>
+        <xs:element ref="login_label"/>
+        <xs:element ref="dynamic_label"/>
+        <xs:element ref="spacer"/>
+        <xs:element ref="auto_configurable_read_only_grid_config"/>
+        <xs:element ref="page"/>
+        <xs:element ref="series_dropdown"/>
+        <xs:element ref="run_workflow_button"/>
+        <xs:element ref="load_all_rows_grid_button"/>
+        <xs:element ref="download_button"/>
+        <xs:element ref="instance_selector"/>
+        <xs:element ref="multi_selectable_grid"/>
+        <xs:element ref="static_label"/>
+        <xs:element ref="single_select_dynamic_column_grid_config"/>
+        <xs:element ref="trend_dropdown"/>
+        <xs:element ref="separate_instance_selector"/>
+        <xs:element ref="bpm"/>
+        <xs:element ref="v_section"/>
+        <xs:element ref="bulk_sign_off_button_config"/>
+        <xs:element ref="dropdown"/>
+        <xs:element ref="date_picker"/>
+        <xs:element ref="form"/>
+        <xs:element ref="user_dropdown"/>
+        <xs:element ref="page_title"/>
+        <xs:element ref="no_select_dynamic_column_grid_config"/>
+        <xs:element ref="instruction_button"/>
+        <xs:element ref="chartjs"/>
+        <xs:element ref="label"/>
+        <xs:element ref="config_name_label"/>
+        <xs:element ref="notification_count_button"/>
+        <xs:element ref="attribute_sign_off_grid"/>
+        <xs:element ref="search"/>
+        <xs:element ref="static_dropdown"/>
+        <xs:element ref="favorites"/>
+        <xs:element ref="h_section"/>
+        <xs:element ref="export_grid_button"/>
+        <xs:element ref="print_button"/>
+        <xs:element ref="appversion_label"/>
+        <xs:element ref="upload_button"/>
+        <xs:element ref="drilldown_button"/>
+        <xs:element ref="dcf"/>
+        <xs:element ref="active_chart"/>
+        <xs:element ref="attribute_sign_off_button"/>
+        <xs:element ref="text_field"/>
+        <xs:element ref="cfo_attestation"/>
+        <xs:element ref="chart"/>
+        <xs:element ref="notification_button"/>
+        <xs:element ref="export_data_button"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="align" type="horizontalLayoutAlignment"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="exportGridButtonConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="grid_id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="printButtonConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="appVersionLabelConfig">
+    <xs:sequence/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="uploadButtonConfig">
+    <xs:sequence>
+      <xs:element name="file_folder" type="path"/>
+      <xs:element name="action" type="uploadAction" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="drag_and_drop_caption" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="uploadAction">
+    <xs:choice>
+      <xs:element ref="run_remove_adjustments_wf"/>
+      <xs:element ref="grid_open_page"/>
+      <xs:element ref="run_workflow"/>
+      <xs:element ref="refresh_component"/>
+      <xs:element ref="comment"/>
+      <xs:element ref="open_popup_window"/>
+      <xs:element ref="file_operation"/>
+      <xs:element ref="logout_procedure"/>
+      <xs:element ref="run_submit_for_approval_wf"/>
+      <xs:element ref="set_model_property"/>
+      <xs:element ref="run_approve_reject_adjustments_wf"/>
+      <xs:element ref="task_starter"/>
+      <xs:element ref="show_favorite_action"/>
+      <xs:element ref="dm_download"/>
+      <xs:element ref="data_source_rows_update"/>
+      <xs:element ref="reset_form"/>
+      <xs:element ref="open_page"/>
+      <xs:element ref="signoff"/>
+      <xs:element ref="set_url_condition_to_model"/>
+      <xs:element ref="remove_model_property"/>
+      <xs:element ref="bpm_action"/>
+      <xs:element ref="run_udf"/>
+      <xs:element ref="action_chain"/>
+      <xs:element ref="text_popup"/>
+      <xs:element ref="data_source_update"/>
+      <xs:element ref="remove_row"/>
+      <xs:element ref="error_action"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="drillDownButtonConfig">
+    <xs:sequence>
+      <xs:element name="object_type" type="drillDownDataValueProvider"/>
+      <xs:element name="object_address" type="drillDownDataValueProvider"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="condition" type="drillDownConditionConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="streams" type="streamsProvider" minOccurs="0"/>
+      <xs:element name="free_form_params" type="freeFormParams" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="drillDownDataValueProvider">
+    <xs:choice>
+      <xs:element ref="string_value"/>
+      <xs:element ref="model_value"/>
+      <xs:element ref="data_object_value"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="freeFormParams">
+    <xs:sequence/>
+    <xs:attribute name="sheetName" type="xs:string"/>
+    <xs:attribute name="cellName" type="xs:string"/>
+    <xs:attribute name="rowNumber" type="xs:int"/>
+    <xs:attribute name="colNumber" type="xs:int"/>
+  </xs:complexType>
+
+  <xs:complexType name="dcfConfig">
+    <xs:sequence>
+      <xs:element name="data_path" type="dataSource"/>
+    </xs:sequence>
+    <xs:attribute name="container_id" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="activeChartWidgetConfig">
+    <xs:sequence>
+      <xs:element name="global_config_data_path" type="dataSource"/>
+      <xs:element name="measure_dimension_data_path" type="dataSource"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="container_id" type="xs:string" use="required"/>
+    <xs:attribute name="display_trend" type="xs:boolean"/>
+    <xs:attribute name="tooltip_format" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="attributeSignOffButtonConfig">
+    <xs:sequence>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="attribute_sign_off" type="attributeSignOffConfig"/>
+      <xs:element name="attribute_sign_off_id" type="xs:string" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="attributeSignOffConfig">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element name="history_address" type="sourceAddress"/>
+      <xs:element name="instruction" type="dcfValue"/>
+      <xs:element name="title" type="dcfValue"/>
+      <xs:element name="role" type="field"/>
+      <xs:element name="permission" type="field"/>
+      <xs:element name="unique_id" type="field"/>
+      <xs:element name="signoff_status" type="field"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="textFieldConfig">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element ref="value_based_read_only_provider"/>
+        <xs:element ref="composite_read_only_condition"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="caption" type="xs:string"/>
+    <xs:attribute name="tool_tip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="default_value" type="xs:string"/>
+    <xs:attribute name="read_only" type="xs:boolean"/>
+    <xs:attribute name="input_type" type="inputType"/>
+    <xs:attribute name="label_position" type="labelPosition"/>
+  </xs:complexType>
+
+  <xs:complexType name="cfoAttestationConfig">
+    <xs:sequence>
+      <xs:element name="principle_key" type="fieldValue"/>
+      <xs:element name="text" type="fieldValue" minOccurs="0"/>
+      <xs:element name="image" type="fieldValue" minOccurs="0"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element name="signOff_source_address" type="sourceAddress" minOccurs="0"/>
+      <xs:element name="role" type="fieldValue" minOccurs="0"/>
+      <xs:element name="status" type="fieldValue" minOccurs="0"/>
+      <xs:element name="styles" type="captionMappingConfig" maxOccurs="unbounded"/>
+      <xs:element name="comment" type="fieldValue" minOccurs="0"/>
+      <xs:element name="action_date" type="fieldValue" minOccurs="0"/>
+      <xs:element ref="data_source"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="style" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="chartConfig">
+    <xs:sequence>
+      <xs:element name="data_path" type="dataSource"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="measures" minOccurs="0"/>
+      <xs:element ref="dimensions" minOccurs="0"/>
+      <xs:element ref="x_axis"/>
+      <xs:element ref="y_axis"/>
+      <xs:element name="display_type" type="displayTypeWrapper" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="color_palette" type="colorsPaletteConfig" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="title" type="xs:string" use="required"/>
+    <xs:attribute name="height" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="show_legend" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="notificationButtonConfig">
+    <xs:sequence>
+      <xs:element name="notification_data_source" type="dataSource"/>
+      <xs:element name="listen_data_source" type="sourceAddress"/>
+      <xs:element name="root_data_source" type="sourceAddress"/>
+      <xs:element name="conditions" type="notificationConditionConfig" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="bell_icon" type="xs:string"/>
+    <xs:attribute name="bell_off_icon" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="notificationConditionConfig">
+    <xs:sequence>
+      <xs:element name="condition_mapping" type="field"/>
+      <xs:element name="condition_value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exportDataButtonConfig">
+    <xs:sequence>
+      <xs:element name="export" type="exportProvider" minOccurs="0"/>
+      <xs:choice minOccurs="0">
+        <xs:element ref="submit_adjustments_enable_provider"/>
+        <xs:element ref="view_adjustments_enable_provider"/>
+        <xs:element ref="composite_enable_condition"/>
+      </xs:choice>
+      <xs:element ref="composite_visibility_condition" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="text" type="xs:string"/>
+    <xs:attribute name="image" type="xs:string"/>
+    <xs:attribute name="icon_alignment" type="iconAlignment"/>
+    <xs:attribute name="tooltip" type="xs:string"/>
+    <xs:attribute name="style" type="xs:string"/>
+    <xs:attribute name="width" type="xs:string"/>
+    <xs:attribute name="header" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="exportProvider">
+    <xs:sequence>
+      <xs:element ref="data_source"/>
+      <xs:element ref="instance" minOccurs="0"/>
+      <xs:element ref="filter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice>
+        <xs:element ref="csv_export"/>
+        <xs:element ref="xlsx_export"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="csvExportDataProvider">
+    <xs:sequence>
+      <xs:element ref="field" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="separator" type="xs:string"/>
+    <xs:attribute name="quote" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="xlsxExportDataProvider">
+    <xs:sequence>
+      <xs:element name="field" type="formatFieldValue" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="formatFieldValue">
+    <xs:sequence/>
+    <xs:attribute name="node" type="xs:string"/>
+    <xs:attribute name="field" type="xs:string" use="required"/>
+    <xs:attribute name="format" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="gridCaptionImpl">
+    <xs:choice>
+      <xs:element ref="status"/>
+      <xs:element ref="static_text"/>
+      <xs:element ref="static_caption"/>
+      <xs:element ref="dynamic_condition_caption"/>
+      <xs:element ref="static_image"/>
+      <xs:element ref="text_with_icon"/>
+      <xs:element ref="dynamic_image"/>
+      <xs:element ref="task_status"/>
+      <xs:element ref="dynamic_caption"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:simpleType name="dataSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DataSource"/>
+      <xs:enumeration value="DataModel"/>
+      <xs:enumeration value="ModifyModel"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="operator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EQUALS"/>
+      <xs:enumeration value="NOT_EQUALS"/>
+      <xs:enumeration value="GREAT"/>
+      <xs:enumeration value="GREAT_EQUALS"/>
+      <xs:enumeration value="LESS"/>
+      <xs:enumeration value="LESS_EQUALS"/>
+      <xs:enumeration value="LIKE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emptyValuePolicy">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="ALL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="function">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="=userId()"/>
+      <xs:enumeration value="=userName()"/>
+      <xs:enumeration value="=fullUserName()"/>
+      <xs:enumeration value="=uuid()"/>
+      <xs:enumeration value="=currentEnvironmentName()"/>
+      <xs:enumeration value="=configurationName()"/>
+      <xs:enumeration value="=currentDate()"/>
+      <xs:enumeration value="=currentDateInMillis()"/>
+      <xs:enumeration value="=firstDayOfWeek()"/>
+      <xs:enumeration value="=firstDayOfMonth()"/>
+      <xs:enumeration value="=firstDayOfQuarter()"/>
+      <xs:enumeration value="=firstDayOfYear()"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="iconAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="LEFT"/>
+      <xs:enumeration value="RIGHT"/>
+      <xs:enumeration value="BOTTOM"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="labelPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP"/>
+      <xs:enumeration value="LEFT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="columnAlign">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RIGHT"/>
+      <xs:enumeration value="LEFT"/>
+      <xs:enumeration value="CENTER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="captionIconAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LEFT"/>
+      <xs:enumeration value="RIGHT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="iconAlign">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP_CENTER"/>
+      <xs:enumeration value="MIDDLE_RIGHT"/>
+      <xs:enumeration value="MIDDLE_LEFT"/>
+      <xs:enumeration value="BOTTOM_CENTER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fileIOperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MOVE"/>
+      <xs:enumeration value="COPY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="asc"/>
+      <xs:enumeration value="desc"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="unitPeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAYS"/>
+      <xs:enumeration value="WEEKS"/>
+      <xs:enumeration value="MONTHS"/>
+      <xs:enumeration value="YEARS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="verticalLayoutAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP_LEFT"/>
+      <xs:enumeration value="TOP_CENTER"/>
+      <xs:enumeration value="TOP_RIGHT"/>
+      <xs:enumeration value="TOP_STRETCH"/>
+      <xs:enumeration value="MIDDLE_LEFT"/>
+      <xs:enumeration value="MIDDLE_CENTER"/>
+      <xs:enumeration value="MIDDLE_RIGHT"/>
+      <xs:enumeration value="MIDDLE_STRETCH"/>
+      <xs:enumeration value="BOTTOM_LEFT"/>
+      <xs:enumeration value="BOTTOM_CENTER"/>
+      <xs:enumeration value="BOTTOM_RIGHT"/>
+      <xs:enumeration value="BOTTOM_STRETCH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dateResolution">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SECOND"/>
+      <xs:enumeration value="MINUTE"/>
+      <xs:enumeration value="HOUR"/>
+      <xs:enumeration value="DAY"/>
+      <xs:enumeration value="MONTH"/>
+      <xs:enumeration value="YEAR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="inputType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="integer"/>
+      <xs:enumeration value="double"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="aggregationFunction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUM"/>
+      <xs:enumeration value="AVG"/>
+      <xs:enumeration value="MIN"/>
+      <xs:enumeration value="MAX"/>
+      <xs:enumeration value="COUNT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="displayType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Area"/>
+      <xs:enumeration value="Bar"/>
+      <xs:enumeration value="Horizontal_Bar"/>
+      <xs:enumeration value="Horizontal_Stack_Bar"/>
+      <xs:enumeration value="Line"/>
+      <xs:enumeration value="Spline"/>
+      <xs:enumeration value="Spline_Area"/>
+      <xs:enumeration value="Scatter"/>
+      <xs:enumeration value="Stack_Bar"/>
+      <xs:enumeration value="Waterfall"/>
+      <xs:enumeration value="Pie"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="position">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="axisType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Linear"/>
+      <xs:enumeration value="Logarithmic"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="outputValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X_VALUE"/>
+      <xs:enumeration value="Y_VALUE"/>
+      <xs:enumeration value="SERIES_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="outputValueKeyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ID"/>
+      <xs:enumeration value="FIELD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sortBy">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VALUE"/>
+      <xs:enumeration value="CAPTION"/>
+      <xs:enumeration value="AS_IS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="alignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEFAULT"/>
+      <xs:enumeration value="TOP_RIGHT"/>
+      <xs:enumeration value="TOP_LEFT"/>
+      <xs:enumeration value="TOP_CENTER"/>
+      <xs:enumeration value="MIDDLE_RIGHT"/>
+      <xs:enumeration value="MIDDLE_LEFT"/>
+      <xs:enumeration value="MIDDLE_CENTER"/>
+      <xs:enumeration value="BOTTOM_RIGHT"/>
+      <xs:enumeration value="BOTTOM_LEFT"/>
+      <xs:enumeration value="BOTTOM_CENTER"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="horizontalLayoutAlignment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOP_LEFT"/>
+      <xs:enumeration value="TOP_CENTER"/>
+      <xs:enumeration value="TOP_RIGHT"/>
+      <xs:enumeration value="MIDDLE_LEFT"/>
+      <xs:enumeration value="MIDDLE_CENTER"/>
+      <xs:enumeration value="MIDDLE_RIGHT"/>
+      <xs:enumeration value="BOTTOM_LEFT"/>
+      <xs:enumeration value="BOTTOM_CENTER"/>
+      <xs:enumeration value="BOTTOM_RIGHT"/>
+      <xs:enumeration value="STRETCH_LEFT"/>
+      <xs:enumeration value="STRETCH_RIGHT"/>
+      <xs:enumeration value="STRETCH_CENTER"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
