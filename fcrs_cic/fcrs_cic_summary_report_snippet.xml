@@ -183,18 +183,6 @@
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
     <h_section id="dbd_cic_1_4_customer_details_section" height="200" width="98%" align="TOP_LEFT">
-        <button>
-            <set_url_condition_to_model>
-                <condition from_ref="Customer_Details" to_ref=""/>
-            </set_url_condition_to_model>
-            <open_page>
-                <url_ref>
-                    <url_value>
-                        <string_value value="Customer_Details"/>
-                    </url_value>
-                </url_ref>
-            </open_page>
-        </button>
         <grid id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
                              type="DataSource" />
@@ -211,7 +199,6 @@
                 </filter>
                <selection type="SINGLE" unselectable="true">
                     <unique_id field="customer_number"/>
-                    <additional_output property_path="Customer_Info"/>
                 </selection>
             <column id="c0" title="Customer Number">
                 <component>
@@ -356,7 +343,22 @@
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
-            </column>
+            </column> <column id="c15" title="Phone Number">
+            <component>
+                <grid_button_component>
+                   <static_caption icon="" text="View Details"/>
+                    <action_chain>
+                        <set_url_condition_to_model>
+                            <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
+                        </set_url_condition_to_model>
+                        <open_page>
+                            <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info" add_condition="true"/>
+                        </open_page>
+                    </action_chain>
+                    <composite_enable_condition/>
+                </grid_button_component>
+            </component>
+        </column>
         </grid>
     </h_section>
 </page>

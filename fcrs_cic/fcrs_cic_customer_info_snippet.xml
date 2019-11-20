@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
-      id="signoff_report_snippet">
+      id="fcrs_customer_info_snippet">
         <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="cic_instance_selector"
                                         width="60%" use_description_for_name="true">
@@ -9,6 +9,10 @@
             </separate_instance_selector>
         </h_section>
     <h_section>
-
+        <dropdown id="DD_TEST">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary" type="DataSource"/>
+            <value field="customer_number"/>
+            <composite_read_only_condition/>
+        </dropdown>
     </h_section>
 </page>
