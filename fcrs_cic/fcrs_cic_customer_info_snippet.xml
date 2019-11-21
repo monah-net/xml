@@ -23,6 +23,9 @@
             <composite_read_only_condition/>
         </dropdown>
         </h_section>
+    <h_section>
+        <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>
+    </h_section>
     <h_section id="dbd_cic_1_4_indicia_details_section" height="200" width="98%" align="TOP_LEFT">
         <grid id="Indicia Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
@@ -38,28 +41,30 @@
                     <filter_on name="customer_number"/>
                 </filter_mapping>
             </filter>
-            <column id="c0" title="Customer Number">
+            <selection type="SINGLE">
+                <unique_id field="customer_number"/>
+            </selection>
+            <column id="c0" title="Customer Number" alignment="LEFT">
                 <component>
-                    <grid_label_component>
+                    <grid_label_component alignment="LEFT">
                         <dynamic_caption>
                             <field_value field="customer_number"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
-
-            <column id="c1" title="Indicia Type">
+            <column id="c1" title="Indicia Type" alignment="LEFT">
                 <component>
-                    <grid_label_component>
+                    <grid_label_component alignment="LEFT">
                         <dynamic_caption>
                             <field_value field="indicia_type"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c2" title="Indicia Value">
+            <column id="c2" title="Indicia Value" alignment="LEFT">
                 <component>
-                    <grid_label_component>
+                    <grid_label_component alignment="LEFT">
                         <dynamic_caption>
                             <field_value field="indicia_value"/>
                         </dynamic_caption>
@@ -75,9 +80,9 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c4" title="Updated Time">
+            <column id="c4" title="Updated Time" alignment="LEFT">
                 <component>
-                    <grid_label_component>
+                    <grid_label_component alignment="LEFT">
                         <dynamic_caption>
                             <field_value field="updated_time"/>
                         </dynamic_caption>
@@ -85,5 +90,14 @@
                 </component>
             </column>
         </grid>
+    </h_section>
+    <h_section>
+        <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>
+    </h_section>
+    <h_section>
+        <static_label id="notification_details_label" text="Notification Details" height="80" width="120" style="cvh1"/>
+    </h_section>
+    <h_section>
+        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="120" style="cvh1"/>
     </h_section>
 </page>
