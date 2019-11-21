@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="fcrs_customer_info_snippet">
-        <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
-            <separate_instance_selector id="cic_instance_selector"
-                                        width="60%" use_description_for_name="true">
-                <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
-                             type="DataSource"/>
-            </separate_instance_selector>
-        </h_section>
+    <context>
+        <variable key="project" value="FATCA_CIC"/>
+        <variable key="branch" value="2019_v03"/>
+        <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
+    </context>
+    <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
+        <separate_instance_selector id="cic_instance_selector"
+                                    width="60%" use_description_for_name="true">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
+                         type="DataSource"/>
+        </separate_instance_selector>
+    </h_section>
     <h_section>
         <dropdown id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
@@ -17,16 +22,64 @@
             </instance>
             <composite_read_only_condition/>
         </dropdown>
-        <grid id="">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
+        </h_section>
+    <h_section id="dbd_cic_1_4_indicia_details_section" height="200" width="98%" align="TOP_LEFT">
+        <grid id="Indicia Details">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
+                         type="DataSource" />
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
             </instance>
-            <column id="customer_detail_1" title="Customer Number">
+            <filter empty_value_policy="ALL">
+                <filter_value>
+                    <model_value reference="Customer_Details"/>
+                </filter_value>
+                <filter_mapping operator="EQUALS">
+                    <filter_on name="customer_number"/>
+                </filter_mapping>
+            </filter>
+            <column id="c0" title="Customer Number">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
                             <field_value field="customer_number"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+
+            <column id="c1" title="Indicia Type">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="indicia_type"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c2" title="Indicia Value">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="indicia_value"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c3" title="Indicia Country">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="indicia_country"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c4" title="Updated Time">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="updated_time"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
