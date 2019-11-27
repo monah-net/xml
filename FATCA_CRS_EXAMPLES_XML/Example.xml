@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
+
+    <h_section id="header" width="100%" height="45px" style="header-section" align="MIDDLE_CENTER">
+        <h_section id="axiom_logo" width="50%" height="100%" align="MIDDLE_LEFT">
+            <static_label id="logo_pic" image="logo_axiomsl.svg" style="original-size"/>
+        </h_section>
+
+        <h_section id="user_info" align="MIDDLE_RIGHT" width="50%" height="100%">
+            <notification_count_button id="notifications" tooltip="Notifications">
+                <data_source project="TESTING_DATA" branch="FATCA_CRS" source="notifications" type="DataModel"/>
+                <filter>
+                    <filter_value>
+                        <string_value value="1"/>
+                    </filter_value>
+                    <filter_mapping>
+                        <filter_on node="root" name="visible"/>
+                    </filter_mapping>
+                </filter>
+                <filter>
+                    <filter_value>
+                        <string_value value="false"/>
+                    </filter_value>
+                    <filter_mapping>
+                        <filter_on node="root" name="read_field"/>
+                    </filter_mapping>
+                </filter>
+                <open_popup_window height="50%" width="30%">
+                    <grid id="notifications" listened_data="true">
+                        <data_source project="TESTING_DATA" branch="FATCA_CRS" source="notifications" type="DataModel"/>
+                        <filter>
+                            <filter_value>
+                                <string_value value="1"/>
+                            </filter_value>
+                            <filter_mapping>
+                                <filter_on node="root" name="visible"/>
+                            </filter_mapping>
+                        </filter>
+                        <filter>
+                            <filter_value>
+                                <string_value value="false"/>
+                            </filter_value>
+                            <filter_mapping>
+                                <filter_on node="root" name="read_field"/>
+                            </filter_mapping>
+                        </filter>
+                        <column id="c1" title="Notification Date">
+                            <component>
+                                <grid_label_component alignment="CENTER">
+                                    <dynamic_caption format="MM/dd/yyyy hh:mm:ss">
+                                        <field_value node="root" field="event_time"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="c2" title="Created by">
+                            <component>
+                                <grid_label_component alignment="CENTER">
+                                    <dynamic_caption>
+                                        <field_value node="root" field="user_name"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="c3" title="Message">
+                            <component>
+                                <grid_label_component>
+                                    <dynamic_caption>
+                                        <field_value node="root" field="message"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="c4" title="Send to Archive">
+                            <component>
+                                <grid_button_component>
+                                    <static_caption icon="archive.svg"/>
+                                    <data_source_update>
+                                        <source_path project="TESTING_DATA" branch="FATCA_CRS" name="notifications"/>
+                                        <fields>
+                                            <field name="read_field">
+                                                <string_value value="true"/>
+                                            </field>
+                                        </fields>
+                                        <keys>
+                                            <field name="event_id">
+                                                <field_value node="root" field="event_id"/>
+                                            </field>
+                                        </keys>
+                                    </data_source_update>
+                                    <composite_enable_condition/>
+                                </grid_button_component>
+                            </component>
+                        </column>
+                    </grid>
+                </open_popup_window>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </notification_count_button>
+            <login_label id="user_login" image="user_box.svg" icon_alignment="LEFT"/>
+            <copy_url_button id="curl" width="45px" icon_alignment="LEFT" image="link.svg" tooltip="Copy Link">
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </copy_url_button>
+            <button id="logout" image="logout.svg" icon_alignment="LEFT" tooltip="Logout">
+                <logout_procedure/>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+        </h_section>
+    </h_section>
+
+    <v_section width="100%" height="100%">
+        <v_section height="100%" width="100%" style="card">
+            <h_section>
+                <label style="cvh2">
+                    <string_value value="Customers"/>
+                    <composite_visibility_condition/>
+                </label>
+            </h_section>
+            <grid id="grid1">
+                <data_source project="TESTING_DATA" branch="FATCA_CRS" source="customers" type="DataSource"/>
+                <selection type="MULTIPLE" unselectable="true">
+                    <unique_id field="enumerator"/>
+                    <additional_output property_path="customer_number">
+                        <value field="customer_number"/>
+                    </additional_output>
+                </selection>
+                <column id="c0" title="Customer Number">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="customer_number"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="c1" title="Status">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="status"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="dm_upload" title="DM Upload">
+                    <component>
+                        <grid_dm_upload_component file_folder="/opt/axiom/server/tomcat/apache-tomcat/temp/">
+                            <static_caption icon="upload.svg"/>
+                            <unique_id>
+                                <field_value field="customer_number"/>
+                            </unique_id>
+                            <source_address project="TESTING_DATA" branch="FATCA_CRS"
+                                            name="sys_document_managment_history"/>
+                            <composite_enable_condition/>
+                        </grid_dm_upload_component>
+                    </component>
+                </column>
+                <column id="dm_download" title="DM Download">
+                    <component>
+                        <grid_button_component>
+                            <static_caption icon="download.svg"/>
+                            <dm_download file_folder="/opt/axiom/server/tomcat/apache-tomcat/temp/">
+                                <unique_id>
+                                    <field_value field="customer_number"/>
+                                </unique_id>
+                                <source_address project="TESTING_DATA" branch="FATCA_CRS"
+                                                name="sys_document_managment_history"/>
+                            </dm_download>
+                            <composite_enable_condition/>
+                        </grid_button_component>
+                    </component>
+                </column>
+            </grid>
+        </v_section>
+        <h_section width="100%" align="MIDDLE_RIGHT" style="card">
+            <button text="Pass grid IDs to pop-up window" style="primary-button">
+                <open_popup_window popup_title="Change Status" height="50%" width="50%" closePath="close_popup">
+                    <v_section>
+                        <h_section>
+                            <label width="160px" style="fixed-width">
+                                <string_value value="Selected Customer Numbers"/>
+                                <composite_visibility_condition/>
+                            </label>
+                            <v_section height="100px" width="200px">
+                                <grid id="grid2" hide_header="true" height="100%" width="100%">
+                                    <data_source project="TESTING_DATA" branch="FATCA_CRS" source="customers"
+                                                 type="DataSource"/>
+                                    <filter>
+                                        <filter_value>
+                                            <model_value reference="grid1"/>
+                                        </filter_value>
+                                        <filter_mapping>
+                                            <filter_on name="enumerator"/>
+                                        </filter_mapping>
+                                    </filter>
+                                    <column id="c0" title="" display="false">
+                                        <component>
+                                            <grid_label_component>
+                                                <dynamic_caption>
+                                                    <field_value field="enumerator"/>
+                                                </dynamic_caption>
+                                            </grid_label_component>
+                                        </component>
+                                    </column>
+                                    <column id="c1" title="">
+                                        <component>
+                                            <grid_label_component alignment="CENTER">
+                                                <dynamic_caption>
+                                                    <field_value field="customer_number"/>
+                                                </dynamic_caption>
+                                            </grid_label_component>
+                                        </component>
+                                    </column>
+                                </grid>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <label width="160px">
+                                <string_value value="Change Status To"/>
+                                <composite_visibility_condition/>
+                            </label>
+                            <static_dropdown id="status_list" width="200px">
+                                <value value="Pending Verification" caption="Pending Verification" default="true"/>
+                                <value value="Notified" caption="Notified"/>
+                                <value value="Closed" caption="Closed"/>
+                                <value value="CIC" caption="CIC"/>
+                                <composite_read_only_condition/>
+                            </static_dropdown>
+                        </h_section>
+                        <h_section>
+                            <label width="160px">
+                                <string_value value="Comment"/>
+                                <composite_visibility_condition/>
+                            </label>
+                            <text_area id="comment" width="200px">
+                                <composite_read_only_condition/>
+                            </text_area>
+                        </h_section>
+                        <h_section width="100%">
+                            <button text="Cancel" style="secondary-button">
+                                <set_model_property property_path="close_popup">
+                                    <value>
+                                        <function_value function="=uuid()"/>
+                                    </value>
+                                </set_model_property>
+                                <composite_enable_condition/>
+                                <composite_visibility_condition/>
+                            </button>
+                            <button text="Run WorkFlow" style="primary-button">
+                                <action_chain>
+                                    <run_workflow>
+                                        <workflow>
+                                            <project>
+                                                <string_value value="TESTING_DATA"/>
+                                            </project>
+                                            <branch>
+                                                <string_value value="FATCA_CRS"/>
+                                            </branch>
+                                            <name>
+                                                <string_value value="customers"/>
+                                            </name>
+                                        </workflow>
+                                        <instance>
+                                            <instance_provider>
+                                                <as_of_date>
+                                                    <date_value value="2019-01-01T00:00:00"/>
+                                                </as_of_date>
+                                            </instance_provider>
+                                        </instance>
+                                        <variables>
+                                            <multiselection_var name="customers" reference="customer_number"
+                                                                as_string="true"/>
+                                            <model_var name="state" reference="status_list"/>
+                                            <model_var name="comment" reference="comment"/>
+                                        </variables>
+                                        <positive_result_action>
+                                            <refresh_component component_id="grid1"/>
+                                        </positive_result_action>
+                                    </run_workflow>
+                                    <set_model_property property_path="close_popup">
+                                        <value>
+                                            <function_value function="=uuid()"/>
+                                        </value>
+                                    </set_model_property>
+                                </action_chain>
+                                <composite_enable_condition/>
+                                <composite_visibility_condition/>
+                            </button>
+                            <button text="Update Status" style="primary-button">
+                                <action_chain>
+                                    <data_source_update>
+                                        <source_path project="TESTING_DATA" branch="FATCA_CRS" name="customers"/>
+                                        <fields>
+                                            <field name="status">
+                                                <model_value reference="status_list"/>
+                                            </field>
+                                        </fields>
+                                        <keys>
+                                            <field name="enumerator">
+                                                <model_value reference="grid1"/>
+                                            </field>
+                                        </keys>
+                                    </data_source_update>
+                                    <set_model_property property_path="close_popup">
+                                        <value>
+                                            <function_value function="=uuid()"/>
+                                        </value>
+                                    </set_model_property>
+                                    <refresh_component component_id="grid1"/>
+                                </action_chain>
+                                <composite_enable_condition/>
+                                <composite_visibility_condition/>
+                            </button>
+                        </h_section>
+                    </v_section>
+                </open_popup_window>
+                <composite_enable_condition>
+                    <enable_condition>
+                        <model_value reference="grid1"/>
+                        <is_not_empty/>
+                    </enable_condition>
+                </composite_enable_condition>
+                <composite_visibility_condition/>
+            </button>
+            <button text="Insert notifications" style="primary-button">
+                <data_source_update>
+                    <source_path project="TESTING_DATA" branch="FATCA_CRS" name="notifications"/>
+                    <fields>
+                        <field name="event_id">
+                            <function_value function="=uuid()"/>
+                        </field>
+                        <field name="event_time">
+                            <function_value function="=currentDateInMillis()"/>
+                        </field>
+                        <field name="user_name">
+                            <string_value value="test_user1"/>
+                        </field>
+                        <field name="message">
+                            <string_value value="Notification message"/>
+                        </field>
+                        <field name="type">
+                            <string_value value="message"/>
+                        </field>
+                    </fields>
+                    <keys>
+                        <field name="event_id">
+                            <function_value function="=uuid()"/>
+                        </field>
+                    </keys>
+                </data_source_update>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+        </h_section>
+    </v_section>
+
+</page>
