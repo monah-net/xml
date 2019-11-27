@@ -127,6 +127,17 @@
             </grid>
         </h_section>
 
+        <h_section id="section_filter_customer" height="80px" width="100%" align="TOP_LEFT">
+            <search id="account_holder_id_search" caption="Search Account Holder ID" icon="filter.svg">
+                <composite_read_only_condition/>
+            </search>
+            <dropdown id="acc_type_filter" label="Holder Type" label_position="TOP">
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_customer_report"
+                             type="DataModel"/>
+                <value field="holder_type" node="root"/>
+                <composite_read_only_condition/>
+            </dropdown>
+        </h_section>
         <h_section width="100%" id="section_titles_customer">
             <h_section id="section_label_customer" height="50px" width="100%" align="TOP_LEFT">
                 <static_label id="customer_label" text="Customer Details" style="cvh1"/>
@@ -141,17 +152,6 @@
                     <composite_visibility_condition/>
                 </load_all_rows_grid_button>
             </h_section>
-        </h_section>
-        <h_section id="section_filter_customer" height="80px" width="100%" align="TOP_LEFT">
-            <search id="account_holder_id_search" caption="Search Account Holder ID" icon="filter.svg">
-                <composite_read_only_condition/>
-            </search>
-            <dropdown id="acc_type_filter" label="Holder Type" label_position="TOP">
-                <data_source project="${project}" branch="${branch}" source="dbd_summary_customer_report"
-                             type="DataModel"/>
-                <value field="holder_type" node="root"/>
-                <composite_read_only_condition/>
-            </dropdown>
         </h_section>
         <h_section id="section_grid_customer" height="270px" width="100%" align="TOP_LEFT">
             <grid id="Customer_Details" listened_data="true" show_rows="5" height="250px">

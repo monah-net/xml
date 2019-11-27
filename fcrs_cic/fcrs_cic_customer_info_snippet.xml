@@ -26,7 +26,7 @@
     <h_section>
         <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>
     </h_section>
-    <h_section id="dbd_cic_1_4_indicia_details_section" height="200" width="98%" align="TOP_LEFT">
+    <h_section id="dbd_cic_1_4_indicia_details_section" height="130px" width="98%" align="TOP_LEFT">
         <grid id="Indicia Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
                          type="DataSource" />
