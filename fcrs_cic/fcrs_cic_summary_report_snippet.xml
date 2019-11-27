@@ -343,7 +343,8 @@
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
-            </column> <column id="c15" title="View Details Button">
+            </column>
+            <column id="c16" title="View Details Button">
             <component>
                 <grid_button_component>
                    <static_caption icon="" text="View Details"/>
