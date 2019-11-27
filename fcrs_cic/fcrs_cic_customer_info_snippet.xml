@@ -94,10 +94,177 @@
     <h_section>
         <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>
     </h_section>
-    <h_section>
-        <static_label id="notification_details_label" text="Notification Details" height="80" width="120" style="cvh1"/>
+    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
+<!--        <grid id="Task_Details">-->
+<!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
+<!--                         type="DataSource" />-->
+<!--            <instance>-->
+<!--                <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--            </instance>-->
+<!--            <column id="t0" title="TASK NUMBER" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="t1" title="Task name" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="t2" title="Task Stamp" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--        </grid>-->
     </h_section>
     <h_section>
-        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="120" style="cvh1"/>
+        <static_label id="notification_details_label" text="Notification Details" height="80" width="150" style="cvh1"/>
+    </h_section>
+    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
+<!--        <grid id="Notification_Details">-->
+<!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
+<!--                         type="DataSource" />-->
+<!--            <instance>-->
+<!--                <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--            </instance>-->
+<!--            <column id="n0" title="Notification Number" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="n1" title="Comment" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="n2" title="Time Stamp" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--        </grid>-->
+    </h_section>
+    <h_section>
+        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="200" style="cvh1"/>
+<!--        <grid id="Notification_Details">-->
+<!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
+<!--                         type="DataSource" />-->
+<!--            <instance>-->
+<!--                <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--            </instance>-->
+<!--            <column id="n0" title="Doc Number" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="n1" title="Doc Name" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field=""/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="n2" title="Download" alignment="LEFT">-->
+<!--            <component>-->
+<!--                <grid_download_component>-->
+<!--                    <static_caption icon="download.svg"/>-->
+<!--                    <file_folder>-->
+<!--                        <field_value field="filePath" node="root"/>-->
+<!--                    </file_folder>-->
+<!--                    <file_name>-->
+<!--                        <field_value field="xmlfileName" node="root"/>-->
+<!--                    </file_name>-->
+<!--                    <composite_enable_condition>-->
+<!--                        <file_exists_condition>-->
+<!--                            <file_name>-->
+<!--                                <field_value field="xmlfileName" node="root"/>-->
+<!--                            </file_name>-->
+<!--                            <file_folder>-->
+<!--                                <field_value field="filePath" node="root"/>-->
+<!--                            </file_folder>-->
+<!--                        </file_exists_condition>-->
+<!--                    </composite_enable_condition>-->
+<!--                </grid_download_component>-->
+<!--            </component>-->
+<!--            </column>-->
+<!--        </grid>-->
+    </h_section>
+    <h_section>
+        <v_section id="change_status_section" align="TOP_LEFT">
+        <static_label id="change_status_label" text="Change Status" height="80" width="200" style="cvh1"/>
+        <dropdown_menu id="change_status_drop_down">
+            <menu_items>
+                <label>
+                    <string_value value="Pending Verification"/>
+                    <composite_visibility_condition/>
+                </label>
+                <label>
+                    <string_value value="Notified"/>
+                    <composite_visibility_condition/>
+                </label>
+                <label>
+                    <string_value value="Closed"/>
+                    <composite_visibility_condition/>
+                </label>
+                <label>
+                    <string_value value="CIC"/>
+                    <composite_visibility_condition/>
+                </label>
+            </menu_items>
+        </dropdown_menu>
+        </v_section>
+        <h_section>
+            <static_label id="status_comment_label" text="Comment" height="80" width="200" style="cvh1"/>
+        </h_section>
+        <v_section>
+            <button>
+                <comment>
+                    <title>
+                        <string_value value="Some comment"/>
+                    </title>
+                </comment>
+                <submit_adjustments_enable_provider>
+                    <data_path project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
+                </submit_adjustments_enable_provider>
+                <composite_visibility_condition/>
+            </button>
+        </v_section>
+    </h_section>
+    <h_section>
+        <static_label id="assign_tasks_label" text="Assign Tasks" height="80" width="200" style="cvh1"/>
+    </h_section>
+    <h_section>
+        <static_label id="send_notification_label" text="Send Notification" height="80" width="200" style="cvh1"/>
     </h_section>
 </page>
