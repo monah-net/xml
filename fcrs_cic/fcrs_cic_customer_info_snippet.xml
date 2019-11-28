@@ -13,7 +13,7 @@
                          type="DataSource"/>
         </separate_instance_selector>
     </h_section>
-    <spacer width="20px" height="30px"/>
+    <spacer width="50px" height="20px"/>
     <h_section>
         <dropdown id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
@@ -23,14 +23,14 @@
             </instance>
             <composite_read_only_condition/>
         </dropdown>
-        </h_section>
+    </h_section>
     <h_section>
-        <grid id="CustDetails">
+            <static_label id="customer_info_main" text="Customer Info" height="80px" width="120px" style="cvh1"/>
+    </h_section>
+    <h_section>
+        <grid id="customerInfoRow">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
                          type="DataSource"/>
-            <instance>
-                <instance_selector_ref reference="Customer_Details"/>
-            </instance>
             <filter empty_value_policy="ALL">
                 <filter_value>
                     <model_value reference="Customer_Details"/>
@@ -39,7 +39,10 @@
                     <filter_on name="customer_number"/>
                 </filter_mapping>
             </filter>
-            <column id="cd1" title="Customer Number" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <selection type="SINGLE">
+                <unique_id field="customer_number"/>
+            </selection>
+            <column id="cd1" title="Customer Number" alignment="LEFT">
                 <component>
                     <grid_label_component alignment="LEFT">
                         <dynamic_caption>
@@ -48,7 +51,7 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="cd2" title="First Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <column id="cd2" title="First Name" alignment="LEFT">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
@@ -57,7 +60,7 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="cd3" title="Middle Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <column id="cd3" title="Middle Name" alignment="LEFT">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
@@ -66,7 +69,7 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="cd4" title="Last Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <column id="cd4" title="Last Name" alignment="LEFT">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
@@ -75,7 +78,7 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="cd5" title="Last Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <column id="cd5" title="Last Name" alignment="LEFT">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
@@ -84,7 +87,7 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="cd6" title="Business Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+            <column id="cd6" title="Business Name" alignment="LEFT">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
