@@ -9,10 +9,11 @@
     <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
         <separate_instance_selector id="cic_instance_selector"
                                     width="60%" use_description_for_name="true">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
                          type="DataSource"/>
         </separate_instance_selector>
     </h_section>
+    <spacer width="20px" height="30px"/>
     <h_section>
         <dropdown id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
@@ -24,14 +25,11 @@
         </dropdown>
         </h_section>
     <h_section>
-        <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>
-    </h_section>
-    <h_section id="dbd_cic_1_4_indicia_details_section" height="130px" width="98%" align="TOP_LEFT">
-        <grid id="Indicia Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
-                         type="DataSource" />
+        <grid id="CustDetails">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
+                         type="DataSource"/>
             <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
+                <instance_selector_ref reference="Customer_Details"/>
             </instance>
             <filter empty_value_policy="ALL">
                 <filter_value>
@@ -41,10 +39,7 @@
                     <filter_on name="customer_number"/>
                 </filter_mapping>
             </filter>
-            <selection type="SINGLE">
-                <unique_id field="customer_number"/>
-            </selection>
-            <column id="c0" title="Customer Number" alignment="LEFT">
+            <column id="cd1" title="Customer Number" alignment="LEFT" display="true" is_filtered="false" width="98%">
                 <component>
                     <grid_label_component alignment="LEFT">
                         <dynamic_caption>
@@ -53,50 +48,127 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c1" title="Indicia Type" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="indicia_type"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c2" title="Indicia Value" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="indicia_value"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c3" title="Indicia Country">
+            <column id="cd2" title="First Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="indicia_country"/>
+                            <field_value field="first_name"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c4" title="Updated Time" alignment="LEFT">
+            <column id="cd3" title="Middle Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
                 <component>
-                    <grid_label_component alignment="LEFT">
+                    <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="updated_time"/>
+                            <field_value field="middle_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="cd4" title="Last Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="last_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="cd5" title="Last Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="last_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="cd6" title="Business Name" alignment="LEFT" display="true" is_filtered="false" width="98%">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="business_name"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
         </grid>
     </h_section>
-    <h_section>
-        <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>
-    </h_section>
-    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
-<!--        <grid id="Task_Details">-->
+<!--    <h_section>-->
+<!--        <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>-->
+<!--    </h_section>-->
+<!--    <h_section id="dbd_cic_1_4_indicia_details_section" height="130px" width="98%" align="TOP_LEFT">-->
+<!--        <grid id="Indicia Details">-->
 <!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
+<!--                         type="DataSource" />-->
+<!--            <instance>-->
+<!--                <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--            </instance>-->
+<!--            <filter empty_value_policy="ALL">-->
+<!--                <filter_value>-->
+<!--                    <model_value reference="Customer_Details"/>-->
+<!--                </filter_value>-->
+<!--                <filter_mapping operator="EQUALS">-->
+<!--                    <filter_on name="customer_number"/>-->
+<!--                </filter_mapping>-->
+<!--            </filter>-->
+<!--            <selection type="SINGLE">-->
+<!--                <unique_id field="customer_number"/>-->
+<!--            </selection>-->
+<!--            <column id="c0" title="Customer Number" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field="customer_number"/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="c1" title="Indicia Type" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field="indicia_type"/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="c2" title="Indicia Value" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field="indicia_value"/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="c3" title="Indicia Country">-->
+<!--                <component>-->
+<!--                    <grid_label_component>-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field="indicia_country"/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--            <column id="c4" title="Updated Time" alignment="LEFT">-->
+<!--                <component>-->
+<!--                    <grid_label_component alignment="LEFT">-->
+<!--                        <dynamic_caption>-->
+<!--                            <field_value field="updated_time"/>-->
+<!--                        </dynamic_caption>-->
+<!--                    </grid_label_component>-->
+<!--                </component>-->
+<!--            </column>-->
+<!--        </grid>-->
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>-->
+<!--    </h_section>-->
+<!--    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">-->
+<!--        <grid id="Task_Details">-->
+<!--            <data_source project="${project}" branch="${branch}" source="dbd_indicia_details"-->
 <!--                         type="DataSource" />-->
 <!--            <instance>-->
 <!--                <instance_selector_ref reference="cic_instance_selector"/>-->
@@ -129,11 +201,11 @@
 <!--                </component>-->
 <!--            </column>-->
 <!--        </grid>-->
-    </h_section>
-    <h_section>
-        <static_label id="notification_details_label" text="Notification Details" height="80" width="150" style="cvh1"/>
-    </h_section>
-    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <static_label id="notification_details_label" text="Notification Details" height="80" width="150" style="cvh1"/>-->
+<!--    </h_section>-->
+<!--    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">-->
 <!--        <grid id="Notification_Details">-->
 <!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
 <!--                         type="DataSource" />-->
@@ -168,9 +240,9 @@
 <!--                </component>-->
 <!--            </column>-->
 <!--        </grid>-->
-    </h_section>
-    <h_section>
-        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="200" style="cvh1"/>
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="200" style="cvh1"/>-->
 <!--        <grid id="Notification_Details">-->
 <!--            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"-->
 <!--                         type="DataSource" />-->
@@ -219,52 +291,52 @@
 <!--            </component>-->
 <!--            </column>-->
 <!--        </grid>-->
-    </h_section>
-    <h_section>
-        <v_section id="change_status_section" align="TOP_LEFT">
-        <static_label id="change_status_label" text="Change Status" height="80" width="200" style="cvh1"/>
-        <dropdown_menu id="change_status_drop_down">
-            <menu_items>
-                <label>
-                    <string_value value="Pending Verification"/>
-                    <composite_visibility_condition/>
-                </label>
-                <label>
-                    <string_value value="Notified"/>
-                    <composite_visibility_condition/>
-                </label>
-                <label>
-                    <string_value value="Closed"/>
-                    <composite_visibility_condition/>
-                </label>
-                <label>
-                    <string_value value="CIC"/>
-                    <composite_visibility_condition/>
-                </label>
-            </menu_items>
-        </dropdown_menu>
-        </v_section>
-        <h_section>
-            <static_label id="status_comment_label" text="Comment" height="80" width="200" style="cvh1"/>
-        </h_section>
-        <v_section>
-            <button>
-                <comment>
-                    <title>
-                        <string_value value="Some comment"/>
-                    </title>
-                </comment>
-                <submit_adjustments_enable_provider>
-                    <data_path project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
-                </submit_adjustments_enable_provider>
-                <composite_visibility_condition/>
-            </button>
-        </v_section>
-    </h_section>
-    <h_section>
-        <static_label id="assign_tasks_label" text="Assign Tasks" height="80" width="200" style="cvh1"/>
-    </h_section>
-    <h_section>
-        <static_label id="send_notification_label" text="Send Notification" height="80" width="200" style="cvh1"/>
-    </h_section>
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <v_section id="change_status_section" align="TOP_LEFT">-->
+<!--        <static_label id="change_status_label" text="Change Status" height="80" width="200" style="cvh1"/>-->
+<!--        <dropdown_menu id="change_status_drop_down">-->
+<!--            <menu_items>-->
+<!--                <label>-->
+<!--                    <string_value value="Pending Verification"/>-->
+<!--                    <composite_visibility_condition/>-->
+<!--                </label>-->
+<!--                <label>-->
+<!--                    <string_value value="Notified"/>-->
+<!--                    <composite_visibility_condition/>-->
+<!--                </label>-->
+<!--                <label>-->
+<!--                    <string_value value="Closed"/>-->
+<!--                    <composite_visibility_condition/>-->
+<!--                </label>-->
+<!--                <label>-->
+<!--                    <string_value value="CIC"/>-->
+<!--                    <composite_visibility_condition/>-->
+<!--                </label>-->
+<!--            </menu_items>-->
+<!--        </dropdown_menu>-->
+<!--        </v_section>-->
+<!--        <h_section>-->
+<!--            <static_label id="status_comment_label" text="Comment" height="80" width="200" style="cvh1"/>-->
+<!--        </h_section>-->
+<!--        <v_section>-->
+<!--            <button>-->
+<!--                <comment>-->
+<!--                    <title>-->
+<!--                        <string_value value="Some comment"/>-->
+<!--                    </title>-->
+<!--                </comment>-->
+<!--                <submit_adjustments_enable_provider>-->
+<!--                    <data_path project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>-->
+<!--                </submit_adjustments_enable_provider>-->
+<!--                <composite_visibility_condition/>-->
+<!--            </button>-->
+<!--        </v_section>-->
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <static_label id="assign_tasks_label" text="Assign Tasks" height="80" width="200" style="cvh1"/>-->
+<!--    </h_section>-->
+<!--    <h_section>-->
+<!--        <static_label id="send_notification_label" text="Send Notification" height="80" width="200" style="cvh1"/>-->
+<!--    </h_section>-->
 </page>
