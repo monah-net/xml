@@ -1,260 +1,260 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="fcrs_customer_info_snippet">
-    <context>
-        <variable key="project" value="FATCA_CIC"/>
-        <variable key="branch" value="2019_v03"/>
-        <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
-    </context>
-    <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
-        <separate_instance_selector id="cic_instance_selector"
-                                    width="60%" use_description_for_name="true">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
-                         type="DataSource"/>
-        </separate_instance_selector>
-    </h_section>
-    <spacer width="50px" height="20px"/>
-    <h_section>
-        <dropdown id="Customer_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
-            <value field="customer_number"/>
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <composite_read_only_condition/>
-        </dropdown>
-    </h_section>
-    <h_section>
-            <static_label id="customer_info_main" text="Customer Info" height="80px" width="120px" style="cvh1"/>
-    </h_section>
-    <h_section>
-        <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>
-    </h_section>
-    <h_section id="dbd_cic_1_4_indicia_details_section" height="130px" width="98%" align="TOP_LEFT">
-        <grid id="Indicia Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
-                         type="DataSource" />
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <filter empty_value_policy="ALL">
-                <filter_value>
-                    <model_value reference="Customer_Details"/>
-                </filter_value>
-                <filter_mapping operator="EQUALS">
-                    <filter_on name="customer_number"/>
-                </filter_mapping>
-            </filter>
-            <selection type="SINGLE">
-                <unique_id field="customer_number"/>
-            </selection>
-            <column id="c0" title="Customer Number" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="customer_number"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c1" title="Indicia Type" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="indicia_type"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c2" title="Indicia Value" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="indicia_value"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c3" title="Indicia Country">
-                <component>
-                    <grid_label_component>
-                        <dynamic_caption>
-                            <field_value field="indicia_country"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="c4" title="Updated Time" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="updated_time"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-        </grid>
-    </h_section>
-    <h_section>
-        <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>
-    </h_section>
-    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
-        <grid id="Task_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_task_details"
-                         type="DataSource" />
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <filter empty_value_policy="ALL">
-                <filter_value>
-                    <model_value reference="Customer_Details"/>
-                </filter_value>
-                <filter_mapping operator="EQUALS">
-                    <filter_on name="customer_number"/>
-                </filter_mapping>
-            </filter>
-            <selection type="SINGLE">
-                <unique_id field="customer_number"/>
-            </selection>
-            <column id="t0" title="TASK NUMBER" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="task_number"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="t1" title="Task name" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="task_name"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="t2" title="Task Stamp" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="time_stamp"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-        </grid>
-    </h_section>
-    <h_section>
-        <static_label id="notification_details_label" text="Notification Details" height="80" width="150" style="cvh1"/>
-    </h_section>
-    <h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
-        <grid id="Notification_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_notification_details"
-                         type="DataSource" />
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <filter empty_value_policy="ALL">
-                <filter_value>
-                    <model_value reference="Customer_Details"/>
-                </filter_value>
-                <filter_mapping operator="EQUALS">
-                    <filter_on name="customer_number"/>
-                </filter_mapping>
-            </filter>
-            <selection type="SINGLE">
-                <unique_id field="customer_number"/>
-            </selection>
-            <column id="n0" title="Notification Number" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="notif_number"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="n1" title="Comment" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="notif_comment"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="n2" title="Time Stamp" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="time_stamp"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-        </grid>
-    </h_section>
-    <h_section>
-        <static_label id="doc_upload_label" text="Doc Upload Summary " height="80" width="200" style="cvh1"/>
-        <grid id="Notification_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
-                         type="DataSource" />
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <filter empty_value_policy="ALL">
-                <filter_value>
-                    <model_value reference="Customer_Details"/>
-                </filter_value>
-                <filter_mapping operator="EQUALS">
-                    <filter_on name="customer_number"/>
-                </filter_mapping>
-            </filter>
-            <selection type="SINGLE">
-                <unique_id field="customer_number"/>
-            </selection>
-            <column id="n0" title="Doc Number" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="doc_no"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="n1" title="Doc Name" alignment="LEFT">
-                <component>
-                    <grid_label_component alignment="LEFT">
-                        <dynamic_caption>
-                            <field_value field="doc_name"/>
-                        </dynamic_caption>
-                    </grid_label_component>
-                </component>
-            </column>
-            <column id="n2" title="Download" alignment="LEFT">
+<context>
+    <variable key="project" value="FATCA_CIC"/>
+    <variable key="branch" value="2019_v03"/>
+    <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
+</context>
+<h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
+    <separate_instance_selector id="cic_instance_selector"
+                                width="60%" use_description_for_name="true">
+        <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
+                     type="DataSource"/>
+    </separate_instance_selector>
+</h_section>
+<spacer width="50px" height="20px"/>
+<h_section>
+    <dropdown id="Customer_Details">
+        <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
+        <value field="customer_number"/>
+        <instance>
+            <instance_selector_ref reference="cic_instance_selector"/>
+        </instance>
+        <composite_read_only_condition/>
+    </dropdown>
+</h_section>
+<h_section>
+    <static_label id="customer_info_main" text="Customer Info" height="80px" width="120px" style="cvh1"/>
+</h_section>
+<h_section>
+    <static_label id="indicia_details_label" text="Indicia Details" height="80px" width="120px" style="cvh1"/>
+</h_section>
+<h_section id="dbd_cic_1_4_indicia_details_section" height="130px" width="98%" align="TOP_LEFT">
+    <grid id="Indicia Details">
+        <data_source project="${project}" branch="${branch}" source="dbd_cic_1_5_indicia_details"
+                     type="DataSource" />
+        <instance>
+            <instance_selector_ref reference="cic_instance_selector"/>
+        </instance>
+        <filter empty_value_policy="ALL">
+            <filter_value>
+                <model_value reference="Customer_Details"/>
+            </filter_value>
+            <filter_mapping operator="EQUALS">
+                <filter_on name="customer_number"/>
+            </filter_mapping>
+        </filter>
+        <selection type="SINGLE">
+            <unique_id field="customer_number"/>
+        </selection>
+        <column id="c0" title="Customer Number" alignment="LEFT">
             <component>
-                <grid_download_component>
-                    <static_caption icon="download.svg"/>
-                    <file_folder>
-                        <field_value field="doc_path"/>
-                    </file_folder>
-                    <file_name>
-                        <field_value field="xmlfileName"/>
-                    </file_name>
-                    <composite_enable_condition>
-                        <file_exists_condition>
-                            <file_name>
-                                <field_value field="xmlfileName" node="root"/>
-                            </file_name>
-                            <file_folder>
-                                <field_value field="filePath" node="root"/>
-                            </file_folder>
-                        </file_exists_condition>
-                    </composite_enable_condition>
-                </grid_download_component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="customer_number"/>
+                    </dynamic_caption>
+                </grid_label_component>
             </component>
-            </column>
-        </grid>
-    </h_section>
+        </column>
+        <column id="c1" title="Indicia Type" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="indicia_type"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="c2" title="Indicia Value" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="indicia_value"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="c3" title="Indicia Country">
+            <component>
+                <grid_label_component>
+                    <dynamic_caption>
+                        <field_value field="indicia_country"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="c4" title="Updated Time" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="updated_time"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+    </grid>
+</h_section>
+<h_section>
+    <static_label id="task_details_label" text="Task Details" height="80" width="120" style="cvh1"/>
+</h_section>
+<h_section id="task_details_section" height="200" width="98%" align="TOP_LEFT">
+    <grid id="Task_Details">
+        <data_source project="${project}" branch="${branch}" source="dbd_task_details"
+                     type="DataSource" />
+        <instance>
+            <instance_selector_ref reference="cic_instance_selector"/>
+        </instance>
+        <filter empty_value_policy="ALL">
+            <filter_value>
+                <model_value reference="Customer_Details"/>
+            </filter_value>
+            <filter_mapping operator="EQUALS">
+                <filter_on name="customer_number"/>
+            </filter_mapping>
+        </filter>
+        <selection type="SINGLE">
+            <unique_id field="customer_number"/>
+        </selection>
+        <column id="t0" title="TASK NUMBER" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="task_number"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="t1" title="Task name" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="task_name"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="t2" title="Task Stamp" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="time_stamp"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+    </grid>
+</h_section>
+<h_section>
+    <static_label id="notification_details_label" text="Notification Details" height="80" width="150" style="cvh1"/>
+</h_section>
+<h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
+    <grid id="Notification_Details">
+        <data_source project="${project}" branch="${branch}" source="dbd_notification_details"
+                     type="DataSource" />
+        <instance>
+            <instance_selector_ref reference="cic_instance_selector"/>
+        </instance>
+        <filter empty_value_policy="ALL">
+            <filter_value>
+                <model_value reference="Customer_Details"/>
+            </filter_value>
+            <filter_mapping operator="EQUALS">
+                <filter_on name="customer_number"/>
+            </filter_mapping>
+        </filter>
+        <selection type="SINGLE">
+            <unique_id field="customer_number"/>
+        </selection>
+        <column id="n0" title="Notification Number" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="notif_number"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="n1" title="Comment" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="notif_comment"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="n2" title="Time Stamp" alignment="LEFT">
+            <component>
+                <grid_label_component alignment="LEFT">
+                    <dynamic_caption>
+                        <field_value field="time_stamp"/>
+                    </dynamic_caption>
+                </grid_label_component>
+            </component>
+        </column>
+    </grid>
+</h_section>
+<!--<h_section>-->
+<!--    <static_label id="doc_upload_label" text="Doc Upload Summary " height="80px" width="200px" style="cvh1"/>-->
+<!--    <grid id="Doc_Details">-->
+<!--        <data_source project="${project}" branch="${branch}" source="dbd_doc_upload_info"-->
+<!--                     type="DataSource" />-->
+<!--        <instance>-->
+<!--            <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--        </instance>-->
+<!--        <filter empty_value_policy="ALL">-->
+<!--            <filter_value>-->
+<!--                <model_value reference="Customer_Details"/>-->
+<!--            </filter_value>-->
+<!--            <filter_mapping operator="EQUALS">-->
+<!--                <filter_on name="customer_number"/>-->
+<!--            </filter_mapping>-->
+<!--        </filter>-->
+<!--        <selection type="SINGLE">-->
+<!--            <unique_id field="customer_number"/>-->
+<!--        </selection>-->
+<!--        <column id="n0" title="Doc Number" alignment="LEFT">-->
+<!--            <component>-->
+<!--                <grid_label_component alignment="LEFT">-->
+<!--                    <dynamic_caption>-->
+<!--                        <field_value field="doc_no"/>-->
+<!--                    </dynamic_caption>-->
+<!--                </grid_label_component>-->
+<!--            </component>-->
+<!--        </column>-->
+<!--        <column id="n1" title="Doc Name" alignment="LEFT">-->
+<!--            <component>-->
+<!--                <grid_label_component alignment="LEFT">-->
+<!--                    <dynamic_caption>-->
+<!--                        <field_value field="doc_name"/>-->
+<!--                    </dynamic_caption>-->
+<!--                </grid_label_component>-->
+<!--            </component>-->
+<!--        </column>-->
+<!--        <column id="n2" title="Download" alignment="LEFT">-->
+<!--            <component>-->
+<!--                <grid_download_component>-->
+<!--                    <static_caption icon="download.svg"/>-->
+<!--                    <file_folder>-->
+<!--                        <field_value field="file_path"/>-->
+<!--                    </file_folder>-->
+<!--                    <file_name>-->
+<!--                        <field_value field="file_name"/>-->
+<!--                    </file_name>-->
+<!--                    <composite_enable_condition>-->
+<!--                        <file_exists_condition>-->
+<!--                            <file_name>-->
+<!--                                <field_value field="file_name"/>-->
+<!--                            </file_name>-->
+<!--                            <file_folder>-->
+<!--                                <field_value field="file_path"/>-->
+<!--                            </file_folder>-->
+<!--                        </file_exists_condition>-->
+<!--                    </composite_enable_condition>-->
+<!--                </grid_download_component>-->
+<!--            </component>-->
+<!--        </column>-->
+<!--    </grid>-->
+<!--</h_section>-->
 </page>
