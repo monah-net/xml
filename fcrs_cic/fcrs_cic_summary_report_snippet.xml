@@ -15,16 +15,16 @@
             <h_section id="dbd_cic_1_1_summary_title_section" height="50px" width="100%">
                 <static_label id="cic_summary_label" text="CIC Summary" style="cvh1"/>
             </h_section>
-            <h_section id="dbd_cic_1_1_summary_grid_section" height="200" width="95%" align="TOP_LEFT">
+            <h_section id="dbd_cic_1_1_summary_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Summary" listened_data="true">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
-                             type="DataSource" />
+                                 type="DataSource" />
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
                     </instance>
-                  <selection type="SINGLE" unselectable="true">
-                    <unique_id field="indicia_type"/>
-                </selection>
+                    <selection type="SINGLE" unselectable="true">
+                        <unique_id field="indicia_type"/>
+                    </selection>
                     <column id="c0" title="Applicability">
                         <component>
                             <grid_label_component>
@@ -95,16 +95,16 @@
             <h_section id="dbd_cic_1_2_aging_title_section" height="50px" width="100%">
                 <static_label id="cic_aging_label" text="CIC Aging" style="cvh1"/>
             </h_section>
-            <h_section id="dbd_cic_1_1_aging_grid_section" height="200" width="95%" align="TOP_LEFT">
+            <h_section id="dbd_cic_1_1_aging_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Aging">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_2_aging"
-                             type="DataSource" />
+                                 type="DataSource" />
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
                     </instance>
-                  <selection type="SINGLE" unselectable="true">
-                    <unique_id field="aging_category"/>
-                </selection>
+                    <selection type="SINGLE" unselectable="true">
+                        <unique_id field="aging_category"/>
+                    </selection>
                     <column id="c0" title="Aging Category">
                         <component>
                             <grid_label_component>
@@ -130,17 +130,17 @@
     <h_section id="dbd_cic_1_3_rm_summary_title_section" height="50px" width="100%">
         <static_label id="cic_rm_summary_label" text="RM Summary" style="cvh1"/>
     </h_section>
-    <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200" width="98%" align="TOP_LEFT">
+    <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="RM Summary">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
-                             type="DataSource" />
+                         type="DataSource" />
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
             </instance>
             <selection type="SINGLE" unselectable="true">
-                    <unique_id field="rm_name"/>
-       
-                </selection>
+                <unique_id field="rm_name"/>
+
+            </selection>
             <column id="c0" title="RM Name">
                 <component>
                     <grid_label_component>
@@ -182,24 +182,25 @@
     <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
-    <h_section id="dbd_cic_1_4_customer_details_section" height="200" width="98%" align="TOP_LEFT">
+    <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
-                             type="DataSource" />
+                         type="DataSource" />
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
             </instance>
-          <filter empty_value_policy="ALL">
-                    <filter_value>
-                        <model_value reference="RM Summary"/>
-                    </filter_value>
-                    <filter_mapping operator="EQUALS">
-                        <filter_on name="rm_name"/>
-                    </filter_mapping>
-                </filter>
-               <selection type="SINGLE" unselectable="true">
-                    <unique_id field="customer_number"/>
-                </selection>
+            <filter empty_value_policy="ALL">
+                <filter_value>
+                    <model_value reference="RM Summary"/>
+                </filter_value>
+                <filter_mapping operator="EQUALS">
+                    <filter_on name="rm_name"/>
+                </filter_mapping>
+            </filter>
+            <selection type="SINGLE" unselectable="true">
+                <unique_id field="customer_number"/>
+                <additional_output property_path="customer_number_output"/>
+            </selection>
             <column id="c0" title="Customer Number">
                 <component>
                     <grid_label_component>
@@ -335,7 +336,7 @@
                     </grid_label_component>
                 </component>
             </column>
-          <column id="c15" title="Phone Number">
+            <column id="c15" title="Phone Number">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
@@ -345,21 +346,21 @@
                 </component>
             </column>
             <column id="c16" title="View Details Button">
-            <component>
-                <grid_button_component>
-                   <static_caption icon="" text="View Details"/>
-                    <action_chain>
-                        <set_url_condition_to_model>
-                            <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
-                        </set_url_condition_to_model>
-                        <open_page open_in_new_tab="true">
-                            <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info_snippet" add_condition="true"/>
-                        </open_page>
-                    </action_chain>
-                    <composite_enable_condition/>
-                </grid_button_component>
-            </component>
-        </column>
+                <component>
+                    <grid_button_component>
+                        <static_caption icon="" text="View Details"/>
+                        <action_chain>
+                            <set_url_condition_to_model>
+                                <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
+                            </set_url_condition_to_model>
+                            <open_page open_in_new_tab="true">
+                                <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info_snippet" add_condition="true"/>
+                            </open_page>
+                        </action_chain>
+                        <composite_enable_condition/>
+                    </grid_button_component>
+                </component>
+            </column>
         </grid>
     </h_section>
 </page>
