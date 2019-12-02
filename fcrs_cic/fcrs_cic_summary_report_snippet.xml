@@ -197,9 +197,8 @@
                     <filter_on name="rm_name"/>
                 </filter_mapping>
             </filter>
-            <selection type="SINGLE" unselectable="true">
+            <selection type="MULTIPLE" unselectable="true">
                 <unique_id field="customer_number"/>
-                <additional_output property_path="customer_number_output"/>
             </selection>
             <column id="c0" title="Customer Number">
                 <component>
@@ -348,7 +347,7 @@
             <column id="c16" title="View Details Button">
                 <component>
                     <grid_button_component>
-                        <static_caption icon="" text="View Details"/>
+                        <static_caption text="View Details"/>
                         <action_chain>
                             <set_url_condition_to_model>
                                 <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
