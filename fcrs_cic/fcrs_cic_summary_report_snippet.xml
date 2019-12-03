@@ -4,7 +4,7 @@
     <v_section id="section_grid_sub_all" width="100%">
         <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="cic_instance_selector"
-                                        width="60%" use_description_for_name="true">
+                                        width="60%" use_description_for_name="true" >
                 <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
                              type="DataSource"/>
             </separate_instance_selector>
