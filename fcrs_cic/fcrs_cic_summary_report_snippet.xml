@@ -441,14 +441,36 @@
                         </button>
                         <button text="Update Status" style="primary-button">
                             <action_chain>
+                                <run_workflow>
+                                    <workflow>
+                                        <project>
+                                            <string_value value="FATCA_CIC"/>
+                                        </project>
+                                        <branch>
+                                            <string_value value="2019_v03"/>
+                                        </branch>
+                                        <name>
+                                            <string_value value="customers"/>
+                                        </name>
+                                    </workflow>
+                                    <instance>
+                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                    </instance>
+                                    <variables>
+                                        <multiselection_var name="customers" reference="customer_number"
+                                                            as_string="true"/>
+                                        <model_var name="state" reference="status_list"/>
+                                        <model_var name="comment" reference="comment"/>
+                                    </variables>
+                                    <positive_result_action>
+                                        <refresh_component component_id="Customer_Details"/>
+                                    </positive_result_action>
+                                </run_workflow>
                                 <data_source_update>
                                     <source_path project="FATCA_CIC" branch="2019_v03" name="dbd_cic_1_4_customer_details"/>
                                     <fields>
                                         <field name="status">
                                             <model_value reference="status_list"/>
-                                        </field>
-                                        <field name="comment">
-                                            <string_value value="comment"/>
                                         </field>
                                     </fields>
                                     <keys>
@@ -463,7 +485,7 @@
                                 <set_model_property property_path="close_popup">
                                     <value>
                                         <function_value function="=uuid()"/>
-                                    </value>
+                                     </value>
                                 </set_model_property>
                                 <refresh_component component_id="Customer_Details"/>
                             </action_chain>
