@@ -503,5 +503,14 @@
             </composite_enable_condition>
             <composite_visibility_condition/>
         </button>
+        <button text="">
+            <composite_enable_condition>
+                <enable_condition>
+                    <model_value reference="Customer_Details"/>
+                    <is_not_empty/>
+                </enable_condition>
+            </composite_enable_condition>
+            <composite_visibility_condition/>
+        </button>
     </h_section>
 </page>
