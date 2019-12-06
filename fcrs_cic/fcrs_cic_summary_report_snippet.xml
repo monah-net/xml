@@ -550,7 +550,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="Task_Name_List">
+                        <dropdown id="task_name_list">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
@@ -585,16 +585,22 @@
                                 <data_source_update>
                                     <source_path project="${project}" branch="${branch}" name="dbd_task_details"/>
                                     <fields>
-                                        <field name="task_name">
-                                            <model_value reference="Task_Name_List"/>
+                                        <field name="time_stamp">
+                                            <function_value function="=currentDateInMillis()"/>
+                                        </field>
+                                        <field name="task_number">
+                                            <function_value function="=uuid()"/>
                                         </field>
                                     </fields>
                                     <keys>
                                         <field name="customer_number">
                                             <model_value reference="Customer_Details"/>
                                         </field>
-                                        <field name="task_id">
-                                            <function_value function="=uuid()"/>
+                                        <field name="rm_name">
+                                            <model_value reference="customer_status_list"/>
+                                        </field>
+                                        <field name="task_name">
+                                            <model_value reference="task_name_list"/>
                                         </field>
                                     </keys>
                                     <instance>
@@ -687,7 +693,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="RMList_Notifications">
+                        <dropdown id="rmlist_notification">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -741,13 +747,25 @@
                                     <field name="notif_comment">
                                         <model_value reference="customer_notification_template"/>
                                     </field>
+                                    <field name="time_stamp">
+                                        <function_value function="=currentDateInMillis()"/>
+                                    </field>
+                                    <field name="notif_number">
+                                        <function_value function="=uuid()"/>
+                                    </field>
+                                    <field name="notif_no">
+                                        <
+                                    </field>
                                 </fields>
                                 <keys>
                                     <field name="customer_number">
                                         <model_value reference="Customer_Details"/>
                                     </field>
-                                    <field name="notif_no">
-                                        <function_value function="=uuid()"/>
+                                    <field name="rm_name">
+                                        <model_value reference="rmlist_notification"/>
+                                    </field>
+                                    <field name="notif_comment">
+                                        <model_value reference="customer_notification_template"/>
                                     </field>
                                 </keys>
                                 <instance>
