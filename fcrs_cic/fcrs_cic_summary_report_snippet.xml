@@ -436,7 +436,7 @@
                                     <source_path project="${project}" branch="${branch}" name="AllHistory"/>
                                     <fields>
                                         <field name="customers">
-                                            <model_value reference="c1"/>
+                                            <model_value reference="CustomerDetTEMP"/>
                                         </field>
                                         <field name="type">
                                             <string_value value="Status Update"/>
