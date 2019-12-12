@@ -9,15 +9,12 @@
                 <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
                              type="DataSource"/>
             </separate_instance_selector>
-        </h_section>
-        </v_section>
-        <v_section width="20%">
-            <drilldown_button id="customerdrill" text="drillDown">
+            <drilldown_button id="Customer_Accounts" text="Customer Accounts" style="primary-button">
                 <object_type>
                     <string_value value="DataModel"/>
                 </object_type>
                 <object_address>
-                <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
+                    <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
                 </object_address>
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -25,18 +22,20 @@
                 <composite_enable_condition/>
                 <composite_visibility_condition/>
             </drilldown_button>
-            <button text="Customer Accounts">
-                <text_popup>
-                    <title>
-                        <string_value value="Test"/>
-                    </title>
-                    <text>
-                        <string_value value="Test"/>
-                    </text>
-                </text_popup>
+            <drilldown_button id="Customer_Records" text="Customer Records" style="primary-button">
+                <object_type>
+                    <string_value value="DataModel"/>
+                </object_type>
+                <object_address>
+                    <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
+                </object_address>
+                <instance>
+                    <instance_selector_ref reference="cic_instance_selector"/>
+                </instance>
                 <composite_enable_condition/>
                 <composite_visibility_condition/>
-            </button>
+            </drilldown_button>
+        </h_section>
         </v_section>
     </v_section>
     <h_section width = "100%">
