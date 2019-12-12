@@ -2,6 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="signoff_report_snippet">
     <v_section id="section_grid_sub_all" width="100%">
+        <v_section width="60%">
         <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="cic_instance_selector"
                                         width="60%" use_description_for_name="true" >
@@ -9,6 +10,34 @@
                              type="DataSource"/>
             </separate_instance_selector>
         </h_section>
+        </v_section>
+        <v_section width="20%">
+            <drilldown_button id="customerdrill" text="drillDown">
+                <object_type>
+                    <string_value value="DataModel"/>
+                </object_type>
+                <object_address>
+                <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
+                </object_address>
+                <instance>
+                    <instance_selector_ref reference="cic_instance_selector"/>
+                </instance>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </drilldown_button>
+            <button text="Customer Accounts">
+                <text_popup>
+                    <title>
+                        <string_value value="Test"/>
+                    </title>
+                    <text>
+                        <string_value value="Test"/>
+                    </text>
+                </text_popup>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+        </v_section>
     </v_section>
     <h_section width = "100%">
         <v_section width = "60%">
@@ -476,7 +505,7 @@
                                 <set_model_property property_path="close_popup">
                                     <value>
                                         <function_value function="=uuid()"/>
-                                     </value>
+                                    </value>
                                 </set_model_property>
                                 <refresh_component component_id="Customer_Details"/>
                             </action_chain>
@@ -534,16 +563,16 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="customer_status_list">
-                        <data_source project="${project}" branch="${branch}" source="DD_rm_list"
-                                     type="DataSource"/>
+                        <dropdown id="rm_list_assign_tasks">
+                            <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                                         type="DataSource"/>
                             <value field="rm_name"/>
                             <sort_by name="rm_id"/>
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
                             <composite_read_only_condition/>
-                    </dropdown>
+                        </dropdown>
                     </h_section>
                     <h_section>
                         <label width="160px">
@@ -583,6 +612,22 @@
                         <button text="Submit" style="primary-button">
                             <action_chain>
                                 <data_source_update>
+                                    <source_path project="${project}" branch="${branch}" name="dbd_cic_1_4_customer_details"/>
+                                    <fields>
+                                        <field name="rm_name">
+                                            <model_value reference="rm_list_assign_tasks"/>
+                                        </field>
+                                    </fields>
+                                    <keys>
+                                        <field name="customer_number">
+                                            <model_value reference="Customer_Details"/>
+                                        </field>
+                                    </keys>
+                                    <instance>
+                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                    </instance>
+                                </data_source_update>
+                                <data_source_update>
                                     <source_path project="${project}" branch="${branch}" name="dbd_task_details"/>
                                     <fields>
                                         <field name="time_stamp">
@@ -597,7 +642,7 @@
                                             <model_value reference="Customer_Details"/>
                                         </field>
                                         <field name="rm_name">
-                                            <model_value reference="customer_status_list"/>
+                                            <model_value reference="rm_list_assign_tasks"/>
                                         </field>
                                         <field name="task_name">
                                             <model_value reference="task_name_list"/>
@@ -742,35 +787,32 @@
                         <button text="Submit" style="primary-button">
                             <action_chain>
                                 <data_source_update>
-                                <source_path project="${project}" branch="${branch}" name="dbd_notification_details"/>
-                                <fields>
-                                    <field name="notif_comment">
-                                        <model_value reference="customer_notification_template"/>
-                                    </field>
-                                    <field name="time_stamp">
-                                        <function_value function="=currentDateInMillis()"/>
-                                    </field>
-                                    <field name="notif_number">
-                                        <function_value function="=uuid()"/>
-                                    </field>
-                                    <field name="notif_no">
-                                        <
-                                    </field>
-                                </fields>
-                                <keys>
-                                    <field name="customer_number">
-                                        <model_value reference="Customer_Details"/>
-                                    </field>
-                                    <field name="rm_name">
-                                        <model_value reference="rmlist_notification"/>
-                                    </field>
-                                    <field name="notif_comment">
-                                        <model_value reference="customer_notification_template"/>
-                                    </field>
-                                </keys>
-                                <instance>
-                                    <instance_selector_ref reference="cic_instance_selector"/>
-                                </instance>
+                                    <source_path project="${project}" branch="${branch}" name="dbd_notification_details"/>
+                                    <fields>
+                                        <field name="notif_comment">
+                                            <model_value reference="customer_notification_template"/>
+                                        </field>
+                                        <field name="time_stamp">
+                                            <function_value function="=currentDateInMillis()"/>
+                                        </field>
+                                        <field name="notif_number">
+                                            <function_value function="=uuid()"/>
+                                        </field>
+                                    </fields>
+                                    <keys>
+                                        <field name="customer_number">
+                                            <model_value reference="Customer_Details"/>
+                                        </field>
+                                        <field name="rm_name">
+                                            <model_value reference="rmlist_notification"/>
+                                        </field>
+                                        <field name="notif_comment">
+                                            <model_value reference="customer_notification_template"/>
+                                        </field>
+                                    </keys>
+                                    <instance>
+                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                    </instance>
                                 </data_source_update>
                                 <data_source_update>
                                     <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
