@@ -352,7 +352,7 @@
                         <static_caption text="View Details"/>
                         <action_chain>
                             <set_url_condition_to_model>
-                                <condition from_ref="Customer_Details" to_ref="DD_TEST"/>
+                                <condition from_ref="Customer_Details" to_ref="customer_info_ref"/>
                             </set_url_condition_to_model>
                             <open_page open_in_new_tab="true">
                                 <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info_snippet" add_condition="true"/>
