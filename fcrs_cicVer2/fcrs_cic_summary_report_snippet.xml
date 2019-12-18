@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
-      id="signoff_report_snippet">
-    <v_section id="section_grid_sub_all" width="100%">
+      id="signoff_report_snippet" style="y-scrollable">
+    <h_section width="100%" height="30px">
         <v_section width="60%">
-            <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
+            <h_section id="section_instance_picker_cic_summary" height="30px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
                                             width="60%" use_description_for_name="true" >
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
@@ -11,9 +11,25 @@
                 </separate_instance_selector>
             </h_section>
         </v_section>
-    </v_section>
-    <h_section width = "100%">
-        <v_section width = "60%">
+        <v_section width="40%">
+            <h_section id="dbd_cic_1_3_rm_summary_grid_header" height="10px" width="100%" align="TOP_LEFT">
+                <static_label id="cic_summary" style="cvh1" text="RM Summary"/>
+            </h_section>
+            <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="30px" width="100%" align="TOP_LEFT">
+                <dropdown id="RM Summary" width="100%">
+                    <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary" type="DataSource"/>
+                    <value field="rm_name"/>
+                    <instance>
+                        <instance_selector_ref reference="cic_instance_selector"/>
+                    </instance>
+                    <composite_read_only_condition/>
+                </dropdown>
+            </h_section>
+        </v_section>
+    </h_section>
+    <spacer width="10px" height="10px"/>
+    <h_section width="100%">
+        <v_section width="60%">
             <h_section id="dbd_cic_1_1_summary_title_section" height="50px" width="100%">
                 <static_label id="cic_summary_label" text="CIC Summary" style="cvh1"/>
             </h_section>
@@ -93,7 +109,7 @@
                 </grid>
             </h_section>
         </v_section>
-        <v_section width = "40%">
+        <v_section width="40%">
             <h_section id="dbd_cic_1_2_aging_title_section" height="50px" width="100%">
                 <static_label id="cic_aging_label" text="CIC Aging" style="cvh1"/>
             </h_section>
@@ -129,23 +145,10 @@
             </h_section>
         </v_section>
     </h_section>
-    <h_section id="dbd_cic_1_3_rm_summary_title_section" height="50px" width="100%">
-        <static_label id="cic_rm_summary_label" text="RM Summary" style="cvh1"/>
-    </h_section>
-    <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200px" width="98%" align="TOP_LEFT">
-        <dropdown id="RM Summary" width="100%">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary" type="DataSource"/>
-            <value field="rm_name"/>
-            <instance>
-                <instance_selector_ref reference="cic_instance_selector"/>
-            </instance>
-            <composite_read_only_condition/>
-        </dropdown>
-    </h_section>
     <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
-    <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
+    <h_section id="dbd_cic_1_4_customer_details_section" height="450px" width="98%" align="TOP_LEFT">
         <grid id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
                          type="DataSource" />
