@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
-      id="fcrs_customer_info_snippet">
+      id="fcrs_cic_customer_info_snippet" style="y-scrollable">
     <context>
         <variable key="project" value="FATCA_CIC"/>
         <variable key="branch" value="2019_v03"/>
         <variable key="filePath" value="/tmp/"/>
     </context>
-    <h_section width="100%">
-        <v_section width="60%">
+    <h_section width="98%" height="40px">
+        <v_section width="60%" height="40px">
             <h_section id="section_instance_picker_cic_summary" height="40px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
                                             width="60%" use_description_for_name="true">
@@ -16,11 +16,11 @@
                 </separate_instance_selector>
             </h_section>
         </v_section>
-        <v_section width="40%">
-            <h_section>
-                <static_label id="cust_no_id" text="Customer No" height="15px" width="100%" style="cvh1"/>
+        <v_section width="40%" height="40px">
+            <h_section width="100%" height="40px">
+                <static_label id="cust_no_id" text="Customer No"style="cvh1"/>
             </h_section>
-            <h_section>
+            <h_section width="100%" height="40px">
                 <dropdown id="Customer_Details" width="100%">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
                     <value field="customer_number"/>
@@ -98,7 +98,7 @@
             </h_section>
         </v_section>
     </h_section>
-    <h_section>
+    <h_section height="30px" width="98%">
         <static_label id="customer_info_main" text="Customer Info" height="30px" width="100%" style="cvh1"/>
     </h_section>
     <h_section height="80px" width="98%" align="TOP_LEFT">
@@ -175,7 +175,7 @@
             </column>
         </grid>
     </h_section>
-    <h_section>
+    <h_section height="30px" width="98%">
         <static_label id="indicia_details_label" text="Indicia Details" height="30px" width="100%" style="cvh1"/>
     </h_section>
     <h_section id="dbd_cic_1_4_indicia_details_section" height="300px" width="98%" align="TOP_LEFT">
@@ -243,9 +243,9 @@
             </column>
         </grid>
     </h_section>
-    <h_section width="100%">
+    <h_section width="100%" height="230px">
         <v_section width="48%">
-            <h_section align="BOTTOM_CENTER">
+            <h_section align="BOTTOM_CENTER" width="98%" height="30px">
                 <static_label id="task_details_label" text="Task Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
             <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
@@ -298,11 +298,11 @@
         </v_section>
         <spacer width="10px" height="10px"/>
         <v_section width="48%">
-            <h_section align="BOTTOM_CENTER">
+            <h_section align="BOTTOM_CENTER" width="98%" height="30px">
                 <static_label id="notification_details_label" text="Notification Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
             <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
-                <grid id="Notification_Details" show_records_loaded="true">
+                <grid id="Notification_Details">
                     <data_source project="${project}" branch="${branch}" source="dbd_notification_details"
                                  type="DataSource" />
                     <instance>
@@ -350,8 +350,8 @@
             </h_section>
         </v_section>
     </h_section>
-    <h_section id="doc_upload_header" width="95%" height="20px" align="TOP_LEFT" style="chv1"/>
-    <h_section id="doc_upload_section" height="180px" width="60%" align="TOP_LEFT">
+    <h_section id="doc_upload_header" width="70%" height="20px" align="TOP_LEFT" style="chv1"/>
+    <h_section id="doc_upload_section" height="130px" width="70%" align="TOP_LEFT">
         <grid id="DocUpload">
             <data_source project="${project}" branch="${branch}" source="dbd_doc_upload_info"
                          type="DataSource" />
@@ -412,7 +412,7 @@
             </column>
         </grid>
     </h_section>
-    <h_section width="100%" align="MIDDLE_RIGHT" style="card">
+    <h_section width="100%" align="MIDDLE_RIGHT" style="card" height="50px">
         <button text="Change Status" style="primary-button">
             <open_popup_window popup_title="Change Status" height="50%" width="50%" closePath="close_popup">
                 <v_section>
