@@ -142,7 +142,7 @@
             <composite_read_only_condition/>
         </dropdown>
     </h_section>
-    <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">
+    <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="97%">
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
     <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
