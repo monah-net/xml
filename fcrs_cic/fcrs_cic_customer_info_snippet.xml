@@ -16,10 +16,10 @@
                 </separate_instance_selector>
             </h_section>
         </v_section>
-        <v_section width="40%" height="40px">
-            <!--            <h_section width="100%" height="20px">-->
-            <!--                <static_label id="cust_no_id" text="Customer No" height="140px" width="100%" style="cvh1"/>-->
-            <!--            </h_section>-->
+        <v_section width="20%" height="40px">
+                        <h_section width="100%" height="20px">
+                            <static_label id="cust_no_id" text="Customer No" height="140px" width="100%" style="cvh1"/>
+                        </h_section>
             <h_section width="100%" height="40px">
                 <dropdown id="Customer_Details" width="100%">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
@@ -29,6 +29,9 @@
                     </instance>
                     <composite_read_only_condition/>
                 </dropdown>
+            </h_section>
+        </v_section>
+        <v_section width="20%" height="40px">
                 <drilldown_button id="Customer_Details" text="Customer Accounts" style="primary-button" icon_alignment="TOP">
                     <object_type>
                         <string_value value="DataModel"/>
@@ -62,6 +65,8 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </drilldown_button>
+        </v_section>
+        <v_section width="20%" height="40px">
                 <drilldown_button id="Customer_Records" text="Customer Records" style="primary-button">
                     <object_type>
                         <string_value value="DataModel"/>
@@ -95,7 +100,6 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </drilldown_button>
-            </h_section>
         </v_section>
     </h_section>
     <spacer height="10px" width="100%"/>
