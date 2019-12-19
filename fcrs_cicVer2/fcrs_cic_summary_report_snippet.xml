@@ -2,18 +2,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="signoff_report_snippet" style="y-scrollable">
     <h_section width="100%" height="30px">
-        <v_section width="60%">
-            <h_section id="section_instance_picker_cic_summary" height="30px" width="100%" align="TOP_LEFT">
+            <h_section id="section_instance_picker_cic_summary" height="30px" width="60%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
                                             width="60%" use_description_for_name="true" >
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
                                  type="DataSource"/>
                 </separate_instance_selector>
             </h_section>
-        </v_section>
-        <v_section width="40%">
-            <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="30px" width="100%" align="TOP_LEFT">
-                <dropdown id="RM Summary" width="100%" label="RM Choose">
+            <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="30px" width="40%" align="TOP_LEFT">
+                <dropdown id="RM Summary" width="100%" label="RM Choose" label_position="TOP" all_supported="false">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary" type="DataSource"/>
                     <value field="rm_name"/>
                     <instance>
@@ -22,14 +19,11 @@
                     <composite_read_only_condition/>
                 </dropdown>
             </h_section>
-        </v_section>
     </h_section>
     <spacer width="10px" height="10px"/>
     <h_section width="100%">
         <v_section width="60%">
-            <h_section id="dbd_cic_1_1_summary_title_section" height="50px" width="100%">
                 <static_label id="cic_summary_label" text="CIC Summary" style="cvh1"/>
-            </h_section>
             <h_section id="dbd_cic_1_1_summary_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Summary" listened_data="true">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
@@ -497,7 +491,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rm_list_assign_tasks">
+                        <dropdown id="rm_list_assign_tasks" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -513,7 +507,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="task_name_list">
+                        <dropdown id="task_name_list" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
@@ -672,7 +666,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rmlist_notification">
+                        <dropdown id="rmlist_notification" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -688,7 +682,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="customer_notification_template">
+                        <dropdown id="customer_notification_template" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>

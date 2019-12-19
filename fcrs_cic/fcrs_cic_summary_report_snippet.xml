@@ -536,7 +536,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rm_list_assign_tasks">
+                        <dropdown id="rm_list_assign_tasks" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -552,7 +552,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="task_name_list">
+                        <dropdown id="task_name_list" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
@@ -711,7 +711,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rmlist_notification">
+                        <dropdown id="rmlist_notification" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -727,7 +727,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="customer_notification_template">
+                        <dropdown id="customer_notification_template" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
