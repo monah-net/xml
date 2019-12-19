@@ -12,11 +12,8 @@
             </h_section>
         </v_section>
         <v_section width="40%">
-            <h_section id="dbd_cic_1_3_rm_summary_grid_header" height="10px" width="100%" align="TOP_LEFT">
-                <static_label id="cic_summary" style="cvh1" text="RM Summary"/>
-            </h_section>
             <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="30px" width="100%" align="TOP_LEFT">
-                <dropdown id="RM Summary" width="100%">
+                <dropdown id="RM Summary" width="100%" label="RM Choose">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary" type="DataSource"/>
                     <value field="rm_name"/>
                     <instance>
