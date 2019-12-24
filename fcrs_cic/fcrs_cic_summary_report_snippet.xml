@@ -351,15 +351,21 @@
                     <grid_button_component>
                         <static_caption text="View Details"/>
                         <action_chain>
-                            <set_url_condition_to_model>
-                                <condition from_ref="Customer_Details" to_ref="customer_info_ref"/>
-                            </set_url_condition_to_model>
                             <open_page open_in_new_tab="true">
                                 <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info_snippet" add_condition="true"/>
                             </open_page>
                         </action_chain>
                         <composite_enable_condition/>
                     </grid_button_component>
+                </component>
+            </column>
+            <column id="c17" title="RM Name" display="true">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rm_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
                 </component>
             </column>
         </grid>
@@ -546,7 +552,7 @@
                             </instance>
                             <filter>
                                 <filter_value>
-                                    <model_value reference="Customer_Details"/>
+                                    <model_value reference="RM Summary"/>
                                 </filter_value>
                                 <filter_mapping>
                                     <filter_on name="rm_name"/>
@@ -727,6 +733,14 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
+                            <filter>
+                                <filter_value>
+                                    <model_value reference=""
+                                </filter_value>
+                                <filter_mapping>
+                                    <filter_on name=""/>
+                                </filter_mapping>
+                            </filter>
                             <composite_read_only_condition/>
                         </dropdown>
                     </h_section>
