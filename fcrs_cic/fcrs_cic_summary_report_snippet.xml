@@ -93,7 +93,7 @@
                 </grid>
             </h_section>
         </v_section>
-        <v_section width = "40%">
+        <v_section width="40%">
             <h_section id="dbd_cic_1_2_aging_title_section" height="50px" width="100%">
                 <static_label id="cic_aging_label" text="CIC Aging" style="cvh1"/>
             </h_section>
@@ -542,7 +542,7 @@
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rm_list_assign_tasks" all_supported="false" dynamic_update="true">
+                        <dropdown id="rm_list_assign_tasks" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -733,14 +733,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <filter>
-                                <filter_value>
-                                    <model_value reference=""
-                                </filter_value>
-                                <filter_mapping>
-                                    <filter_on name=""/>
-                                </filter_mapping>
-                            </filter>
+
                             <composite_read_only_condition/>
                         </dropdown>
                     </h_section>
@@ -749,7 +742,7 @@
                             <string_value value="Task Name"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="customer_notification_template" all_supported="false" dynamic_update="true">
+                        <dropdown id="customer_notification_template" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
