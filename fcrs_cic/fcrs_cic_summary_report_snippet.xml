@@ -443,7 +443,7 @@
                             <string_value value="Change Status To"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="change_status_dropdown_id" all_supported="false">
+                        <dropdown id="status_list" all_supported="false">
                             <data_source project="${project}" branch="${branch}" source="DD_status_list" type="DataSource"/>
                             <value field="status"/>
                             <sort_by name="status_id"/>
