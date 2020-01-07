@@ -34,9 +34,7 @@
                     <set_url_condition_to_model>
                         <condition from_ref="" to_ref=""/>
                     </set_url_condition_to_model>
-                    <composite_visibility_condition>
-
-                    </composite_visibility_condition>
+                    <composite_visibility_condition/>
                 </button>
                 <grid id="Exception_Source" listened_data="true" width="90%">
                     <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report"
