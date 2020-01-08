@@ -500,7 +500,7 @@
                                             <string_value value="${branch}"/>
                                         </branch>
                                         <name>
-                                            <string_value value="customers"/>
+                                            <string_value value="AssignTaskButton"/>
                                         </name>
                                     </workflow>
                                     <instance>
@@ -510,11 +510,37 @@
                                         <multiselection_var name="customers" reference="Customer_Details" as_string="true"/>
                                         <model_var name="task_name" reference="task_name_list"/>
                                         <model_var name="rm_name" reference="rm_list_assign_tasks"/>
+                                        <model_var name="status_val" reference="status_list"/>
                                     </variables>
                                     <positive_result_action>
                                         <refresh_component component_id="Customer_Details"/>
                                     </positive_result_action>
                                 </run_workflow>
+                                <data_source_update>
+                                    <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
+                                    <fields>
+                                        <field name="action_name">
+                                            <string_value value="Sending notification"/>
+                                        </field>
+                                        <field name="comment_val">
+                                            <model_value reference="comment_task"/>
+                                        </field>
+                                        <field name="user_name">
+                                            <function_value function="=userName()"/>
+                                        </field>
+                                        <field name="user_ID">
+                                            <function_value function="=userId()"/>
+                                        </field>
+                                    </fields>
+                                    <keys>
+                                        <field name="customer_ID">
+                                            <model_value reference="Customer_Details"/>
+                                        </field>
+                                        <field name="timeStampValue">
+                                            <function_value function="=currentDateInMillis()"/>
+                                        </field>
+                                    </keys>
+                                </data_source_update>
                                 <set_model_property property_path="close_popup">
                                     <value>
                                         <function_value function="=uuid()"/>
@@ -625,6 +651,30 @@
                         </button>
                         <button text="Submit" style="primary-button">
                             <action_chain>
+                                <run_workflow>
+                                    <workflow>
+                                        <project>
+                                            <string_value value="${project}"/>
+                                        </project>
+                                        <branch>
+                                            <string_value value="${branch}"/>
+                                        </branch>
+                                        <name>
+                                            <string_value value="AssignTaskButton"/>
+                                        </name>
+                                    </workflow>
+                                    <instance>
+                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                    </instance>
+                                    <variables>
+                                        <multiselection_var name="customers" reference="Customer_Details" as_string="true"/>
+                                        <model_var name="rm_name" reference="rmlist_notification"/>
+                                        <model_var name="notif_comment" reference="comment_notif"/>
+                                    </variables>
+                                    <positive_result_action>
+                                        <refresh_component component_id="Customer_Details"/>
+                                    </positive_result_action>
+                                </run_workflow>
                                 <data_source_update>
                                     <source_path project="${project}" branch="${branch}" name="dbd_notification_details"/>
                                     <fields>
