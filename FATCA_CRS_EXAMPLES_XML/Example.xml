@@ -4,7 +4,7 @@
     <h_section id="header" width="100%" height="45px" style="header-section" align="MIDDLE_CENTER">
         <h_section id="axiom_logo" width="50%" height="100%" align="MIDDLE_LEFT">
             <static_label id="logo_pic" image="logo_axiomsl.svg" style="original-size"/>
-        </h_section>
+        </h_section>зцв
 
         <h_section id="user_info" align="MIDDLE_RIGHT" width="50%" height="100%">
             <notification_count_button id="notifications" tooltip="Notifications">

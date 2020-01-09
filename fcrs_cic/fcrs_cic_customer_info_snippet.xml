@@ -239,7 +239,7 @@
     </h_section>
     <h_section width="100%" height="230px">
         <v_section width="50%">
-            <h_section align="BOTTOM_CENTER" width="98%" height="30px">
+            <h_section align="BOTTOM_CENTER" width="100%" height="30px">
                 <static_label id="task_details_label" text="Task Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
             <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
@@ -291,7 +291,7 @@
             </h_section>
         </v_section>
         <v_section width="50%">
-            <h_section align="BOTTOM_CENTER" width="98%" height="30px">
+            <h_section align="BOTTOM_CENTER" width="100%" height="30px">
                 <static_label id="notification_details_label" text="Notification Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
             <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
@@ -343,7 +343,7 @@
             </h_section>
         </v_section>
     </h_section>
-    <h_section id="doc_upload_header" width="95%" height="20px" align="TOP_LEFT" style="chv1"/>
+    <h_section id="doc_upload_header" width="100%" height="20px" align="TOP_LEFT" style="chv1"/>
     <h_section id="doc_upload_section" height="130px" width="100%" align="TOP_LEFT">
         <grid id="DocUpload">
             <data_source project="${project}" branch="${branch}" source="dbd_doc_upload_info"

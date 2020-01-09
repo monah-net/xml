@@ -375,13 +375,13 @@
             <states_source project="${project}" branch="${branch}" name="CIC_BPMState"/>
             <config_data_source project="${project}" branch="${branch}" name="CIC_BPMState"/>
             <item_id>
-                <model_value reference="Assign_Tasks"/>
+                <model_value reference="AssignTasksButton"/>
             </item_id>
             <workflow_id>
                 <model_value reference=""/>
             </workflow_id>
         </bpm>
-        <button text="Assign Tasks" style="primary-button">
+        <button id="AssignTasksButton" text="Assign Tasks" style="primary-button">
             <open_popup_window popup_title="Assign Tasks" height="50%" width="50%" closePath="close_popup">
                 <v_section>
                     <h_section>
@@ -555,6 +555,7 @@
             </composite_enable_condition>
             <composite_visibility_condition/>
         </button>
+
         <button text="Send Notifications" style="primary-button">
             <open_popup_window popup_title="Send Notifications" height="50%" width="50%" closePath="close_popup">
                 <v_section>
