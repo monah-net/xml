@@ -536,7 +536,7 @@
                                         <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
                                         <fields>
                                             <field name="action_name">
-                                                <string_value value="Sending notification"/>
+                                                <string_value value="Assign Tasks"/>
                                             </field>
                                             <field name="comment_val">
                                                 <model_value reference="comment_task"/>
