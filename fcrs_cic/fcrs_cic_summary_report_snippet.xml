@@ -579,7 +579,6 @@
             </composite_enable_condition>
             <composite_visibility_condition/>
         </button>
-
         <button text="Send Notifications" style="primary-button">
             <open_popup_window popup_title="Send Notifications" height="50%" width="50%" closePath="close_popup">
                 <v_section>
