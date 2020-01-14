@@ -403,6 +403,19 @@
                     </grid_download_component>
                 </component>
             </column>
+            <column id="d3" title="Upload">
+                <component>
+                    <grid_dm_upload_component file_folder="${filePath}">
+                        <static_caption icon="upload.svg"/>
+                        <unique_id>
+                            <field_value field="customer_number"/>
+                        </unique_id>
+                        <source_address project="FATCA_CIC" branch="2019_v03"
+                                        name="sys_document_management_history"/>
+                        <composite_enable_condition/>
+                    </grid_dm_upload_component>
+                </component>
+            </column>
         </grid>
     </h_section>
     <h_section width="100%" align="MIDDLE_RIGHT" style="card" height="50px">
