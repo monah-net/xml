@@ -12,7 +12,7 @@
             </h_section>
         </v_section>
     </v_section>
-    <h_section width = "100%">
+    <h_section width="100%">
         <v_section width = "60%">
             <h_section id="dbd_cic_1_1_summary_title_section" height="50px" width="100%">
                 <static_label id="cic_summary_label" text="CIC Summary" style="cvh1"/>

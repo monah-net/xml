@@ -381,27 +381,19 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="d2" title="Download" alignment="LEFT">
+            <column id="d2" title="Download">
                 <component>
-                    <grid_download_component>
+                    <grid_button_component>
                         <static_caption icon="download.svg"/>
-                        <file_folder>
-                            <field_value field="file_path"/>
-                        </file_folder>
-                        <file_name>
-                            <field_value field="file_name"/>
-                        </file_name>
-                        <composite_enable_condition>
-                            <file_exists_condition>
-                                <file_name>
-                                    <field_value field="file_name"/>
-                                </file_name>
-                                <file_folder>
-                                    <field_value field="file_path"/>
-                                </file_folder>
-                            </file_exists_condition>
-                        </composite_enable_condition>
-                    </grid_download_component>
+                        <dm_download file_folder="${filePath}">
+                            <unique_id>
+                                <field_value field="customer_number"/>
+                            </unique_id>
+                            <source_address project="FATCA_CIC" branch="2019_v03"
+                                            name="sys_document_management_history"/>
+                        </dm_download>
+                        <composite_enable_condition/>
+                    </grid_button_component>
                 </component>
             </column>
             <column id="d3" title="Upload">
