@@ -242,7 +242,7 @@
             <h_section align="BOTTOM_CENTER" width="100%" height="30px">
                 <static_label id="task_details_label" text="Task Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
-            <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
+            <h_section id="task_details_section" height="200px" width="100%" align="TOP_LEFT">
                 <grid id="Task_Details">
                     <data_source project="${project}" branch="${branch}" source="dbd_task_details"
                                  type="DataSource" />
@@ -290,11 +290,12 @@
                 </grid>
             </h_section>
         </v_section>
+        <spacer width="1%"/>
         <v_section width="50%">
             <h_section align="BOTTOM_CENTER" width="100%" height="30px">
                 <static_label id="notification_details_label" text="Notification Details" height="30px" width="100%" style="cvh1"/>
             </h_section>
-            <h_section id="task_details_section" height="200px" width="98%" align="TOP_LEFT">
+            <h_section id="task_details_section" height="200px" width="100%" align="TOP_LEFT">
                 <grid id="Notification_Details">
                     <data_source project="${project}" branch="${branch}" source="dbd_notification_details"
                                  type="DataSource" />
