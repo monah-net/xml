@@ -367,6 +367,9 @@
                     <grid_label_component>
                         <dynamic_caption>
                             <field_value field="rm_name"/>
+                            <captions>
+                                <caption key="rm_name" text="Some text"/>
+                            </captions>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
