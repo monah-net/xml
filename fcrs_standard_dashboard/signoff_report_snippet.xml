@@ -91,7 +91,7 @@
                 <column id="Signoff_Details_9" title="Download" display="true" sort="asc">
                     <component>
                         <grid_download_component>
-                            <static_caption icon="download_icon.png" text="TAGTEST"/>
+                            <static_caption icon="download_icon.png" text="Download"/>
                             <file_folder>
                                 <string_value value="${filePath}"/>
                             </file_folder>
