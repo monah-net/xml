@@ -186,8 +186,8 @@
     </h_section>
     <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="Customer_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
-                         type="DataSource" />
+            <data_source project="${project}" branch="${branch}" source="customer_details_info"
+                         type="DataModel" />
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
             </instance>
@@ -196,20 +196,20 @@
                     <model_value reference="RM Summary"/>
                 </filter_value>
                 <filter_mapping operator="EQUALS">
-                    <filter_on name="rm_name"/>
+                    <filter_on name="rm_name" node="root"/>
                 </filter_mapping>
             </filter>
             <selection type="MULTIPLE" unselectable="true">
-                <unique_id field="customer_number"/>
+                <unique_id field="customer_number" node="root"/>
                 <additional_output property_path="rmNamePath">
-                    <value field="rm_name"/>
+                    <value field="rm_name" node="root"/>
                 </additional_output>
             </selection>
             <column id="c0" title="Customer Number">
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="customer_number"/>
+                            <field_value field="customer_number" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -218,7 +218,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="status"/>
+                            <field_value field="status" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -227,7 +227,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="cust_type"/>
+                            <field_value field="cust_type" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -236,7 +236,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="first_name"/>
+                            <field_value field="first_name" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -245,7 +245,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="middle_name"/>
+                            <field_value field="middle_name" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -254,7 +254,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="last_name"/>
+                            <field_value field="last_name" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -263,7 +263,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="business_name"/>
+                            <field_value field="business_name" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -272,7 +272,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="address_free"/>
+                            <field_value field="address_free" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -281,7 +281,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="address_line_1"/>
+                            <field_value field="address_line_1" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -290,7 +290,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="address_line_2"/>
+                            <field_value field="address_line_2" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -299,7 +299,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="address_line_3"/>
+                            <field_value field="address_line_3" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -308,7 +308,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="customer_number"/>
+                            <field_value field="customer_number" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -317,7 +317,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="post_code"/>
+                            <field_value field="post_code" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -326,7 +326,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="country"/>
+                            <field_value field="country" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -335,7 +335,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="phone_country_code"/>
+                            <field_value field="phone_country_code" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
@@ -344,7 +344,7 @@
                 <component>
                     <grid_label_component>
                         <dynamic_caption>
-                            <field_value field="phone_number"/>
+                            <field_value field="phone_number" node="root"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
