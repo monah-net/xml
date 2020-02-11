@@ -3,7 +3,7 @@
     <context>
      <variable key="project" value="FATCA_CIC"/>
      <variable key="branch" value="2019_v03"/>
-     <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
+     <variable key="filePath" value="/tmp/"/>
    </context>
     <include name="header_snippet"/>
    <v_section id="main_section" width="100%" style="main-section main-frame" align="TOP_CENTER">

@@ -146,7 +146,7 @@
                 </column>
                 <column id="dm_upload" title="DM Upload">
                     <component>
-                        <grid_dm_upload_component file_folder="/opt/axiom/server/tomcat/apache-tomcat/temp/">
+                        <grid_dm_upload_component file_folder="/opt/axiom/apache-tomcat/temp/">
                             <static_caption icon="upload.svg"/>
                             <unique_id>
                                 <field_value field="customer_number"/>
@@ -161,7 +161,7 @@
                     <component>
                         <grid_button_component>
                             <static_caption icon="download.svg"/>
-                            <dm_download file_folder="/opt/axiom/server/tomcat/apache-tomcat/temp/">
+                            <dm_download file_folder="/opt/axiom/apache-tomcat/temp/">
                                 <unique_id>
                                     <field_value field="customer_number"/>
                                 </unique_id>
