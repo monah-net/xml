@@ -455,7 +455,7 @@
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
                                 </instance>
-                                <composite_read_only_condition/>
+                                <composite_enable_condition/>
                             </dropdown>
                         </h_section>
                         <h_section>
@@ -471,7 +471,7 @@
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
                                 </instance>
-                                <composite_read_only_condition/>
+                                <composite_enable_condition/>
                             </dropdown>
                         </h_section>
                         <h_section>
@@ -486,7 +486,7 @@
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
                                 </instance>
-                                <composite_read_only_condition/>
+                                <composite_enable_condition/>
                             </dropdown>
                         </h_section>
                         <h_section>
@@ -495,7 +495,7 @@
                                 <composite_visibility_condition/>
                             </label>
                             <text_area id="comment_task" width="200px">
-                                <composite_read_only_condition/>
+                                <composite_enable_condition/>
                             </text_area>
                         </h_section>
                         <h_section width="100%">
@@ -526,17 +526,25 @@
                                             <instance_selector_ref reference="cic_instance_selector"/>
                                         </instance>
                                         <variables>
-                                            <multiselection_var name="customers" reference="Customer_Details" as_string="true"/>
-                                            <model_var name="task_name" reference="task_name_list"/>
-                                            <model_var name="rm_name" reference="rm_list_assign_tasks"/>
-                                            <model_var name="status_val" reference="status_list"/>
+                                            <variable name="customers">
+                                                <multiselection_value reference="Customer_Details" as_string="true"/>
+                                            </variable>
+                                            <variable name="task_name">
+                                                <model_value reference="task_name_list"/>
+                                            </variable>
+                                            <variable name="rm_name">
+                                                <model_value reference="rm_list_assign_tasks"/>
+                                            </variable>
+                                            <variable name="status_val">
+                                                <model_value reference="status_list"/>
+                                            </variable>
                                         </variables>
                                         <positive_result_action>
                                             <refresh_component component_id="Customer_Details"/>
                                         </positive_result_action>
                                     </run_workflow>
                                     <data_source_update>
-                                        <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
+                                        <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                         <fields>
                                             <field name="action_name">
                                                 <string_value value="Assign Tasks"/>
@@ -631,7 +639,7 @@
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
 
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -647,7 +655,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -656,7 +664,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <text_area id="comment_notif" width="200px">
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </text_area>
                     </h_section>
                     <h_section width="100%">
@@ -687,16 +695,22 @@
                                         <instance_selector_ref reference="cic_instance_selector"/>
                                     </instance>
                                     <variables>
-                                        <multiselection_var name="customers" reference="Customer_Details" as_string="true"/>
-                                        <model_var name="rm_name" reference="rmlist_notification"/>
-                                        <model_var name="notif_comment" reference="comment_notif"/>
+                                        <variable name="customers">
+                                            <multiselection_value reference="Customer_Details" as_string="true"/>
+                                        </variable>
+                                        <variable name="rm_name">
+                                            <model_value reference="rmlist_notification"/>
+                                        </variable>
+                                        <variable name="notif_comment">
+                                            <model_value reference="comment_notif"/>
+                                        </variable>
                                     </variables>
                                     <positive_result_action>
                                         <refresh_component component_id="Customer_Details"/>
                                     </positive_result_action>
                                 </run_workflow>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="dbd_notification_details"/>
+                                    <source_address project="${project}" branch="${branch}" name="dbd_notification_details"/>
                                     <fields>
                                         <field name="notif_comment">
                                             <model_value reference="customer_notification_template"/>
@@ -724,7 +738,7 @@
                                     </instance>
                                 </data_source_update>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
+                                    <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                     <fields>
                                         <field name="action_name">
                                             <string_value value="Sending notification"/>

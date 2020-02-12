@@ -21,7 +21,7 @@
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
                 </instance>
-                <composite_read_only_condition/>
+                <composite_enable_condition/>
             </dropdown>
             <drilldown_button id="Customer_Details" text="Customer Accounts" style="primary-button" icon_alignment="TOP">
                 <object_type>
@@ -460,7 +460,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -476,7 +476,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -491,7 +491,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -500,7 +500,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <text_area id="comment_task" width="200px">
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </text_area>
                     </h_section>
                     <h_section width="100%">
@@ -516,7 +516,7 @@
                         <button text="Submit" style="primary-button">
                             <action_chain>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="dbd_cic_1_4_customer_details"/>
+                                    <source_address project="${project}" branch="${branch}" name="dbd_cic_1_4_customer_details"/>
                                     <fields>
                                         <field name="rm_name">
                                             <model_value reference="rm_list_assign_tasks"/>
@@ -532,7 +532,7 @@
                                     </instance>
                                 </data_source_update>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="dbd_task_details"/>
+                                    <source_address project="${project}" branch="${branch}" name="dbd_task_details"/>
                                     <fields>
                                         <field name="time_stamp">
                                             <function_value function="=currentDateInMillis()"/>
@@ -557,7 +557,7 @@
                                     </instance>
                                 </data_source_update>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
+                                    <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                     <fields>
                                         <field name="action_name">
                                             <string_value value="Assign Task"/>
@@ -650,7 +650,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -666,7 +666,7 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </dropdown>
                     </h_section>
                     <h_section>
@@ -675,7 +675,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <text_area id="comment_notif" width="200px">
-                            <composite_read_only_condition/>
+                            <composite_enable_condition/>
                         </text_area>
                     </h_section>
                     <h_section width="100%">
@@ -691,7 +691,7 @@
                         <button text="Submit" style="primary-button">
                             <action_chain>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="dbd_notification_details"/>
+                                    <source_address project="${project}" branch="${branch}" name="dbd_notification_details"/>
                                     <fields>
                                         <field name="notif_comment">
                                             <model_value reference="customer_notification_template"/>
@@ -719,7 +719,7 @@
                                     </instance>
                                 </data_source_update>
                                 <data_source_update>
-                                    <source_path project="${project}" branch="${branch}" name="cic_history_source"/>
+                                    <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                     <fields>
                                         <field name="action_name">
                                             <string_value value="Sending notification"/>
