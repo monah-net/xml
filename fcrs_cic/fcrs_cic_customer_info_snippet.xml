@@ -321,7 +321,7 @@
                                 </dynamic_caption>
                             </grid_label_component>
                         </component>
-                    </column>
+                     </column>
                     <column id="n1" title="Comment" alignment="LEFT">
                         <component>
                             <grid_label_component alignment="LEFT">
