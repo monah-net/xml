@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="fcrs_cic_customer_info" style="page-with-header-and-footer">
     <context>
-     <variable key="project" value="FATCA_CIC"/>
-     <variable key="branch" value="2019_v03"/>
-     <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
-   </context>
+        <variable key="project" value="FATCA_CIC"/>
+        <variable key="branch" value="2019_v03"/>
+        <variable key="filePath" value="/tmp/"/>
+    </context>
     <include name="header_snippet"/>
    <v_section id="customer_info_main" width="100%" style="main-section main-frame" align="TOP_CENTER">
-          <include name="fcrs_customer_info_snippet"/>
+          <include name="fcrs_cic_customer_info_snippet"/>
     </v_section>
     <include name="footer_snippet"/>    
 </page>

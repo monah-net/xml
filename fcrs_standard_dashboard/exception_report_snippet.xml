@@ -30,24 +30,15 @@
         </h_section>
         <h_section id="section_top_grids_tables_ex" height="350px" width="100%" align="TOP_LEFT">
             <h_section width="100%" height="330px">
-                <button>
-                    <set_url_condition_to_model>
-                        <condition from_ref="" to_ref=""/>
-                    </set_url_condition_to_model>
-                    </composite_visibility_condition>
-                </button>
                 <grid id="Exception_Source" listened_data="true" width="90%">
                     <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report"
                                  type="DataModel"/>
                     <instance>
                         <instance_selector_ref reference="exception_instance_selectr"/>
                     </instance>
-                   <selection type="SINGLE">
-                       <unique_id field="error_level" node="root"/>
-                   </selection>
                     <column id="ex_source_grid_1" title="Exception Type" display="true" sort="asc">
                        <component>
-                           <grid_label_component alignment="LEFT">
+                           <grid_label_component>
                                <dynamic_caption>
                                    <field_value field="error_level" node="root"/>
                                </dynamic_caption>
@@ -62,50 +53,6 @@
                     <instance>
                         <instance_selector_ref reference="exception_instance_selectr"/>
                     </instance>
-                    <filter empty_value_policy="ALL">
-                        <filter_value>
-                            <model_value reference="Exception_Source"/>
-                        </filter_value>
-                        <filter_mapping operator="EQUALS">
-                            <filter_on name="error_level" node="root"/>
-                        </filter_mapping>
-                    </filter>
-                    <selection type="SINGLE">
-                        <unique_id field="enumerator" node="root"/>
-                        <additional_output property_path="Exception_Summary_ptf_name">
-                            <value field="portfolio_name" node="root"/>
-                        </additional_output>
-                        <additional_output property_path="Exception_Summary_error_level">
-                            <value field="error_level" node="root"/>
-                        </additional_output>
-                    </selection>
-                    <column id="ex_summary_grid_1" title="Exception Type" display="true" sort="asc">
-                            <component>
-                                <grid_label_component>
-                                    <dynamic_caption>
-                                        <field_value node="root" field="error_level"/>
-                                    </dynamic_caption>
-                                </grid_label_component>
-                            </component>
-                    </column>
-                    <column id="ex_summary_grid_2" title="Validation Portfolio Name" display="true" sort="asc">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value node="root" field="portfolio_name"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
-                    <column id="ex_summary_grid_3" title="Exception Count" display="true" sort="asc">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption format="###,###">
-                                    <field_value node="root" field="count_of_exceptions"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
                 </grid>
             </h_section>
         </h_section>
@@ -131,7 +78,7 @@
                 <instance>
                     <instance_selector_ref reference="exception_instance_selectr"/>
                 </instance>
-                <filter empty_value_policy="ALL">
+                <filter>
                     <filter_value>
                         <model_value reference="Exception_Summary_error_level"/>
                     </filter_value>
@@ -139,7 +86,7 @@
                         <filter_on name="error_level" node="root"/>
                     </filter_mapping>
                 </filter>
-                <filter empty_value_policy="ALL">
+                <filter>
                     <filter_value>
                         <model_value reference="Exception_Summary_ptf_name"/>
                     </filter_value>
