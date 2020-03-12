@@ -377,30 +377,6 @@
         </grid>
     </h_section>
     <h_section width="100%" align="MIDDLE_RIGHT" style="card">
-        <bpm title="WF1">
-            <states_source project="${project}" branch="${branch}" name="CIC_BPM_State"/>
-            <config_data_source project="${project}" branch="${branch}" name="CIC_BPM_Config"/>
-            <item_id>
-                <model_value reference="AssignTasksButton"/>
-            </item_id>
-            <workflow_id>
-                <string_value value="AssignWF"/>
-            </workflow_id>
-            <tasks>
-                <task task_id="AssignStart" task_status="Officer_CIC">
-                    <bpm_action task_id="AssignTask" action="Assign">
-                        <states_source project="${project}" branch="${branch}" name="CIC_BPM_State"/>
-                        <config_data_source project="${project}" branch="${branch}" source="CIC_BPM_Config" type="DataSource"/>
-                        <item_id>
-                            <model_value reference="AssignTasksButton"/>
-                        </item_id>
-                        <workflow_id>
-                            <string_value value="AssignWF"/>
-                        </workflow_id>
-                    </bpm_action>
-                </task>
-            </tasks>
-        </bpm>
         <button id="AssignTasksButton" text="Assign Tasks" style="primary-button">
             <action_chain>
                 <set_model_property property_path="rm_list_assign_tasks">
@@ -448,7 +424,7 @@
                                 <composite_visibility_condition/>
                             </label>
                             <dropdown id="rm_list_assign_tasks" all_supported="false">
-                                <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                                <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                              type="DataSource"/>
                                 <value field="rm_name"/>
                                 <sort_by name="rm_id"/>
@@ -464,7 +440,7 @@
                                 <composite_visibility_condition/>
                             </label>
                             <dropdown id="task_name_list" all_supported="false" dynamic_update="true">
-                                <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
+                                <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                              type="DataSource"/>
                                 <value field="task_name"/>
                                 <sort_by name="task_id"/>
@@ -480,7 +456,7 @@
                                 <composite_visibility_condition/>
                             </label>
                             <dropdown id="status_list" all_supported="false">
-                                <data_source project="${project}" branch="${branch}" source="DD_status_list" type="DataSource"/>
+                                <data_source project="${project}" branch="${static_branch}" source="DD_status_list" type="DataSource"/>
                                 <value field="status"/>
                                 <sort_by name="status_id"/>
                                 <instance>
