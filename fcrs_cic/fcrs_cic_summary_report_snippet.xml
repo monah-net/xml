@@ -514,6 +514,9 @@
                                             <variable name="status_val">
                                                 <model_value reference="status_list"/>
                                             </variable>
+                                            <variable name="comment">
+                                                <model_value reference="comment_task"/>
+                                            </variable>
                                         </variables>
                                         <positive_result_action>
                                             <refresh_component component_id="Customer_Details"/>

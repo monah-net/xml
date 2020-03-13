@@ -292,6 +292,15 @@
                             </grid_label_component>
                         </component>
                     </column>
+                    <column id="t3" title="Task status" alignment="LEFT">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption>
+                                    <field_value field="task_status"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
                 </grid>
             </h_section>
         </v_section>
