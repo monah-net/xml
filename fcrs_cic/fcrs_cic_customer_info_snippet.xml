@@ -5,6 +5,8 @@
         <variable key="project" value="FATCA_CIC"/>
         <variable key="branch" value="2019_v03"/>
         <variable key="filePath" value="/tmp/"/>
+        <variable key="static_branch" value="static_data"/>
+        <variable key="data_load_branch" value="cic_data_load"/>
     </context>
     <permission_service project="FATCA_CIC" branch="permissions" source="DS_permissions">
         <page_restriction page_id="cus" permission="enables"/>
@@ -456,7 +458,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="rm_list_assign_tasks" all_supported="false">
-                            <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
                             <sort_by name="rm_id"/>
@@ -472,7 +474,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="task_name_list" all_supported="false" dynamic_update="true">
-                            <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
                             <sort_by name="task_id"/>
@@ -488,7 +490,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="status_list" all_supported="false">
-                            <data_source project="${project}" branch="${branch}" source="DD_status_list" type="DataSource"/>
+                            <data_source project="${project}" branch="${static_branch}" source="DD_status_list" type="DataSource"/>
                             <value field="status"/>
                             <sort_by name="status_id"/>
                             <instance>
@@ -646,7 +648,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="rmlist_notification">
-                            <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
                             <sort_by name="rm_id"/>
@@ -662,7 +664,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="customer_notification_template" all_supported="false">
-                            <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
                             <sort_by name="task_id"/>
