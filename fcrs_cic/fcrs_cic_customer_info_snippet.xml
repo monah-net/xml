@@ -297,32 +297,39 @@
                     </column>
                     <column id="t3" title="Task status" alignment="LEFT">
                         <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="task_status"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="t4" title="Task status button">
+                        <component>
                             <grid_button_component>
                                 <static_caption text="TEST"/>
-                                <action_chain>
-                                    <run_workflow>
-                                        <workflow>
-                                            <project>
-                                                <string_value value="${project}"/>
-                                            </project>
-                                            <branch>
-                                                <string_value value="${branch}"/>
-                                            </branch>
-                                            <name>
-                                                <string_value value="TaskStatusChange"/>
-                                            </name>
-                                        </workflow>
-                                        <instance>
-                                            <instance_selector_ref reference="cic_instance_selector"/>
-                                        </instance>
-                                        <variables>
-                                            <variable name="task_number">
-                                                <field_value field="task_number" node="root"/>
-                                                <d
-                                            </variable>
-                                        </variables>
-                                    </run_workflow>
-                                </action_chain>
+                                <open_popup_window height="50%" width="50%">
+                                    <v_section>
+                                        <h_section width="100%">
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Task Type"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <v_section height="100px" width="200px">
+                                                <dropdown id="task_status_list" all_supported="false" dynamic_update="false">
+                                                    <data_source project="${project}" branch="${static_branch}" source="DD_task_status_list"
+                                                                 type="DataSource"/>
+                                                    <value field="task_status"/>
+                                                    <sort_by name="task_status_id"/>
+                                                    <instance>
+                                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                                    </instance>
+                                                    <composite_enable_condition/>
+                                                </dropdown>
+                                            </v_section>
+                                        </h_section>
+                                    </v_section>
+                                </open_popup_window>
                                 <composite_enable_condition/>
                             </grid_button_component>
                         </component>
