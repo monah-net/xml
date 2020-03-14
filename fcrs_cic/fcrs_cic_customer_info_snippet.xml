@@ -302,6 +302,12 @@
                                 <action_chain>
                                     <run_workflow>
                                         <workflow>
+                                            <project>
+                                                <string_value value="${project}"/>
+                                            </project>
+                                            <branch>
+                                                <string_value value="${branch}"/>
+                                            </branch>
                                             <name>
                                                 <string_value value="TaskStatusChange"/>
                                             </name>
@@ -311,11 +317,13 @@
                                         </instance>
                                         <variables>
                                             <variable name="task_number">
-                                                <model_value reference=""
+                                                <field_value field="task_number" node="root"/>
+                                                <d
                                             </variable>
                                         </variables>
                                     </run_workflow>
                                 </action_chain>
+                                <composite_enable_condition/>
                             </grid_button_component>
                         </component>
                     </column>
