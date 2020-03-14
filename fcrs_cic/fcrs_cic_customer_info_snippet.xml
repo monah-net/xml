@@ -262,8 +262,11 @@
                             <filter_on name="customer_number"/>
                         </filter_mapping>
                     </filter>
-                    <selection type="SINGLE">
-                        <unique_id field="customer_number"/>
+                    <selection type="SINGLE" select_first_row="true" unselectable="false">
+                        <unique_id field="task_number"/>
+                        <additional_output property_path="workflow_id">
+                            <value field="workflow_id"/>
+                        </additional_output>
                     </selection>
                     <column id="t0" title="TASK NUMBER" alignment="LEFT">
                         <component>
@@ -294,11 +297,26 @@
                     </column>
                     <column id="t3" title="Task status" alignment="LEFT">
                         <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value field="task_status"/>
-                                </dynamic_caption>
-                            </grid_label_component>
+                            <grid_button_component>
+                                <static_caption text="TEST"/>
+                                <action_chain>
+                                    <run_workflow>
+                                        <workflow>
+                                            <name>
+                                                <string_value value="TaskStatusChange"/>
+                                            </name>
+                                        </workflow>
+                                        <instance>
+                                            <instance_selector_ref reference="cic_instance_selector"/>
+                                        </instance>
+                                        <variables>
+                                            <variable name="task_number">
+                                                <model_value reference=""
+                                            </variable>
+                                        </variables>
+                                    </run_workflow>
+                                </action_chain>
+                            </grid_button_component>
                         </component>
                     </column>
                 </grid>
