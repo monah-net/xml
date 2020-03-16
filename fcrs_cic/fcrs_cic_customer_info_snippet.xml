@@ -28,7 +28,7 @@
                 </instance>
                 <composite_enable_condition/>
             </dropdown>
-            <drilldown_button id="Customer_Details" text="Customer Accounts" style="primary-button" icon_alignment="TOP">
+            <drilldown_button id="Customer_Details_drill" text="Customer Accounts" style="primary-button" icon_alignment="TOP">
                 <object_type>
                     <string_value value="DataModel"/>
                 </object_type>
@@ -256,7 +256,7 @@
                     </instance>
                     <filter empty_value_policy="ALL">
                         <filter_value>
-                            <model_value reference="Customer_Details"/>
+                            <model_value reference="Customer_Details" mode="raw"/>
                         </filter_value>
                         <filter_mapping operator="EQUALS">
                             <filter_on name="customer_number"/>
