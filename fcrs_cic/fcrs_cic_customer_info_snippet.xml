@@ -20,7 +20,7 @@
             </separate_instance_selector>
         </h_section>
         <h_section width="40%" height="40px">
-            <dropdown id="Customer_Details" width="100%" label="Customer No" label_position="TOP" all_supported="false">
+            <dropdown id="Customer_Details_DD" width="100%" label="Customer No" label_position="TOP" all_supported="false">
                 <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details" type="DataSource"/>
                 <value field="customer_number"/>
                 <instance>
@@ -307,28 +307,52 @@
                     <column id="t4" title="Task status button">
                         <component>
                             <grid_button_component>
-                                <static_caption text="TEST"/>
+                                <static_caption text="Change Status"/>
                                 <open_popup_window height="50%" width="50%">
-                                    <v_section>
-                                        <h_section width="100%">
-                                            <label width="160px" style="fixed-width">
-                                                <string_value value="Task Type"/>
-                                                <composite_visibility_condition/>
-                                            </label>
-                                            <v_section height="100px" width="200px">
-                                                <dropdown id="task_status_list" all_supported="false" dynamic_update="false">
-                                                    <data_source project="${project}" branch="${static_branch}" source="DD_task_status_list"
+<!--                                    <v_section>-->
+                                                <grid id="customer_task_grid" hide_header="true" height="100%" width="100%">
+                                                    <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
                                                                  type="DataSource"/>
-                                                    <value field="task_status"/>
-                                                    <sort_by name="task_status_id"/>
                                                     <instance>
                                                         <instance_selector_ref reference="cic_instance_selector"/>
                                                     </instance>
-                                                    <composite_enable_condition/>
-                                                </dropdown>
-                                            </v_section>
-                                        </h_section>
-                                    </v_section>
+                                                    <filter>
+                                                        <filter_value>
+                                                            <model_value reference="Customer_Details"/>
+                                                        </filter_value>
+                                                        <filter_mapping>
+                                                            <filter_on name="customer_number"/>
+                                                        </filter_mapping>
+                                                    </filter>
+                                                    <column id="c0" title="">
+                                                        <component>
+                                                            <grid_label_component alignment="CENTER">
+                                                                <dynamic_caption>
+                                                                    <field_value field="customer_number"/>
+                                                                </dynamic_caption>
+                                                            </grid_label_component>
+                                                        </component>
+                                                    </column>
+                                                </grid>
+<!--                                            <h_section>-->
+<!--                                            <label width="160px" style="fixed-width">-->
+<!--                                                <string_value value="Task Type"/>-->
+<!--                                                <composite_visibility_condition/>-->
+<!--                                            </label>-->
+<!--                                            </h_section>-->
+<!--                                        <h_section>-->
+<!--                                                <dropdown id="task_status_list" all_supported="false" dynamic_update="false">-->
+<!--                                                    <data_source project="${project}" branch="${static_branch}" source="DD_task_status_list"-->
+<!--                                                                 type="DataSource"/>-->
+<!--                                                    <value field="task_status"/>-->
+<!--                                                    <sort_by name="task_status_id"/>-->
+<!--                                                    <instance>-->
+<!--                                                        <instance_selector_ref reference="cic_instance_selector"/>-->
+<!--                                                    </instance>-->
+<!--                                                    <composite_enable_condition/>-->
+<!--                                                </dropdown>-->
+<!--                                        </h_section>-->
+<!--                                    </v_section>-->
                                 </open_popup_window>
                                 <composite_enable_condition/>
                             </grid_button_component>
