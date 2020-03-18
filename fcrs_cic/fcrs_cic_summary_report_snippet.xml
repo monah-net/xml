@@ -586,7 +586,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <v_section height="100px" width="200px">
-                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%">
+                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%" distinct="true">
                                 <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
@@ -618,7 +618,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="rmlist_notification" all_supported="false" dynamic_update="true">
-                            <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
                             <sort_by name="rm_id"/>
@@ -635,7 +635,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="customer_notification_template" all_supported="false">
-                            <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
                             <sort_by name="task_id"/>
@@ -675,7 +675,7 @@
                                             <string_value value="${branch}"/>
                                         </branch>
                                         <name>
-                                            <string_value value="AssignTaskButton"/>
+                                            <string_value value="SendNotificationButton"/>
                                         </name>
                                     </workflow>
                                     <instance>
@@ -695,6 +695,14 @@
                                     <positive_result_action>
                                         <refresh_component component_id="Customer_Details"/>
                                     </positive_result_action>
+                                    <negative_result_action>
+                                        <open_popup_window height="50px" width="100px">
+                                            <label>
+                                                <string_value value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                        </open_popup_window>
+                                    </negative_result_action>
                                 </run_workflow>
                                 <data_source_update>
                                     <source_address project="${project}" branch="${branch}" name="dbd_notification_details"/>
