@@ -306,7 +306,7 @@
                         <component>
                             <grid_button_component>
                                 <static_caption text="Change Status"/>
-                                <open_popup_window height="50%" width="50%" closePath="close_popup">
+                                <open_popup_window height="50%" width="50%" closePath="close_popup_status">
                                     <v_section>
                                         <h_section>
                                             <label>
@@ -388,6 +388,9 @@
                                                         <additional_output property_path="task_name_grid_alter">
                                                             <value field="task_name"/>
                                                         </additional_output>
+                                                        <additional_output property_path="task_name_grid_Before">
+                                                            <value field="task_status"/>
+                                                        </additional_output>
                                                     </selection>
                                                     <column id="tn0" title="">
                                                         <component>
@@ -432,7 +435,7 @@
                                         </h_section>
                                         <h_section width="100%">
                                             <button text="Cancel" style="secondary-button">
-                                                <set_model_property property_path="close_popup">
+                                                <set_model_property property_path="close_popup_status" global="true">
                                                     <value>
                                                         <function_value function="=uuid()"/>
                                                     </value>
@@ -477,6 +480,9 @@
                                                             <variable name="comment">
                                                                 <model_value reference="comment_task_status"/>
                                                             </variable>
+                                                            <variable name="task_status_beforeUPD">
+                                                                <model_value reference="task_name_grid_Before"/>
+                                                            </variable>
                                                         </variables>
                                                         <positive_result_action>
                                                             <refresh_component component_id="Task_Details"/>
@@ -518,7 +524,7 @@
                                                             </field>
                                                         </keys>
                                                     </data_source_update>
-                                                    <set_model_property property_path="close_popup">
+                                                    <set_model_property property_path="close_popup_status" global="true">
                                                         <value>
                                                             <function_value function="=uuid()"/>
                                                         </value>
