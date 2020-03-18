@@ -631,7 +631,7 @@
                     </h_section>
                     <h_section>
                         <label width="160px">
-                            <string_value value="Task Name"/>
+                            <string_value value="Notification Template"/>
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="customer_notification_template" all_supported="false">
