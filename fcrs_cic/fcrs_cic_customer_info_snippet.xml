@@ -327,7 +327,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Task_Details" global="true"
+                                                            <model_value reference="CustomerInfo" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
@@ -362,7 +362,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Task_Details" global="true"
+                                                            <model_value reference="CustomerInfo" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
@@ -397,7 +397,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Task_Details" global="true"
+                                                            <model_value reference="CustomerInfo" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
