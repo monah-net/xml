@@ -346,20 +346,72 @@
                                                             </grid_label_component>
                                                         </component>
                                                     </column>
-                                                    <column id="c1" title="" display="false">
-                                                        <component>
-                                                            <grid_label_component>
-                                                                <dynamic_caption>
-                                                                    <field_value field="rm_name"/>
-                                                                </dynamic_caption>
-                                                            </grid_label_component>
-                                                        </component>
-                                                    </column>
-                                                    <column id="c2" title="" display="false">
+                                                </grid>
+                                            </v_section>
+                                        </h_section>
+                                        <h_section>
+                                            <label>
+                                                <string_value value="Selected task name"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <v_section height="50px" width="100px">
+                                                <grid id="customer_task_name_grid" hide_header="true" height="100%"
+                                                      width="100%">
+                                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                                                 source="dbd_cic_1_4_customer_details"
+                                                                 type="DataSource"/>
+                                                    <instance>
+                                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                                    </instance>
+                                                    <filter>
+                                                        <filter_value>
+                                                            <model_value reference="Customer_Details" global="true"
+                                                                         mode="value"/>
+                                                        </filter_value>
+                                                        <filter_mapping>
+                                                            <filter_on name="customer_number"/>
+                                                        </filter_mapping>
+                                                    </filter>
+                                                    <column id="c2_task_name" title="" display="false">
                                                         <component>
                                                             <grid_label_component>
                                                                 <dynamic_caption>
                                                                     <field_value field="task_name"/>
+                                                                </dynamic_caption>
+                                                            </grid_label_component>
+                                                        </component>
+                                                    </column>
+                                                </grid>
+                                            </v_section>
+                                        </h_section>
+                                        <h_section>
+                                            <label>
+                                                <string_value value="Selected rm name"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <v_section height="50px" width="100px">
+                                                <grid id="customer_task_rm_name_grid" hide_header="true" height="100%"
+                                                      width="100%">
+                                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                                                 source="dbd_cic_1_4_customer_details"
+                                                                 type="DataSource"/>
+                                                    <instance>
+                                                        <instance_selector_ref reference="cic_instance_selector"/>
+                                                    </instance>
+                                                    <filter>
+                                                        <filter_value>
+                                                            <model_value reference="Customer_Details" global="true"
+                                                                         mode="value"/>
+                                                        </filter_value>
+                                                        <filter_mapping>
+                                                            <filter_on name="customer_number"/>
+                                                        </filter_mapping>
+                                                    </filter>
+                                                    <column id="c1" title="" display="true">
+                                                        <component>
+                                                            <grid_label_component>
+                                                                <dynamic_caption>
+                                                                    <field_value field="rm_name"/>
                                                                 </dynamic_caption>
                                                             </grid_label_component>
                                                         </component>
@@ -428,10 +480,10 @@
                                                                 <model_value reference="customer_task_grid"/>
                                                             </variable>
                                                             <variable name="task_name">
-                                                                <model_value reference="customer_task_grid"/>
+                                                                <model_value reference="customer_task_name_grid"/>
                                                             </variable>
                                                             <variable name="rm_name">
-                                                                <model_value reference="customer_task_grid"/>
+                                                                <model_value reference="customer_task_rm_name_grid"/>
                                                             </variable>
                                                             <variable name="task_status">
                                                                 <model_value reference="task_status_list"/>
