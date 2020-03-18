@@ -8,9 +8,6 @@
         <variable key="static_branch" value="static_data"/>
         <variable key="data_load_branch" value="cic_data_load"/>
     </context>
-    <permission_service project="FATCA_CIC" branch="permissions" source="DS_permissions">
-        <page_restriction page_id="cus" permission="enables"/>
-    </permission_service>
     <h_section width="100%" height="40px">
         <h_section id="section_instance_picker_cic_summary" height="40px" width="60%" align="TOP_LEFT">
             <separate_instance_selector id="cic_instance_selector"
@@ -330,7 +327,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Customer_Details" global="true"
+                                                            <model_value reference="Task_Details" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
@@ -365,7 +362,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Customer_Details" global="true"
+                                                            <model_value reference="Task_Details" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
@@ -400,7 +397,7 @@
                                                     </instance>
                                                     <filter>
                                                         <filter_value>
-                                                            <model_value reference="Customer_Details" global="true"
+                                                            <model_value reference="Task_Details" global="true"
                                                                          mode="value"/>
                                                         </filter_value>
                                                         <filter_mapping>
