@@ -521,6 +521,14 @@
                                         <positive_result_action>
                                             <refresh_component component_id="Customer_Details"/>
                                         </positive_result_action>
+                                        <negative_result_action>
+                                            <open_popup_window height="" width="">
+                                                <label>
+                                                    <string_value value="Please see the log of AssignTaskButton workflow"/>
+                                                    <composite_visibility_condition/>
+                                                </label>
+                                            </open_popup_window>
+                                        </negative_result_action>
                                     </run_workflow>
                                     <data_source_update>
                                         <source_address project="${project}" branch="${branch}" name="cic_history_source"/>

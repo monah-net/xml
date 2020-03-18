@@ -355,6 +355,15 @@
                                                             </grid_label_component>
                                                         </component>
                                                     </column>
+                                                    <column id="c2" title="" display="false">
+                                                        <component>
+                                                            <grid_label_component>
+                                                                <dynamic_caption>
+                                                                    <field_value field="task_name"/>
+                                                                </dynamic_caption>
+                                                            </grid_label_component>
+                                                        </component>
+                                                    </column>
                                                 </grid>
                                             </v_section>
                                         </h_section>
@@ -416,16 +425,16 @@
                                                         </instance>
                                                         <variables>
                                                             <variable name="customer_number">
-                                                                <multiselection_value reference="Customer_Details" as_string="true"/>
+                                                                <model_value reference="customer_task_grid"/>
                                                             </variable>
                                                             <variable name="task_name">
-                                                                <model_value reference="task_name_list"/>
+                                                                <model_value reference="customer_task_grid"/>
                                                             </variable>
                                                             <variable name="rm_name">
-                                                                <model_value reference="rm_list_assign_tasks"/>
+                                                                <model_value reference="customer_task_grid"/>
                                                             </variable>
                                                             <variable name="task_status">
-                                                                <model_value reference="status_list"/>
+                                                                <model_value reference="task_status_list"/>
                                                             </variable>
                                                             <variable name="comment">
                                                                 <model_value reference="comment_task_status"/>
@@ -434,12 +443,22 @@
                                                         <positive_result_action>
                                                             <refresh_component component_id="Customer_Details"/>
                                                         </positive_result_action>
+                                                        <negative_result_action>
+                                                            <open_popup_window height="100px" width="200px">
+                                                                <label>
+                                                                    <string_value
+                                                                            value="Current task can not be updated. Please look at log file of TaskStatusUpdate workflow"/>
+                                                                    <composite_visibility_condition/>
+                                                                </label>
+                                                            </open_popup_window>
+                                                        </negative_result_action>
                                                     </run_workflow>
                                                     <data_source_update>
-                                                        <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
+                                                        <source_address project="${project}" branch="${branch}"
+                                                                        name="cic_history_source"/>
                                                         <fields>
                                                             <field name="action_name">
-                                                                <string_value value="Assign Tasks"/>
+                                                                <string_value value="Update task status"/>
                                                             </field>
                                                             <field name="comment_val">
                                                                 <model_value reference="comment_task"/>
@@ -756,7 +775,7 @@
                                             <string_value value="Assign Task"/>
                                         </field>
                                         <field name="comment_val">
-                                            <model_value reference="comment_task_status"/>
+                                            <model_value reference="comment_task"/>
                                         </field>
                                         <field name="user_name">
                                             <function_value function="=userName()"/>
