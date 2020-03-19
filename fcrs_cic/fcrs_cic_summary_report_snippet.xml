@@ -656,7 +656,7 @@
                     </h_section>
                     <h_section width="100%">
                         <button text="Cancel" style="secondary-button">
-                            <set_model_property property_path="close_popup">
+                            <set_model_property property_path="close_popup" global="false">
                                 <value>
                                     <function_value function="=uuid()"/>
                                 </value>
@@ -686,10 +686,10 @@
                                             <multiselection_value reference="Customer_Details" as_string="true"/>
                                         </variable>
                                         <variable name="rm_name">
-                                            <model_value reference="rmlist_notification"/>
+                                            <model_value reference="rmlist_notification" global="true" mode="value"/>
                                         </variable>
                                         <variable name="notif_comment">
-                                            <model_value reference="comment_notif"/>
+                                            <model_value reference="comment_notif" mode="value" global="false"/>
                                         </variable>
                                     </variables>
                                     <positive_result_action>
@@ -705,41 +705,13 @@
                                     </negative_result_action>
                                 </run_workflow>
                                 <data_source_update>
-                                    <source_address project="${project}" branch="${branch}" name="dbd_notification_details"/>
-                                    <fields>
-                                        <field name="notif_comment">
-                                            <model_value reference="customer_notification_template"/>
-                                        </field>
-                                        <field name="time_stamp">
-                                            <function_value function="=currentDateInMillis()"/>
-                                        </field>
-                                        <field name="notif_number">
-                                            <function_value function="=uuid()"/>
-                                        </field>
-                                    </fields>
-                                    <keys>
-                                        <field name="customer_number">
-                                            <model_value reference="Customer_Details"/>
-                                        </field>
-                                        <field name="rm_name">
-                                            <model_value reference="rmlist_notification"/>
-                                        </field>
-                                        <field name="notif_comment">
-                                            <model_value reference="customer_notification_template"/>
-                                        </field>
-                                    </keys>
-                                    <instance>
-                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                    </instance>
-                                </data_source_update>
-                                <data_source_update>
                                     <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                     <fields>
                                         <field name="action_name">
                                             <string_value value="Sending notification"/>
                                         </field>
                                         <field name="comment_val">
-                                            <model_value reference="comment_task"/>
+                                            <model_value reference="comment_notif"/>
                                         </field>
                                         <field name="user_name">
                                             <function_value function="=userName()"/>
@@ -757,7 +729,7 @@
                                         </field>
                                     </keys>
                                 </data_source_update>
-                                <set_model_property property_path="close_popup">
+                                <set_model_property property_path="close_popup" global="true">
                                     <value>
                                         <function_value function="=uuid()"/>
                                     </value>
