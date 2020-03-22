@@ -586,7 +586,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <v_section height="100px" width="200px">
-                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%">
+                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%" distinct="true">
                                 <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
@@ -618,7 +618,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="rmlist_notification" all_supported="false" dynamic_update="true">
-                            <data_source project="${project}" branch="${branch}" source="DD_rm_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
                             <sort_by name="rm_id"/>
@@ -631,11 +631,11 @@
                     </h_section>
                     <h_section>
                         <label width="160px">
-                            <string_value value="Task Name"/>
+                            <string_value value="Notification Template"/>
                             <composite_visibility_condition/>
                         </label>
                         <dropdown id="customer_notification_template" all_supported="false">
-                            <data_source project="${project}" branch="${branch}" source="DD_task_name_list"
+                            <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                          type="DataSource"/>
                             <value field="task_name"/>
                             <sort_by name="task_id"/>
@@ -656,7 +656,7 @@
                     </h_section>
                     <h_section width="100%">
                         <button text="Cancel" style="secondary-button">
-                            <set_model_property property_path="close_popup">
+                            <set_model_property property_path="close_popup" global="false">
                                 <value>
                                     <function_value function="=uuid()"/>
                                 </value>
@@ -675,7 +675,7 @@
                                             <string_value value="${branch}"/>
                                         </branch>
                                         <name>
-                                            <string_value value="AssignTaskButton"/>
+                                            <string_value value="SendNotificationButton"/>
                                         </name>
                                     </workflow>
                                     <instance>
@@ -686,44 +686,24 @@
                                             <multiselection_value reference="Customer_Details" as_string="true"/>
                                         </variable>
                                         <variable name="rm_name">
-                                            <model_value reference="rmlist_notification"/>
+                                            <model_value reference="rmlist_notification" global="true" mode="value"/>
                                         </variable>
                                         <variable name="notif_comment">
-                                            <model_value reference="comment_notif"/>
+                                            <model_value reference="comment_notif" mode="value" global="false"/>
                                         </variable>
                                     </variables>
                                     <positive_result_action>
                                         <refresh_component component_id="Customer_Details"/>
                                     </positive_result_action>
+                                    <negative_result_action>
+                                        <open_popup_window height="50px" width="100px">
+                                            <label>
+                                                <string_value value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                        </open_popup_window>
+                                    </negative_result_action>
                                 </run_workflow>
-                                <data_source_update>
-                                    <source_address project="${project}" branch="${branch}" name="dbd_notification_details"/>
-                                    <fields>
-                                        <field name="notif_comment">
-                                            <model_value reference="customer_notification_template"/>
-                                        </field>
-                                        <field name="time_stamp">
-                                            <function_value function="=currentDateInMillis()"/>
-                                        </field>
-                                        <field name="notif_number">
-                                            <function_value function="=uuid()"/>
-                                        </field>
-                                    </fields>
-                                    <keys>
-                                        <field name="customer_number">
-                                            <model_value reference="Customer_Details"/>
-                                        </field>
-                                        <field name="rm_name">
-                                            <model_value reference="rmlist_notification"/>
-                                        </field>
-                                        <field name="notif_comment">
-                                            <model_value reference="customer_notification_template"/>
-                                        </field>
-                                    </keys>
-                                    <instance>
-                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                    </instance>
-                                </data_source_update>
                                 <data_source_update>
                                     <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
                                     <fields>
@@ -731,7 +711,7 @@
                                             <string_value value="Sending notification"/>
                                         </field>
                                         <field name="comment_val">
-                                            <model_value reference="comment_task"/>
+                                            <model_value reference="comment_notif"/>
                                         </field>
                                         <field name="user_name">
                                             <function_value function="=userName()"/>
@@ -749,7 +729,7 @@
                                         </field>
                                     </keys>
                                 </data_source_update>
-                                <set_model_property property_path="close_popup">
+                                <set_model_property property_path="close_popup" global="true">
                                     <value>
                                         <function_value function="=uuid()"/>
                                     </value>
