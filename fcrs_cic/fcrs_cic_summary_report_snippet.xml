@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="fcrs_cic_summary_report" style="y-scrollable">
+    <permission_service project="${project}" branch="${static_branch}" source="CIC_PermissionManager"/>
     <v_section id="section_grid_sub_all" width="100%">
         <v_section width="60%">
             <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
-                                            width="60%" use_description_for_name="true" >
+                                            width="60%" use_description_for_name="true">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
                                  type="DataSource"/>
                 </separate_instance_selector>
@@ -13,14 +14,14 @@
         </v_section>
     </v_section>
     <h_section width="100%">
-        <v_section width = "60%">
+        <v_section width="60%">
             <h_section id="dbd_cic_1_1_summary_title_section" height="50px" width="100%">
                 <static_label id="cic_summary_label" text="CIC Summary" style="cvh1"/>
             </h_section>
             <h_section id="dbd_cic_1_1_summary_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Summary" listened_data="true">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
-                                 type="DataSource" />
+                                 type="DataSource"/>
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
                     </instance>
@@ -100,7 +101,7 @@
             <h_section id="dbd_cic_1_1_aging_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Aging">
                     <data_source project="${project}" branch="${branch}" source="dbd_cic_1_2_aging"
-                                 type="DataSource" />
+                                 type="DataSource"/>
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
                     </instance>
@@ -135,7 +136,7 @@
     <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="RM Summary">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
-                         type="DataSource" />
+                         type="DataSource"/>
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
             </instance>
@@ -355,7 +356,8 @@
                         <static_caption text="View Details"/>
                         <action_chain>
                             <open_page open_in_new_tab="true">
-                                <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info" add_condition="true"/>
+                                <app_page_ref app_name="fcrs_cic" page_id="fcrs_cic_customer_info"
+                                              add_condition="true"/>
                             </open_page>
                         </action_chain>
                         <composite_enable_condition/>
@@ -392,8 +394,9 @@
                                 <composite_visibility_condition/>
                             </label>
                             <v_section height="50px" width="500px">
-                                <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%" >
-                                    <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
+                                <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
+                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                                 source="dbd_cic_1_4_customer_details"
                                                  type="DataSource"/>
                                     <instance>
                                         <instance_selector_ref reference="cic_instance_selector"/>
@@ -456,7 +459,8 @@
                                 <composite_visibility_condition/>
                             </label>
                             <dropdown id="status_list" all_supported="false" width="300px">
-                                <data_source project="${project}" branch="${static_branch}" source="DD_status_list" type="DataSource"/>
+                                <data_source project="${project}" branch="${static_branch}" source="DD_status_list"
+                                             type="DataSource"/>
                                 <value field="status"/>
                                 <sort_by name="status_id"/>
                                 <instance>
@@ -524,14 +528,16 @@
                                         <negative_result_action>
                                             <open_popup_window height="" width="">
                                                 <label>
-                                                    <string_value value="Please see the log of AssignTaskButton workflow"/>
+                                                    <string_value
+                                                            value="Please see the log of AssignTaskButton workflow"/>
                                                     <composite_visibility_condition/>
                                                 </label>
                                             </open_popup_window>
                                         </negative_result_action>
                                     </run_workflow>
                                     <data_source_update>
-                                        <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
+                                        <source_address project="${project}" branch="${branch}"
+                                                        name="cic_history_source"/>
                                         <fields>
                                             <field name="action_name">
                                                 <string_value value="Assign Tasks"/>
@@ -574,8 +580,11 @@
                     <model_value reference="Customer_Details"/>
                     <is_not_empty/>
                 </enable_condition>
+                <permission_enable_condition context_id="compl_off_id" permission="visible"/>
             </composite_enable_condition>
-            <composite_visibility_condition/>
+            <composite_visibility_condition>
+                <permission_visibility_condition context_id="compl_off_id" permission="visible"/>
+            </composite_visibility_condition>
         </button>
         <button text="Send Notifications" style="primary-button">
             <open_popup_window popup_title="Send Notifications" height="50%" width="50%" closePath="close_popup">
@@ -586,7 +595,8 @@
                             <composite_visibility_condition/>
                         </label>
                         <v_section height="100px" width="200px">
-                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%" distinct="true">
+                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%"
+                                  distinct="true">
                                 <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
@@ -698,7 +708,8 @@
                                     <negative_result_action>
                                         <open_popup_window height="50px" width="100px">
                                             <label>
-                                                <string_value value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
+                                                <string_value
+                                                        value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
                                                 <composite_visibility_condition/>
                                             </label>
                                         </open_popup_window>
@@ -747,8 +758,11 @@
                     <model_value reference="Customer_Details"/>
                     <is_not_empty/>
                 </enable_condition>
+                <permission_enable_condition context_id="rm_manager_id" permission="enable"/>
             </composite_enable_condition>
-            <composite_visibility_condition/>
+            <composite_visibility_condition>
+                <permission_visibility_condition context_id="rm_manager_id" permission="visible"/>
+            </composite_visibility_condition>
         </button>
     </h_section>
 </page>
