@@ -391,8 +391,8 @@
                                 <string_value value="Selected Customer Numbers"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <v_section height="100px" width="200px">
-                                <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
+                            <v_section height="50px" width="500px">
+                                <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%" >
                                     <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
                                                  type="DataSource"/>
                                     <instance>
@@ -423,7 +423,7 @@
                                 <string_value value="RM List"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <dropdown id="rm_list_assign_tasks" all_supported="false">
+                            <dropdown id="rm_list_assign_tasks" all_supported="false" width="300px">
                                 <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                              type="DataSource"/>
                                 <value field="rm_name"/>
@@ -439,7 +439,7 @@
                                 <string_value value="Task Name"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <dropdown id="task_name_list" all_supported="false" dynamic_update="true">
+                            <dropdown id="task_name_list" all_supported="false" dynamic_update="true" width="300px">
                                 <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
                                              type="DataSource"/>
                                 <value field="task_name"/>
@@ -455,7 +455,7 @@
                                 <string_value value="Change Status To"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <dropdown id="status_list" all_supported="false">
+                            <dropdown id="status_list" all_supported="false" width="300px">
                                 <data_source project="${project}" branch="${static_branch}" source="DD_status_list" type="DataSource"/>
                                 <value field="status"/>
                                 <sort_by name="status_id"/>
@@ -470,7 +470,7 @@
                                 <string_value value="Comment"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <text_area id="comment_task" width="200px">
+                            <text_area id="comment_task" width="500px" height="200px">
                                 <composite_enable_condition/>
                             </text_area>
                         </h_section>
