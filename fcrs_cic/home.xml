@@ -16,7 +16,7 @@
         <button id="ho_exception_icon" text="RM Manager Report" image="fatca_get_report.png" icon_alignment="TOP"
                 style="gen_button" width="100%">
             <open_page open_in_new_tab="true">
-                <app_page_ref page_id="fcrs_cic_summary_report"/>
+                <app_page_ref page_id="fcrs_cic_summary_report_RM"/>
             </open_page>
             <composite_enable_condition/>
             <composite_visibility_condition/>

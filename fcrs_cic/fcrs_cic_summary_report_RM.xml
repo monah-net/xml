@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="fcrs_cic_summary_report_RM" style="page-with-header-and-footer">
+<context>
+    <variable key="project" value="FATCA_CIC"/>
+    <variable key="branch" value="2019_v03"/>
+    <variable key="filePath" value="/tmp/"/>
+    <variable key="static_branch" value="static_data"/>
+</context>
+<include name="header_snippet"/>
+<v_section id="main_section" width="100%" style="main-section main-frame" align="TOP_CENTER">
+    <include name="fcrs_cic_summary_report_snippet_RM"/>
+</v_section>
+<include name="footer_snippet"/>
+</page>

@@ -130,15 +130,58 @@
             </h_section>
         </v_section>
     </h_section>
-    <dropdown id="RM_Summary" width="100%" label="Relationship Manager" label_position="TOP" all_supported="true">
-        <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
-                     type="DataSource"/>
-        <value field="rm_name"/>
-        <instance>
-            <instance_selector_ref reference="cic_instance_selector"/>
-        </instance>
-        <composite_enable_condition/>
-    </dropdown>
+    <h_section id="dbd_cic_1_3_rm_summary_title_section" height="50px" width="100%">
+        <static_label id="cic_rm_summary_label" text="RM Summary" style="cvh1"/>
+    </h_section>
+    <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200px" width="98%" align="TOP_LEFT">
+        <grid id="RM Summary">
+            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
+                         type="DataSource"/>
+            <instance>
+                <instance_selector_ref reference="cic_instance_selector"/>
+            </instance>
+            <selection type="SINGLE" unselectable="true">
+                <unique_id field="rm_name"/>
+
+            </selection>
+            <column id="c0" title="RM Name">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rm_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c1" title="Tagged Customers">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="tagged_customers"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c2" title="Customes having CIC">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="cic_customers"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="c3" title="Number of Notifications sent">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="notifications_number"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+        </grid>
+    </h_section>
     <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
@@ -151,7 +194,7 @@
             </instance>
             <filter empty_value_policy="ALL">
                 <filter_value>
-                    <model_value reference="RM_Summary"/>
+                    <model_value reference="RM Summary"/>
                 </filter_value>
                 <filter_mapping operator="EQUALS">
                     <filter_on name="rm_name"/>
@@ -715,11 +758,8 @@
                     <model_value reference="Customer_Details"/>
                     <is_not_empty/>
                 </enable_condition>
-                <permission_enable_condition context_id="rm_manager_id" permission="enable"/>
             </composite_enable_condition>
-            <composite_visibility_condition>
-                <permission_visibility_condition context_id="rm_manager_id" permission="visible"/>
-            </composite_visibility_condition>
+            <composite_visibility_condition/>
         </button>
     </h_section>
 </page>
