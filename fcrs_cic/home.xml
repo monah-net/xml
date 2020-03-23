@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      style="page-with-header-and-footer" id="CIC_home">
+<include name="header_snippet"/>
+<v_section id="panel_main_home" width="100%">
+    <include name="footer_snippet"/>
+    <h_section id="compl_officer" height="500px" width="100%" align="MIDDLE_CENTER">
+        <button id="ho_summary_icon" text="Compliance Officer Report" image="fatca_get_report.png"
+                icon_alignment="TOP" style="gen_button" width="100%">
+            <open_page open_in_new_tab="true">
+                <app_page_ref page_id="fcrs_cic_summary_report"/>
+            </open_page>
+            <composite_enable_condition/>
+            <composite_visibility_condition/>
+        </button>
+        <button id="ho_exception_icon" text="RM Manager Report" image="fatca_get_report.png" icon_alignment="TOP"
+                style="gen_button" width="100%">
+            <open_page open_in_new_tab="true">
+                <app_page_ref page_id="fcrs_cic_summary_report"/>
+            </open_page>
+            <composite_enable_condition/>
+            <composite_visibility_condition/>
+        </button>
+    </h_section>
+</v_section>
+</page>

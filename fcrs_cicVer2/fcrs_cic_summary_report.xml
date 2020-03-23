@@ -446,6 +446,7 @@
                             </action_chain>
                             <composite_enable_condition/>
                             <composite_visibility_condition/>
+                            <composite_visibility_condition/>
                         </button>
                     </h_section>
                 </v_section>
