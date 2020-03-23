@@ -130,19 +130,27 @@
             </h_section>
         </v_section>
     </h_section>
-    <dropdown id="RM_Summary" width="100%" label="Relationship Manager" label_position="TOP" all_supported="true">
-        <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
+    <dropdown id="RM_Summary" width="100%" label="Relationship Manager" label_position="TOP" dynamic_update="true" all_supported="false">
+        <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
                      type="DataSource"/>
         <value field="rm_name"/>
         <instance>
             <instance_selector_ref reference="cic_instance_selector"/>
         </instance>
+        <filter>
+            <filter_value>
+                <model_value reference="user_login"/>
+            </filter_value>
+            <filter_mapping>
+                <filter_on name="rm_login"/>
+            </filter_mapping>
+        </filter>
         <composite_enable_condition/>
     </dropdown>
     <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">
         <static_label id="dbd_cic_1_4_customer_details_label" text="Customer Details" style="cvh1"/>
     </h_section>
-    <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
+    <h_section id="dbd_cic_1_4_customer_details_section" height="400px" width="98%" align="TOP_LEFT">
         <grid id="Customer_Details">
             <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
                          type="DataSource"/>
