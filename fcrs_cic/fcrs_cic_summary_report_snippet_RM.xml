@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="fcrs_cic_summary_report_RM" style="y-scrollable">
-    <permission_service project="${project}" branch="${static_branch}" source="CIC_PermissionManager"/>
+    <permission_service project="${project}" branch="${static_branch}" source="CIC_PermissionManager">
+        <page_restriction page_id="rm_manager_id" permission="enable"/>
+    </permission_service>
     <v_section id="section_grid_sub_all" width="100%">
         <v_section width="60%">
             <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
@@ -130,21 +132,14 @@
             </h_section>
         </v_section>
     </h_section>
-    <dropdown id="RM_Summary" width="100%" label="Relationship Manager" label_position="TOP" dynamic_update="true" all_supported="false">
+    <dropdown id="RM_Summary" width="100%" label="Relationship Manager" label_position="TOP" dynamic_update="true"
+              all_supported="false">
         <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
                      type="DataSource"/>
         <value field="rm_name"/>
         <instance>
             <instance_selector_ref reference="cic_instance_selector"/>
         </instance>
-        <filter>
-            <filter_value>
-                <model_value reference="user_login"/>
-            </filter_value>
-            <filter_mapping>
-                <filter_on name="rm_login"/>
-            </filter_mapping>
-        </filter>
         <composite_enable_condition/>
     </dropdown>
     <h_section id="dbd_cic_1_4_customer_details_title_section" height="50px" width="100%">

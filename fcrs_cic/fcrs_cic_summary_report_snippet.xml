@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="fcrs_cic_summary_report" style="y-scrollable">
-    <permission_service project="${project}" branch="${static_branch}" source="CIC_PermissionManager"/>
+    <permission_service project="${project}" branch="${static_branch}" source="CIC_PermissionManager">
+        <page_restriction page_id="compl_off_id" permission="enable"/>
+    </permission_service>
     <v_section id="section_grid_sub_all" width="100%">
         <v_section width="60%">
             <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
