@@ -57,24 +57,24 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="c3" title="Pending Verification HVA">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value field="pending_verification_hva"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
-                    <column id="c4" title="Pending Verification LVA">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value field="pending_verification_lva"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
+<!--                    <column id="c3" title="Pending Verification HVA">-->
+<!--                        <component>-->
+<!--                            <grid_label_component>-->
+<!--                                <dynamic_caption>-->
+<!--                                    <field_value field="pending_verification_hva"/>-->
+<!--                                </dynamic_caption>-->
+<!--                            </grid_label_component>-->
+<!--                        </component>-->
+<!--                    </column>-->
+<!--                    <column id="c4" title="Pending Verification LVA">-->
+<!--                        <component>-->
+<!--                            <grid_label_component>-->
+<!--                                <dynamic_caption>-->
+<!--                                    <field_value field="pending_verification_lva"/>-->
+<!--                                </dynamic_caption>-->
+<!--                            </grid_label_component>-->
+<!--                        </component>-->
+<!--                    </column>-->
                     <column id="c5" title="Notified">
                         <component>
                             <grid_label_component>
@@ -339,7 +339,7 @@
         </grid>
     </h_section>
     <h_section width="100%" align="MIDDLE_RIGHT" style="card">
-        <button id="AssignTasksButton" text="Assign Tasks" style="primary-button">
+        <button id="SendBackButton" text="Send Back Tasks" style="primary-button">
             <action_chain>
                 <set_model_property property_path="rm_list_assign_tasks">
                     <value>

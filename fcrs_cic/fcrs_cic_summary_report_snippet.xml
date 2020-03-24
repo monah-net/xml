@@ -57,24 +57,24 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="c3" title="Pending Verification HVA">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value field="pending_verification_hva"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
-                    <column id="c4" title="Pending Verification LVA">
-                        <component>
-                            <grid_label_component>
-                                <dynamic_caption>
-                                    <field_value field="pending_verification_lva"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
+<!--                    <column id="c3" title="Pending Verification HVA">-->
+<!--                        <component>-->
+<!--                            <grid_label_component>-->
+<!--                                <dynamic_caption>-->
+<!--                                    <field_value field="pending_verification_hva"/>-->
+<!--                                </dynamic_caption>-->
+<!--                            </grid_label_component>-->
+<!--                        </component>-->
+<!--                    </column>-->
+<!--                    <column id="c4" title="Pending Verification LVA">-->
+<!--                        <component>-->
+<!--                            <grid_label_component>-->
+<!--                                <dynamic_caption>-->
+<!--                                    <field_value field="pending_verification_lva"/>-->
+<!--                                </dynamic_caption>-->
+<!--                            </grid_label_component>-->
+<!--                        </component>-->
+<!--                    </column>-->
                     <column id="c5" title="Notified">
                         <component>
                             <grid_label_component>
