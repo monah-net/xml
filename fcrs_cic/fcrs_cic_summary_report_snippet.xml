@@ -9,7 +9,8 @@
             <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
                                             width="60%" use_description_for_name="true">
-                    <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
+                    <data_source project="${project}" branch="${branch}"
+                                 source="Aggregation[dbd_cic_1_4_customer_details]"
                                  type="DataSource"/>
                 </separate_instance_selector>
             </h_section>
@@ -57,24 +58,24 @@
                             </grid_label_component>
                         </component>
                     </column>
-<!--                    <column id="c3" title="Pending Verification HVA">-->
-<!--                        <component>-->
-<!--                            <grid_label_component>-->
-<!--                                <dynamic_caption>-->
-<!--                                    <field_value field="pending_verification_hva"/>-->
-<!--                                </dynamic_caption>-->
-<!--                            </grid_label_component>-->
-<!--                        </component>-->
-<!--                    </column>-->
-<!--                    <column id="c4" title="Pending Verification LVA">-->
-<!--                        <component>-->
-<!--                            <grid_label_component>-->
-<!--                                <dynamic_caption>-->
-<!--                                    <field_value field="pending_verification_lva"/>-->
-<!--                                </dynamic_caption>-->
-<!--                            </grid_label_component>-->
-<!--                        </component>-->
-<!--                    </column>-->
+                    <!--                    <column id="c3" title="Pending Verification HVA">-->
+                    <!--                        <component>-->
+                    <!--                            <grid_label_component>-->
+                    <!--                                <dynamic_caption>-->
+                    <!--                                    <field_value field="pending_verification_hva"/>-->
+                    <!--                                </dynamic_caption>-->
+                    <!--                            </grid_label_component>-->
+                    <!--                        </component>-->
+                    <!--                    </column>-->
+                    <!--                    <column id="c4" title="Pending Verification LVA">-->
+                    <!--                        <component>-->
+                    <!--                            <grid_label_component>-->
+                    <!--                                <dynamic_caption>-->
+                    <!--                                    <field_value field="pending_verification_lva"/>-->
+                    <!--                                </dynamic_caption>-->
+                    <!--                            </grid_label_component>-->
+                    <!--                        </component>-->
+                    <!--                    </column>-->
                     <column id="c5" title="Notified">
                         <component>
                             <grid_label_component>
@@ -87,7 +88,7 @@
                     <column id="c6" title="Changes Approved">
                         <component>
                             <grid_label_component>
-                     ф           <dynamic_caption>
+                                <dynamic_caption>
                                     <field_value field="changes_approved"/>
                                 </dynamic_caption>
                             </grid_label_component>
@@ -596,7 +597,8 @@
                         <v_section height="100px" width="200px">
                             <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%"
                                   distinct="true">
-                                <data_source project="FATCA_CIC" branch="2019_v03" source="Aggregation[dbd_cic_1_4_customer_details]"
+                                <data_source project="FATCA_CIC" branch="2019_v03"
+                                             source="Aggregation[dbd_cic_1_4_customer_details]"
                                              type="DataSource"/>
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
