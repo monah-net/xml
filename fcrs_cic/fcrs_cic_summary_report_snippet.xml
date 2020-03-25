@@ -9,7 +9,7 @@
             <h_section id="section_instance_picker_cic_summary" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="cic_instance_selector"
                                             width="60%" use_description_for_name="true">
-                    <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
+                    <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
                                  type="DataSource"/>
                 </separate_instance_selector>
             </h_section>
@@ -22,7 +22,7 @@
             </h_section>
             <h_section id="dbd_cic_1_1_summary_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Summary" listened_data="true">
-                    <data_source project="${project}" branch="${branch}" source="dbd_cic_1_1_summary"
+                    <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_1_summary]"
                                  type="DataSource"/>
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
@@ -50,8 +50,8 @@
                     </column>
                     <column id="c2" title="Total">
                         <component>
-                            <grid_label_component>
-                                <dynamic_caption>
+                            <grid_label_component alignment="CENTER">
+                                <dynamic_caption format="0">
                                     <field_value field="total"/>
                                 </dynamic_caption>
                             </grid_label_component>
@@ -87,7 +87,7 @@
                     <column id="c6" title="Changes Approved">
                         <component>
                             <grid_label_component>
-                                <dynamic_caption>
+                     ф           <dynamic_caption>
                                     <field_value field="changes_approved"/>
                                 </dynamic_caption>
                             </grid_label_component>
@@ -102,7 +102,7 @@
             </h_section>
             <h_section id="dbd_cic_1_1_aging_grid_section" height="200px" width="95%" align="TOP_LEFT">
                 <grid id="CIC Aging">
-                    <data_source project="${project}" branch="${branch}" source="dbd_cic_1_2_aging"
+                    <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_2_aging]"
                                  type="DataSource"/>
                     <instance>
                         <instance_selector_ref reference="cic_instance_selector"/>
@@ -137,7 +137,7 @@
     </h_section>
     <h_section id="dbd_cic_1_3_rm_summary_grid_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="RM Summary">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_3_rm_summary"
+            <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_3_rm_summary]"
                          type="DataSource"/>
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
@@ -155,28 +155,28 @@
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c1" title="Tagged Customers">
+            <column id="c1" title="Tagged Customers" alignment="CENTER">
                 <component>
-                    <grid_label_component>
-                        <dynamic_caption>
+                    <grid_label_component alignment="CENTER">
+                        <dynamic_caption format="0">
                             <field_value field="tagged_customers"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c2" title="Customes having CIC">
+            <column id="c2" title="Customes having CIC" alignment="CENTER">
                 <component>
-                    <grid_label_component>
-                        <dynamic_caption>
+                    <grid_label_component alignment="CENTER">
+                        <dynamic_caption format="0">
                             <field_value field="cic_customers"/>
                         </dynamic_caption>
                     </grid_label_component>
                 </component>
             </column>
-            <column id="c3" title="Number of Notifications sent">
+            <column id="c3" title="Number of Notifications sent" alignment="CENTER">
                 <component>
-                    <grid_label_component>
-                        <dynamic_caption>
+                    <grid_label_component alignment="CENTER">
+                        <dynamic_caption format="0">
                             <field_value field="notifications_number"/>
                         </dynamic_caption>
                     </grid_label_component>
@@ -189,7 +189,7 @@
     </h_section>
     <h_section id="dbd_cic_1_4_customer_details_section" height="200px" width="98%" align="TOP_LEFT">
         <grid id="Customer_Details">
-            <data_source project="${project}" branch="${branch}" source="dbd_cic_1_4_customer_details"
+            <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
                          type="DataSource"/>
             <instance>
                 <instance_selector_ref reference="cic_instance_selector"/>
@@ -395,7 +395,7 @@
                             <v_section height="50px" width="500px">
                                 <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
                                     <data_source project="FATCA_CIC" branch="2019_v03"
-                                                 source="dbd_cic_1_4_customer_details"
+                                                 source="Aggregation[dbd_cic_1_4_customer_details]"
                                                  type="DataSource"/>
                                     <instance>
                                         <instance_selector_ref reference="cic_instance_selector"/>
@@ -596,7 +596,7 @@
                         <v_section height="100px" width="200px">
                             <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%"
                                   distinct="true">
-                                <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
+                                <data_source project="FATCA_CIC" branch="2019_v03" source="Aggregation[dbd_cic_1_4_customer_details]"
                                              type="DataSource"/>
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
