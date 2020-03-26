@@ -41,7 +41,8 @@
                     <condition_field field="customer_number" node="root"/>
                     <field_mapping>
                         <data_object_value>
-                            <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
+                            <data_source project="${project}" branch="${branch}"
+                                         source="Aggregation[dbd_cic_1_4_customer_details]"
                                          type="DataModel"/>
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
@@ -75,7 +76,8 @@
                     <condition_field field="customer_number" node="root"/>
                     <field_mapping>
                         <data_object_value>
-                            <data_source project="${project}" branch="${branch}" source="Aggregation[dbd_cic_1_4_customer_details]"
+                            <data_source project="${project}" branch="${branch}"
+                                         source="Aggregation[dbd_cic_1_4_customer_details]"
                                          type="DataModel"/>
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
@@ -524,7 +526,8 @@
                                                             </field>
                                                         </keys>
                                                     </data_source_update>
-                                                    <set_model_property property_path="close_popup_status" global="true">
+                                                    <set_model_property property_path="close_popup_status"
+                                                                        global="true">
                                                         <value>
                                                             <function_value function="=uuid()"/>
                                                         </value>
@@ -592,6 +595,217 @@
                                     <field_value field="time_stamp"/>
                                 </dynamic_caption>
                             </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="n3" title="Change Status">
+                        <component>
+                            <grid_button_component>
+                                <static_caption text="Change Status"/>
+                                <open_popup_window height="50%" width="50%" closePath="close_popup_notif_status">
+                                    <v_section>
+                                        <h_section>
+                                            <grid id="notif_customers_grid" height="100%" width="100%"
+                                                  hide_header="true">
+                                                <data_source source="dbd_notification_details" type="DataSource"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Customer_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="customer_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" unselectable="false" select_first_row="true">
+                                                    <unique_id field="notif_number"/>
+                                                    <additional_output property_path="notif_customer_rm_name"/>
+                                                </selection>
+                                                <column id="nt0" title="Customer_Details" display="true">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="customer_number"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                                <column id="nt1" title="RM name" display="false">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="rm_name"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
+                                        </h_section>
+                                        <h_section>
+                                            <grid id="notifications_numbers_grid" height="100%" width="100%"
+                                                  hide_header="true">
+                                                <data_source source="dbd_notification_details" type="DataSource"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Customer_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="customer_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" unselectable="false" select_first_row="true">
+                                                    <unique_id field="customer_number"/>
+                                                </selection>
+                                                <column id="nn0" title="Notification type" display="true">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="notif_type"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
+                                        </h_section>
+                                        <h_section>
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Task Type"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <v_section>
+                                                <dropdown id="notif_type_list" all_supported="false"
+                                                          dynamic_update="false">
+                                                    <data_source project="${project}" branch="${static_branch}"
+                                                                 source="DD_notification_types"
+                                                                 type="DataSource"/>
+                                                    <value field="notification_type"/>
+                                                    <sort_by name="notif_id"/>
+                                                    <composite_enable_condition/>
+                                                </dropdown>
+                                            </v_section>
+                                        </h_section>
+                                        <h_section>
+                                            <label width="160px">
+                                                <string_value value="Comment"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <text_area id="comment_task_status" width="200px">
+                                                <composite_enable_condition/>
+                                            </text_area>
+                                        </h_section>
+                                        <h_section width="100%">
+                                            <button text="Cancel" style="secondary-button">
+                                                <set_model_property property_path="close_popup_notif_status"
+                                                                    global="true">
+                                                    <value>
+                                                        <function_value function="=uuid()"/>
+                                                    </value>
+                                                </set_model_property>
+                                                <composite_enable_condition/>
+                                                <composite_visibility_condition/>
+                                            </button>
+                                            <button id="Notif_Submit" text="Submit" style="primary-button">
+                                                <action_chain>
+                                                    <run_workflow>
+                                                        <workflow>
+                                                            <project>
+                                                                <string_value value="${project}"/>
+                                                            </project>
+                                                            <branch>
+                                                                <string_value value="${branch}"/>
+                                                            </branch>
+                                                            <name>
+                                                                <string_value value="TaskStatusUpdate"/>
+                                                            </name>
+                                                        </workflow>
+                                                        <instance>
+                                                            <instance_selector_ref reference="cic_instance_selector"/>
+                                                        </instance>
+                                                        <variables>
+                                                            <variable name="customer_number">
+                                                                <model_value reference="customer_task_grid"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="task_name">
+                                                                <model_value reference="task_name_grid_alter"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="rm_name">
+                                                                <model_value reference="customer_task_grid_RM_name"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="task_status">
+                                                                <model_value reference="task_status_list" global="false"
+                                                                             mode="value"/>
+                                                            </variable>
+                                                            <variable name="comment">
+                                                                <model_value reference="comment_task_status"/>
+                                                            </variable>
+                                                            <variable name="task_status_beforeUPD">
+                                                                <model_value reference="task_name_grid_Before"/>
+                                                            </variable>
+                                                        </variables>
+                                                        <positive_result_action>
+                                                            <refresh_component component_id="Task_Details"/>
+                                                        </positive_result_action>
+                                                        <negative_result_action>
+                                                            <open_popup_window height="100px" width="200px">
+                                                                <label>
+                                                                    <string_value
+                                                                            value="Please be note, that you are able to chahge status only for tasks, that have status OPENED"/>
+                                                                    <composite_visibility_condition/>
+                                                                </label>
+                                                            </open_popup_window>
+                                                        </negative_result_action>
+                                                    </run_workflow>
+                                                    <data_source_update>
+                                                        <source_address project="${project}" branch="${branch}"
+                                                                        name="cic_history_source"/>
+                                                        <fields>
+                                                            <field name="action_name">
+                                                                <string_value value="Update task status"/>
+                                                            </field>
+                                                            <field name="comment_val">
+                                                                <model_value reference="comment_task_status"/>
+                                                            </field>
+                                                            <field name="user_name">
+                                                                <function_value function="=userName()"/>
+                                                            </field>
+                                                            <field name="user_ID">
+                                                                <function_value function="=userId()"/>
+                                                            </field>
+                                                        </fields>
+                                                        <keys>
+                                                            <field name="customer_ID">
+                                                                <model_value reference="Customer_Details" mode="value"
+                                                                             global="true"/>
+                                                            </field>
+                                                            <field name="timeStampValue">
+                                                                <function_value function="=currentDateInMillis()"/>
+                                                            </field>
+                                                        </keys>
+                                                    </data_source_update>
+                                                    <set_model_property property_path="close_popup_status"
+                                                                        global="true">
+                                                        <value>
+                                                            <function_value function="=uuid()"/>
+                                                        </value>
+                                                    </set_model_property>
+                                                </action_chain>
+                                                <composite_enable_condition/>
+                                                <composite_visibility_condition/>
+                                            </button>
+                                        </h_section>
+                                    </v_section>
+                                </open_popup_window>
+                                <composite_enable_condition/>
+                            </grid_button_component>
                         </component>
                     </column>
                 </grid>
