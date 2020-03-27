@@ -601,13 +601,13 @@
                         </component>
                     </column>
                     <column id="n3" title="Notification type" alignment="LEFT">
-                    <component>
-                        <grid_label_component alignment="LEFT">
-                            <dynamic_caption>
-                                <field_value field="notif_type"/>
-                            </dynamic_caption>
-                        </grid_label_component>
-                    </component>
+                        <component>
+                            <grid_label_component alignment="LEFT">
+                                <dynamic_caption>
+                                    <field_value field="notif_type"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
                     </column>
                     <column id="n4" title="Notification Status Button">
                         <component>
@@ -615,7 +615,7 @@
                                 <static_caption text="Change Status"/>
                                 <open_popup_window height="50%" width="50%" closePath="close_popup_notif_status">
                                     <v_section>
-                                        <grid id="notifications_cust_grid" height="100px" width="200px"
+                                        <grid id="notifications_cust_grid" height="40px" width="500px"
                                               hide_header="true">
                                             <data_source project="${project}" branch="${branch}"
                                                          source="dbd_notification_details"
@@ -645,7 +645,7 @@
                                                 </component>
                                             </column>
                                         </grid>
-                                        <grid id="notifications_numbers_grid" height="100px" width="200px"
+                                        <grid id="notifications_numbers_grid" height="40px" width="500px"
                                               hide_header="true">
                                             <data_source project="${project}" branch="${branch}"
                                                          source="dbd_notification_details"
