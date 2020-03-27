@@ -3,7 +3,7 @@
       id="fcrs_cic_customer_info" style="y-scrollable">
     <context>
         <variable key="project" value="FATCA_CIC"/>
-        <variable key="branch" value="2019_v03"/>
+        <variable key="branch" value="2020_v01"/>
         <variable key="filePath" value="/tmp/"/>
         <variable key="static_branch" value="static_data"/>
         <variable key="data_load_branch" value="cic_data_load"/>
@@ -32,7 +32,7 @@
                     <string_value value="DataModel"/>
                 </object_type>
                 <object_address>
-                    <string_value value="FATCA_CIC!2019_v03:Aggregation[dbd_cic_1_4_customer_details]"/>
+                    <string_value value="FATCA_CIC!2020_v01:Aggregation[dbd_cic_1_4_customer_details]"/>
                 </object_address>
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -67,7 +67,7 @@
                     <string_value value="DataModel"/>
                 </object_type>
                 <object_address>
-                    <string_value value="FATCA_CIC!2019_v03:Aggregation[dbd_cic_1_4_customer_details]"/>
+                    <string_value value="FATCA_CIC!2020_v01:Aggregation[dbd_cic_1_4_customer_details]"/>
                 </object_address>
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -318,7 +318,7 @@
                                             <v_section height="100px" width="200px">
                                                 <grid id="customer_task_grid" hide_header="true" height="100%"
                                                       width="100%">
-                                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                                    <data_source project="${project}" branch="${branch}"
                                                                  source="Aggregation[dbd_cic_1_4_customer_details]"
                                                                  type="DataSource"/>
                                                     <instance>
@@ -369,7 +369,7 @@
                                             <v_section height="100px" width="200px">
                                                 <grid id="task_name_grid" hide_header="true" height="100%"
                                                       width="100%">
-                                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                                    <data_source project="${project}" branch="${branch}"
                                                                  source="dbd_task_details"
                                                                  type="DataSource"/>
                                                     <instance>
@@ -694,7 +694,7 @@
                                             <string_value value="Comment"/>
                                             <composite_visibility_condition/>
                                         </label>
-                                        <text_area id="comment_task_status" width="200px">
+                                        <text_area id="comment_task_status" width="500px">
                                             <composite_enable_condition/>
                                         </text_area>
                                         <h_section width="100%">
