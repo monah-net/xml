@@ -32,7 +32,7 @@
                     <string_value value="DataModel"/>
                 </object_type>
                 <object_address>
-                    <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
+                    <string_value value="FATCA_CIC!2019_v03:Aggregation[dbd_cic_1_4_customer_details]"/>
                 </object_address>
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -67,7 +67,7 @@
                     <string_value value="DataModel"/>
                 </object_type>
                 <object_address>
-                    <string_value value="FATCA_CIC!2019_v03:dbd_cic_1_4_customer_details"/>
+                    <string_value value="FATCA_CIC!2019_v03:Aggregation[dbd_cic_1_4_customer_details]"/>
                 </object_address>
                 <instance>
                     <instance_selector_ref reference="cic_instance_selector"/>
