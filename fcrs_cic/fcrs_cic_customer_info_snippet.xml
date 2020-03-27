@@ -831,30 +831,43 @@
             </column>
             <column id="d2" title="Download">
                 <component>
-                    <grid_button_component>
+                    <grid_download_component>
                         <static_caption icon="download.svg"/>
-                        <dm_download file_folder="${filePath}">
-                            <unique_id>
-                                <field_value field="customer_number"/>
-                            </unique_id>
-                            <source_address project="FATCA_CIC" branch="2019_v03"
-                                            name="sys_document_management_history"/>
-                        </dm_download>
+                        <file_folder>
+                            <field_value field="file_path"/>
+                        </file_folder>
+                        <file_name>
+                            <field_value field="file_name"/>
+                        </file_name>
                         <composite_enable_condition/>
-                    </grid_button_component>
+                    </grid_download_component>
                 </component>
             </column>
             <column id="d3" title="Upload">
                 <component>
-                    <grid_dm_upload_component file_folder="${filePath}">
+                    <grid_upload_component path_to_uploaded_file="UploadPathFile">
                         <static_caption icon="upload.svg"/>
-                        <unique_id>
-                            <field_value field="customer_number"/>
-                        </unique_id>
-                        <source_address project="FATCA_CIC" branch="2019_v03"
-                                        name="sys_document_management_history"/>
+                        <file_folder>
+                            <field_value field="file_path"/>
+                        </file_folder>
                         <composite_enable_condition/>
-                    </grid_dm_upload_component>
+                        <data_source_update>
+                            <source_address project="${project}" branch="${branch}" name="dbd_doc_upload_info"/>
+                            <fields>
+                                <field name="file_name">
+                                    <model_value reference="UploadPathFile"/>
+                                </field>
+                            </fields>
+                            <keys>
+                                <field name="doc_no">
+                                    <field_value field="doc_no"/>
+                                </field>
+                            </keys>
+                            <instance>
+                                <instance_selector_ref reference="cic_instance_selector"/>
+                            </instance>
+                        </data_source_update>
+                    </grid_upload_component>
                 </component>
             </column>
         </grid>

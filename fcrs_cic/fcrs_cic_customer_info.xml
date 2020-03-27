@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="fcrs_cic_customer_info" style="page-with-header-and-footer">
     <context>
         <variable key="project" value="FATCA_CIC"/>
-        <variable key="branch" value="2019_v03"/>
+        <variable key="branch" value="2020_v01"/>
         <variable key="filePath" value="/tmp/"/>
         <variable key="staticBranch" value="static_data"/>
     </context>
