@@ -395,7 +395,7 @@
                             </label>
                             <v_section height="50px" width="500px">
                                 <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
-                                    <data_source project="FATCA_CIC" branch="2019_v03"
+                                    <data_source project="${project}" branch="${branch}"
                                                  source="Aggregation[dbd_cic_1_4_customer_details]"
                                                  type="DataSource"/>
                                     <instance>
