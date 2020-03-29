@@ -304,13 +304,12 @@
                                 <open_popup_window height="50%" width="50%" closePath="close_popup_status">
                                     <v_section>
                                         <h_section>
-                                            <label>
+                                            <label width="160px" style="fixed-width">
                                                 <string_value value="Selected customer numbers"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <v_section height="100px" width="200px">
-                                                <grid id="customer_task_grid" hide_header="true" height="100%"
-                                                      width="100%">
+                                                <grid id="customer_task_grid" hide_header="true" height="50px"
+                                                      width="300px">
                                                     <data_source project="${project}" branch="${branch}"
                                                                  source="Aggregation[dbd_cic_1_4_customer_details]"
                                                                  type="DataSource"/>
@@ -352,16 +351,14 @@
                                                         </component>
                                                     </column>
                                                 </grid>
-                                            </v_section>
                                         </h_section>
                                         <h_section>
-                                            <label>
+                                            <label width="160px" style="fixed-width">
                                                 <string_value value="Selected task name"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <v_section height="100px" width="200px">
-                                                <grid id="task_name_grid" hide_header="true" height="100%"
-                                                      width="100%">
+                                                <grid id="task_name_grid" hide_header="true" height="50px"
+                                                      width="300px">
                                                     <data_source project="${project}" branch="${branch}"
                                                                  source="dbd_task_details"
                                                                  type="DataSource"/>
@@ -397,16 +394,14 @@
                                                         </component>
                                                     </column>
                                                 </grid>
-                                            </v_section>
                                         </h_section>
                                         <h_section>
                                             <label width="160px" style="fixed-width">
                                                 <string_value value="Task Type"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <v_section>
                                                 <dropdown id="task_status_list" all_supported="false"
-                                                          dynamic_update="false">
+                                                          dynamic_update="false" width="300px">
                                                     <data_source project="${project}" branch="${static_branch}"
                                                                  source="DD_task_status_list"
                                                                  type="DataSource"/>
@@ -417,14 +412,13 @@
                                                     </instance>
                                                     <composite_enable_condition/>
                                                 </dropdown>
-                                            </v_section>
                                         </h_section>
                                         <h_section>
-                                            <label width="160px">
+                                            <label width="160px" style="fixed-width">
                                                 <string_value value="Comment"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <text_area id="comment_task_status" width="200px">
+                                            <text_area id="comment_task_status" width="500px" height="200px">
                                                 <composite_enable_condition/>
                                             </text_area>
                                         </h_section>
@@ -487,7 +481,7 @@
                                                         </positive_result_action>
                                                         <negative_result_action>
                                                             <open_popup_window height="100px" width="200px">
-                                                                <label>
+                                                                <label  style="fixed-width" width="160px">
                                                                     <string_value
                                                                             value="Current task can not be updated. Please look at log file of TaskStatusUpdate workflow"/>
                                                                     <composite_visibility_condition/>
@@ -683,7 +677,7 @@
                                                 <composite_enable_condition/>
                                             </dropdown>
                                         </h_section>
-                                        <label width="160px">
+                                        <label width="160px" style="fixed-width">
                                             <string_value value="Comment"/>
                                             <composite_visibility_condition/>
                                         </label>
@@ -729,7 +723,7 @@
                                                         </positive_result_action>
                                                         <negative_result_action>
                                                             <open_popup_window height="100px" width="200px">
-                                                                <label>
+                                                                <label  style="fixed-width" width="160px">
                                                                     <string_value
                                                                             value="Please be note, that you are able to chahge status only for tasks, that have status OPENED"/>
                                                                     <composite_visibility_condition/>

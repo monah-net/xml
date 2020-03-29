@@ -394,7 +394,7 @@
                                 <composite_visibility_condition/>
                             </label>
                             <v_section height="50px" width="500px">
-                                <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
+                                <grid id="tasks_assign_grid" hide_header="true" height="100px" width="500px">
                                     <data_source project="${project}" branch="${branch}"
                                                  source="Aggregation[dbd_cic_1_4_customer_details]"
                                                  type="DataSource"/>
@@ -526,10 +526,10 @@
                                             <refresh_component component_id="Customer_Details"/>
                                         </positive_result_action>
                                         <negative_result_action>
-                                            <open_popup_window height="" width="">
+                                            <open_popup_window height="50%" width="50%">
                                                 <label>
                                                     <string_value
-                                                            value="Please see the log of AssignTaskButton workflow"/>
+                                                            value="Task is alraeady reviewed"/>
                                                     <composite_visibility_condition/>
                                                 </label>
                                             </open_popup_window>
@@ -594,41 +594,39 @@
                             <string_value value="Selected Customer Numbers"/>
                             <composite_visibility_condition/>
                         </label>
-                        <v_section height="100px" width="200px">
-                            <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%"
-                                  distinct="true">
-                                <data_source project="FATCA_CIC" branch="2019_v03"
-                                             source="Aggregation[dbd_cic_1_4_customer_details]"
-                                             type="DataSource"/>
-                                <instance>
-                                    <instance_selector_ref reference="cic_instance_selector"/>
-                                </instance>
-                                <filter>
-                                    <filter_value>
-                                        <model_value reference="Customer_Details"/>
-                                    </filter_value>
-                                    <filter_mapping>
-                                        <filter_on name="customer_number"/>
-                                    </filter_mapping>
-                                </filter>
-                                <column id="c0" title="">
-                                    <component>
-                                        <grid_label_component alignment="CENTER">
-                                            <dynamic_caption>
-                                                <field_value field="customer_number"/>
-                                            </dynamic_caption>
-                                        </grid_label_component>
-                                    </component>
-                                </column>
-                            </grid>
-                        </v_section>
+                        <grid id="customer_details_notification_grid" hide_header="true" height="100px" width="500px"
+                              distinct="true">
+                            <data_source project="${project}" branch="${branch}"
+                                         source="Aggregation[dbd_cic_1_4_customer_details]"
+                                         type="DataSource"/>
+                            <instance>
+                                <instance_selector_ref reference="cic_instance_selector"/>
+                            </instance>
+                            <filter>
+                                <filter_value>
+                                    <model_value reference="Customer_Details"/>
+                                </filter_value>
+                                <filter_mapping>
+                                    <filter_on name="customer_number"/>
+                                </filter_mapping>
+                            </filter>
+                            <column id="c0" title="">
+                                <component>
+                                    <grid_label_component alignment="CENTER">
+                                        <dynamic_caption>
+                                            <field_value field="customer_number"/>
+                                        </dynamic_caption>
+                                    </grid_label_component>
+                                </component>
+                            </column>
+                        </grid>
                     </h_section>
                     <h_section>
                         <label width="160px">
                             <string_value value="RM List"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="rmlist_notification" all_supported="false" dynamic_update="true">
+                        <dropdown id="rmlist_notification" all_supported="false" dynamic_update="true" width="300px">
                             <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                          type="DataSource"/>
                             <value field="rm_name"/>
@@ -636,7 +634,6 @@
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
-
                             <composite_enable_condition/>
                         </dropdown>
                     </h_section>
@@ -645,11 +642,12 @@
                             <string_value value="Notification Template"/>
                             <composite_visibility_condition/>
                         </label>
-                        <dropdown id="customer_notification_template" all_supported="false">
-                            <data_source project="${project}" branch="${static_branch}" source="DD_task_name_list"
+                        <dropdown id="customer_notification_template" all_supported="false" width="300px">
+                            <data_source project="${project}" branch="${static_branch}"
+                                         source="DD_notification_templates"
                                          type="DataSource"/>
-                            <value field="task_name"/>
-                            <sort_by name="task_id"/>
+                            <value field="notif_template_name"/>
+                            <sort_by name="notif_template_id"/>
                             <instance>
                                 <instance_selector_ref reference="cic_instance_selector"/>
                             </instance>
@@ -661,96 +659,96 @@
                             <string_value value="Comment"/>
                             <composite_visibility_condition/>
                         </label>
-                        <text_area id="comment_notif" width="200px">
+                        <text_area id="comment_notif" width="500px" height="200px">
                             <composite_enable_condition/>
                         </text_area>
                     </h_section>
-                    <h_section width="100%">
-                        <button text="Cancel" style="secondary-button">
-                            <set_model_property property_path="close_popup" global="false">
+                    <h_section>
+                    <button text="Cancel" style="secondary-button" width="200px">
+                        <set_model_property property_path="close_popup" global="false">
+                            <value>
+                                <function_value function="=uuid()"/>
+                            </value>
+                        </set_model_property>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </button>
+                    <button text="Submit" style="primary-button" width="200px">
+                        <action_chain>
+                            <run_workflow>
+                                <workflow>
+                                    <project>
+                                        <string_value value="${project}"/>
+                                    </project>
+                                    <branch>
+                                        <string_value value="${branch}"/>
+                                    </branch>
+                                    <name>
+                                        <string_value value="SendNotificationButton"/>
+                                    </name>
+                                </workflow>
+                                <instance>
+                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                </instance>
+                                <variables>
+                                    <variable name="customers">
+                                        <multiselection_value reference="Customer_Details" as_string="true"/>
+                                    </variable>
+                                    <variable name="rm_name">
+                                        <model_value reference="rmlist_notification" global="true" mode="value"/>
+                                    </variable>
+                                    <variable name="notif_comment">
+                                        <model_value reference="comment_notif" mode="value" global="false"/>
+                                    </variable>
+                                </variables>
+                                <positive_result_action>
+                                    <refresh_component component_id="Customer_Details"/>
+                                </positive_result_action>
+                                <negative_result_action>
+                                    <open_popup_window height="50px" width="100px">
+                                        <label>
+                                            <string_value
+                                                    value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
+                                            <composite_visibility_condition/>
+                                        </label>
+                                    </open_popup_window>
+                                </negative_result_action>
+                            </run_workflow>
+                            <data_source_update>
+                                <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
+                                <fields>
+                                    <field name="action_name">
+                                        <string_value value="Sending notification"/>
+                                    </field>
+                                    <field name="comment_val">
+                                        <model_value reference="comment_notif"/>
+                                    </field>
+                                    <field name="user_name">
+                                        <function_value function="=userName()"/>
+                                    </field>
+                                    <field name="user_ID">
+                                        <function_value function="=userId()"/>
+                                    </field>
+                                </fields>
+                                <keys>
+                                    <field name="customer_ID">
+                                        <model_value reference="Customer_Details"/>
+                                    </field>
+                                    <field name="timeStampValue">
+                                        <function_value function="=currentDateInMillis()"/>
+                                    </field>
+                                </keys>
+                            </data_source_update>
+                            <set_model_property property_path="close_popup" global="true">
                                 <value>
                                     <function_value function="=uuid()"/>
                                 </value>
                             </set_model_property>
-                            <composite_enable_condition/>
-                            <composite_visibility_condition/>
-                        </button>
-                        <button text="Submit" style="primary-button">
-                            <action_chain>
-                                <run_workflow>
-                                    <workflow>
-                                        <project>
-                                            <string_value value="${project}"/>
-                                        </project>
-                                        <branch>
-                                            <string_value value="${branch}"/>
-                                        </branch>
-                                        <name>
-                                            <string_value value="SendNotificationButton"/>
-                                        </name>
-                                    </workflow>
-                                    <instance>
-                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                    </instance>
-                                    <variables>
-                                        <variable name="customers">
-                                            <multiselection_value reference="Customer_Details" as_string="true"/>
-                                        </variable>
-                                        <variable name="rm_name">
-                                            <model_value reference="rmlist_notification" global="true" mode="value"/>
-                                        </variable>
-                                        <variable name="notif_comment">
-                                            <model_value reference="comment_notif" mode="value" global="false"/>
-                                        </variable>
-                                    </variables>
-                                    <positive_result_action>
-                                        <refresh_component component_id="Customer_Details"/>
-                                    </positive_result_action>
-                                    <negative_result_action>
-                                        <open_popup_window height="50px" width="100px">
-                                            <label>
-                                                <string_value
-                                                        value="Sending notifications were failed, please see log of SendNotificationButton workflow"/>
-                                                <composite_visibility_condition/>
-                                            </label>
-                                        </open_popup_window>
-                                    </negative_result_action>
-                                </run_workflow>
-                                <data_source_update>
-                                    <source_address project="${project}" branch="${branch}" name="cic_history_source"/>
-                                    <fields>
-                                        <field name="action_name">
-                                            <string_value value="Sending notification"/>
-                                        </field>
-                                        <field name="comment_val">
-                                            <model_value reference="comment_notif"/>
-                                        </field>
-                                        <field name="user_name">
-                                            <function_value function="=userName()"/>
-                                        </field>
-                                        <field name="user_ID">
-                                            <function_value function="=userId()"/>
-                                        </field>
-                                    </fields>
-                                    <keys>
-                                        <field name="customer_ID">
-                                            <model_value reference="Customer_Details"/>
-                                        </field>
-                                        <field name="timeStampValue">
-                                            <function_value function="=currentDateInMillis()"/>
-                                        </field>
-                                    </keys>
-                                </data_source_update>
-                                <set_model_property property_path="close_popup" global="true">
-                                    <value>
-                                        <function_value function="=uuid()"/>
-                                    </value>
-                                </set_model_property>
-                                <refresh_component component_id="Customer_Details"/>
-                            </action_chain>
-                            <composite_enable_condition/>
-                            <composite_visibility_condition/>
-                        </button>
+                            <refresh_component component_id="Customer_Details"/>
+                        </action_chain>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </button>
                     </h_section>
                 </v_section>
             </open_popup_window>
