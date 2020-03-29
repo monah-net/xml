@@ -279,7 +279,7 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="t2" title="Task Stamp" alignment="LEFT">
+                    <column id="t2" title="Time Stamp" alignment="LEFT">
                         <component>
                             <grid_label_component alignment="LEFT">
                                 <dynamic_caption>
@@ -569,16 +569,7 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="n1" title="Comment" alignment="LEFT">
-                        <component>
-                            <grid_label_component alignment="LEFT">
-                                <dynamic_caption>
-                                    <field_value field="notif_comment"/>
-                                </dynamic_caption>
-                            </grid_label_component>
-                        </component>
-                    </column>
-                    <column id="n2" title="Time Stamp" alignment="LEFT">
+                    <column id="n1" title="Time Stamp" alignment="LEFT">
                         <component>
                             <grid_label_component alignment="LEFT">
                                 <dynamic_caption>
@@ -587,7 +578,7 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="n3" title="Notification type" alignment="LEFT">
+                    <column id="n2" title="Notification type" alignment="LEFT">
                         <component>
                             <grid_label_component alignment="LEFT">
                                 <dynamic_caption>
@@ -596,7 +587,25 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="n4" title="Notification Status Button">
+                    <column id="n3" title="Comment" alignment="LEFT">
+                        <component>
+                            <grid_label_component alignment="LEFT">
+                                <dynamic_caption>
+                                    <field_value field="notif_comment"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="n4" title="Template name" alignment="LEFT">
+                        <component>
+                            <grid_label_component alignment="LEFT">
+                                <dynamic_caption>
+                                    <field_value field="template_name"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="n5" title="Notification Status Button">
                         <component>
                             <grid_button_component>
                                 <static_caption text="Change Status"/>

@@ -393,7 +393,6 @@
                                 <string_value value="Selected Customer Numbers"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <v_section height="50px" width="500px">
                                 <grid id="tasks_assign_grid" hide_header="true" height="100px" width="500px">
                                     <data_source project="${project}" branch="${branch}"
                                                  source="Aggregation[dbd_cic_1_4_customer_details]"
@@ -419,14 +418,13 @@
                                         </component>
                                     </column>
                                 </grid>
-                            </v_section>
                         </h_section>
                         <h_section>
                             <label width="160px">
                                 <string_value value="RM List"/>
                                 <composite_visibility_condition/>
                             </label>
-                            <dropdown id="rm_list_assign_tasks" all_supported="false" width="300px">
+                            <dropdown id="rm_list_assign_tasks" all_supported="false">
                                 <data_source project="${project}" branch="${static_branch}" source="DD_rm_list"
                                              type="DataSource"/>
                                 <value field="rm_name"/>
@@ -529,7 +527,7 @@
                                             <open_popup_window height="50%" width="50%">
                                                 <label>
                                                     <string_value
-                                                            value="Task is alraeady reviewed"/>
+                                                            value="Task is already reviewed"/>
                                                     <composite_visibility_condition/>
                                                 </label>
                                             </open_popup_window>
