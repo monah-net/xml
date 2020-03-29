@@ -308,110 +308,110 @@
                                                 <string_value value="Selected customer numbers"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                                <grid id="customer_task_grid" hide_header="true" height="50px"
-                                                      width="300px">
-                                                    <data_source project="${project}" branch="${branch}"
-                                                                 source="Aggregation[dbd_cic_1_4_customer_details]"
-                                                                 type="DataSource"/>
-                                                    <instance>
-                                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                                    </instance>
-                                                    <filter>
-                                                        <filter_value>
-                                                            <model_value reference="Customer_Details" global="true"
-                                                                         mode="value"/>
-                                                        </filter_value>
-                                                        <filter_mapping>
-                                                            <filter_on name="customer_number"/>
-                                                        </filter_mapping>
-                                                    </filter>
-                                                    <selection type="SINGLE" select_first_row="true"
-                                                               unselectable="false">
-                                                        <unique_id field="customer_number"/>
-                                                        <additional_output property_path="customer_task_grid_RM_name">
-                                                            <value field="rm_name"/>
-                                                        </additional_output>
-                                                    </selection>
-                                                    <column id="ct0" title="Customer number" display="true">
-                                                        <component>
-                                                            <grid_label_component alignment="CENTER">
-                                                                <dynamic_caption>
-                                                                    <field_value field="customer_number"/>
-                                                                </dynamic_caption>
-                                                            </grid_label_component>
-                                                        </component>
-                                                    </column>
-                                                    <column id="ct1" title="RM name" display="false">
-                                                        <component>
-                                                            <grid_label_component>
-                                                                <dynamic_caption>
-                                                                    <field_value field="rm_name"/>
-                                                                </dynamic_caption>
-                                                            </grid_label_component>
-                                                        </component>
-                                                    </column>
-                                                </grid>
+                                            <grid id="customer_task_grid" hide_header="true" height="50px"
+                                                  width="300px">
+                                                <data_source project="${project}" branch="${branch}"
+                                                             source="Aggregation[dbd_cic_1_4_customer_details]"
+                                                             type="DataSource"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Customer_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="customer_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" select_first_row="true"
+                                                           unselectable="false">
+                                                    <unique_id field="customer_number"/>
+                                                    <additional_output property_path="customer_task_grid_RM_name">
+                                                        <value field="rm_name"/>
+                                                    </additional_output>
+                                                </selection>
+                                                <column id="ct0" title="Customer number" display="true">
+                                                    <component>
+                                                        <grid_label_component alignment="CENTER">
+                                                            <dynamic_caption>
+                                                                <field_value field="customer_number"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                                <column id="ct1" title="RM name" display="false">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="rm_name"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
                                         </h_section>
                                         <h_section>
                                             <label width="160px" style="fixed-width">
                                                 <string_value value="Selected task name"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                                <grid id="task_name_grid" hide_header="true" height="50px"
-                                                      width="300px">
-                                                    <data_source project="${project}" branch="${branch}"
-                                                                 source="dbd_task_details"
-                                                                 type="DataSource"/>
-                                                    <instance>
-                                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                                    </instance>
-                                                    <filter>
-                                                        <filter_value>
-                                                            <model_value reference="Task_Details" global="true"
-                                                                         mode="value"/>
-                                                        </filter_value>
-                                                        <filter_mapping>
-                                                            <filter_on name="task_number"/>
-                                                        </filter_mapping>
-                                                    </filter>
-                                                    <selection type="SINGLE" select_first_row="true"
-                                                               unselectable="false">
-                                                        <unique_id field="task_number"/>
-                                                        <additional_output property_path="task_name_grid_alter">
-                                                            <value field="task_name"/>
-                                                        </additional_output>
-                                                        <additional_output property_path="task_name_grid_Before">
-                                                            <value field="task_status"/>
-                                                        </additional_output>
-                                                    </selection>
-                                                    <column id="tn0" title="">
-                                                        <component>
-                                                            <grid_label_component alignment="CENTER">
-                                                                <dynamic_caption>
-                                                                    <field_value field="task_name"/>
-                                                                </dynamic_caption>
-                                                            </grid_label_component>
-                                                        </component>
-                                                    </column>
-                                                </grid>
+                                            <grid id="task_name_grid" hide_header="true" height="50px"
+                                                  width="300px">
+                                                <data_source project="${project}" branch="${branch}"
+                                                             source="dbd_task_details"
+                                                             type="DataSource"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Task_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="task_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" select_first_row="true"
+                                                           unselectable="false">
+                                                    <unique_id field="task_number"/>
+                                                    <additional_output property_path="task_name_grid_alter">
+                                                        <value field="task_name"/>
+                                                    </additional_output>
+                                                    <additional_output property_path="task_name_grid_Before">
+                                                        <value field="task_status"/>
+                                                    </additional_output>
+                                                </selection>
+                                                <column id="tn0" title="">
+                                                    <component>
+                                                        <grid_label_component alignment="CENTER">
+                                                            <dynamic_caption>
+                                                                <field_value field="task_name"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
                                         </h_section>
                                         <h_section>
                                             <label width="160px" style="fixed-width">
                                                 <string_value value="Task Type"/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                                <dropdown id="task_status_list" all_supported="false"
-                                                          dynamic_update="false" width="300px">
-                                                    <data_source project="${project}" branch="${static_branch}"
-                                                                 source="DD_task_status_list"
-                                                                 type="DataSource"/>
-                                                    <value field="task_status"/>
-                                                    <sort_by name="task_status_id"/>
-                                                    <instance>
-                                                        <instance_selector_ref reference="cic_instance_selector"/>
-                                                    </instance>
-                                                    <composite_enable_condition/>
-                                                </dropdown>
+                                            <dropdown id="task_status_list" all_supported="false"
+                                                      dynamic_update="false" width="300px">
+                                                <data_source project="${project}" branch="${static_branch}"
+                                                             source="DD_task_status_list"
+                                                             type="DataSource"/>
+                                                <value field="task_status"/>
+                                                <sort_by name="task_status_id"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <composite_enable_condition/>
+                                            </dropdown>
                                         </h_section>
                                         <h_section>
                                             <label width="160px" style="fixed-width">
@@ -481,7 +481,7 @@
                                                         </positive_result_action>
                                                         <negative_result_action>
                                                             <open_popup_window height="100px" width="200px">
-                                                                <label  style="fixed-width" width="160px">
+                                                                <label style="fixed-width" width="160px">
                                                                     <string_value
                                                                             value="Current task can not be updated. Please look at log file of TaskStatusUpdate workflow"/>
                                                                     <composite_visibility_condition/>
@@ -605,94 +605,156 @@
                             </grid_label_component>
                         </component>
                     </column>
-                    <column id="n5" title="Notification Status Button">
+                    <column id="n5" title="Notification Status" alignment="LEFT">
+                        <component>
+                            <grid_label_component alignment="LEFT">
+                                <dynamic_caption>
+                                    <field_value field="notif_status"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="n6" title="Notification Status Button">
                         <component>
                             <grid_button_component>
                                 <static_caption text="Change Status"/>
                                 <open_popup_window height="50%" width="50%" closePath="close_popup_notif_status">
                                     <v_section>
-                                        <grid id="notifications_cust_grid" height="40px" width="500px"
-                                              hide_header="true">
-                                            <data_source project="${project}" branch="${branch}"
-                                                         source="dbd_notification_details"
-                                                         type="DataSource"/>
-                                            <instance>
-                                                <instance_selector_ref reference="cic_instance_selector"/>
-                                            </instance>
-                                            <filter>
-                                                <filter_value>
-                                                    <model_value reference="Customer_Details" global="true"
-                                                                 mode="value"/>
-                                                </filter_value>
-                                                <filter_mapping>
-                                                    <filter_on name="customer_number"/>
-                                                </filter_mapping>
-                                            </filter>
-                                            <selection type="SINGLE" unselectable="false" select_first_row="true">
-                                                <unique_id field="customer_number"/>
-                                            </selection>
-                                            <column id="nn0" title="Selected customer numbers" display="true">
-                                                <component>
-                                                    <grid_label_component>
-                                                        <dynamic_caption>
-                                                            <field_value field="customer_number"/>
-                                                        </dynamic_caption>
-                                                    </grid_label_component>
-                                                </component>
-                                            </column>
-                                        </grid>
-                                        <grid id="notifications_numbers_grid" height="40px" width="500px"
-                                              hide_header="true">
-                                            <data_source project="${project}" branch="${branch}"
-                                                         source="dbd_notification_details"
-                                                         type="DataSource"/>
-                                            <instance>
-                                                <instance_selector_ref reference="cic_instance_selector"/>
-                                            </instance>
-                                            <filter>
-                                                <filter_value>
-                                                    <model_value reference="Customer_Details" global="true"
-                                                                 mode="value"/>
-                                                </filter_value>
-                                                <filter_mapping>
-                                                    <filter_on name="customer_number"/>
-                                                </filter_mapping>
-                                            </filter>
-                                            <selection type="SINGLE" unselectable="false" select_first_row="true">
-                                                <unique_id field="customer_number"/>
-                                            </selection>
-                                            <column id="nn0" title="Notification type" display="true">
-                                                <component>
-                                                    <grid_label_component>
-                                                        <dynamic_caption>
-                                                            <field_value field="notif_type"/>
-                                                        </dynamic_caption>
-                                                    </grid_label_component>
-                                                </component>
-                                            </column>
-                                        </grid>
-                                        <h_section width="200px" height="100px">
+                                        <h_section>
                                             <label width="160px" style="fixed-width">
-                                                <string_value value="Task Type"/>
+                                                <string_value value="Selected customer number : "/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <dropdown id="notif_type_list" all_supported="false"
-                                                      dynamic_update="false">
-                                                <data_source project="${project}" branch="${static_branch}"
-                                                             source="DD_notification_types"
+                                            <grid id="notifications_cust_grid" height="40px" width="500px"
+                                                  hide_header="true">
+                                                <data_source project="${project}" branch="${branch}"
+                                                             source="dbd_notification_details"
                                                              type="DataSource"/>
-                                                <value field="notification_type"/>
-                                                <sort_by name="notif_id"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Customer_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="customer_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" unselectable="false" select_first_row="true">
+                                                    <unique_id field="customer_number"/>
+                                                    <additional_output property_path="notif_grid_rm_name">
+                                                        <value field="rm_name"/>
+                                                    </additional_output>
+                                                    <additional_output property_path="notif_grid_rm_notification">
+                                                        <value field="notif_number"/>
+                                                    </additional_output>
+                                                </selection>
+                                                <column id="nn0" title="Selected customer numbers" display="true">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="customer_number"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                                <column id="nn1" title="RM_name" display="false">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="rm_name"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                                <column id="nn2" title="Notification number" display="false">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="notif_number"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
+                                        </h_section>
+                                        <h_section>
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Notification type : "/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <grid id="notification_type_grid" height="40px" width="500px"
+                                                  hide_header="true">
+                                                <data_source project="${project}" branch="${branch}"
+                                                             source="dbd_notification_details"
+                                                             type="DataSource"/>
+                                                <instance>
+                                                    <instance_selector_ref reference="cic_instance_selector"/>
+                                                </instance>
+                                                <filter>
+                                                    <filter_value>
+                                                        <model_value reference="Customer_Details" global="true"
+                                                                     mode="value"/>
+                                                    </filter_value>
+                                                    <filter_mapping>
+                                                        <filter_on name="customer_number"/>
+                                                    </filter_mapping>
+                                                </filter>
+                                                <selection type="SINGLE" unselectable="false" select_first_row="true">
+                                                    <unique_id field="customer_number"/>
+                                                </selection>
+                                                <column id="nn0" title="Notification type" display="true">
+                                                    <component>
+                                                        <grid_label_component>
+                                                            <dynamic_caption>
+                                                                <field_value field="notif_type"/>
+                                                            </dynamic_caption>
+                                                        </grid_label_component>
+                                                    </component>
+                                                </column>
+                                            </grid>
+                                        </h_section>
+                                        <h_section>
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Template name"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <dropdown id="notif_template_list" all_supported="false"
+                                                      dynamic_update="false" width="500px">
+                                                <data_source project="${project}" branch="${static_branch}"
+                                                             source="DD_notification_templates"
+                                                             type="DataSource"/>
+                                                <value field="notif_template_name"/>
+                                                <sort_by name="notif_template_id"/>
                                                 <composite_enable_condition/>
                                             </dropdown>
                                         </h_section>
-                                        <label width="160px" style="fixed-width">
-                                            <string_value value="Comment"/>
-                                            <composite_visibility_condition/>
-                                        </label>
-                                        <text_area id="comment_task_status" width="500px">
-                                            <composite_enable_condition/>
-                                        </text_area>
+                                        <h_section>
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Notification Status"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <dropdown id="notif_status_list" all_supported="false"
+                                                      dynamic_update="false" width="500px">
+                                                <data_source project="${project}" branch="${static_branch}"
+                                                             source="DD_notification_status"
+                                                             type="DataSource"/>
+                                                <value field="notif_status"/>
+                                                <sort_by name="notif_status_id"/>
+                                                <composite_enable_condition/>
+                                            </dropdown>
+                                        </h_section>
+                                        <h_section>
+                                            <label width="160px" style="fixed-width">
+                                                <string_value value="Comment"/>
+                                                <composite_visibility_condition/>
+                                            </label>
+                                            <text_area id="comment_notif_status" width="500px" height="200px">
+                                                <composite_enable_condition/>
+                                            </text_area>
+                                        </h_section>
                                         <h_section width="100%">
                                             <button text="Cancel" style="secondary-button">
                                                 <set_model_property property_path="close_popup_notif_status"
@@ -722,8 +784,32 @@
                                                             <instance_selector_ref reference="cic_instance_selector"/>
                                                         </instance>
                                                         <variables>
+                                                            <variable name="notif_comment">
+                                                                <model_value reference="comment_notif_status"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="rm_name">
+                                                                <model_value reference="notif_grid_rm_name"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
                                                             <variable name="notif_type">
-                                                                <model_value reference="task_name_grid_alter"
+                                                                <model_value reference="notification_type_grid"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="notif_status">
+                                                                <model_value reference="notif_status_list"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="notif_template">
+                                                                <model_value reference="notif_template_list"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="customer_number">
+                                                                <model_value reference="notifications_cust_grid"
+                                                                             global="false" mode="value"/>
+                                                            </variable>
+                                                            <variable name="notif_number">
+                                                                <model_value reference="notif_grid_rm_notification"
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                         </variables>
@@ -732,9 +818,9 @@
                                                         </positive_result_action>
                                                         <negative_result_action>
                                                             <open_popup_window height="100px" width="200px">
-                                                                <label  style="fixed-width" width="160px">
+                                                                <label style="fixed-width" width="160px">
                                                                     <string_value
-                                                                            value="Please be note, that you are able to chahge status only for tasks, that have status OPENED"/>
+                                                                            value="Please be note, that you are able to change status only for tasks, that have status OPENED"/>
                                                                     <composite_visibility_condition/>
                                                                 </label>
                                                             </open_popup_window>
@@ -745,7 +831,7 @@
                                                                         name="cic_history_source"/>
                                                         <fields>
                                                             <field name="action_name">
-                                                                <string_value value="Update task status"/>
+                                                                <string_value value="Update notification status"/>
                                                             </field>
                                                             <field name="comment_val">
                                                                 <model_value reference="comment_task_status"/>
