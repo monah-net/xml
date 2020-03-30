@@ -867,7 +867,7 @@
                                                                 <string_value value="Update notification status"/>
                                                             </field>
                                                             <field name="comment_val">
-                                                                <model_value reference="comment_task_status"/>
+                                                                <model_value reference="comment_notif_status"/>
                                                             </field>
                                                             <field name="user_name">
                                                                 <function_value function="=userName()"/>
