@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
- <h_section id="footer_sec" width="100%" align="STRETCH_CENTER" style="footer-section">
-    <h_section id="left_sec" width="100%" align="MIDDLE_LEFT">
-        <env_label/>
-    </h_section>
-    <h_section id="right_sec" width="100%" align="MIDDLE_RIGHT">
-        <static_label id="copyright_label" text="2019 AxiomSL"/>
-    </h_section>
-</h_section>
