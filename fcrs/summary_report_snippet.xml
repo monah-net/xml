@@ -61,7 +61,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Summary_6" title="Number of Individual Accounts" display="true" sort="asc" is_filtered="true">
+                <column id="Summary_6" title="Number of Individual Accounts" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption format="###,###">
@@ -70,7 +71,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Summary_7" title="Number of Organizational Accounts" display="true" sort="asc" is_filtered="true">
+                <column id="Summary_7" title="Number of Organizational Accounts" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption format="###,###">
@@ -88,7 +90,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Summary_9" title="Number of Substantial Owners" display="true" sort="asc" is_filtered="true">
+                <column id="Summary_9" title="Number of Substantial Owners" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component>
                             <dynamic_caption>
@@ -115,7 +118,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Summary_12" title="Number of accounts in Pools" display="true" sort="asc" is_filtered="true">
+                <column id="Summary_12" title="Number of accounts in Pools" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption format="###,###">
@@ -162,7 +166,7 @@
                 </instance>
                 <filter empty_value_policy="ALL">
                     <filter_value>
-                        <model_value reference="acc_type_filter" mode="raw" global="true" />
+                        <model_value reference="acc_type_filter" mode="raw" global="true"/>
                     </filter_value>
                     <filter_mapping operator="EQUALS" key="acc_type_filter">
                         <filter_on name="holder_type" node="root"/>
@@ -328,7 +332,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Account_Details_5" title="Undocumented Account" display="true" sort="asc" is_filtered="true">
+                <column id="Account_Details_5" title="Undocumented Account" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption>
@@ -355,7 +360,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Account_Details_8" title="Account Balance in Reported Currency" display="true" sort="asc" is_filtered="true">
+                <column id="Account_Details_8" title="Account Balance in Reported Currency" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption>
@@ -449,7 +455,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Income_Details_6" title="Payment Amount in original payment currency" display="true" is_filtered="true"
+                <column id="Income_Details_6" title="Payment Amount in original payment currency" display="true"
+                        is_filtered="true"
                         sort="asc">
                     <component>
                         <grid_label_component alignment="LEFT">
@@ -459,7 +466,8 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Income_Details_7" title="Payment Amount in Reported Currency" display="true" sort="asc" is_filtered="true">
+                <column id="Income_Details_7" title="Payment Amount in Reported Currency" display="true" sort="asc"
+                        is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption>
