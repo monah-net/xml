@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="exception_report_snippet">
+    <v_section id="section_grid_ex_all" width="100%">
+        <h_section id="section_instance_picker_exception" height="50px" width="100%" align="TOP_LEFT">
+            <separate_instance_selector id="exception_instance_selectr"
+                                        width="60%" use_description_for_name="true">
+                <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report" type="DataModel"/>
+            </separate_instance_selector>
+        </h_section>
+        <h_section id="section_top_grids_titles_ex" height="50px" width="100%">
+            <h_section id="section_title_ex_source" height="30px" width="90%">
+                <static_label id="ex_source_label" text="Source of Exception" style="cvh1"/>
+            </h_section>
+            <h_section id="section_titles_ex_summary" width="90%">
+                <h_section id="section_title_ex_summary" height="30px" align="TOP_LEFT" width="100%">
+                    <static_label id="ex_summary_label" text="Exception Summary" style="cvh1"/>
+                </h_section>
+                <h_section id="section_buttons_exception_summary" height="30px" align="TOP_RIGHT" width="100%">
+                    <export_grid_button grid_id="Exception_Summary" image="download.svg">
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </export_grid_button>
+                    <load_all_rows_grid_button grid_id="Exception_Summary">
+                        <composite_enable_condition/>
+                        <composite_visibility_condition hide_panel="false"/>
+                    </load_all_rows_grid_button>
+                </h_section>
+            </h_section>
+        </h_section>
+        <h_section id="section_top_grids_tables_ex" height="350px" width="100%" align="TOP_LEFT">
+            <h_section width="100%" height="330px">
+                <grid id="Exception_Source" listened_data="true" width="90%">
+                    <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report"
+                                 type="DataModel"/>
+                    <instance>
+                        <instance_selector_ref reference="exception_instance_selectr"/>
+                    </instance>
+                   <selection type="SINGLE" unselectable="true" select_first_row="false">
+                       <unique_id field="error_level" node="root"/>
+                   </selection>
+                    <column id="ex_source_grid_1" title="Exception Type" display="true" sort="asc">
+                       <component>
+                           <grid_label_component alignment="LEFT">
+                               <dynamic_caption>
+                                   <field_value field="error_level" node="root"/>
+                               </dynamic_caption>
+                           </grid_label_component>
+                       </component>
+                    </column>
+                </grid>
+            </h_section>
+            <h_section width="100%" height="330px">
+                <grid id="Exception_Summary">
+                    <data_source project="${project}" branch="${branch}" source="dbd_exception_summary_report" type="DataModel"/>
+                    <instance>
+                        <instance_selector_ref reference="exception_instance_selectr"/>
+                    </instance>
+                    <filter empty_value_policy="ALL">
+                        <filter_value>
+                            <model_value reference="Exception_Source"/>
+                        </filter_value>
+                        <filter_mapping operator="EQUALS">
+                            <filter_on name="error_level" node="root"/>
+                        </filter_mapping>
+                    </filter>
+                    <selection type="SINGLE" unselectable="true" select_first_row="false">
+                        <unique_id field="enumerator" node="root"/>
+                        <additional_output property_path="Exception_Summary_ptf_name">
+                            <value field="portfolio_name" node="root"/>
+                        </additional_output>
+                        <additional_output property_path="Exception_Summary_error_level">
+                            <value field="error_level" node="root"/>
+                        </additional_output>
+                    </selection>
+                    <column id="ex_summary_grid_1" title="Exception Type" display="true" sort="asc">
+                            <component>
+                                <grid_label_component>
+                                    <dynamic_caption>
+                                        <field_value node="root" field="error_level"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                    </column>
+                    <column id="ex_summary_grid_2" title="Validation Portfolio Name" display="true" sort="asc">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption>
+                                    <field_value node="root" field="portfolio_name"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="ex_summary_grid_3" title="Exception Count" display="true" sort="asc">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption format="0">
+                                    <field_value node="root" field="count_of_exceptions"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                </grid>
+            </h_section>
+        </h_section>
+        <h_section id="section_bottom_grids_titles_ex" height="50px" width="100%" align="TOP_LEFT">
+            <h_section id="section_title_ex_details" height="30px" width="100%" align="TOP_LEFT">
+                <static_label id="ex_details_label" text="Exception Details" style="cvh1"/>
+            </h_section>
+            <h_section id="section_buttons_exception_report" height="50px" width="100%" align="TOP_RIGHT">
+                <export_grid_button grid_id="Exception_Details" image="download.svg">
+                    <composite_enable_condition/>
+                    <composite_visibility_condition hide_panel="false"/>
+                </export_grid_button>
+                <load_all_rows_grid_button grid_id="Exception_Details">
+                    <composite_enable_condition/>
+                    <composite_visibility_condition/>
+                </load_all_rows_grid_button>
+            </h_section>
+        </h_section>
+        <h_section id="section_bottom_grids_tables_ex" height="350px" width="100%" align="TOP_LEFT">
+            <grid id="Exception_Details" listened_data="true">
+                <data_source project="${project}" branch="${branch}" source="dbd_exception_details_report"
+                             type="DataModel"/>
+                <instance>
+                    <instance_selector_ref reference="exception_instance_selectr"/>
+                </instance>
+                <filter empty_value_policy="ALL">
+                    <filter_value>
+                        <model_value reference="Exception_Summary_error_level"/>
+                    </filter_value>
+                    <filter_mapping operator="EQUALS">
+                        <filter_on name="error_level" node="root"/>
+                    </filter_mapping>
+                </filter>
+                <filter empty_value_policy="ALL">
+                    <filter_value>
+                        <model_value reference="Exception_Summary_ptf_name"/>
+                    </filter_value>
+                    <filter_mapping operator="EQUALS">
+                        <filter_on name="portfolio_name" node="root"/>
+                    </filter_mapping>
+                </filter>
+                <column id="Exception_Details_1" title="Error level" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="error_level" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_2" title="Validation Portfolio Name" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="portfolio_name" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_3" title="Error Group" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="error_group" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_4" title="Error Type" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="error_type" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_5" title="Error Message" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="error_message" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_6" title="Error Group Description" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value field="description" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_7" title="Customer ID" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value node="root" field="customer_id"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_8" title="Account Number" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value node="root" field="acct_number"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_9" title="Substantial Owner ID" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value node="root" field="sub_owner_id"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Exception_Details_10" title="Legal Entity ID" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value node="root" field="legal_entity_id"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+            </grid>
+        </h_section>
+    </v_section>
+</page>
