@@ -557,8 +557,8 @@
                             <filter_on name="customer_number"/>
                         </filter_mapping>
                     </filter>
-                    <selection type="SINGLE">
-                        <unique_id field="customer_number"/>
+                    <selection type="SINGLE" unselectable="false">
+                        <unique_id field="notif_number"/>
                     </selection>
                     <column id="n0" title="Notification Number" alignment="LEFT">
                         <component>
@@ -614,6 +614,24 @@
                             </grid_label_component>
                         </component>
                     </column>
+                    <column id="n7" title="Customer Number" display="false">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption>
+                                    <field_value field="customer_number"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="n8" title="RM name" display="false">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption>
+                                    <field_value field="rm_name"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
                     <column id="n6" title="Notification Status Button">
                         <component>
                             <grid_button_component>
@@ -625,7 +643,7 @@
                                                 <string_value value="Selected customer number : "/>
                                                 <composite_visibility_condition/>
                                             </label>
-                                            <grid id="notifications_cust_grid" height="40px" width="500px"
+                                            <grid id="notifications_cust_grid" height="100px" width="500px"
                                                   hide_header="true">
                                                 <data_source project="${project}" branch="${branch}"
                                                              source="dbd_notification_details"
@@ -635,20 +653,23 @@
                                                 </instance>
                                                 <filter>
                                                     <filter_value>
-                                                        <model_value reference="Customer_Details" global="true"
+                                                        <model_value reference="Notification_Details" global="true"
                                                                      mode="value"/>
                                                     </filter_value>
                                                     <filter_mapping>
-                                                        <filter_on name="customer_number"/>
+                                                        <filter_on name="notif_number"/>
                                                     </filter_mapping>
                                                 </filter>
                                                 <selection type="SINGLE" unselectable="false" select_first_row="true">
-                                                    <unique_id field="customer_number"/>
+                                                    <unique_id field="notif_number"/>
                                                     <additional_output property_path="notif_grid_rm_name">
                                                         <value field="rm_name"/>
                                                     </additional_output>
-                                                    <additional_output property_path="notif_grid_rm_notification">
-                                                        <value field="notif_number"/>
+                                                    <additional_output property_path="notif_type_select">
+                                                        <value field="notif_type"/>
+                                                    </additional_output>
+                                                    <additional_output property_path="notif_cust_select">
+                                                        <value field="customer_number"/>
                                                     </additional_output>
                                                 </selection>
                                                 <column id="nn0" title="Selected customer numbers" display="true">
@@ -678,34 +699,7 @@
                                                         </grid_label_component>
                                                     </component>
                                                 </column>
-                                            </grid>
-                                        </h_section>
-                                        <h_section>
-                                            <label width="160px" style="fixed-width">
-                                                <string_value value="Notification type : "/>
-                                                <composite_visibility_condition/>
-                                            </label>
-                                            <grid id="notification_type_grid" height="40px" width="500px"
-                                                  hide_header="true">
-                                                <data_source project="${project}" branch="${branch}"
-                                                             source="dbd_notification_details"
-                                                             type="DataSource"/>
-                                                <instance>
-                                                    <instance_selector_ref reference="cic_instance_selector"/>
-                                                </instance>
-                                                <filter>
-                                                    <filter_value>
-                                                        <model_value reference="Customer_Details" global="true"
-                                                                     mode="value"/>
-                                                    </filter_value>
-                                                    <filter_mapping>
-                                                        <filter_on name="customer_number"/>
-                                                    </filter_mapping>
-                                                </filter>
-                                                <selection type="SINGLE" unselectable="false" select_first_row="true">
-                                                    <unique_id field="customer_number"/>
-                                                </selection>
-                                                <column id="nn0" title="Notification type" display="true">
+                                                <column id="nn3" title="Notification type" display="false">
                                                     <component>
                                                         <grid_label_component>
                                                             <dynamic_caption>
@@ -716,6 +710,45 @@
                                                 </column>
                                             </grid>
                                         </h_section>
+                                        <!--                                        <h_section>-->
+                                        <!--                                            <label width="160px" style="fixed-width">-->
+                                        <!--                                                <string_value value="Notification type : "/>-->
+                                        <!--                                                <composite_visibility_condition/>-->
+                                        <!--                                            </label>-->
+                                        <!--                                            <grid id="notification_type_grid" height="40px" width="500px"-->
+                                        <!--                                                  hide_header="true">-->
+                                        <!--                                                <data_source project="${project}" branch="${branch}"-->
+                                        <!--                                                             source="dbd_notification_details"-->
+                                        <!--                                                             type="DataSource"/>-->
+                                        <!--                                                <instance>-->
+                                        <!--                                                    <instance_selector_ref reference="cic_instance_selector"/>-->
+                                        <!--                                                </instance>-->
+                                        <!--                                                <filter>-->
+                                        <!--                                                    <filter_value>-->
+                                        <!--                                                        <model_value reference="Customer_Details" global="true"-->
+                                        <!--                                                                     mode="value"/>-->
+                                        <!--                                                    </filter_value>-->
+                                        <!--                                                    <filter_mapping>-->
+                                        <!--                                                        <filter_on name="customer_number"/>-->
+                                        <!--                                                    </filter_mapping>-->
+                                        <!--                                                </filter>-->
+                                        <!--                                                <selection type="SINGLE" unselectable="false" select_first_row="true">-->
+                                        <!--                                                    <unique_id field="notif_number"/>-->
+                                        <!--                                                    <additional_output property_path="notif_type_select">-->
+                                        <!--                                                        <value field="notif_type"/>-->
+                                        <!--                                                    </additional_output>-->
+                                        <!--                                                </selection>-->
+                                        <!--                                                <column id="nn0" title="Notification type" display="true">-->
+                                        <!--                                                    <component>-->
+                                        <!--                                                        <grid_label_component>-->
+                                        <!--                                                            <dynamic_caption>-->
+                                        <!--                                                                <field_value field="notif_type"/>-->
+                                        <!--                                                            </dynamic_caption>-->
+                                        <!--                                                        </grid_label_component>-->
+                                        <!--                                                    </component>-->
+                                        <!--                                                </column>-->
+                                        <!--                                            </grid>-->
+                                        <!--                                        </h_section>-->
                                         <h_section>
                                             <label width="160px" style="fixed-width">
                                                 <string_value value="Template name"/>
@@ -793,7 +826,7 @@
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                             <variable name="notif_type">
-                                                                <model_value reference="notification_type_grid"
+                                                                <model_value reference="notif_type_select"
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                             <variable name="notif_status">
@@ -805,11 +838,11 @@
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                             <variable name="customer_number">
-                                                                <model_value reference="notifications_cust_grid"
+                                                                <model_value reference="notif_cust_select"
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                             <variable name="notif_number">
-                                                                <model_value reference="notif_grid_rm_notification"
+                                                                <model_value reference="notifications_cust_grid"
                                                                              global="false" mode="value"/>
                                                             </variable>
                                                         </variables>
