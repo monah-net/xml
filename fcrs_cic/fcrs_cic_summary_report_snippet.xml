@@ -637,6 +637,22 @@
                     </h_section>
                     <h_section>
                         <label width="160px">
+                            <string_value value="Notification type"/>
+                            <composite_visibility_condition/>
+                        </label>
+                        <dropdown id="notification_type_list" all_supported="false" dynamic_update="true" width="300px">
+                            <data_source project="${project}" branch="${static_branch}" source="DD_notification_types"
+                                         type="DataSource"/>
+                            <value field="notification_type"/>
+                            <sort_by name="notif_id"/>
+                            <instance>
+                                <instance_selector_ref reference="cic_instance_selector"/>
+                            </instance>
+                            <composite_enable_condition/>
+                        </dropdown>
+                    </h_section>
+                    <h_section>
+                        <label width="160px">
                             <string_value value="Notification Template"/>
                             <composite_visibility_condition/>
                         </label>
@@ -697,6 +713,12 @@
                                     </variable>
                                     <variable name="notif_comment">
                                         <model_value reference="comment_notif" mode="value" global="false"/>
+                                    </variable>
+                                    <variable name="notif_type">
+                                        <model_value reference="notification_type_list" mode="value" global="false"/>
+                                    </variable>
+                                    <variable name="notif_template">
+                                        <model_value reference="customer_notification_template" global="false" mode="value"/>
                                     </variable>
                                 </variables>
                                 <positive_result_action>
