@@ -107,6 +107,12 @@
                                         <field_value field="filePath" node="root"/>
                                     </file_folder>
                                 </file_exists_condition>
+                                <enable_condition>
+                                    <field_value field="signoff_status_x" node="Signoff_History"/>
+                                    <equals>
+                                        <string_value value="COMPLETE"/>
+                                    </equals>
+                                </enable_condition>
                             </composite_enable_condition>
                         </grid_download_component>
                     </component>
@@ -217,7 +223,7 @@
                 <column id="Signoff_History_3" title="Last Updated Date" display="true" sort="desc">
                     <component>
                         <grid_label_component alignment="LEFT">
-                            <dynamic_caption format="yyyy-MM-DD">
+                            <dynamic_caption format="yyyy-MM-dd">
                                 <field_value field="action_date"/>
                             </dynamic_caption>
                         </grid_label_component>

@@ -31,6 +31,13 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </button>
+                <button id="adj_dashboard_part" text="Adjustment Dashboard">
+                    <open_page open_in_new_tab="false">
+                        <app_page_ref page_id="adjustment_dashboard"/>
+                    </open_page>
+                    <composite_enable_condition/>
+                    <composite_visibility_condition/>
+                </button>
             </menu_items>
         </dropdown_menu>
     </h_section>
