@@ -170,6 +170,17 @@
                                 <rollup_config/>
                             </signoff>
                             <composite_enable_condition/>
+                            <run_workflow>
+                                <workflow>
+                                    <name>
+                                        <string_value value="TESTO"/>
+                                    </name>
+                                </workflow>
+                                <instance>
+                                    <instance_selector_ref reference="signoff_instance_selectr"/>
+                                </instance>
+                            </run_workflow>
+                            <composite_enable_condition/>
                         </grid_button_component>
                     </component>
                 </column>
@@ -233,7 +244,7 @@
                     <component>
                         <grid_label_component>
                             <dynamic_caption>
-                                <field_value field="user_id"/>
+                                <field_value field="user_name"/>
                             </dynamic_caption>
                         </grid_label_component>
                     </component>
