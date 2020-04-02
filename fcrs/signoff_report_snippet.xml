@@ -128,58 +128,59 @@
                                     <caption key="COMPLETE" style="signoff_green"/>
                                 </captions>
                             </dynamic_caption>
-                            <signoff>
-                                <unique_id>
-                                    <field_value node="root" field="messageRefId"/>
-                                </unique_id>
-                                <title>
-                                    <field_value node="root" field="reporting_period"/>
-                                </title>
-                                <status>
-                                    <field_value node="Signoff_History" field="signoff_status"/>
-                                </status>
-                                <signOffStates>
-                                    <state_name>NONE</state_name>
-                                    <is_comment_enable>true</is_comment_enable>
-                                    <is_comment_mandatory>true</is_comment_mandatory>
-                                    <is_display>true</is_display>
-                                    <is_signOff_identifier>false</is_signOff_identifier>
-                                </signOffStates>
-                                <signOffStates>
-                                    <state_name>IN-PROGRESS</state_name>
-                                    <is_comment_enable>true</is_comment_enable>
-                                    <is_comment_mandatory>true</is_comment_mandatory>
-                                    <is_display>true</is_display>
-                                    <is_signOff_identifier>false</is_signOff_identifier>
-                                </signOffStates>
-                                <signOffStates>
-                                    <state_name>COMPLETE</state_name>
-                                    <is_comment_enable>true</is_comment_enable>
-                                    <is_comment_mandatory>true</is_comment_mandatory>
-                                    <is_display>true</is_display>
-                                    <is_signOff_identifier>true</is_signOff_identifier>
-                                </signOffStates>
-                                <historySourceAddress project="${project}" branch="${branch}" name="Signoff_History"/>
-                                <instance>
-                                    <instance_selector_ref reference="signoff_instance_selectr"/>
-                                </instance>
-                                <signOffStatement>
-                                    <string_value
-                                            value="Do you attest that you've reviewed the accuracy of this report and it is ready for submission?"/>
-                                </signOffStatement>
-                                <rollup_config/>
-                            </signoff>
-                            <composite_enable_condition/>
-                            <run_workflow>
-                                <workflow>
-                                    <name>
-                                        <string_value value="TESTO"/>
-                                    </name>
-                                </workflow>
-                                <instance>
-                                    <instance_selector_ref reference="signoff_instance_selectr"/>
-                                </instance>
-                            </run_workflow>
+                            <action_chain>
+                                <signoff>
+                                    <unique_id>
+                                        <field_value node="root" field="messageRefId"/>
+                                    </unique_id>
+                                    <title>
+                                        <field_value node="root" field="reporting_period"/>
+                                    </title>
+                                    <status>
+                                        <field_value node="Signoff_History" field="signoff_status"/>
+                                    </status>
+                                    <signOffStates>
+                                        <state_name>NONE</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>false</is_signOff_identifier>
+                                    </signOffStates>
+                                    <signOffStates>
+                                        <state_name>IN-PROGRESS</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>false</is_signOff_identifier>
+                                    </signOffStates>
+                                    <signOffStates>
+                                        <state_name>COMPLETE</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>true</is_signOff_identifier>
+                                    </signOffStates>
+                                    <historySourceAddress project="${project}" branch="${branch}" name="Signoff_History"/>
+                                    <instance>
+                                        <instance_selector_ref reference="signoff_instance_selectr"/>
+                                    </instance>
+                                    <signOffStatement>
+                                        <string_value
+                                                value="Do you attest that you've reviewed the accuracy of this report and it is ready for submission?"/>
+                                    </signOffStatement>
+                                    <rollup_config/>
+                                </signoff>
+                                <run_workflow>
+                                    <workflow>
+                                        <name>
+                                            <string_value value="TESTO"/>
+                                        </name>
+                                    </workflow>
+                                    <instance>
+                                        <instance_selector_ref reference="signoff_instance_selectr"/>
+                                    </instance>
+                                </run_workflow>
+                            </action_chain>
                             <composite_enable_condition/>
                         </grid_button_component>
                     </component>

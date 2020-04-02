@@ -115,7 +115,7 @@
                         <component>
                             <grid_label_component>
                                 <dynamic_caption>
-                                    <field_value field="aging_category"/>
+                                    <field_value field="notification_desc"/>
                                 </dynamic_caption>
                             </grid_label_component>
                         </component>
@@ -124,7 +124,7 @@
                         <component>
                             <grid_label_component>
                                 <dynamic_caption>
-                                    <field_value field="count"/>
+                                    <field_value field="notification_counter"/>
                                 </dynamic_caption>
                             </grid_label_component>
                         </component>
