@@ -886,7 +886,7 @@
                                                             </field>
                                                         </keys>
                                                     </data_source_update>
-                                                    <set_model_property property_path="close_popup_status"
+                                                    <set_model_property property_path="close_popup_notif_status"
                                                                         global="true">
                                                         <value>
                                                             <function_value function="=uuid()"/>
