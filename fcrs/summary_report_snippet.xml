@@ -364,7 +364,7 @@
                         is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
-                            <dynamic_caption>
+                            <dynamic_caption format="###,###.##">
                                 <field_value field="acct_balance_reported" node="root"/>
                             </dynamic_caption>
                         </grid_label_component>
@@ -460,7 +460,7 @@
                         sort="asc">
                     <component>
                         <grid_label_component alignment="LEFT">
-                            <dynamic_caption>
+                            <dynamic_caption format="###,###.##">
                                 <field_value field="payment_amount" node="income"/>
                             </dynamic_caption>
                         </grid_label_component>
@@ -470,7 +470,7 @@
                         is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
-                            <dynamic_caption>
+                            <dynamic_caption format="###,###.##">
                                 <field_value field="payment_amount_reported" node="income"/>
                             </dynamic_caption>
                         </grid_label_component>
