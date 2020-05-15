@@ -82,7 +82,7 @@
                                 </grid_label_component>
                             </component>
                     </column>
-                    <column id="ex_summary_grid_2" title="Validation Portfolio Name" display="true" sort="asc">
+                    <column id="ex_summary_grid_2" title="Validation Portfolio Name" display="true" sort="asc" >
                         <component>
                             <grid_label_component>
                                 <dynamic_caption>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
+    <spacer width="100px" height="50%"/>
+    <grid id="grid1">
+        <data_source project="FILE_UPLOADER" branch="FILE_UPLOADER" source="customers" type="DataSource"/>
+        <column id="FolderName" title="FolderName">
+            <component>
+                <grid_label_component>
+                    <static_caption text="FCRS_DATA_DIR"/>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="dm_upload" title="DM Upload">
+            <component>
+                <grid_dm_upload_component file_folder="FCRS_DATA_DIR">
+                    <static_caption icon="upload.svg"/>
+                    <unique_id>
+                        <field_value field="customer_number"/>
+                    </unique_id>
+                    <source_address project="FILE_UPLOADER" branch="FILE_UPLOADER"
+                                    name="sys_document_managment_history"/>
+                    <composite_enable_condition/>
+                </grid_dm_upload_component>
+            </component>
+        </column>
+        <column id="dm_download" title="DM Download">
+            <component>
+                <grid_button_component>
+                    <static_caption icon="download.svg"/>
+                    <dm_download file_folder="FCRS_DATA_DIR">
+                        <unique_id>
+                            <field_value field="customer_number"/>
+                        </unique_id>
+                        <source_address project="FILE_UPLOADER" branch="FILE_UPLOADER"
+                                        name="sys_document_managment_history"/>
+                    </dm_download>
+                    <composite_enable_condition/>
+                </grid_button_component>
+            </component>
+        </column>
+    </grid>
+</page>
