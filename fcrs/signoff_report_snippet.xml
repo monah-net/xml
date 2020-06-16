@@ -170,16 +170,6 @@
                                     </signOffStatement>
                                     <rollup_config/>
                                 </signoff>
-                                <run_workflow>
-                                    <workflow>
-                                        <name>
-                                            <string_value value="TESTO"/>
-                                        </name>
-                                    </workflow>
-                                    <instance>
-                                        <instance_selector_ref reference="signoff_instance_selectr"/>
-                                    </instance>
-                                </run_workflow>
                             </action_chain>
                             <composite_enable_condition/>
                         </grid_button_component>
@@ -237,15 +227,6 @@
                         <grid_label_component alignment="LEFT">
                             <dynamic_caption format="yyyy-MM-dd">
                                 <field_value field="action_date"/>
-                            </dynamic_caption>
-                        </grid_label_component>
-                    </component>
-                </column>
-                <column id="Signoff_History_4" title="Last Updated User" display="true">
-                    <component>
-                        <grid_label_component>
-                            <dynamic_caption>
-                                <field_value field="user_name"/>
                             </dynamic_caption>
                         </grid_label_component>
                     </component>

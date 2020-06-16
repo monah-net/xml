@@ -3,7 +3,7 @@
       id="signoff_report_snippet" style="y-scrollable">
     <context>
         <variable key="project" value="FATCA_CIC"/>
-        <variable key="branch" value="2019_v03"/>
+        <variable key="branch" value="2020_v01"/>
         <variable key="filePath" value="C:\\axiom\\server\\aws_cv_fatca\\temp\\"/>
     </context>
     <include name="header_snippet"/>
@@ -337,7 +337,7 @@
                         </label>
                         <v_section height="100px" width="200px">
                             <grid id="CustomerDetTEMP" hide_header="true" height="100%" width="100%">
-                                <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
+                                <data_source project="FATCA_CIC" branch="2020_v01" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -469,7 +469,7 @@
                         </label>
                         <v_section height="100px" width="200px">
                             <grid id="tasks_assign_grid" hide_header="true" height="100%" width="100%">
-                                <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
+                                <data_source project="FATCA_CIC" branch="2020_v01" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>
@@ -644,7 +644,7 @@
                         </label>
                         <v_section height="100px" width="200px">
                             <grid id="customer_details_notification_grid" hide_header="true" height="100%" width="100%">
-                                <data_source project="FATCA_CIC" branch="2019_v03" source="dbd_cic_1_4_customer_details"
+                                <data_source project="FATCA_CIC" branch="2020_v01" source="dbd_cic_1_4_customer_details"
                                              type="DataSource"/>
                                 <instance>
                                     <instance_selector_ref reference="cic_instance_selector"/>

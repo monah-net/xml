@@ -7,6 +7,6 @@
         </label>
     </h_section>
     <h_section id="right_sec" width="100%" align="MIDDLE_RIGHT">
-        <static_label id="copyright_label" text="2019 AxiomSL"/>
+        <static_label id="copyright_label" text="2020 AxiomSL"/>
     </h_section>
 </h_section>

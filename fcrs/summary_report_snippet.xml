@@ -243,7 +243,7 @@
                 <column id="Customer_Details_7" title="Holder DOB" display="true" sort="asc" is_filtered="true">
                     <component>
                         <grid_label_component alignment="LEFT">
-                            <dynamic_caption>
+                            <dynamic_caption format="dd/MMMM/yyyy">
                                 <field_value field="dob" node="root"/>
                             </dynamic_caption>
                         </grid_label_component>
@@ -265,7 +265,7 @@
                 <static_label id="account_label" text="Account Details" style="cvh1"/>
             </h_section>
             <h_section id="section_buttons_account_details" height="50px" width="100%" align="TOP_RIGHT">
-                <export_grid_button grid_id="Account_Details" image="download_16.svg">
+                <export_grid_button grid_id="Account_Details" image="download.svg">
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </export_grid_button>
@@ -377,7 +377,7 @@
                 <static_label id="income_label" text="Income Details" style="cvh1"/>
             </h_section>
             <h_section id="section_buttons_income_details" height="50px" width="100%" align="TOP_RIGHT">
-                <export_grid_button grid_id="Income_Details" image="download_16.svg">
+                <export_grid_button grid_id="Income_Details" image="download.svg">
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </export_grid_button>
