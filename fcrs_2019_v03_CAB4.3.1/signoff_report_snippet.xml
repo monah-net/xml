@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="signoff_report_snippet">
+    <v_section id="section_grid_sub_all" width="100%">
+        <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT">
+            <separate_instance_selector id="signoff_instance_selectr" width="60%" use_description_for_name="true">
+                <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
+            </separate_instance_selector>
+        </h_section>
+        <h_section id="section_signoff_details_label" height="50px" align="TOP_LEFT">
+            <static_label id="signoff_details_grid_label" text="Submission Details" style="cvh1"/>
+        </h_section>
+        <h_section id="section_signoff_details_grid" height="120px" width="100%" align="TOP_LEFT">
+            <no_selectable_grid id="Signoff_Details" height="100px" listened_data="true">
+                <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
+                <instance>
+                    <instance_provider>
+                        <model_value reference="signoff_instance_selectr"/>
+                    </instance_provider>
+                </instance>
+                <column id="Signoff_Details_1" title="Sending Company IN" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="sending_company_in"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_2" title="Transmitting Country" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="transmitting_country"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_3" title="Receiving Country" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="receiving_country"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_4" title="Version" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="version"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_5" title="Message Ref ID" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="messageRefId"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_6" title="FATCA Message Type" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="message_type_fatca"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_7" title="Message Type Indic (CRS only)" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="message_type_indic"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_8" title="Reporting Period" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="root" field="reporting_period"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_9" title="Download" display="true" sort="asc">
+                    <caption>
+                        <static_image alignment="CENTER" isFiltered="false">
+                            <value>
+                                <string_value value="download_icon.png"/>
+                            </value>
+                        </static_image>
+                    </caption>
+                    <action>
+                        <download file_folder="${filePath}">
+                            <file_name>
+                                <field_value node="root" field="xmlfileName"/>
+                            </file_name>
+                            <grid_composite_enable_provider>
+                                <grid_condition_enable_validator>
+                                    <enableRef>
+                                        <field_value node="root" field="xmlfileName"/>
+                                    </enableRef>
+                                    <enableValue>
+                                        <string_value value=""/>
+                                    </enableValue>
+                                    <enable_cond>NOT_EQUAL</enable_cond>
+                                </grid_condition_enable_validator>
+                            </grid_composite_enable_provider>
+                        </download>
+                    </action>
+                </column>
+                <column id="Signoff_Details_301" title="Sign Off Status" display="true" sort="asc" width="175px">
+                    <caption>
+                        <status alignment="LEFT" format="">
+                            <value>
+                                <field_value node="Signoff_History" field="signoff_status_x"/>
+                            </value>
+                            <style_mapping key="NONE" value="signoff_grey"/>
+                            <style_mapping key="IN-PROGRESS" value="signoff_orange"/>
+                            <style_mapping key="COMPLETE" value="signoff_green"/>
+                        </status>
+                    </caption>
+                    <action>
+                        <signoff>
+                            <unique_id>
+                                <field_value node="root" field="messageRefId"/>
+                            </unique_id>
+                            <title>
+                                <field_value node="root" field="reporting_period"/>
+                            </title>
+                            <status>
+                                <field_value node="Signoff_History" field="signoff_status"/>
+                            </status>
+                            <signOffStates>
+                                <state_name>NONE</state_name>
+                                <is_comment_enable>true</is_comment_enable>
+                                <is_comment_mandatory>true</is_comment_mandatory>
+                                <is_display>true</is_display>
+                                <is_signOff_identifier>false</is_signOff_identifier>
+                            </signOffStates>
+                            <signOffStates>
+                                <state_name>IN-PROGRESS</state_name>
+                                <is_comment_enable>true</is_comment_enable>
+                                <is_comment_mandatory>true</is_comment_mandatory>
+                                <is_display>true</is_display>
+                                <is_signOff_identifier>false</is_signOff_identifier>
+                            </signOffStates>
+                            <signOffStates>
+                                <state_name>COMPLETE</state_name>
+                                <is_comment_enable>true</is_comment_enable>
+                                <is_comment_mandatory>true</is_comment_mandatory>
+                                <is_display>true</is_display>
+                                <is_signOff_identifier>true</is_signOff_identifier>
+                            </signOffStates>
+                            <historySourceAddress project="${project}" branch="${branch}" name="UI:Signoff_History"/>
+                            <instance_value_property>signoff_instance_selectr</instance_value_property>
+                            <signOffStatement>
+                                <string_value
+                                        value="Do you attest that you've reviewed the accuracy of this report and it is ready for submission?"/>
+                            </signOffStatement>
+                            <rollup_config/>
+                            <grid_composite_enable_provider/>
+                            <grid_composite_visibility_provider/>
+                        </signoff>
+                    </action>
+                </column>
+                <column id="Signoff_Details_302" title="Sign Off Comment" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="Signoff_History" field="signoff_comment"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_Details_303" title="Sign Off Date" display="true" sort="asc">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value node="Signoff_History" field="action_date"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+            </no_selectable_grid>
+        </h_section>
+        <h_section id="section_signoff_aud_details_label" height="50px" align="TOP_LEFT">
+            <static_label id="signoff_audit_grid_label" text="Signoff History" style="cvh1"/>
+        </h_section>
+        <h_section id="section_signoff_audit_details_grid" height="270px" width="100%" align="TOP_LEFT">
+            <no_selectable_grid id="Signoff_History" height="250px" listened_data="true">
+                <data_source project="${project}" branch="${branch}" source="UI:Signoff_History" type="DataSource"/>
+                <instance>
+                    <instance_provider>
+                        <model_value reference="signoff_instance_selectr"/>
+                    </instance_provider>
+                </instance>
+                <column id="Signoff_History_1" title="Signoff Status" display="true">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value field="signoff_status"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_History_2" title="Signoff Comment" display="true">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value field="signoff_comment"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_History_3" title="Last Updated Date" display="true" sort="desc">
+                    <caption>
+                        <static_text alignment="LEFT" format="yyyy-MM-dd HH:mm:ss">
+                            <value>
+                                <field_value field="action_date"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+                <column id="Signoff_History_4" title="Last Updated User" display="true">
+                    <caption>
+                        <static_text alignment="LEFT" format="">
+                            <value>
+                                <field_value field="user_id"/>
+                            </value>
+                        </static_text>
+                    </caption>
+                </column>
+            </no_selectable_grid>
+        </h_section>
+    </v_section>
+</page>
