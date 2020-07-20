@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
-      id="exception_report_snippet">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="exception_report_snippet">
     <v_section id="section_grid_ex_all" width="100%">
         <h_section id="section_instance_picker_exception" height="50px" width="100%" align="TOP_LEFT">
-            <separate_instance_selector id="exception_instance_selectr"
-                                        width="60%" use_description_for_name="true">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_exception_source_report"
-                             type="DataModel"/>
+            <separate_instance_selector id="exception_instance_selectr" width="60%" use_description_for_name="true">
+                <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report" type="DataModel"/>
             </separate_instance_selector>
         </h_section>
         <h_section id="section_top_grids_titles_ex" height="50px" width="100%">
@@ -32,8 +29,7 @@
         <h_section id="section_top_grids_tables_ex" height="350px" width="100%" align="TOP_LEFT">
             <h_section width="100%" height="330px">
                 <single_selectable_grid id="Exception_Source" listened_data="true" width="90%">
-                    <data_source project="${project}" branch="${branch}" source="UI:dbd_exception_source_report"
-                                 type="DataModel"/>
+                    <data_source project="${project}" branch="${branch}" source="dbd_exception_source_report" type="DataModel"/>
                     <unique_id node="root" field="error_level"/>
                     <instance>
                         <instance_provider>
@@ -53,8 +49,7 @@
             </h_section>
             <h_section width="100%" height="330px">
                 <single_selectable_grid id="Exception_Summary" listened_data="true" width="90%">
-                    <data_source project="${project}" branch="${branch}" source="UI:dbd_exception_summary_report"
-                                 type="DataModel"/>
+                    <data_source project="${project}" branch="${branch}" source="dbd_exception_summary_report" type="DataModel"/>
                     <unique_id node="root" field="enumerator"/>
                     <instance>
                         <instance_provider>
@@ -125,8 +120,7 @@
         </h_section>
         <h_section id="section_bottom_grids_tables_ex" height="350px" width="100%" align="TOP_LEFT">
             <no_selectable_grid id="Exception_Details" listened_data="true">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_exception_details_report"
-                             type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_exception_details_report" type="DataModel"/>
                 <instance>
                     <instance_provider>
                         <model_value reference="exception_instance_selectr"/>

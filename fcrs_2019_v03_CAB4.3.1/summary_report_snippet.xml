@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
-      id="summary_snippet">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="summary_snippet">
     <v_section id="section_grid_all" width="100%">
         <h_section id="section_instance_picker_summary" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="summary_instance_selectr" width="60%" use_description_for_name="true">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report" type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_report" type="DataModel"/>
             </separate_instance_selector>
         </h_section>
         <h_section id="section_title_summary" height="50px" width="100%" align="TOP_LEFT">
@@ -12,7 +11,7 @@
         </h_section>
         <h_section id="section_grid_summary" height="120px" width="100%" align="TOP_LEFT">
             <no_selectable_grid id="Summary" listened_data="true" height="100px">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report" type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_report" type="DataModel"/>
                 <instance>
                     <instance_provider>
                         <model_value reference="summary_instance_selectr"/>
@@ -145,8 +144,7 @@
         </h_section>
         <h_section id="section_grid_customer" height="270px" width="100%" align="TOP_LEFT">
             <single_selectable_grid id="Customer_Details" listened_data="true" show_rows="5" height="250px">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_customer_report"
-                             type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_customer_report" type="DataModel"/>
                 <unique_id node="root" field="enumerator"/>
                 <instance>
                     <instance_provider>
@@ -248,8 +246,7 @@
         </h_section>
         <h_section id="section_grid_account" height="170px" width="100%" align="TOP_LEFT">
             <single_selectable_grid id="Account_Details" listened_data="true" height="150px">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_account_report"
-                             type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_account_report" type="DataModel"/>
                 <unique_id node="root" field="enumerator"/>
                 <instance>
                     <instance_provider>
@@ -360,8 +357,7 @@
         </h_section>
         <h_section id="section_grid_income" height="270px" width="100%" align="TOP_LEFT">
             <no_selectable_grid id="Income_Details" listened_data="true" height="250px">
-                <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_income_report"
-                             type="DataModel"/>
+                <data_source project="${project}" branch="${branch}" source="dbd_summary_income_report" type="DataModel"/>
                 <instance>
                     <instance_provider>
                         <model_value reference="summary_instance_selectr"/>
@@ -430,8 +426,7 @@
                         </static_text>
                     </caption>
                 </column>
-                <column id="Income_Details_6" title="Payment Amount in original payment currency" display="true"
-                        sort="asc">
+                <column id="Income_Details_6" title="Payment Amount in original payment currency" display="true" sort="asc">
                     <caption>
                         <static_text alignment="LEFT" format="" isFiltered="true">
                             <value>

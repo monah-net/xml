@@ -1,0 +1,71 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      style="page-with-header-and-footer" id="home">
+    <context>
+        <variable key="project" value="FCRS_DATA"/>
+        <variable key="branch" value="rc_mvt"/>
+    </context>
+    <date_picker id="date_field" unit="DAY" tooltip="Choose a day" width="30px">
+        <default_value>
+            <date_value value="2019-12-31"/>
+        </default_value>
+        <composite_enable_condition/>
+    </date_picker>
+    <h_section height="100px" width="30px">
+        <text_field id="country_name_field" input_type="string">
+            <composite_enable_condition/>
+        </text_field>
+    </h_section>
+    <h_section height="100px" width="30px">
+        <run_workflow_button id="load_data_wf" status_path="runVasya" text="DATA LOAD" tooltip="Some tip">
+            <icon status_value="NONE" icon_value="play.svg"/>
+            <icon status_value="WAITING" icon_value="play_outline.svg"/>
+            <icon status_value="WARNING" icon_value="warning_colorful.svg"/>
+            <icon status_value="ERROR" icon_value="error_colorful.svg"/>
+            <icon status_value="ACTIVE" icon_value="check_circle_colorful.svg"/>
+            <workflow_action status_path="runVasya" restart_all_modules="true">
+                <workflow>
+                    <name>
+                        <string_value value="TEST"/>
+                    </name>
+                </workflow>
+                <instance>
+                    <instance_provider>
+                        <as_of_date>
+                            <date_value value="2019-12-31"/>
+                        </as_of_date>
+                    </instance_provider>
+                </instance>
+                <variables>
+                    <variable name="country_name">
+                        <model_value reference="country_name_field"/>
+                    </variable>
+                </variables>
+            </workflow_action>
+            <composite_enable_condition/>
+            <composite_visibility_condition/>
+        </run_workflow_button>
+    </h_section>
+    <h_section>
+        <!--        checkbox selector-->
+        <checkbox_selector id="cb_selector1" label="Selector #1" label_position="LEFT" orientation="HORIZONTAL">
+            <static_checkbox_selector>
+                <value value="Value 1"/>
+                <value value="Value 2"/>
+                <value value="Value 3"/>
+                <value value="Value 4"/>
+                <value value="Value 5"/>
+            </static_checkbox_selector>
+        </checkbox_selector>
+    </h_section>
+    <h_section width="30px">
+        <!--        radio selector-->
+        <radio_selector id="rs1" orientation="VERTICAL" label_position="LEFT" label="Selector">
+            <static_radio_selector>
+                <value value="1" caption="Value 1" default="true"/>
+                <value value="2" caption="Value 2" default="false"/>
+                <value value="3" caption="Value 3" default="false"/>
+                <value value="-1" caption="Value -1" default="true"/>
+            </static_radio_selector>
+        </radio_selector>
+    </h_section>
+</page>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
+    <download_button id="b" text="TEXT">
+        <file_name>
+            <string_value value="export_projects.zip"/>
+        </file_name>
+        <file_folder>
+            <string_value value="Default"/>
+        </file_folder>
+    </download_button>
     <spacer width="100px" height="50%"/>
     <grid id="grid1">
         <data_source project="FILE_UPLOADER" branch="FILE_UPLOADER" source="customers" type="DataSource"/>

@@ -39,7 +39,7 @@
         </h_section>
         <h_section id="h1_title" align = "MIDDLE_CENTER">
             <page_title id="page_title_label">
-                <data_source project="FCRS_UI" branch="current" source="UI:cab_page_setup" type="DataSource"/>
+                <data_source project="FCRS_UI" branch="2019_v03" source="cab_page_setup" type="DataSource"/>
                 <unique_id field="page_id"/>
                 <title field="page_title"/>
             </page_title>
