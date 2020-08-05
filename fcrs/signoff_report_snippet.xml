@@ -233,5 +233,46 @@
                 </column>
             </grid>
         </h_section>
+<!--        <h_section id="section_signoff_audit_details_grid_add" height="270px" width="100%" align="TOP_LEFT">-->
+<!--            <grid id="SUBMISSION_History">-->
+<!--                <data_source project="${project}" branch="${branch}" source="dbd_signoff_history_standard" type="DataModel"/>-->
+<!--                <column id="Signoff_History_additional_1" title="IDES/TA Responce Request File Name" display="true">-->
+<!--                    <component>-->
+<!--                        <grid_label_component alignment="LEFT">-->
+<!--                            <dynamic_caption>-->
+<!--                                <field_value field="idesResponceFileName"/>-->
+<!--                            </dynamic_caption>-->
+<!--                        </grid_label_component>-->
+<!--                    </component>-->
+<!--                </column>-->
+<!--                <column id="Signoff_History_additional_2" title="File Has Been Accepted by IDES/TA (Y/N flag)" display="true">-->
+<!--                    <component>-->
+<!--                        <grid_label_component alignment="LEFT">-->
+<!--                            <dynamic_caption>-->
+<!--                                <field_value field="fileValidFlag"/>-->
+<!--                            </dynamic_caption>-->
+<!--                        </grid_label_component>-->
+<!--                    </component>-->
+<!--                </column>-->
+<!--                <column id="Signoff_History_additional_3" title="Number of Record-Level Errors In IDES Responce File" display="true">-->
+<!--                    <component>-->
+<!--                        <grid_label_component alignment="LEFT">-->
+<!--                            <dynamic_caption>-->
+<!--                                <field_value field="recordErrorsCount"/>-->
+<!--                            </dynamic_caption>-->
+<!--                        </grid_label_component>-->
+<!--                    </component>-->
+<!--                </column>-->
+<!--                <column id="Signoff_History_additional_4" title="Number of Field-Level Errors In IDES Responce File" display="true">-->
+<!--                    <component>-->
+<!--                        <grid_label_component alignment="LEFT">-->
+<!--                            <dynamic_caption>-->
+<!--                                <field_value field="fieldErrorCount"/>-->
+<!--                            </dynamic_caption>-->
+<!--                        </grid_label_component>-->
+<!--                    </component>-->
+<!--                </column>-->
+<!--            </grid>-->
+<!--        </h_section>-->
     </v_section>
 </page>
