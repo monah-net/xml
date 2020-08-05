@@ -4,7 +4,7 @@
     <v_section id="section_grid_sub_all" width="100%">
         <h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="adjustment_instance_selectr" width="60%" use_description_for_name="true">
-                <data_source project="FATCA_ENRICHMENT" branch="current" source="UI:Aggregation[rpt_legal_entity]"
+                <data_source project="FCRS_UI" branch="current" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
                              type="DataModel"/>
             </separate_instance_selector>
         </h_section>

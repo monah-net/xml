@@ -160,7 +160,7 @@
                                         <is_display>true</is_display>
                                         <is_signOff_identifier>true</is_signOff_identifier>
                                     </signOffStates>
-                                    <historySourceAddress project="${project}" branch="${branch}" name="UI:Signoff_History"/>
+                                    <historySourceAddress project="${project}" branch="${branch}" name="Signoff_History"/>
                                     <instance>
                                         <instance_selector_ref reference="signoff_instance_selectr"/>
                                     </instance>
