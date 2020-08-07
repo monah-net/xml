@@ -353,10 +353,10 @@
                         </grid_label_component>
                     </component>
                 </column>
-                <column id="Signoff_History_additional_6" title="Drill-down IDES" display="true" sort="asc">
+                <column id="Signoff_History_additional_6" title="Response Details" display="true" sort="asc">
                     <component>
                         <drilldown_component>
-                            <static_caption text="drill"/>
+                            <static_caption text="View Details"/>
                             <task_source>
                                 <taskAddress>
                                     <string_value value="FATCA_AEOI!2020_v01:ides_fatca_notif_rec_error"/>
