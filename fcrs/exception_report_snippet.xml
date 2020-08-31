@@ -238,8 +238,14 @@
                 <model_value reference="WFPath"/>
                 <composite_visibility_condition/>
             </label>
-            <run_workflow_button id="WF" text="Rerun and Reload" style="primary-button" width="200px" status_path="WFPath">
-                <icon status_value="" icon_value=""/>
+            <run_workflow_button id="WF" text="Rerun and Reload" style="primary-button" width="200px" status_path="WFPath" icon_alignment="RIGHT">
+                <icon status_value="ACTIVE" icon_value="play.svg"/>
+                <icon status_value="NONE" icon_value="play.svg"/>
+                <icon status_value="START" icon_value="spinner.svg"/>
+                <icon status_value="WAITING" icon_value="spinner.svg"/>
+                <icon status_value="KILLED" icon_value="play.svg"/>
+                <icon status_value="ERROR" icon_value="play.svg"/>
+                <icon status_value="WARNING" icon_value="play.svg"/>
                     <workflow_action restart_all_modules="true" status_path="WFPath">
                         <workflow>
                             <project>
