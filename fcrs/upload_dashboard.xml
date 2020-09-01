@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
-  <h_section >
-  	  <static_label id="upload_header" text="Upload your template" height="20px"/>
-  </h_section>
-  <grid id="grid1">
+    <h_section style="heading-1" width="100%">
+            <static_label id="upload_header" text="Upload your template" icon_alignment="BOTTOM">
+                <style type="H1"/>
+            </static_label>
+    </h_section>
+    <grid id="grid1">
         <data_source project="FILE_UPLOADER" branch="FILE_UPLOADER" source="customers" type="DataSource"/>
         <column id="FolderName" title="FolderName" display="false">
             <component>
@@ -41,4 +43,32 @@
             </component>
         </column>
     </grid>
+    <v_section width="100%" height="100%">
+        <run_workflow_button id="wf_run" status_path="wf_status" text="RUN" style="solid"
+                             icon_alignment="RIGHT">
+            <icon status_value="ACTIVE" icon_value="play.svg"/>
+            <icon status_value="NONE" icon_value="play.svg"/>
+            <icon status_value="START" icon_value="spinner.svg"/>
+            <icon status_value="WAITING" icon_value="spinner.svg"/>
+            <icon status_value="KILLED" icon_value="play.svg"/>
+            <icon status_value="ERROR" icon_value="play.svg"/>
+            <icon status_value="WARNING" icon_value="play.svg"/>
+            <workflow_action restart_all_modules="true" status_path="wf_status">
+                <workflow>
+                    <name>
+                        <string_value value="MVT_Main"/>
+                    </name>
+                </workflow>
+                <instance>
+                    <instance_provider>
+                        <as_of_date>
+                            <date_value value="1970-01-01T00:00:00"/>
+                        </as_of_date>
+                    </instance_provider>
+                </instance>
+            </workflow_action>
+            <composite_enable_condition/>
+            <composite_visibility_condition/>
+        </run_workflow_button>
+    </v_section>
 </page>
