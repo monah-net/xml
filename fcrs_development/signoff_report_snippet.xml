@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="signoff_report_snippet">
+    <v_section id="section_grid_sub_all" width="100%">
+        <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT">
+            <separate_instance_selector id="signoff_instance_selectr" width="60%" use_description_for_name="true">
+                <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
+            </separate_instance_selector>
+        </h_section>
+        <h_section id="section_signoff_details_label" height="50px" align="TOP_LEFT">
+            <static_label id="signoff_details_grid_label" text="Submission Details" style="cvh1"/>
+        </h_section>
+        <h_section id="section_signoff_details_grid" height="210px" width="100%" align="TOP_LEFT">
+            <grid id="Signoff_Details" height="200px" listened_data="true">
+                <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
+                <instance>
+                    <instance_selector_ref reference="signoff_instance_selectr"/>
+                </instance>
+                <selection type="SINGLE" select_first_row="true">
+                    <unique_id field="messageRefId" node="root"/>
+                </selection>
+                <column id="Signoff_Details_1" title="Sending Company IN" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value node="root" field="sending_company_in"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_2" title="Transmitting Country" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value node="root" field="transmitting_country"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_3" title="Receiving Country" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value node="root" field="receiving_country"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_4" title="Version" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value node="root" field="version"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_5" title="Message Ref ID" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="messageRefId" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_6" title="FATCA Message Type" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="message_type_fatca" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_7" title="Message Type Indic (CRS only)" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="message_type_indic" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_8" title="Reporting Period" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="reporting_period" node="root"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_9" title="Download" display="true" sort="asc">
+                    <component>
+                        <grid_download_component>
+                            <static_caption icon="download.svg"/>
+                            <file_folder>
+                                <field_value field="filePath" node="root"/>
+                            </file_folder>
+                            <file_name>
+                                <field_value field="xmlfileName" node="root"/>
+                            </file_name>
+                            <composite_enable_condition>
+                                <file_exists_condition>
+                                    <file_name>
+                                        <field_value field="xmlfileName" node="root"/>
+                                    </file_name>
+                                    <file_folder>
+                                        <field_value field="filePath" node="root"/>
+                                    </file_folder>
+                                </file_exists_condition>
+                                <enable_condition>
+                                    <field_value field="signoff_status_x" node="Signoff_History"/>
+                                    <equals>
+                                        <string_value value="COMPLETE"/>
+                                    </equals>
+                                </enable_condition>
+                            </composite_enable_condition>
+                        </grid_download_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_301" title="Sign Off Status" display="true" sort="asc" width="175px">
+                    <component>
+                        <grid_button_component>
+                            <dynamic_caption>
+                                <field_value field="signoff_status_x" node="Signoff_History"/>
+                                <captions>
+                                    <caption key="NONE" style="signoff_grey"/>
+                                    <caption key="IN-PROGRESS" style="signoff_orange"/>
+                                    <caption key="COMPLETE" style="signoff_green"/>
+                                </captions>
+                            </dynamic_caption>
+                            <action_chain>
+                                <signoff>
+                                    <unique_id>
+                                        <field_value node="root" field="messageRefId"/>
+                                    </unique_id>
+                                    <title>
+                                        <field_value node="root" field="reporting_period"/>
+                                    </title>
+                                    <status>
+                                        <field_value node="Signoff_History" field="signoff_status"/>
+                                    </status>
+                                    <signOffStates>
+                                        <state_name>NONE</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>false</is_signOff_identifier>
+                                    </signOffStates>
+                                    <signOffStates>
+                                        <state_name>IN-PROGRESS</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>false</is_signOff_identifier>
+                                    </signOffStates>
+                                    <signOffStates>
+                                        <state_name>COMPLETE</state_name>
+                                        <is_comment_enable>true</is_comment_enable>
+                                        <is_comment_mandatory>true</is_comment_mandatory>
+                                        <is_display>true</is_display>
+                                        <is_signOff_identifier>true</is_signOff_identifier>
+                                    </signOffStates>
+                                    <historySourceAddress project="${project}" branch="${branch}" name="UI:Signoff_History"/>
+                                    <instance>
+                                        <instance_selector_ref reference="signoff_instance_selectr"/>
+                                    </instance>
+                                    <signOffStatement>
+                                        <string_value
+                                                value="Do you attest that you've reviewed the accuracy of this report and it is ready for submission?"/>
+                                    </signOffStatement>
+                                    <rollup_config/>
+                                </signoff>
+                            </action_chain>
+                            <composite_enable_condition/>
+                        </grid_button_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_302" title="Sign Off Comment" display="true" sort="asc">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                    <field_value field="signoff_comment" node="Signoff_History"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_Details_303" title="Sign Off Date" display="true" sort="asc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption>
+                                <field_value node="Signoff_History" field="action_date"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+            </grid>
+        </h_section>
+        <spacer height="10px" width="100%"/>
+        <h_section id="section_signoff_aud_details_label" height="50px" align="TOP_LEFT">
+            <static_label id="signoff_audit_grid_label" text="Signoff History" style="cvh1"/>
+        </h_section>
+        <h_section id="section_signoff_audit_details_grid" height="270px" width="100%" align="TOP_LEFT">
+            <grid id="Signoff_History" height="250px" listened_data="true">
+                <data_source project="${project}" branch="${branch}" source="UI:Signoff_History" type="DataSource"/>
+                <instance>
+                    <instance_selector_ref reference="signoff_instance_selectr"/>
+                </instance>
+                <filter>
+                    <filter_value>
+                        <model_value reference="Signoff_Details"/>
+                    </filter_value>
+                    <filter_mapping>
+                        <filter_on name="unique_id"/>
+                    </filter_mapping>
+                </filter>
+                <column id="Signoff_History_1" title="Signoff Status" display="true">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="signoff_status"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_2" title="Signoff Comment" display="true">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="signoff_comment"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_3" title="Last Updated Date" display="true" sort="desc">
+                    <component>
+                        <grid_label_component alignment="LEFT">
+                            <dynamic_caption format="yyyy-MM-dd">
+                                <field_value field="action_date"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+            </grid>
+        </h_section>
+        <h_section id="section_submission_history_label" height="50px" align="TOP_LEFT">
+            <composite_visibility_provider>
+                <visibility_condition>
+                    <data_object_value>
+                        <data_source source="UI:dbd_signoff_report" type="DataModel" project="${project}" branch="${branch}"/>
+                        <instance>
+                            <instance_selector_ref reference="signoff_instance_selectr"/>
+                        </instance>
+                        <field name="idesResponceFileName" node="Submission_History"/>
+                        <filter>
+                            <filter_value>
+                                <model_value reference="Signoff_Details"/>
+                            </filter_value>
+                            <filter_mapping>
+                                <filter_on name="messageRefId" node="root"/>
+                            </filter_mapping>
+                        </filter>
+                    </data_object_value>
+                    <is_not_empty/>
+                </visibility_condition>
+            </composite_visibility_provider>
+            <static_label id="section_submission_history_label" text="Submission History" style="cvh1"/>
+        </h_section>
+        <h_section id="submission_history_grid_add" height="270px" width="100%" align="TOP_CENTER">
+            <composite_visibility_provider>
+                <visibility_condition>
+                <data_object_value>
+                    <data_source source="UI:dbd_signoff_report" type="DataModel" project="${project}" branch="${branch}"/>
+                    <instance>
+                        <instance_selector_ref reference="signoff_instance_selectr"/>
+                    </instance>
+                    <field name="idesResponceFileName" node="Submission_History"/>
+                    <filter>
+                        <filter_value>
+                            <model_value reference="Signoff_Details"/>
+                        </filter_value>
+                        <filter_mapping>
+                            <filter_on name="messageRefId" node="root"/>
+                        </filter_mapping>
+                    </filter>
+                </data_object_value>
+                    <is_not_empty/>
+                </visibility_condition>
+            </composite_visibility_provider>
+            <grid id="submission_history">
+                <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
+                <instance>
+                    <instance_selector_ref reference="signoff_instance_selectr"/>
+                </instance>
+                <column id="Signoff_History_additional_1" title="IDES/TA Responce Request File Name" display="true" alignment="CENTER">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="idesResponceFileName" node="Submission_History"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_additional_2" title="File Has Been Accepted by IDES/TA (Y/N flag)" display="true" alignment="CENTER">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="fileValidFlag" node="Submission_History"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_additional_3" title="Number of Record-Level Errors In IDES Responce File" display="true" alignment="CENTER">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="recordErrorsCount" node="Submission_History"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_additional_5" title="Download Refiling Template" display="true" sort="asc">
+                    <component>
+                        <grid_download_component>
+                            <static_caption icon="download.svg"/>
+                            <file_folder>
+                                <string_value value="FCRS_DATA_DIR"/>
+                            </file_folder>
+                            <file_name>
+                                <string_value value="REFILING_TEMPLATE-IDES_RecordLevelError_FATCA11-JP-US-20191231000000.xlsx"/>
+                            </file_name>
+                            <composite_enable_condition>
+                                <file_exists_condition>
+                                    <file_name>
+                                        <string_value value="REFILING_TEMPLATE-IDES_RecordLevelError_FATCA11-JP-US-20191231000000.xlsx"/>
+                                    </file_name>
+                                    <file_folder>
+                                        <string_value value="FCRS_DATA_DIR"/>
+                                    </file_folder>
+                                </file_exists_condition>
+                            </composite_enable_condition>
+                        </grid_download_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_additional_4" title="Number of Field-Level Errors In IDES Responce File" display="true" alignment="CENTER">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="fieldErrorCount" node="Submission_History"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="Signoff_History_additional_6" title="Response Details" display="true" sort="asc">
+                    <component>
+                        <drilldown_component>
+                            <static_caption text="View Details"/>
+                            <task_source>
+                                <taskAddress>
+                                    <string_value value="FATCA_AEOI!2020_v01:ides_fatca_notif_rec_error"/>
+                                </taskAddress>
+                                <taskType>
+                                    <string_value value="Aggregation"/>
+                                </taskType>
+                            </task_source>
+                            <instance>
+                                <instance_provider>
+                                    <as_of_date>
+                                        <date_value value="2019-12-31T00:00:00"/>
+                                    </as_of_date>
+                                    <keys>
+                                        <variable name="fileName">
+                                            <string_value value="RecordLevelError"/>
+                                        </variable>
+                                    </keys>
+                                </instance_provider>
+                            </instance>
+                            <composite_enable_condition/>
+                        </drilldown_component>
+                    </component>
+                </column>
+            </grid>
+        </h_section>
+    </v_section>
+</page>
