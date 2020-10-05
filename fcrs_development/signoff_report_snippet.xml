@@ -359,7 +359,7 @@
                             <static_caption text="View Details"/>
                             <task_source>
                                 <taskAddress>
-                                    <string_value value="FATCA_AEOI!2020_v01:ides_fatca_notif_rec_error"/>
+                                    <string_value value="FATCA_AEOI!dev:ides_fatca_notif_rec_error"/>
                                 </taskAddress>
                                 <taskType>
                                     <string_value value="Aggregation"/>

@@ -15,7 +15,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_message_header"/>
+                        <string_value value="FATCA_ENRICHMENT!dev:rpt_message_header"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
