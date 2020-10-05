@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      style="page-with-header-and-footer" id="home">
+    <include name="header_section"/>
+    <v_section id="main_section" width="100%" style="main-section main-frame" align="TOP_CENTER">
+        <include name="home_snippet"/>
+    </v_section>
+    <include name="footer_section"/>
+</page>
