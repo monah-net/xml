@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="home_snippet">
+    <v_section id="panel_main_home" width="100%">
+        <h_section id="section_top_grids_icons_home" height="500px" width="100%" align="MIDDLE_CENTER">
+            <button id="ho_summary_icon" text="Summary Report" image="file_document_outline.svg" icon_alignment="TOP"
+                    style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="summary_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button id="ho_exception_icon" text="Exception Report" image="file_document_outline.svg"
+                    icon_alignment="TOP" style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="exception_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button id="ho_signoff_icon" text="Signoff Report" image="file_document_outline.svg" icon_alignment="TOP"
+                    style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="signoff_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button id="ho_adjustment_icon" text="Adjustment Dashboard" image="file_document_outline.svg"
+                    icon_alignment="TOP" style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="adjustment_dashboard"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <!-- <button id="ho_upload_icon" text="Upload Data Dashboard" image="file_document_outline.svg"
+                    icon_alignment="TOP" style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="upload_dashboard"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button> -->
+        </h_section>
+    </v_section>
+</page>

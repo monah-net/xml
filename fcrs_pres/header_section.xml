@@ -38,6 +38,13 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </button>
+              <!-- <button id="upload_dashboard_part" text="Upload Data Dashboard">
+                    <open_page open_in_new_tab="false">
+                        <app_page_ref page_id="upload_dashboard"/>
+                    </open_page>
+                    <composite_enable_condition/>
+                    <composite_visibility_condition/>
+                </button> -->
             </menu_items>
         </dropdown_menu>
     </h_section>

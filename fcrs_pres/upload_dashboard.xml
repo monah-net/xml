@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" style="page-with-header-and-footer">
+    <context>
+        <variable key="project" value="FCRS_UI"/>
+        <variable key="branch" value="2020_v02"/>
+        <variable key="filePath" value="/opt/axiom/filefolder/"/>
+        <variable key="wf_data_load" value="MAIN_DATA_LOAD_UI"/>
+    </context>
+    <include name="header_section"/>
+    <h_section style="heading-1" width="100%" height="40px" align="MIDDLE_CENTER">
+        <static_label id="upload_header" text="Data uploading" icon_alignment="BOTTOM"/>
+    </h_section>
+    <grid id="grid1" style="data_load_grid" height="70px" width="100%">
+        <data_source project="FILE_UPLOADER" branch="FILE_UPLOADER" source="customers" type="DataSource"/>
+        <column id="FolderName" title="FolderName" display="true">
+            <component>
+                <grid_label_component>
+                    <static_caption text="FCRS_DATA_DIR"/>
+                </grid_label_component>
+            </component>
+        </column>
+        <column id="dm_upload" title="DM Upload">
+            <component>
+                <grid_dm_upload_component file_folder="FCRS_DATA_DIR">
+                    <static_caption icon="upload.svg"/>
+                    <unique_id>
+                        <field_value field="customer_number"/>
+                    </unique_id>
+                    <source_address project="FILE_UPLOADER" branch="FILE_UPLOADER"
+                                    name="sys_document_managment_history"/>
+                    <composite_enable_condition/>
+                </grid_dm_upload_component>
+            </component>
+        </column>
+        <column id="dm_download" title="DM Download">
+            <component>
+                <grid_button_component>
+                    <static_caption icon="download.svg"/>
+                    <dm_download file_folder="FCRS_DATA_DIR">
+                        <unique_id>
+                            <field_value field="customer_number"/>
+                        </unique_id>
+                        <source_address project="FILE_UPLOADER" branch="FILE_UPLOADER"
+                                        name="sys_document_managment_history"/>
+                    </dm_download>
+                    <composite_enable_condition/>
+                </grid_button_component>
+            </component>
+        </column>
+    </grid>
+    <spacer width="100%" height="20px"/>
+    <date_picker id="asofdate_var" style="asofdate_picker" caption="AsOfDate" unit="DAY" width="10%">
+        <default_value>
+            <function_value function="=currentDateInMillis()"/>
+        </default_value>
+        <composite_enable_condition/>
+    </date_picker>
+    <text_field id="filing_id_field" input_type="string" caption="Filing ID" width="10%">
+        <composite_enable_condition/>
+    </text_field>
+    <text_field id="snd_country_id" input_type="string" caption="Sender country" width="10%">
+        <composite_enable_condition/>
+    </text_field>
+    <text_field id="rec_country_id" input_type="string" caption="Receiver country" width="10%">
+        <composite_enable_condition/>
+    </text_field>
+    <label width="100%" >
+        <model_value reference="wf_status"/>
+        <composite_visibility_condition/>
+    </label>
+    <run_workflow_button id="wf_run" status_path="wf_status" text="RUN" style="solid"
+                         icon_alignment="RIGHT" width="10%">
+        <icon status_value="ACTIVE" icon_value="play.svg"/>
+        <icon status_value="NONE" icon_value="play.svg"/>
+        <icon status_value="START" icon_value="spinner.svg"/>
+        <icon status_value="WAITING" icon_value="spinner.svg"/>
+        <icon status_value="KILLED" icon_value="play.svg"/>
+        <icon status_value="ERROR" icon_value="play.svg"/>
+        <icon status_value="WARNING" icon_value="play.svg"/>
+        <workflow_action restart_all_modules="true" status_path="wf_status">
+            <workflow>
+                <project>
+                    <model_value reference="{$project}"/>
+                </project>
+                <branch>
+                    <model_value reference="{$branch}"/>
+                </branch>
+                <name>
+                    <string_value value="{$wf_data_load}"/>
+                </name>
+            </workflow>
+            <instance>
+                <instance_provider>
+                    <as_of_date>
+                        <model_value reference="asofdate_var"/>
+                    </as_of_date>
+                    <keys>
+                        <variable name="filing_id">
+                            <model_value reference="filing_id_field"/>
+                        </variable>
+                        <variable name="snd_country">
+                            <model_value reference="snd_country_id"/>
+                        </variable>
+                        <variable name="rec_country">
+                            <model_value reference="rec_country_id"/>
+                        </variable>
+                    </keys>
+                </instance_provider>
+            </instance>
+            <variables>
+                <variable name="FILING_TYPE">
+                    <model_value reference="filing_type_var"/>
+                </variable>
+                <variable name="ACCT_INFO_TYPE">
+                    <model_value reference="acct_info_type_var"/>
+                </variable>
+                <variable name="FILE_NAME">
+                    <model_value reference="file_name_var"/>
+                </variable>
+                <variable name="POOL_REPORT_SOURCE">
+                    <model_value reference="pool_report_source_var"/>
+                </variable>
+                <variable name="FATCA_CRS">
+                    <model_value reference="fatca_crs_var"/>
+                </variable>
+                <variable name="FatcaMainDirectory">
+                    <model_value reference="fatca_main_dir_var"/>
+                </variable>
+            </variables>
+        </workflow_action>
+        <composite_enable_condition/>
+        <composite_visibility_condition/>
+    </run_workflow_button>
+    <h_section height="50px" width="100%">
+        <text_field id="filing_type_var" caption="Filing Type" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="acct_info_type_var" caption="Aggregated (AGGREGATED) / D etailed (NULL)" input_type="string" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="file_name_var" caption="Input File Name" input_type="string" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="pool_report_source_var" caption="FATCA (F)/ CRS (C)" input_type="string" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="fatca_crs_var" caption="FATCA (F)/ CRS (C)" input_type="string" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="fatca_main_dir_var" caption="Full path of the main directory" input_type="string" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+    </h_section>
+</page>

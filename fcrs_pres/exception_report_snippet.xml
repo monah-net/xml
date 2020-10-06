@@ -252,7 +252,7 @@
                                 <string_value value="FCRS_UI"/>
                             </project>
                             <branch>
-                                <string_value value="2020_v02"/>
+                                <string_value value="2020_v01"/>
                             </branch>
                             <name>
                                 <string_value value="FULL_REPORTING_RUN"/>
