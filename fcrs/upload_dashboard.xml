@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" style="page-with-header-and-footer">
     <context>
         <variable key="project" value="FCRS_UI"/>
         <variable key="branch" value="current"/>
         <variable key="filePath" value="/opt/axiom/filefolder/"/>
         <variable key="wf_data_load" value="MAIN_DATA_LOAD_UI"/>
     </context>
-<!--    <h_section id="section_instance_picker_upload" height="70px" width="100%" align="TOP_LEFT">-->
-<!--        <separate_instance_selector id="upload_selectr" width="60%" use_description_for_name="true">-->
-<!--            <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>-->
-<!--        </separate_instance_selector>-->
-<!--    </h_section>-->
-    <h_section style="heading-1" width="100%" height="70px">
-            <static_label id="upload_header" text="Upload your template" icon_alignment="BOTTOM"/>
+    <include name="header_section"/>
+    <h_section style="heading-1" width="100%" height="40px" align="MIDDLE_CENTER">
+            <static_label id="upload_header" text="Data uploading" icon_alignment="BOTTOM"/>
     </h_section>
-    <grid id="grid1" style="data_load_grid">
+    <grid id="grid1" style="data_load_grid" height="70px" width="100%">
         <data_source project="FILE_UPLOADER" branch="FILE_UPLOADER" source="customers" type="DataSource"/>
-        <column id="FolderName" title="FolderName" display="false">
+        <column id="FolderName" title="FolderName" display="true">
             <component>
                 <grid_label_component>
                     <static_caption text="FCRS_DATA_DIR"/>
@@ -52,9 +48,28 @@
             </component>
         </column>
     </grid>
-    <h_section width="100%" height="100%">
+    <spacer width="100%" height="20px"/>
+        <date_picker id="asofdate_var" style="asofdate_picker" caption="AsOfDate" unit="DAY" width="10%">
+            <default_value>
+                <function_value function="=currentDateInMillis()"/>
+            </default_value>
+            <composite_enable_condition/>
+        </date_picker>
+        <text_field id="filing_id_field" input_type="string" caption="Filing ID" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="snd_country_id" input_type="string" caption="Sender country" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <text_field id="rec_country_id" input_type="string" caption="Receiver country" width="10%">
+            <composite_enable_condition/>
+        </text_field>
+        <label width="100%" >
+            <model_value reference="wf_status"/>
+            <composite_visibility_condition/>
+        </label>
         <run_workflow_button id="wf_run" status_path="wf_status" text="RUN" style="solid"
-                             icon_alignment="RIGHT">
+                             icon_alignment="RIGHT" width="10%">
             <icon status_value="ACTIVE" icon_value="play.svg"/>
             <icon status_value="NONE" icon_value="play.svg"/>
             <icon status_value="START" icon_value="spinner.svg"/>
@@ -65,60 +80,75 @@
             <workflow_action restart_all_modules="true" status_path="wf_status">
                 <workflow>
                     <project>
-                        <model_value reference="{$project}"/>
+                        <string_value value="FCRS_UI"/>
                     </project>
                     <branch>
                         <model_value reference="{$branch}"/>
                     </branch>
                     <name>
-                        <string_value value="{$wf_data_load}"/>
+                        <string_value value="MAIN_DATA_LOAD_UI"/>
                     </name>
                 </workflow>
                 <instance>
                     <instance_provider>
                         <as_of_date>
-                            <model_value reference="as_of_date_load"/>
+                            <model_value reference="asofdate_var"/>
                         </as_of_date>
                         <keys>
-                            <variable name="">
-                                <model_value reference=""/>
+                            <variable name="filing_id">
+                                <model_value reference="filing_id_field"/>
                             </variable>
-                            <variable name="">
-                                <model_value reference=""/>
+                            <variable name="snd_country">
+                                <model_value reference="snd_country_id"/>
                             </variable>
-                            <variable name="">
-                                <model_value reference=""/>
+                            <variable name="rec_country">
+                                <model_value reference="rec_country_id"/>
                             </variable>
                         </keys>
                     </instance_provider>
-                    <instance_selector_ref reference="upload_selectr"/>
                 </instance>
                 <variables>
-                    <variable name="">
-                        <model_value reference=""/>
+                    <variable name="FILING_TYPE">
+                        <model_value reference="filing_type_var"/>
+                    </variable>
+                    <variable name="ACCT_INFO_TYPE">
+                        <model_value reference="acct_info_type_var"/>
+                    </variable>
+                    <variable name="FILE_NAME">
+                        <model_value reference="file_name_var"/>
+                    </variable>
+                    <variable name="POOL_REPORT_SOURCE">
+                        <model_value reference="pool_report_source_var"/>
+                    </variable>
+                    <variable name="FATCA_CRS">
+                        <model_value reference="fatca_crs_var"/>
+                    </variable>
+                    <variable name="FatcaMainDirectory">
+                        <model_value reference="fatca_main_dir_var"/>
                     </variable>
                 </variables>
             </workflow_action>
             <composite_enable_condition/>
             <composite_visibility_condition/>
         </run_workflow_button>
-        <text_area id="filing_type" caption="Filing Type">
+        <h_section height="50px" width="100%">
+        <text_field id="filing_type_var" caption="Filing Type" width="10%" input_type="string">
             <composite_enable_condition/>
-        </text_area>
-        <text_area id="acct_info_type" caption="Aggregated (AGGREGATED) / D etailed (NULL)">
+        </text_field>
+        <text_field id="acct_info_type_var" caption="Aggregated (AGGREGATED) / Detailed (NULL)" input_type="string" width="10%" >
             <composite_enable_condition/>
-        </text_area>
-        <text_area id="file_name" caption="Input File Name">
+        </text_field>
+        <text_field id="file_name_var" caption="Input File Name" input_type="string" width="10%">
             <composite_enable_condition/>
-        </text_area>
-        <text_area id="pool_report_source" caption="FATCA (F)/ CRS (C)">
+        </text_field>
+        <text_field id="pool_report_source_var" caption="Pool report source" input_type="string" width="10%">
             <composite_enable_condition/>
-        </text_area>
-        <text_area id="fatca_crs" caption="FATCA (F)/ CRS (C)">
+        </text_field>
+        <text_field id="fatca_crs_var" caption="FATCA (F)/ CRS (C)" input_type="string" width="10%">
             <composite_enable_condition/>
-        </text_area>
-        <text_area id="fatca_crs" caption="FATCA (F)/ CRS (C)">
+        </text_field>
+        <text_field id="fatca_main_dir_var" caption="Full path of the main directory" input_type="string" width="10%">
             <composite_enable_condition/>
-        </text_area>
+        </text_field>
     </h_section>
 </page>
