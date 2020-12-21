@@ -1,47 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd" id="xmlMigrationMainTab">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
+      id="xmlMigrationMainTab">
     <include name="header_section"/>
     <include name="footer_section"/>
     <h_section>
-        <button>
-            <open_popup_window height="300px" width="50%">
-                <h_section height="50px" width="100%">
-                    <text_field id="filing_ID_var" caption="Filing Type" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="snd_country_var" caption="Sender country" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="rec_country_var" caption="Receiver country" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="acct_info_type_var" caption="Account Info Type" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="FATCA_CRS" caption="FATCA (F)/CRS (C)" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="ris_file_name_var" caption="File name for ID Restoring Request" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="FatcaMainDirectory_var" caption="Full path of the main directory" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="emptyTemplatePath_var" caption="Empty Excel Template File Path with File Name" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="gener_template_var" caption="Generate Template For Refiling (YES/NO)" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="outputTemplateDir_var" caption="Generate Template For Refiling (YES/NO)" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="SUBMISSION_FILE_NAME_var" caption="Generate Template For Refiling (YES/NO)" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
-                    <text_field id="FATCAPayLoadDirectory_var" caption="Generate Template For Refiling (YES/NO)" width="10%">
-                        <composite_enable_condition/>
-                    </text_field>
+        <button style="primary-button" icon_alignment="RIGHT" tooltip="Тыцяй!!!!" width="180px"
+                text="Initialize new Instance">
+            <open_popup_window height="500px" width="500px">
+                <h_section width="500px" height="500px" align="BOTTOM_LEFT" style="wrap">
+                    <v_section width="100px" height="200px" align="BOTTOM_LEFT" style="wrap">
+                        <h_section height="200px" width="100px">
+                            <text_field id="filing_ID_var" caption="Filing Type" width="10%">
+                                <composite_enable_condition/>
+                            </text_field>
+                            <text_field id="snd_country_var" caption="Sender country" width="10%" default_value=""
+                                        input_type="string">
+                                <composite_enable_condition/>
+                            </text_field>
+                            <text_field id="rec_country_var" caption="Receiver country" width="10%">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </h_section>
+                    </v_section>
+                    <v_section height="50px" width="100%">
+                        <text_field id="acct_info_type_var" caption="Account Info Type" width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="FATCA_CRS" caption="FATCA (F)/CRS (C)" width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="ris_file_name_var" caption="File name for ID Restoring Request" width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="FatcaMainDirectory_var" caption="Full path of the main directory" width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="emptyTemplatePath_var" caption="Empty Excel Template File Path with File Name"
+                                    width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="gener_template_var" caption="Generate Template For Refiling (YES/NO)"
+                                    width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="outputTemplateDir_var" caption="Generate Template For Refiling (YES/NO)"
+                                    width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="SUBMISSION_FILE_NAME_var" caption="Generate Template For Refiling (YES/NO)"
+                                    width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                        <text_field id="FATCAPayLoadDirectory_var" caption="Generate Template For Refiling (YES/NO)"
+                                    width="10%">
+                            <composite_enable_condition/>
+                        </text_field>
+                    </v_section>
                 </h_section>
             </open_popup_window>
         </button>
