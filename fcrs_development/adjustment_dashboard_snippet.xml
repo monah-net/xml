@@ -4,7 +4,7 @@
     <v_section id="section_grid_sub_all" width="100%">
         <h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
             <separate_instance_selector id="adjustment_instance_selectr" width="60%" use_description_for_name="true">
-                <data_source project="FCRS_UI" branch="current_dev" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
+                <data_source project="FCRS_UI" branch="current" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
                              type="DataModel"/>
             </separate_instance_selector>
         </h_section>
@@ -15,7 +15,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_message_header"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_message_header"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -30,7 +30,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_legal_entity"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_legal_entity"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -45,7 +45,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_doc_spec"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_doc_spec"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -60,7 +60,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_pool_report"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_pool_report"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -77,7 +77,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_acct_holder"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_acct_holder"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -92,7 +92,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_acct_info"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_acct_info"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -107,7 +107,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_acct_transaction"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_acct_transaction"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -122,7 +122,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_tin"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_tin"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>
@@ -137,7 +137,7 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <string_value value="FATCA_ENRICHMENT!dev:rpt_address"/>
+                        <string_value value="FATCA_ENRICHMENT!2020_v01:rpt_address"/>
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="adjustment_instance_selectr"/>

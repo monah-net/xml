@@ -3,7 +3,7 @@
       id="signoff_report" style="page-with-header-and-footer">
     <context>
         <variable key="project" value="FCRS_UI"/>
-        <variable key="branch" value="current_dev"/>
+        <variable key="branch" value="current"/>
         <variable key="filePath" value="/opt/axiom/filefolder/"/>
     </context>
     <include name="header_section"/>

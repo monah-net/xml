@@ -38,6 +38,13 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </button>
+              <button id="upload_dashboard_part" text="Upload Data Dashboard">
+                    <open_page open_in_new_tab="false">
+                        <app_page_ref page_id="upload_dashboard"/>
+                    </open_page>
+                    <composite_enable_condition/>
+                    <composite_visibility_condition/>
+                </button>
             </menu_items>
         </dropdown_menu>
     </h_section>
@@ -46,7 +53,7 @@
     </h_section>
     <h_section id="h1_title" align="MIDDLE_LEFT" width="500px">
         <page_title id="page_title_label">
-            <data_source project="FCRS_UI" branch="current_dev" source="UI:cab_page_setup" type="DataSource"/>
+            <data_source project="FCRS_UI" branch="current" source="UI:cab_page_setup" type="DataSource"/>
             <unique_id name="page_id"/>
             <title name="page_title"/>
         </page_title>
