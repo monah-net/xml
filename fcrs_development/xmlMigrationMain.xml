@@ -4,35 +4,57 @@
     <include name="header_section"/>
     <include name="footer_section"/>
     <h_section>
-        <button id="init_button" icon_alignment="RIGHT" tooltip="Тыцяй!!!!" width="180px" style="primary-button"
+        <upload_button id="xmlMigration">
+            <file_folder>
+                <string_value value="FCRS_RPT_DIR"/>
+            </file_folder>
+        </upload_button>
+        <button id="init_button" icon_alignment="RIGHT" width="180px" style="outline{purple}**"
                 text="Initialize new Instance">
-            <open_popup_window height="50%" width="50%" closePath="close_pop_up" popup_title="Initialise new intstance">
+            <open_popup_window height="50%" width="50%" closePath="close_pop_up" popup_title="Initialize new Instance">
                 <v_section>
                     <h_section>
-                        <v_section>
+                        <radio_selector id="radioID">
+                            <static_radio_selector>
+                                <item default="true" caption="FATCA">
+                                    <string_value value="FATCA"/>
+                                </item>
+                                <item default="false" caption="CRS">
+                                    <string_value value="CRS"/>
+                                </item>
+                            </static_radio_selector>
+                        </radio_selector>
+                    </h_section>
+                    <h_section style="" align="MIDDLE_CENTER">
+                        <v_section width="15%">
                             <spacer height="20px"/>
                             <label icon_alignment="LEFT" tooltip="Please insert instance keys for your execution">
                                 <string_value value="Input instance keys : "/>
                                 <style type="CAPTION"/>
                             </label>
                         </v_section>
-                        <v_section>
-                        <text_field id="filing_ID_var" caption="Filing Type" width="20%" label_position="TOP" input_type="string" default_value="" style="">
-                            <composite_enable_condition/>
-                        </text_field>
+                        <v_section width="25%">
+                            <text_field id="filing_ID_var" caption="Filing Type" input_type="string" default_value="" style="sidebar" width="100%" label_position="TOP">
+                                <composite_enable_condition/>
+                            </text_field>
                         </v_section>
-                        <v_section>
-                        <text_field id="snd_country_var" caption="Sender country" width="20%" default_value=""
-                                    input_type="string" label_position="TOP">
-                            <composite_enable_condition/>
-                        </text_field>
+                        <v_section width="25%">
+                            <text_field id="snd_country_var" caption="Sender country" default_value=""
+                                        input_type="string" label_position="TOP" style="sidebar" width="100%">
+                                <composite_enable_condition/>
+                            </text_field>
                         </v_section>
-                        <v_section>
-                        <text_field id="rec_country_var" caption="Receiver country" width="20%" input_type="string"
-                                    label_position="TOP">
-                            <composite_enable_condition/>
-                        </text_field>
+                        <v_section width="25%">
+                            <text_field id="rec_country_var" caption="Receiver country" input_type="string"
+                                        label_position="TOP" style="sidebar" width="100%">
+                                <composite_enable_condition/>
+                            </text_field>
                         </v_section>
+                    </h_section>
+                    <h_section>
+                        <label style="CAPTION">
+                            <string_value value="Variable values : "/>
+                        </label>
                     </h_section>
                     <h_section>
                         <text_field id="acct_info_type_var" caption="Account Info Type">
