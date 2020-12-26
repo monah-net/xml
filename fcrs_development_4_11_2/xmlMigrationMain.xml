@@ -14,14 +14,11 @@
             <open_popup_window height="50%" width="50%" closePath="close_pop_up" popup_title="Initialize new Instance">
                 <v_section>
                     <h_section>
-                        <radio_selector id="radioID">
+                        <radio_selector id="rb2" style="chips-outline">
                             <static_radio_selector>
-                                <item default="true" caption="FATCA">
-                                    <string_value value="FATCA"/>
-                                </item>
-                                <item default="false" caption="CRS">
-                                    <string_value value="CRS"/>
-                                </item>
+                                <value value="1" caption="option name - 1" default="true"/>
+                                <value value="2" caption="option name - 2"/>
+                                <value value="3" caption="the last option name"/>
                             </static_radio_selector>
                         </radio_selector>
                     </h_section>
