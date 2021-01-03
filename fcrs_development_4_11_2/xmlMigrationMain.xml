@@ -38,6 +38,7 @@
                         </v_section>
                     </h_section>
                     <h_section>
+                        <spacer height="10px"/>
                         <label style="CAPTION" icon_alignment="LEFT">
                             <string_value value="Variable values : "/>
                             <style type="CAPTION"/>
@@ -46,82 +47,166 @@
                     </h_section>
                     <h_section>
                         <v_section>
-                            <label>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
                                 <string_value value="Account Info Type"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="FATCA (F)/CRS (C)"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="File name for ID Restoring Request"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="Empty Excel Template File Path with File Name"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="Generate Template For Refiling (YES/NO)"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="Path for Generated Template with Data for Refiling"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="Submission File Name"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="FATCA Payload Directory"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="File name path"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value value="Metadata File Name"/>
-                                <composite_visibility_condition/>
-                            </label>
-                            <label>
-                                <string_value
-                                        value="Matching status of a generated file to an incoming file (TRUE or FALSE)"/>
                                 <composite_visibility_condition/>
                             </label>
                         </v_section>
                         <v_section>
-                            <text_field id="acct_info_type_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="FATCA_CRS">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="ris_file_name_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="FatcaMainDirectory_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="emptyTemplatePath_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="gener_template_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="outputTemplateDir_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="SUBMISSION_FILE_NAME_var">
-                                <composite_enable_condition/>
-                            </text_field>
-                            <text_field id="FATCAPayLoadDirectory_var">
+                            <radio_selector id="acct_info_type_var" orientation="HORIZONTAL">
+                                <static_radio_selector>
+                                    <item caption="AGGREGATED" default="true">
+                                        <string_value value="Aggregated"/>
+                                    </item>
+                                    <item caption="DETAILED" default="false">
+                                        <string_value value="Detailed"/>
+                                    </item>
+                                </static_radio_selector>
+                            </radio_selector>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="FATCA (F)/CRS (C)"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <radio_selector id="FatcaCrs_selectr" orientation="HORIZONTAL">
+                                <static_radio_selector>
+                                    <item caption="FATCA" default="true">
+                                        <string_value value="F"/>
+                                    </item>
+                                    <item caption="CRS" default="false">
+                                        <string_value value="C"/>
+                                    </item>
+                                </static_radio_selector>
+                            </radio_selector>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="File name for ID Restoring Request"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="ris_file_name_var" width="200px" style="card">
                                 <composite_enable_condition/>
                             </text_field>
                         </v_section>
                     </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="Empty Excel Template File Path with File Name"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="emptyTemplatePath_var" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="Generate Template For Refiling (YES/NO)"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <radio_selector id="gener_template" orientation="HORIZONTAL">
+                                <static_radio_selector>
+                                    <item caption="YES" default="true">
+                                        <string_value value="YES"/>
+                                    </item>
+                                    <item caption="NO" default="false">
+                                        <string_value value="NO"/>
+                                    </item>
+                                </static_radio_selector>
+                            </radio_selector>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="Path for Generated Template with Data for Refiling"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="outputTemplateDir" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="Submission File Name"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="SUBMISSION_FILE_NAME_var" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="FATCA Payload Directory"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="FATCAPayLoadDirectory_var" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="File name path"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="FileNamePath_var" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <h_section>
+                        <v_section>
+                            <spacer height="10px"/>
+                            <label icon_alignment="LEFT" style="wrap" width="300px">
+                                <string_value value="Metadata File Name"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </v_section>
+                        <v_section>
+                            <text_field id="MetaDataFileName_var" width="200px" style="card">
+                                <composite_enable_condition/>
+                            </text_field>
+                        </v_section>
+                    </h_section>
+                    <spacer height="50px"/>
                     <h_section>
                         <button text="Submit" style="primary-button" width="200px">
                             <action_chain>
@@ -207,6 +292,7 @@
                             <composite_enable_condition/>
                             <composite_visibility_condition/>
                         </button>
+                        <spacer width="50px"/>
                         <button text="Cancel" style="secondary-button" width="200px">
                             <set_model_property property_path="close_pop_up" global="false">
                                 <value>
