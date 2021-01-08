@@ -261,7 +261,7 @@
                             <composite_visibility_condition/>
                         </label>
                         <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT">
-                            <action_chain>
+                            <action_chain break_on_errors="true">
                                 <run_workflow restart_all_modules="true" status_path="wf_status">
                                     <workflow>
                                         <project>
