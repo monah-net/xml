@@ -38,9 +38,16 @@
                     <composite_enable_condition/>
                     <composite_visibility_condition/>
                 </button>
-              <button id="upload_dashboard_part" text="Upload Data Dashboard">
+                <button id="upload_dashboard_part" text="Upload Data Dashboard">
                     <open_page open_in_new_tab="false">
                         <app_page_ref page_id="upload_dashboard"/>
+                    </open_page>
+                    <composite_enable_condition/>
+                    <composite_visibility_condition/>
+                </button>
+                <button id="xml_mgr_part" text="XML Migration Tool">
+                    <open_page open_in_new_tab="false">
+                        <app_page_ref page_id="xmlMigrationMain"/>
                     </open_page>
                     <composite_enable_condition/>
                     <composite_visibility_condition/>

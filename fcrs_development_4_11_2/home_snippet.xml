@@ -43,6 +43,14 @@
                 <composite_enable_condition/>
                 <composite_visibility_condition/>
             </button>
+            <button id="xml_mgr_icon" text="XML Migration Tool" image="file_document_outline.svg"
+                    icon_alignment="TOP" style="gen_button" width="100%">
+                <open_page open_in_new_tab="false">
+                    <app_page_ref page_id="xmlMigrationMain"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
         </h_section>
     </v_section>
 </page>
