@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crs:CRS_OECD version="1.1" xmlns="urn:oecd:ties:crs:v1"
+              xmlns:cfc="urn:oecd:ties:commontypesfatcacrs:v1"
+              xmlns:crs="urn:oecd:ties:crs:v1" xmlns:ftc="urn:oecd:ties:fatca:v1"
+              xmlns:iso="urn:oecd:ties:isocrstypes:v1"
+              xmlns:stf="urn:oecd:ties:stf:v4"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <crs:MessageSpec>
+        <crs:SendingCompanyIN>R5TS2T.00307.SG.230</crs:SendingCompanyIN>
+        <crs:TransmittingCountry>JP</crs:TransmittingCountry>
+        <crs:ReceivingCountry>BB</crs:ReceivingCountry>
+        <crs:MessageType>CRS</crs:MessageType>
+        <crs:MessageRefId>MRID12345001</crs:MessageRefId>
+        <crs:MessageTypeIndic>CRS701</crs:MessageTypeIndic>
+        <crs:ReportingPeriod>2018-12-31</crs:ReportingPeriod>
+        <crs:Timestamp>2020-11-27T03:16:01</crs:Timestamp>
+    </crs:MessageSpec>
+    <crs:CrsBody>
+        <crs:ReportingFI>
+            <crs:ResCountryCode>BB</crs:ResCountryCode>
+            <crs:IN issuedBy="UA">G5ME2G.00007.ME.840UA</crs:IN>
+            <crs:IN issuedBy="BB">G5ME2G.00007.ME.840</crs:IN>
+            <crs:IN issuedBy="IN">G5ME2G.00007.ME.840IN</crs:IN>
+            <crs:IN issuedBy="GB">G5ME2G.00007.ME.840GB</crs:IN>
+            <crs:Name>Bank 5</crs:Name>
+            <crs:Name>Bank 2</crs:Name>
+            <crs:Name>Bank 4</crs:Name>
+            <crs:Name>Bank 3</crs:Name>
+            <crs:Name>Bank 1</crs:Name>
+            <crs:Address>
+                <cfc:CountryCode>IN</cfc:CountryCode>
+                <cfc:AddressFix>
+                    <cfc:PostCode>1111</cfc:PostCode>
+                    <cfc:City>New Delhi</cfc:City>
+                </cfc:AddressFix>
+                <cfc:AddressFree>Third Address some string 101</cfc:AddressFree>
+            </crs:Address>
+            <crs:Address>
+                <cfc:CountryCode>UA</cfc:CountryCode>
+                <cfc:AddressFix>
+                    <cfc:PostCode>5470</cfc:PostCode>
+                    <cfc:City>Kiev</cfc:City>
+                </cfc:AddressFix>
+                <cfc:AddressFree>Poznyaki 44, app.262</cfc:AddressFree>
+            </crs:Address>
+            <crs:Address>
+                <cfc:CountryCode>BB</cfc:CountryCode>
+                <cfc:AddressFix>
+                    <cfc:PostCode>123</cfc:PostCode>
+                    <cfc:City>STAMF</cfc:City>
+                </cfc:AddressFix>
+                <cfc:AddressFree>Carrera 48 N 26 - 85 / Medellin / SGance</cfc:AddressFree>
+            </crs:Address>
+            <crs:Address>
+                <cfc:CountryCode>IN</cfc:CountryCode>
+                <cfc:AddressFix>
+                    <cfc:PostCode>1112</cfc:PostCode>
+                    <cfc:City>New Delhi</cfc:City>
+                </cfc:AddressFix>
+                <cfc:AddressFree>Fourth Address some string 101</cfc:AddressFree>
+            </crs:Address>
+            <crs:DocSpec>
+                <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                <stf:DocRefId>MRID12345001FI0000001</stf:DocRefId>
+            </crs:DocSpec>
+        </crs:ReportingFI>
+        <crs:ReportingGroup>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000001</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR189</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Organisation>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:IN issuedBy="BB">52-1230189</crs:IN>
+                        <crs:Name>EMPANADAs S.A</crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFree>NEW YORK / NY / BBA</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>Main Street</cfc:Street>
+                                <cfc:BuildingIdentifier>45</cfc:BuildingIdentifier>
+                                <cfc:City>STAMFORD</cfc:City>
+                                <cfc:CountrySubentity>CT</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>SG</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>CALLE 5 NORTE N 2 N - 78 . APARTAMENTO 301 BR. CENTENARIO / CALI /VALLE DEL
+                                CAUCA/SGA
+                            </cfc:AddressFree>
+                        </crs:Address>
+                    </crs:Organisation>
+                    <crs:AcctHolderType>CRS101</crs:AcctHolderType>
+                </crs:AccountHolder>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6789</crs:TIN>
+                        <crs:TIN issuedBy="BB">24242421421</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>ALISON</crs:FirstName>
+                            <crs:LastName>PEREZ</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>Commonwealth Ave</cfc:Street>
+                                <cfc:BuildingIdentifier>22</cfc:BuildingIdentifier>
+                                <cfc:City>BOSTON</cfc:City>
+                                <cfc:CountrySubentity>MA</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>xxxxxxxxx</cfc:Street>
+                                <cfc:City>TAOS</cfc:City>
+                                <cfc:CountrySubentity>NM</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>1537 Jefferson Ave / Miami Beach / FL / 33139</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6790</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 1</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 1</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 1</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 1</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6791</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 2</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 2</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 2</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 2</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6792</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 3</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 3</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 3</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 3</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6793</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 4</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 4</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 4</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 4</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6794</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 5</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 5</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 5</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 5</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6795</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 6</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 6</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 6</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 6</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6796</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 7</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 7</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 7</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 7</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6797</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 8</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 8</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 8</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 8</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6798</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 9</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 9</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 9</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 9</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6799</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 10</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 10</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 10</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 10</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6800</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 11</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 11</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 11</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 11</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6801</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 12</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 12</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 12</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 12</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6802</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 13</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 13</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 13</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 13</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">123-45-6803</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner First Name 14</crs:FirstName>
+                            <crs:MiddleName>Owner Middle Name 14</crs:MiddleName>
+                            <crs:LastName>Owner Last Name 14</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>456</cfc:PostCode>
+                                <cfc:City>STAMFOR</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 14</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-30</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000002</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR196</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230196</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 7</crs:FirstName>
+                            <crs:MiddleName>Middle name 7</crs:MiddleName>
+                            <crs:LastName>Last name 7</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-21</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 7</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000003</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR198</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230198</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 9</crs:FirstName>
+                            <crs:MiddleName>Middle name 9</crs:MiddleName>
+                            <crs:LastName>Last name 9</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-23</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 9</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000004</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR191</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230191</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 2</crs:FirstName>
+                            <crs:MiddleName>Middle name 2</crs:MiddleName>
+                            <crs:LastName>Last name 2</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-16</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 2</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000005</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR192</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230192</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 3</crs:FirstName>
+                            <crs:MiddleName>Middle name 3</crs:MiddleName>
+                            <crs:LastName>Last name 3</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-17</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 3</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000006</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR195</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230195</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 6</crs:FirstName>
+                            <crs:MiddleName>Middle name 6</crs:MiddleName>
+                            <crs:LastName>Last name 6</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-20</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 6</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000007</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR200</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230200</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 11</crs:FirstName>
+                            <crs:MiddleName>Middle name 11</crs:MiddleName>
+                            <crs:LastName>Last name 11</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-25</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 11</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000008</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR193</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230193</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 4</crs:FirstName>
+                            <crs:MiddleName>Middle name 4</crs:MiddleName>
+                            <crs:LastName>Last name 4</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-18</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 4</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000009</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR199</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230199</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 10</crs:FirstName>
+                            <crs:MiddleName>Middle name 10</crs:MiddleName>
+                            <crs:LastName>Last name 10</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-24</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 10</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000010</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR190</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230190</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 1</crs:FirstName>
+                            <crs:MiddleName>Middle name 1</crs:MiddleName>
+                            <crs:LastName>Last name 1</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-15</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 1</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000011</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR194</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230194</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 5</crs:FirstName>
+                            <crs:MiddleName>Middle name 5</crs:MiddleName>
+                            <crs:LastName>Last name 5</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-19</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 5</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>MRID12345001AC0000012</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR197</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Individual>
+                        <crs:ResCountryCode>BB</crs:ResCountryCode>
+                        <crs:TIN issuedBy="BB">52-1230197</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>First name 8</crs:FirstName>
+                            <crs:MiddleName>Middle name 8</crs:MiddleName>
+                            <crs:LastName>Last name 8</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AF</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:PostCode>234</cfc:PostCode>
+                                <cfc:City>STAMFO</cfc:City>
+                                <cfc:CountrySubentity>1980-02-22</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>Addr Free 8</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Nationality>BB</crs:Nationality>
+                    </crs:Individual>
+                </crs:AccountHolder>
+                <crs:AccountBalance currCode="BBD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+        </crs:ReportingGroup>
+    </crs:CrsBody>
+</crs:CRS_OECD>

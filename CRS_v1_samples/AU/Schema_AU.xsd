@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ato.gov.au/bde/bbdm" xmlns:event="http://sbr.gov.au/comn/event.02.data" targetNamespace="http://ato.gov.au/bde/bbdm" xmlns:crs="urn:oecd:ties:crs:v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:import namespace="http://sbr.gov.au/comn/event.02.data" schemaLocation="event.02.01.xsd"/>
+    <xsd:import namespace="urn:oecd:ties:crs:v1" schemaLocation="crs_v1.0.xsd" />
+    <xsd:element name="BulkBusinessDocumentMessage">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="BulkBusinessDocumentHeader">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Message.Type.Text" type="tns:String80"/>
+                            <xsd:element name="Message.Timestamp.Generation.Datetime" type="xsd:dateTime"/>
+                            <xsd:choice>
+                                <xsd:sequence>
+                                    <xsd:element name="Sender" type="tns:PartyInformation"/>
+                                    <xsd:element name="SoftwareInformation">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element name="OrganisationNameDetails.OrganisationalName.Text" type="tns:String200NameRestricted"/>
+                                                <xsd:element name="SoftwareInformation.ProductName.Text" type="tns:String80"/>
+                                                <xsd:element name="SoftwareInformation.ProductVersion.Text" type="tns:String80"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                </xsd:sequence>
+                                <xsd:sequence>
+                                    <xsd:element name="Receiver" type="tns:PartyInformation"/>
+                                    <xsd:element name="LodgementReceipt.Text" type="tns:String80"/>
+                                </xsd:sequence>
+                            </xsd:choice>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="BulkBusinessDocumentBody">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence maxOccurs="unbounded">
+                            <xsd:element name="Record_Delimiter" minOccurs="1" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:base64Binary">
+                                            <xsd:attribute name="DocumentID" type="xsd:string" use="required"/>
+                                            <xsd:attribute name="DocumentName" type="xsd:string"/>
+                                            <xsd:attribute name="DocumentType" use="required">
+                                                <xsd:simpleType>
+                                                    <xsd:restriction base="xsd:string">
+                                                        <xsd:enumeration value="BASE"/>
+                                                        <xsd:enumeration value="SCHEDULE"/>
+                                                        <xsd:enumeration value="PARENT"/>
+                                                        <xsd:enumeration value="CHILD"/>
+                                                        <xsd:enumeration value="BINARY"/>
+                                                    </xsd:restriction>
+                                                </xsd:simpleType>
+                                            </xsd:attribute>
+                                            <xsd:attribute name="RelatedDocumentID" type="xsd:string"/>
+                                            <xsd:attribute name="Filename" type="xsd:string"/>
+                                            <xsd:attribute name="ContentType" type="xsd:string"/>
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+<xsd:choice minOccurs="1" maxOccurs="1">
+                             <xsd:element ref="crs:CRS_OECD" minOccurs="1" maxOccurs="1"/>
+</xsd:choice>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="PartyInformation">
+            <xsd:sequence>
+                <xsd:element name="IdentificationDetails.IdentifierName.Text" type="tns:String80"/>
+                <xsd:element name="IdentificationDetails.IdentifierValue.Text" type="tns:String80"/>
+                <xsd:element name="Message.Identifier.Text" type="tns:String255"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:simpleType name="String80">
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="80"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:simpleType name="String255">
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="255"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        <xsd:simpleType name="String200NameRestricted">
+            <xsd:restriction base="xsd:string">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="200"/>
+                <xsd:pattern value="([0-9a-zA-Z \.,\?\(\)\{\}:;'\|\-_=\\/@#$%\*=&amp;&quot;])*"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:schema>

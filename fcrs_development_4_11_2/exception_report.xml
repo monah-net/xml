@@ -3,6 +3,8 @@
     <context>
         <variable key="project" value="FCRS_UI"/>
         <variable key="branch" value="current"/>
+        <variable key="projectAEOI" value="FATCA_AEOI_ComCore"/>
+        <variable key="branchAEOI" value="2020_v02"/>
     </context>
     <include name="header_section"/>
     <v_section id="main_section" width="100%" style="main-section main-frame" align="TOP_CENTER">

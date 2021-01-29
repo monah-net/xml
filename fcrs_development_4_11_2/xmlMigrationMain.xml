@@ -3,7 +3,8 @@
       id="xmlMigrationMain">
     <context>
         <variable key="project_XmlMgr" value="XMLToDataSource"/>
-        <variable key="branch_XmlMgr" value="xml_decompile_kop"/>
+        <variable key="branch_XmlMgr" value="dev"/>
+        <variable key="FCRS_DATA_DIR" value="/opt/axiom/home/DATA/"/>
     </context>
     <include name="header_section"/>
     <include name="footer_section"/>
@@ -11,405 +12,734 @@
         <data_source source="xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
                      branch="${branch_XmlMgr}"/>
     </separate_instance_selector>
-    <h_section>
-        <button id="init_button" icon_alignment="RIGHT" width="180px" style="primary-button"
-                text="Initialize new Instance">
-            <open_popup_window height="70%" width="70%" closePath="close_pop_up" popup_title="Initialize new Instance">
-                <v_section width="100%">
-                    <h_section align="TOP_LEFT">
-                        <v_section width="100%">
-                            <h_section align="MIDDLE_LEFT">
-                                <v_section width="25%">
-                                    <label style="heading-2">
-                                        <string_value value="As Of Date : "/>
-                                        <composite_visibility_condition/>
-                                    </label>
-                                </v_section>
-                                <v_section width="50%" style="indented">
-                                    <date_picker id="date_picker_asOfDate" unit="DAY" style="flat" width="50%"
-                                                 label_position="TOP">
-                                        <default_value>
-                                            <date_value value="2020-01-01T00:00:00"/>
-                                        </default_value>
-                                        <composite_enable_condition/>
-                                    </date_picker>
-                                </v_section>
-                            </h_section>
-                            <h_section>
-                                <v_section width="25%">
-                                    <spacer height="65px"/>
-                                    <label icon_alignment="LEFT" style="heading-2">
-                                        <string_value value="Input instance keys : "/>
-                                        <style type="CAPTION"/>
-                                        <composite_visibility_condition/>
-                                    </label>
-                                </v_section>
-                                <v_section width="50%">
-                                    <text_field id="filing_ID_var" caption="Filing Type*" input_type="string"
-                                                default_value=""
-                                                style="sidebar" width="100%" label_position="TOP">
-                                        <composite_enable_condition/>
-                                    </text_field>
-                                    <text_field id="snd_country_var" caption="Sender country*" default_value=""
-                                                input_type="string" label_position="TOP" style="sidebar" width="100%">
-                                        <composite_enable_condition/>
-                                    </text_field>
-                                    <text_field id="rec_country_var" caption="Receiver country*" input_type="string"
-                                                label_position="TOP" style="sidebar" width="100%">
-                                        <composite_enable_condition/>
-                                    </text_field>
-                                </v_section>
-                            </h_section>
-                        </v_section>
-                    </h_section>
-                    <h_section>
+    <h_section id="initGridButtonPart" style="initPart" width="100%" align="MIDDLE_LEFT" height="10%">
+        <v_section width="8%" align="MIDDLE_LEFT" style="card" height="70%" id="test">
+            <button id="init_button" icon_alignment="LEFT" width="180px" style="primary-button"
+                    text="Initialize new Instance">
+                <open_popup_window height="70%" width="70%" closePath="close_pop_up"
+                                   popup_title="Initialize new Instance">
+                    <v_section width="100%">
+                        <h_section align="TOP_LEFT">
+                            <v_section width="100%">
+                                <h_section align="MIDDLE_LEFT">
+                                    <v_section width="25%">
+                                        <label style="heading-2">
+                                            <string_value value="As Of Date : "/>
+                                            <composite_visibility_condition/>
+                                        </label>
+                                    </v_section>
+                                    <v_section width="50%" style="indented">
+                                        <date_picker id="date_picker_asOfDate" unit="DAY" style="flat" width="50%"
+                                                     label_position="TOP">
+                                            <default_value>
+                                                <date_value value="2020-01-01T00:00:00"/>
+                                            </default_value>
+                                            <composite_enable_condition/>
+                                        </date_picker>
+                                    </v_section>
+                                </h_section>
+                                <h_section>
+                                    <v_section width="25%">
+                                        <spacer height="65px"/>
+                                        <label icon_alignment="LEFT" style="heading-2">
+                                            <string_value value="Input instance keys : "/>
+                                            <style type="CAPTION"/>
+                                            <composite_visibility_condition/>
+                                        </label>
+                                    </v_section>
+                                    <v_section width="50%">
+                                        <text_field id="filing_ID_var" caption="Filing Type*" input_type="string"
+                                                    default_value=""
+                                                    style="sidebar" width="100%" label_position="TOP">
+                                            <composite_enable_condition/>
+                                        </text_field>
+                                        <text_field id="snd_country_var" caption="Sender country*" default_value=""
+                                                    input_type="string" label_position="TOP" style="sidebar"
+                                                    width="100%">
+                                            <composite_enable_condition/>
+                                        </text_field>
+                                        <text_field id="rec_country_var" caption="Receiver country*" input_type="string"
+                                                    label_position="TOP" style="sidebar" width="100%">
+                                            <composite_enable_condition/>
+                                        </text_field>
+                                    </v_section>
+                                </h_section>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <spacer height="10px"/>
+                            <label style="CAPTION" icon_alignment="LEFT">
+                                <string_value value="Variable values : "/>
+                                <style type="CAPTION"/>
+                                <composite_visibility_condition/>
+                            </label>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Account Info Type*"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <radio_selector id="acct_info_type_var" orientation="HORIZONTAL">
+                                    <static_radio_selector>
+                                        <item caption="AGGREGATED" default="true">
+                                            <string_value value="Aggregated"/>
+                                        </item>
+                                        <item caption="DETAILED" default="false">
+                                            <string_value value="Detailed"/>
+                                        </item>
+                                    </static_radio_selector>
+                                </radio_selector>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="FATCA (F)/CRS (C)*"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <radio_selector id="FatcaCrs_selectr_var" orientation="HORIZONTAL">
+                                    <static_radio_selector>
+                                        <item caption="FATCA" default="true">
+                                            <string_value value="F"/>
+                                        </item>
+                                        <item caption="CRS" default="false">
+                                            <string_value value="C"/>
+                                        </item>
+                                    </static_radio_selector>
+                                </radio_selector>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="File name*"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="file_name_var" width="200px" style="card" default_value=""
+                                            input_type="string">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Metadata File Name"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="mt_file_name_var" width="200px" style="card" default_value=""
+                                            input_type="string">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="File name for ID Restoring Request"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="ris_file_name_var" width="200px" style="card" default_value=""
+                                            input_type="string">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Full path of the main directory"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="FatcaMainDirectory_var" width="200px" style="card" default_value=""
+                                            input_type="string">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Empty Excel Template File Path with File Name*"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="emptyTemplatePath_var" width="200px" style="card" input_type="string"
+                                            default_value="">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Generate Template For Refiling (YES/NO)"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <radio_selector id="gener_template" orientation="HORIZONTAL">
+                                    <static_radio_selector>
+                                        <item caption="YES" default="true">
+                                            <string_value value="YES"/>
+                                        </item>
+                                        <item caption="NO" default="false">
+                                            <string_value value="NO"/>
+                                        </item>
+                                    </static_radio_selector>
+                                </radio_selector>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Path for Generated Template with Data for Refiling"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="outputTemplateDir_var" width="200px" style="card" input_type="string"
+                                            default_value="">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="Submission File Name"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="SUBMISSION_FILE_NAME_var" width="200px" style="card" input_type="string"
+                                            default_value="">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
+                        <h_section>
+                            <v_section>
+                                <spacer height="10px"/>
+                                <label icon_alignment="LEFT" style="wrap" width="300px">
+                                    <string_value value="FATCA Payload Directory"/>
+                                    <composite_visibility_condition/>
+                                </label>
+                            </v_section>
+                            <v_section>
+                                <text_field id="FATCAPayLoadDirectory_var" width="200px" style="card"
+                                            input_type="string"
+                                            default_value="">
+                                    <composite_enable_condition/>
+                                </text_field>
+                            </v_section>
+                        </h_section>
                         <spacer height="10px"/>
-                        <label style="CAPTION" icon_alignment="LEFT">
-                            <string_value value="Variable values : "/>
-                            <style type="CAPTION"/>
-                            <composite_visibility_condition/>
-                        </label>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Account Info Type*"/>
+                        <h_section align="STRETCH_LEFT">
+                            <label>
+                                <string_value value="* - mandatory fields for the filling"/>
                                 <composite_visibility_condition/>
                             </label>
-                        </v_section>
-                        <v_section>
-                            <radio_selector id="acct_info_type_var" orientation="HORIZONTAL">
-                                <static_radio_selector>
-                                    <item caption="AGGREGATED" default="true">
-                                        <string_value value="Aggregated"/>
-                                    </item>
-                                    <item caption="DETAILED" default="false">
-                                        <string_value value="Detailed"/>
-                                    </item>
-                                </static_radio_selector>
-                            </radio_selector>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="FATCA (F)/CRS (C)*"/>
+                        </h_section>
+                        <spacer height="30px"/>
+                        <h_section align="MIDDLE_LEFT">
+                            <label width="35%">
+                                <model_value reference="wf_status"/>
                                 <composite_visibility_condition/>
                             </label>
-                        </v_section>
-                        <v_section>
-                            <radio_selector id="FatcaCrs_selectr_var" orientation="HORIZONTAL">
-                                <static_radio_selector>
-                                    <item caption="FATCA" default="true">
-                                        <string_value value="F"/>
-                                    </item>
-                                    <item caption="CRS" default="false">
-                                        <string_value value="C"/>
-                                    </item>
-                                </static_radio_selector>
-                            </radio_selector>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="File name for ID Restoring Request*"/>
+                            <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT">
+                                <action_chain break_on_errors="true">
+                                    <run_workflow restart_all_modules="true" status_path="wf_status">
+                                        <workflow>
+                                            <project>
+                                                <string_value value="${project_XmlMgr}"/>
+                                            </project>
+                                            <branch>
+                                                <string_value value="${branch_XmlMgr}"/>
+                                            </branch>
+                                            <name>
+                                                <string_value value="XML_MIGRATION_PROCESS_INIT"/>
+                                            </name>
+                                        </workflow>
+                                        <instance>
+                                            <instance_provider>
+                                                <as_of_date>
+                                                    <model_value reference="date_picker_asOfDate" mode="value"/>
+                                                </as_of_date>
+                                                <keys>
+                                                    <variable name="filing_id">
+                                                        <model_value reference="filing_ID_var" mode="value"/>
+                                                    </variable>
+                                                    <variable name="snd_country">
+                                                        <model_value reference="snd_country_var" mode="value"/>
+                                                    </variable>
+                                                    <variable name="rec_country">
+                                                        <model_value reference="rec_country_var" mode="value"/>
+                                                    </variable>
+                                                </keys>
+                                            </instance_provider>
+                                        </instance>
+                                        <variables>
+                                            <variable name="acct_info_type_WFvar">
+                                                <model_value reference="acct_info_type_var" mode="value"/>
+                                            </variable>
+                                            <variable name="FATCA_CRS_WFvar">
+                                                <model_value reference="FatcaCrs_selectr_var" mode="value"/>
+                                            </variable>
+                                            <variable name="ris_file_name_WFvar">
+                                                <model_value reference="ris_file_name_var" mode="value"/>
+                                            </variable>
+                                            <variable name="FatcaMainDirectory_WFvar">
+                                                <model_value reference="FatcaMainDirectory_var" mode="value"/>
+                                            </variable>
+                                            <variable name="emptyTemplatePath_WFvar">
+                                                <model_value reference="emptyTemplatePath_var" mode="value"/>
+                                            </variable>
+                                            <variable name="gener_template_WFvar">
+                                                <model_value reference="gener_template" mode="value"/>
+                                            </variable>
+                                            <variable name="outputTemplateDir_WFvar">
+                                                <model_value reference="outputTemplateDir_var" mode="value"/>
+                                            </variable>
+                                            <variable name="SUBMISSION_FILE_NAME_WFvar">
+                                                <model_value reference="SUBMISSION_FILE_NAME_var" mode="value"/>
+                                            </variable>
+                                            <variable name="FATCAPayLoadDirectory_WFvar">
+                                                <model_value reference="FATCAPayLoadDirectory_var" mode="value"/>
+                                            </variable>
+                                            <variable name="fileNamePath_WFvar">
+                                                <model_value reference="file_name_var" mode="value"/>
+                                            </variable>
+                                            <variable name="mtDataFileName_WFvar">
+                                                <model_value reference="mt_file_name_var" mode="value"/>
+                                            </variable>
+                                        </variables>
+                                        <positive_result_action>
+                                            <open_popup_window height="300px" width="200px">
+                                                <label>
+                                                    <string_value value="Instance was initialised"/>
+                                                    <composite_visibility_condition/>
+                                                </label>
+                                            </open_popup_window>
+                                        </positive_result_action>
+                                        <negative_result_action>
+                                            <open_popup_window height="500px" width="300px">
+                                                <label>
+                                                    <string_value
+                                                            value="Instance initialisation was failed, please check all input parameters"/>
+                                                    <composite_visibility_condition/>
+                                                </label>
+                                            </open_popup_window>
+                                        </negative_result_action>
+                                    </run_workflow>
+                                    <set_model_property property_path="close_popup" global="true">
+                                        <value>
+                                            <function_value function="=uuid()"/>
+                                        </value>
+                                    </set_model_property>
+                                    <refresh_component component_id="xmlMigrationMain"/>
+                                </action_chain>
+                                <composite_enable_condition>
+                                    <enable_condition>
+                                        <model_value reference="file_name_var"/>
+                                        <is_not_empty/>
+                                    </enable_condition>
+                                    <enable_condition>
+                                        <model_value reference="emptyTemplatePath_var"/>
+                                        <is_not_empty/>
+                                    </enable_condition>
+                                    <enable_condition>
+                                        <model_value reference="filing_ID_var"/>
+                                        <is_not_empty/>
+                                    </enable_condition>
+                                    <enable_condition>
+                                        <model_value reference="snd_country_var"/>
+                                        <is_not_empty/>
+                                    </enable_condition>
+                                    <enable_condition>
+                                        <model_value reference="rec_country_var"/>
+                                        <is_not_empty/>
+                                    </enable_condition>
+                                </composite_enable_condition>
                                 <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="ris_file_name_var" width="200px" style="card" default_value=""
-                                        input_type="string">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Full path of the main directory"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="FatcaMainDirectory_var" width="200px" style="card" default_value=""
-                                        input_type="string">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Empty Excel Template File Path with File Name*"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="emptyTemplatePath_var" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Generate Template For Refiling (YES/NO)"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <radio_selector id="gener_template" orientation="HORIZONTAL">
-                                <static_radio_selector>
-                                    <item caption="YES" default="true">
-                                        <string_value value="YES"/>
-                                    </item>
-                                    <item caption="NO" default="false">
-                                        <string_value value="NO"/>
-                                    </item>
-                                </static_radio_selector>
-                            </radio_selector>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Path for Generated Template with Data for Refiling"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="outputTemplateDir" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Submission File Name"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="SUBMISSION_FILE_NAME_var" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="FATCA Payload Directory"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="FATCAPayLoadDirectory_var" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="File name path*"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="FileNamePath_var" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <h_section>
-                        <v_section>
-                            <spacer height="10px"/>
-                            <label icon_alignment="LEFT" style="wrap" width="300px">
-                                <string_value value="Metadata File Name"/>
-                                <composite_visibility_condition/>
-                            </label>
-                        </v_section>
-                        <v_section>
-                            <text_field id="MetaDataFileName_var" width="200px" style="card">
-                                <composite_enable_condition/>
-                            </text_field>
-                        </v_section>
-                    </h_section>
-                    <spacer height="10px"/>
-                    <h_section align="STRETCH_LEFT">
-                        <label>
-                            <string_value value="* - mandatory fields for the filling"/>
-                            <composite_visibility_condition/>
-                        </label>
-                    </h_section>
-                    <spacer height="30px"/>
-                    <h_section align="MIDDLE_LEFT">
-                        <label width="35%" >
-                            <model_value reference="wf_status"/>
-                            <composite_visibility_condition/>
-                        </label>
-                        <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT">
-                            <action_chain break_on_errors="true">
-                                <run_workflow restart_all_modules="true" status_path="wf_status">
-                                    <workflow>
-                                        <project>
-                                            <string_value value="${project_XmlMgr}"/>
-                                        </project>
-                                        <branch>
-                                            <string_value value="${branch_XmlMgr}"/>
-                                        </branch>
-                                        <name>
-                                            <string_value value="XML_MIGRATION_PROCESS_INIT"/>
-                                        </name>
-                                    </workflow>
-                                    <instance>
-                                        <instance_provider>
-                                            <as_of_date>
-                                                <model_value reference="date_picker_asOfDate" mode="value"/>
-                                            </as_of_date>
-                                            <keys>
-                                                <variable name="filing_id">
-                                                    <model_value reference="filing_ID_var" mode="value"/>
-                                                </variable>
-                                                <variable name="snd_country">
-                                                    <model_value reference="snd_country_var" mode="value"/>
-                                                </variable>
-                                                <variable name="rec_country">
-                                                    <model_value reference="rec_country_var" mode="value"/>
-                                                </variable>
-                                            </keys>
-                                        </instance_provider>
-                                    </instance>
-                                    <variables>
-                                        <variable name="acct_info_type_WFvar">
-                                            <model_value reference="acct_info_type_var" mode="value"/>
-                                        </variable>
-                                        <variable name="FATCA_CRS_WFvar">
-                                            <model_value reference="FatcaCrs_selectr_var" mode="value"/>
-                                        </variable>
-                                        <variable name="ris_file_name_WFvar">
-                                            <model_value reference="ris_file_name_var" mode="value"/>
-                                        </variable>
-                                        <variable name="FatcaMainDirectory_WFvar">
-                                            <model_value reference="ris_file_name_var" mode="value"/>
-                                        </variable>
-                                        <variable name="emptyTemplatePath_WFvar">
-                                            <model_value reference="emptyTemplatePath_var" mode="value"/>
-                                        </variable>
-                                        <variable name="gener_template_WFvar">
-                                            <model_value reference="gener_template" mode="value"/>
-                                        </variable>
-                                        <variable name="outputTemplateDir_WFvar">
-                                            <model_value reference="outputTemplateDir" mode="value"/>
-                                        </variable>
-                                        <variable name="SUBMISSION_FILE_NAME_WFvar">
-                                            <model_value reference="SUBMISSION_FILE_NAME_var" mode="value"/>
-                                        </variable>
-                                        <variable name="FATCAPayLoadDirectory_WFvar">
-                                            <model_value reference="FATCAPayLoadDirectory_var" mode="value"/>
-                                        </variable>
-                                    </variables>
-<!--                                    <positive_result_action>-->
-<!--                                        <refresh_component component_id="Customer_Details"/>-->
-<!--                                    </positive_result_action>-->
-                                    <negative_result_action>
-                                        <open_popup_window height="500px" width="300px">
-                                            <label>
-                                                <string_value
-                                                        value="Instance initialisation was failed, please check all input parameters"/>
-                                                <composite_visibility_condition/>
-                                            </label>
-                                        </open_popup_window>
-                                    </negative_result_action>
-                                </run_workflow>
-<!--                                <data_source_update>-->
-<!--                                    <source_address project="${project}" branch="${branch}"-->
-<!--                                                    name="xml_init_history_source"/>-->
-<!--                                    <fields>-->
-<!--                                        <field name="action_name">-->
-<!--                                            <string_value value="Instance initialisation"/>-->
-<!--                                        </field>-->
-<!--                                        <field name="comment_val">-->
-<!--                                            <model_value reference="comment_notif"/>-->
-<!--                                        </field>-->
-<!--                                        <field name="user_name">-->
-<!--                                            <function_value function="=userName()"/>-->
-<!--                                        </field>-->
-<!--                                        <field name="user_ID">-->
-<!--                                            <function_value function="=userId()"/>-->
-<!--                                        </field>-->
-<!--                                    </fields>-->
-<!--                                    <keys>-->
-<!--                                        <field name="customer_ID">-->
-<!--                                            <model_value reference="Customer_Details"/>-->
-<!--                                        </field>-->
-<!--                                        <field name="timeStampValue">-->
-<!--                                            <function_value function="=currentDateInMillis()"/>-->
-<!--                                        </field>-->
-<!--                                    </keys>-->
-<!--                                </data_source_update>-->
-                                <set_model_property property_path="close_popup" global="true">
+                            </button>
+                            <spacer width="50px"/>
+                            <button text="Cancel" style="secondary-button" width="200px">
+                                <set_model_property property_path="close_pop_up" global="false">
                                     <value>
                                         <function_value function="=uuid()"/>
                                     </value>
                                 </set_model_property>
-<!--                                <refresh_component component_id="Customer_Details"/>-->
-                            </action_chain>
-                            <composite_enable_condition>
-                                <enable_condition>
-                                    <model_value reference="ris_file_name_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                                <enable_condition>
-                                    <model_value reference="emptyTemplatePath_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                                <enable_condition>
-                                    <model_value reference="FileNamePath_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                                <enable_condition>
-                                    <model_value reference="filing_ID_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                                <enable_condition>
-                                    <model_value reference="snd_country_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                                <enable_condition>
-                                    <model_value reference="rec_country_var"/>
-                                    <is_not_empty/>
-                                </enable_condition>
-                            </composite_enable_condition>
-                            <composite_visibility_condition/>
-                        </button>
-                        <spacer width="50px"/>
-                        <button text="Cancel" style="secondary-button" width="200px">
-                            <set_model_property property_path="close_pop_up" global="false">
-                                <value>
-                                    <function_value function="=uuid()"/>
-                                </value>
-                            </set_model_property>
+                                <composite_enable_condition/>
+                                <composite_visibility_condition/>
+                            </button>
+                        </h_section>
+                    </v_section>
+                </open_popup_window>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+        </v_section>
+        <v_section width="70%" height="100%" align="MIDDLE_CENTER">
+            <composite_visibility_provider>
+                <visibility_condition>
+                    <data_object_value>
+                        <data_source source="xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
+                                     branch="${branch_XmlMgr}"/>
+                        <instance>
+                            <instance_selector_ref reference="xml_migration_slctr"/>
+                        </instance>
+                        <field name="acct_info_type"/>
+                    </data_object_value>
+                    <is_not_empty/>
+                </visibility_condition>
+            </composite_visibility_provider>
+            <grid id="xmlMigrationMainInfoGrid" show_rows="1" height="65px" width="94%" listened_data="true">
+                <data_source source="xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
+                             branch="${branch_XmlMgr}"/>
+                <instance>
+                    <instance_selector_ref reference="xml_migration_slctr"/>
+                </instance>
+                <selection type="SINGLE">
+                    <unique_id field="filing_id"/>
+                </selection>
+                <column id="FATCA_CRS" title="FATCA(F)/CRS(C)" alignment="LEFT" width="140px">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="FATCA_CRS"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="fileNamePath" title="File name" width="200px">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="fileNamePath"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="uploadFile" title="Upload xml" width="140px" alignment="CENTER">
+                    <component>
+                        <grid_upload_component path_to_uploaded_file="pathToFile">
+                            <static_caption icon="upload.svg"/>
+                            <file_folder>
+                                <model_value reference="${FCRS_DATA_DIR}"/>
+                            </file_folder>
                             <composite_enable_condition/>
-                            <composite_visibility_condition/>
-                        </button>
-                    </h_section>
-                </v_section>
-            </open_popup_window>
-            <composite_enable_condition/>
-            <composite_visibility_condition/>
-        </button>
+                            <data_source_update>
+                                <source_address name="xml_migration_process_init" project="${project_XmlMgr}"
+                                                branch="${branch_XmlMgr}"/>
+                                <fields>
+                                    <field name="fileNamePath">
+                                        <model_value reference="pathToFile"/>
+                                    </field>
+                                </fields>
+                                <keys>
+                                    <field name="acct_info_type">
+                                        <field_value field="acct_info_type"/>
+                                    </field>
+                                </keys>
+                                <instance>
+                                    <instance_selector_ref reference="xml_migration_slctr"/>
+                                </instance>
+                            </data_source_update>
+                        </grid_upload_component>
+                    </component>
+                </column>
+                <column id="fileExists" title="Is file exists?" width="160px">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="fileExists"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="gener_template" title="Input Template Gen" width="220px">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="gener_template"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="ris_file_name" title="File Name for ID Restoring Request" width="240px">
+                    <component>
+                        <grid_download_component>
+                            <dynamic_caption>
+                                <field_value field="ris_file_name"/>
+                            </dynamic_caption>
+                            <file_folder>
+                                <string_value value="${FCRS_DATA_DIR}"/>
+                            </file_folder>
+                            <file_name>
+                                <field_value field="ris_file_name"/>
+                            </file_name>
+                            <composite_enable_condition>
+                                <file_exists_condition>
+                                    <file_name>
+                                        <field_value field="ris_file_name"/>
+                                    </file_name>
+                                    <file_folder>
+                                        <string_value value="${FCRS_DATA_DIR}"/>
+                                    </file_folder>
+                                </file_exists_condition>
+                            </composite_enable_condition>
+                        </grid_download_component>
+                    </component>
+                </column>
+                <column id="acct_info_type" title="Account Info Type" display="true" alignment="LEFT" width="120px">
+                    <component>
+                        <grid_label_component alignment="CENTER">
+                            <dynamic_caption>
+                                <field_value field="acct_info_type"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+                <column id="emptyTemplatePath" title="Empty Template FilePath" width="240px" alignment="CENTER">
+                    <component>
+                        <grid_download_component>
+                            <dynamic_caption>
+                                <field_value field="emptyTemplatePath"/>
+                            </dynamic_caption>
+                            <file_folder>
+                                <string_value value="${FCRS_DATA_DIR}"/>
+                            </file_folder>
+                            <file_name>
+                                <field_value field="emptyTemplatePath"/>
+                            </file_name>
+                            <composite_enable_condition>
+                                <file_exists_condition>
+                                    <file_name>
+                                        <field_value field="emptyTemplatePath"/>
+                                    </file_name>
+                                    <file_folder>
+                                        <string_value value="${FCRS_DATA_DIR}"/>
+                                    </file_folder>
+                                </file_exists_condition>
+                            </composite_enable_condition>
+                        </grid_download_component>
+                    </component>
+                </column>
+                <column id="outputTemplateDir" title="Generated Template with input data" width="220px"
+                        alignment="CENTER">
+                    <component>
+                        <grid_label_component>
+                            <dynamic_caption>
+                                <field_value field="outputTemplateDir"/>
+                            </dynamic_caption>
+                        </grid_label_component>
+                    </component>
+                </column>
+            </grid>
+        </v_section>
+    </h_section>
+    <h_section id="sub_ree_grid">
+        <composite_visibility_provider>
+            <visibility_condition>
+                <data_object_value>
+                    <data_source source="Aggregation[sub_ree_summary]" type="DataSource" project="${project_XmlMgr}"
+                                 branch="${branch_XmlMgr}"/>
+                    <instance>
+                        <instance_selector_ref reference="xml_migration_slctr"/>
+                    </instance>
+                    <field name="msg_ref_id"/>
+                </data_object_value>
+                <is_not_empty/>
+            </visibility_condition>
+        </composite_visibility_provider>
+        <grid id="ree_data_popul" width="100%" height="100px">
+            <data_source source="Aggregation[sub_ree_summary]" type="DataSource" project="${project_XmlMgr}"
+                         branch="${branch_XmlMgr}"/>
+            <instance>
+                <instance_selector_ref reference="xml_migration_slctr"/>
+            </instance>
+            <column id="id001" title="File name" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="file_name"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id002" title="Regime (FATCA / CRS)" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="regime_fcrs"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id003" title="Message Reference ID">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="msg_ref_id"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id004" title="Number of Reporting Fis" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="report_fi_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id005" title="Number of Account Reports" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="acct_rpt_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id006" title="Number of Account Holders that are Individual" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="acct_hld_ind_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id007" title="Number of Account Holders that are Organizations" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="acct_hld_org_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id008" title="Number of Controlling Persons / Subowners" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="cntr_pers_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id009" title="Number of Account Reports with Restored Account IDs">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_acct_id_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id010" title="Number of Account Reports with Restored Account Holder IDs" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_acct_hld_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id011" title="Number of Controlling Persons / Subowners with Restored IDs" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_cntr_pers_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id012" title="Number of Account Reports where Account ID was Restored with Error(s)"
+                    alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_err_acct_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id013" title="Number of Account Reports where Account Holder ID was Restored with Error(s)"
+                    alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_err_acct_hld_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id014" title="Number of Substantial Owners where ID was Restored with Error(s)"
+                    alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_err_subown_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id015" title="Number of Account / Account Holder ID Restoring Request Records with Error(s)"
+                    alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_err_id_request_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id016" title="Number of ID Subowner Restoring Request Records with Error(s)" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="rid_err_subown_req_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+            <column id="id017" title="Number of Errors During XML Regression Comparison" alignment="CENTER">
+                <component>
+                    <grid_label_component>
+                        <dynamic_caption>
+                            <field_value field="xml_regres_test_err_no"/>
+                        </dynamic_caption>
+                    </grid_label_component>
+                </component>
+            </column>
+        </grid>
     </h_section>
 </page>

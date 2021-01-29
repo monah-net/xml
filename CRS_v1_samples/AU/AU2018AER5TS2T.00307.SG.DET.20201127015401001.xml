@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bbdm:BulkBusinessDocumentMessage     xmlns:bbdm="http://ato.gov.au/bde/bbdm"    >
+    <bbdm:BulkBusinessDocumentHeader>
+        <bbdm:Message.Type.Text>crs.0001.lodge.request</bbdm:Message.Type.Text>
+        <bbdm:Message.Timestamp.Generation.Datetime>2020-11-27T01:54:01</bbdm:Message.Timestamp.Generation.Datetime>
+        <bbdm:Sender>
+            <bbdm:Message.Identifier.Text>bc876b95-1e34-4646-8b4c-6fdc5e4136d3_1</bbdm:Message.Identifier.Text>
+        </bbdm:Sender>
+    </bbdm:BulkBusinessDocumentHeader>
+    <bbdm:BulkBusinessDocumentBody>
+        <Record_Delimiter   DocumentID="AU2018AER5TS2T.00307.SG.DET.20201127015401001"            DocumentName="CRS" DocumentType="BASE"/>
+<crs:CRS_OECD version="1" xmlns="urn:oecd:ties:crs:v1"    xmlns:cfc="urn:oecd:ties:commontypesfatcacrs:v1"    xmlns:crs="urn:oecd:ties:crs:v1" xmlns:ftc="urn:oecd:ties:fatca:v1"    xmlns:iso="urn:oecd:ties:isocrstypes:v1"    xmlns:stf="urn:oecd:ties:stf:v4"    >
+    <crs:MessageSpec>
+        <crs:SendingCompanyIN>R5TS2T.00307.SG.DET</crs:SendingCompanyIN>
+        <crs:TransmittingCountry>AU</crs:TransmittingCountry>
+        <crs:ReceivingCountry>AE</crs:ReceivingCountry>
+        <crs:MessageType>CRS</crs:MessageType>
+        <crs:MessageRefId>AU2018AER5TS2T.00307.SG.DET.20201127015401001</crs:MessageRefId>
+        <crs:MessageTypeIndic>CRS701</crs:MessageTypeIndic>
+        <crs:ReportingPeriod>2018-12-31</crs:ReportingPeriod>
+        <crs:Timestamp>2020-11-27T01:54:01</crs:Timestamp>
+    </crs:MessageSpec>
+    <crs:CrsBody>
+        <crs:ReportingFI>
+            <crs:ResCountryCode>AU</crs:ResCountryCode>
+            <crs:IN issuedBy="US">G5ME2G.00007.ME.DET</crs:IN>
+            <crs:IN issuedBy="UA">G5ME2G.00007.ME.DETUA</crs:IN>
+            <crs:IN issuedBy="GB">G5ME2G.00007.ME.DETGB</crs:IN>
+            <crs:IN issuedBy="IN">G5ME2G.00007.ME.DETIN</crs:IN>
+            <crs:Name>Bank 1</crs:Name>
+            <crs:Address>
+                <cfc:CountryCode>SG</cfc:CountryCode>
+                <cfc:AddressFix>
+                    <cfc:Street>Street5</cfc:Street>
+                    <cfc:PostCode>1901-10-15</cfc:PostCode>
+                    <cfc:City>TAOS</cfc:City>
+                </cfc:AddressFix>
+                <cfc:AddressFree>Carrera 48 N 26 - 85 / Medellin / SGance</cfc:AddressFree>
+            </crs:Address>
+            <crs:DocSpec>
+                <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                <stf:DocRefId>AU2018AEG5ME2G.00007.ME.DET.REP189.202011270154010001</stf:DocRefId>
+            </crs:DocSpec>
+        </crs:ReportingFI>
+        <crs:ReportingGroup>
+            <crs:AccountReport>
+                <crs:DocSpec>
+                    <stf:DocTypeIndic>OECD11</stf:DocTypeIndic>
+                    <stf:DocRefId>AU2018AER5TS2T.00307.SG.DET.1.20201127015401.1</stf:DocRefId>
+                </crs:DocSpec>
+                <crs:AccountNumber>PQR189</crs:AccountNumber>
+                <crs:AccountHolder>
+                    <crs:Organisation>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:IN issuedBy="AE">52-1230189</crs:IN>
+                        <crs:Name>EMPANADAs S.A</crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFree>NEW YORK / NY / USA</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>Main Street</cfc:Street>
+                                <cfc:BuildingIdentifier>1900-02-14</cfc:BuildingIdentifier>
+                                <cfc:City>STAMFORD</cfc:City>
+                                <cfc:CountrySubentity>CT</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>SG</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>Main Street</cfc:Street>
+                                <cfc:PostCode>1901-06-26</cfc:PostCode>
+                                <cfc:City>BOSTON</cfc:City>
+                            </cfc:AddressFix>
+                            <cfc:AddressFree>CALLE 5 NORTE N 2 N - 78 . APARTAMENTO 301 BR. CENTENARIO / CALI /VALLE DEL CAUCA/SGA</cfc:AddressFree>
+                        </crs:Address>
+                    </crs:Organisation>
+                    <crs:AcctHolderType>CRS101</crs:AcctHolderType>
+                </crs:AccountHolder>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6789</crs:TIN>
+                        <crs:TIN issuedBy="AE">12313126</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>ALISON</crs:FirstName>
+                            <crs:LastName>PEREZ</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>Commonwealth Ave</cfc:Street>
+                                <cfc:BuildingIdentifier>1900-01-22</cfc:BuildingIdentifier>
+                                <cfc:City>BOSTON</cfc:City>
+                                <cfc:CountrySubentity>MA</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFix>
+                                <cfc:Street>xxxxxxxxx</cfc:Street>
+                                <cfc:City>TAOS</cfc:City>
+                                <cfc:CountrySubentity>NM</cfc:CountrySubentity>
+                            </cfc:AddressFix>
+                        </crs:Address>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFree>1537 Jefferson Ave / Miami Beach / FL / 33139</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6790</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner2</crs:FirstName>
+                            <crs:LastName>OwnerLastName2</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AU</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 2</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6791</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner3</crs:FirstName>
+                            <crs:LastName>OwnerLastName3</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AE</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 3</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6792</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner4</crs:FirstName>
+                            <crs:LastName>OwnerLastName4</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AE</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 4</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6793</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner5</crs:FirstName>
+                            <crs:LastName>OwnerLastName5</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>AE</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 5</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6794</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner6</crs:FirstName>
+                            <crs:LastName>OwnerLastName6</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>BB</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 6</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6795</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner7</crs:FirstName>
+                            <crs:LastName>OwnerLastName7</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 7</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:ControllingPerson>
+                    <crs:Individual>
+                        <crs:ResCountryCode>AE</crs:ResCountryCode>
+                        <crs:TIN issuedBy="AE">123-45-6796</crs:TIN>
+                        <crs:Name>
+                            <crs:FirstName>Owner8</crs:FirstName>
+                            <crs:LastName>OwnerLastName8</crs:LastName>
+                        </crs:Name>
+                        <crs:Address>
+                            <cfc:CountryCode>US</cfc:CountryCode>
+                            <cfc:AddressFree>Address Free 8</cfc:AddressFree>
+                        </crs:Address>
+                        <crs:BirthInfo>
+                            <crs:BirthDate>1977-11-29</crs:BirthDate>
+                        </crs:BirthInfo>
+                    </crs:Individual>
+                </crs:ControllingPerson>
+                <crs:AccountBalance currCode="USD">3000</crs:AccountBalance>
+                <crs:Payment>
+                    <crs:Type>CRS501</crs:Type>
+                    <crs:PaymentAmnt currCode="GBP">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS502</crs:Type>
+                    <crs:PaymentAmnt currCode="AUD">1000</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS503</crs:Type>
+                    <crs:PaymentAmnt currCode="SGD">500</crs:PaymentAmnt>
+                </crs:Payment>
+                <crs:Payment>
+                    <crs:Type>CRS504</crs:Type>
+                    <crs:PaymentAmnt currCode="MYR">500</crs:PaymentAmnt>
+                </crs:Payment>
+            </crs:AccountReport>
+        </crs:ReportingGroup>
+    </crs:CrsBody>
+</crs:CRS_OECD>
+</bbdm:BulkBusinessDocumentBody>
+</bbdm:BulkBusinessDocumentMessage>
