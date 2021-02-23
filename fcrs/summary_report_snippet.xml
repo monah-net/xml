@@ -130,6 +130,7 @@
                 </column>
             </grid>
         </h_section>
+
         <h_section width="100%" id="section_titles_customer">
             <h_section id="section_label_customer" height="50px" width="100%" align="TOP_LEFT">
                 <static_label id="customer_label" text="Customer Details" style="cvh1"/>
@@ -259,9 +260,6 @@
                 </column>
             </grid>
         </h_section>
-<!--        <text_field id="amount_filter" input_type="double" default_value="0.00" caption="Account Balance greater than:">-->
-<!--            <composite_enable_condition/>-->
-<!--        </text_field>-->
         <h_section id="section_title_account" height="50px" width="100%" align="TOP_LEFT">
             <h_section id="section_label_account" height="50px" width="100%" align="TOP_LEFT">
                 <static_label id="account_label" text="Account Details" style="cvh1"/>
@@ -292,14 +290,6 @@
                         <filter_on name="acct_holder_id" node="root"/>
                     </filter_mapping>
                 </filter>
-<!--                <filter empty_value_policy="ALL">-->
-<!--                    <filter_value>-->
-<!--                        <model_value reference="amount_filter"/>-->
-<!--                    </filter_value>-->
-<!--                    <filter_mapping operator="GREAT_EQUALS">-->
-<!--                        <filter_on name="acct_balance_reported" node="root"/>-->
-<!--                    </filter_mapping>-->
-<!--                </filter>-->
                 <selection type="SINGLE" unselectable="true" select_first_row="false">
                     <unique_id field="enumerator" node="root"/>
                     <additional_output property_path="Account_Details_acct_number">

@@ -233,12 +233,13 @@
                 </column>
             </grid>
         </h_section>
-        <h_section width="100%" align="MIDDLE_RIGHT" style="card">
+      <h_section width="100%" align="MIDDLE_RIGHT" style="card">
             <label>
                 <model_value reference="WFPath"/>
                 <composite_visibility_condition/>
             </label>
-            <run_workflow_button id="WF" text="Rerun and Reload" style="primary-button" width="200px" status_path="WFPath" icon_alignment="RIGHT">
+            <run_workflow_button id="WF" text="Rerun and Reload" style="primary-button" width="200px"
+                                 status_path="WFPath" icon_alignment="RIGHT">
                 <icon status_value="ACTIVE" icon_value="play.svg"/>
                 <icon status_value="NONE" icon_value="play.svg"/>
                 <icon status_value="START" icon_value="spinner.svg"/>
@@ -246,64 +247,76 @@
                 <icon status_value="KILLED" icon_value="play.svg"/>
                 <icon status_value="ERROR" icon_value="play.svg"/>
                 <icon status_value="WARNING" icon_value="play.svg"/>
-                    <workflow_action restart_all_modules="true" status_path="WFPath">
-                        <workflow>
-                            <project>
-                                <string_value value="FCRS_UI"/>
-                            </project>
-                            <branch>
-                                <string_value value="2020_v01"/>
-                            </branch>
-                            <name>
-                                <string_value value="FULL_REPORTING_RUN"/>
-                            </name>
-                        </workflow>
-                        <instance>
-                            <instance_selector_ref reference="exception_instance_selectr"/>
-                        </instance>
-                        <variables>
-                            <variable name="FATCARootDirectory">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="FILING_TYPE">
-                                <string_value value="OECD11"/>
-                            </variable>
-                            <variable name="FILE_NAME">
-                                <string_value value="FATCA_DATA_TEMPLATE_GB_CRS.xlsx"/>
-                            </variable>
-                            <variable name="POOL_REPORT_SOURCE">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="FATCA_CRS">
-                                <string_value value="C"/>
-                            </variable>
-                            <variable name="FatcaMainDirectory">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="EXECUTION_TYPE">
-                                <string_value value="C"/>
-                            </variable>
-                            <variable name="SUBMISSION_FILE_NAME">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="FATCAPayLoadDirectory">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="UDM_INPUT_MODE">
-                                <string_value value=""/>
-                            </variable>
-                            <variable name="ACCT_INFO_TYPE">
-                                <string_value value="AGG"/>
-                            </variable>
-                        </variables>
-                        <positive_result_action>
-                            <action_chain>
-                                <refresh_component component_id="Exception_Source"/>
-                                <refresh_component component_id="Exception_Summary"/>
-                                <refresh_component component_id="Exception_Details"/>
-                            </action_chain>
-                        </positive_result_action>
-                    </workflow_action>
+                <workflow_action restart_all_modules="true" status_path="WFPath">
+                    <workflow>
+                        <project>
+                            <string_value value="FCRS_UI"/>
+                        </project>
+                        <branch>
+                            <string_value value="rc_mvt"/>
+                        </branch>
+                        <name>
+                            <string_value value="FULL_REPORTING_RUN"/>
+                        </name>
+                    </workflow>
+                    <instance>
+                        <instance_selector_ref reference="exception_instance_selectr"/>
+                    </instance>
+                    <variables>
+                        <variable name="FATCA_CRS">
+                            <data_object_value>
+                                <data_source project="${projectAEOI}" branch="${branchAEOI}" source="Aggregation[filing_instance]" type="DataSource"/>
+                                <instance>
+                                    <instance_selector_ref reference="exception_instance_selectr"/>
+                                </instance>
+                                <field name="FATCA_CRS"/>
+                            </data_object_value>
+                        </variable>
+                        <variable name="SUBMISSION_FILE_NAME">
+                            <data_object_value>
+                                <data_source project="${projectAEOI}" branch="${branchAEOI}" source="Aggregation[filing_instance]" type="DataSource"/>
+                                <instance>
+                                    <instance_selector_ref reference="exception_instance_selectr"/>
+                                </instance>
+                                <field name="SUBMISSION_FILE_NAME"/>
+                            </data_object_value>
+                        </variable>
+                        <variable name="FATCAMainDirectory">
+                           <data_object_value>
+                               <data_source project="${projectAEOI}" branch="${branchAEOI}" source="Aggregation[filing_instance]" type="DataSource"/>
+                               <instance>
+                                   <instance_selector_ref reference="exception_instance_selectr"/>
+                               </instance>
+                               <field name="FATCAMainDirectory"/>
+                           </data_object_value>
+                        </variable>
+                        <variable name="FATCAPayLoadDirectory">
+                            <data_object_value>
+                                <data_source project="${projectAEOI}" branch="${branchAEOI}" source="Aggregation[filing_instance]" type="DataSource"/>
+                                <instance>
+                                    <instance_selector_ref reference="exception_instance_selectr"/>
+                                </instance>
+                                <field name="FATCAPayLoadDirectory"/>
+                            </data_object_value>
+                        </variable>
+                        <variable name="TestOrProduction">
+                            <data_object_value>
+                                <data_source project="${projectAEOI}" branch="${branchAEOI}" source="Aggregation[filing_instance]" type="DataSource"/>
+                                <instance>
+                                    <instance_selector_ref reference="exception_instance_selectr"/>
+                                </instance>
+                                <field name="LU_TestOrProduction"/>
+                            </data_object_value>
+                        </variable>
+                    </variables>
+                    <positive_result_action>
+                        <action_chain>
+                            <refresh_component component_id="Exception_Source"/>
+                            <refresh_component component_id="Exception_Summary"/>
+                            <refresh_component component_id="Exception_Details"/>
+                        </action_chain>
+                    </positive_result_action>
+                </workflow_action>
                 <composite_enable_condition/>
                 <composite_visibility_condition/>
             </run_workflow_button>
