@@ -652,7 +652,22 @@
                         <string_value value="Aggregation"/>
                     </object_type>
                     <object_address>
-                        <model_value reference="summary"/>
+                        <data_object_value>
+                            <data_source project="${project_XmlMgr}" branch="${branch_XmlMgr}" source="dashboard_object_adresses" type="DataSource"/>
+                            <instance>
+                                <instance_selector_ref reference="xml_migration_slctr"/>
+                            </instance>
+                            <field name="address_val"/>
+                            <filter>
+                                <filter_value>
+                                    <string_value value="sub_ree_summary"/>
+                                </filter_value>
+                                <filter_mapping>
+                                    <filter_on name="id_value"/>
+                                </filter_mapping>
+                            </filter>
+                        </data_object_value>
+<!--                        <string_value value="XMLToDataSource!rc_mvt:sub_ree_summary"/>-->
                     </object_address>
                     <instance>
                         <instance_selector_ref reference="xml_migration_slctr"/>
