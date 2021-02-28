@@ -253,7 +253,7 @@
                             <string_value value="FCRS_UI"/>
                         </project>
                         <branch>
-                            <string_value value="rc_mvt"/>
+                            <string_value value="2021_v01"/>
                         </branch>
                         <name>
                             <string_value value="FULL_REPORTING_RUN"/>
