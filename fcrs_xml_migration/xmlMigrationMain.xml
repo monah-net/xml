@@ -10,7 +10,7 @@
     <h_section width="98%" align="MIDDLE_LEFT">
         <spacer width="50px"/>
         <separate_instance_selector id="xml_migration_slctr" width="60%" label_position="TOP">
-            <data_source source="migration:xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
+            <data_source source="xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
                          branch="${branch_XmlMgr}"/>
         </separate_instance_selector>
     </h_section>
@@ -290,23 +290,23 @@
                                                     <string_value value="${branch_XmlMgr}"/>
                                                 </branch>
                                                 <name>
-                                                    <string_value value="migration:XML_MIGRATION_PROCESS_INIT"/>
+                                                    <string_value value="XML_MIGRATION_PROCESS_INIT"/>
                                                 </name>
                                             </workflow>
                                             <instance>
                                                 <instance_provider>
                                                     <as_of_date>
-                                                        <model_value reference="date_picker_asOfDate" mode="value"/>
+                                                        <model_value reference="date_picker_asOfDate"/>
                                                     </as_of_date>
                                                     <keys>
                                                         <variable name="filing_id">
-                                                            <model_value reference="filing_ID_var" mode="value"/>
+                                                            <model_value reference="filing_ID_var"/>
                                                         </variable>
                                                         <variable name="snd_country">
-                                                            <model_value reference="snd_country_var" mode="value"/>
+                                                            <model_value reference="snd_country_var"/>
                                                         </variable>
                                                         <variable name="rec_country">
-                                                            <model_value reference="rec_country_var" mode="value"/>
+                                                            <model_value reference="rec_country_var"/>
                                                         </variable>
                                                     </keys>
                                                 </instance_provider>
@@ -630,51 +630,52 @@
                                     <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT">
                                         <action_chain break_on_errors="true">
                                             <data_source_update>
-                                                <source_address name="migration:xml_migration_process_init" branch="${branch_XmlMgr}" project="${project_XmlMgr}"/>
+                                                <source_address name="xml_migration_process_init"
+                                                                branch="${branch_XmlMgr}" project="${project_XmlMgr}"/>
                                                 <fields>
                                                     <field name="acct_info_type">
-                                                        <model_value reference="acct_info_type_var_edit"/>
+                                                        <model_value reference="acct_info_type_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="FATCA_CRS">
-                                                        <model_value reference="FatcaCrs_selectr_var_edit"/>
+                                                        <model_value reference="FatcaCrs_selectr_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="fileNamePath">
-                                                        <model_value reference="file_name_var_edit"/>
+                                                        <model_value reference="file_name_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="mtDataFileName">
-                                                        <model_value reference="mt_file_name_var_edit"/>
+                                                        <model_value reference="mt_file_name_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="ris_file_name">
-                                                        <model_value reference="ris_file_name_var_edit"/>
+                                                        <model_value reference="ris_file_name_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="FatcaMainDirectory">
-                                                        <model_value reference="FatcaMainDirectory_var_edit"/>
+                                                        <model_value reference="FatcaMainDirectory_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="emptyTemplatePath">
-                                                        <model_value reference="emptyTemplatePath_var_edit"/>
+                                                        <model_value reference="emptyTemplatePath_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="gener_template">
-                                                        <model_value reference="gener_template_var_edit"/>
+                                                        <model_value reference="gener_template_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="outputTemplateDir">
-                                                        <model_value reference="outputTemplateDir_var_edit"/>
+                                                        <model_value reference="outputTemplateDir_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="SUBMISSION_FILE_NAME">
-                                                        <model_value reference="SUBMISSION_FILE_NAME_var_edit"/>
+                                                        <model_value reference="SUBMISSION_FILE_NAME_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="FATCAPayLoadDirectory">
-                                                        <model_value reference="FATCAPayLoadDirectory_var_edit"/>
+                                                        <model_value reference="FATCAPayLoadDirectory_var_edit" mode="value"/>
                                                     </field>
                                                     <field name="fileExists">
                                                         <string_value value="FALSE"/>
                                                     </field>
                                                     <field name="fileFolder">
-                                                        <model_value reference="fileFolder_output"/>
+                                                        <model_value reference="fileFolder_output" mode="value"/>
                                                     </field>
                                                 </fields>
                                                 <keys>
                                                     <field name="init_key">
-                                                        <model_value reference="init_key_output"/>
+                                                        <model_value reference="init_key_output" mode="value"/>
                                                     </field>
                                                 </keys>
                                                 <instance>
@@ -690,7 +691,7 @@
                                                         <string_value value="${branch_XmlMgr}"/>
                                                     </branch>
                                                     <name>
-                                                        <string_value value="migration:XML_MIGRATION_PROCESS_INIT"/>
+                                                        <string_value value="XML_MIGRATION_PROCESS_INIT"/>
                                                     </name>
                                                 </workflow>
                                                 <instance>
@@ -698,31 +699,31 @@
                                                 </instance>
                                                 <variables>
                                                     <variable name="acct_info_type_WFvar">
-                                                        <model_value reference="acct_info_type_var_edit" mode="value"/>
+                                                        <model_value reference="acct_info_type_var_edit"/>
                                                     </variable>
                                                     <variable name="FATCA_CRS_WFvar">
-                                                        <model_value reference="FatcaCrs_selectr_var_edit" mode="value"/>
+                                                        <model_value reference="FatcaCrs_selectr_var_edit"/>
                                                     </variable>
                                                     <variable name="ris_file_name_WFvar">
-                                                        <model_value reference="ris_file_name_var_edit" mode="value"/>
+                                                        <model_value reference="ris_file_name_var_edit"/>
                                                     </variable>
                                                     <variable name="FatcaMainDirectory_WFvar">
-                                                        <model_value reference="FatcaMainDirectory_var_edit" mode="value"/>
+                                                        <model_value reference="FatcaMainDirectory_var_edit"/>
                                                     </variable>
                                                     <variable name="emptyTemplatePath_WFvar">
-                                                        <model_value reference="emptyTemplatePath_var_edit" mode="value"/>
+                                                        <model_value reference="emptyTemplatePath_var_edit"/>
                                                     </variable>
                                                     <variable name="gener_template_WFvar">
-                                                        <model_value reference="gener_template_var_edit" mode="value"/>
+                                                        <model_value reference="gener_template_var_edit"/>
                                                     </variable>
                                                     <variable name="outputTemplateDir_WFvar">
-                                                        <model_value reference="outputTemplateDir_var_edit" mode="value"/>
+                                                        <model_value reference="outputTemplateDir_var_edit"/>
                                                     </variable>
                                                     <variable name="SUBMISSION_FILE_NAME_WFvar">
-                                                        <model_value reference="SUBMISSION_FILE_NAME_var_edit" mode="value"/>
+                                                        <model_value reference="SUBMISSION_FILE_NAME_var_edit"/>
                                                     </variable>
                                                     <variable name="FATCAPayLoadDirectory_WFvar">
-                                                        <model_value reference="FATCAPayLoadDirectory_var_edit" mode="value"/>
+                                                        <model_value reference="FATCAPayLoadDirectory_var_edit"/>
                                                     </variable>
                                                     <variable name="scenario_WFvar">
                                                         <string_value value="editing"/>
@@ -730,15 +731,16 @@
                                                 </variables>
                                                 <non_key_variables>
                                                     <variable name="fileNamePath_WFvar">
-                                                        <model_value reference="file_name_var_edit" mode="value"/>
+                                                        <model_value reference="file_name_var_edit"/>
                                                     </variable>
                                                     <variable name="mtDataFileName_WFvar">
-                                                        <model_value reference="mt_file_name_var_edit" mode="value"/>
+                                                        <model_value reference="mt_file_name_var_edit"/>
                                                     </variable>
                                                 </non_key_variables>
                                                 <positive_result_action>
                                                     <action_chain>
-                                                        <set_model_property property_path="close_popup_edit" global="false">
+                                                        <set_model_property property_path="close_popup_edit"
+                                                                            global="false">
                                                             <value>
                                                                 <function_value function="=uuid()"/>
                                                             </value>
@@ -871,7 +873,7 @@
                                 <string_value value="${branch_XmlMgr}"/>
                             </branch>
                             <name>
-                                <string_value value="migration:MAIN_XML_Migration"/>
+                                <string_value value="MAIN_XML_Migration_UI"/>
                             </name>
                         </workflow>
                         <instance>
@@ -880,7 +882,7 @@
                         <variables>
                             <variable name="acct_info_type">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -890,7 +892,7 @@
                             </variable>
                             <variable name="FATCA_CRS">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -900,7 +902,7 @@
                             </variable>
                             <variable name="ris_file_name">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -910,7 +912,7 @@
                             </variable>
                             <variable name="FatcaMainDirectory">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -920,7 +922,7 @@
                             </variable>
                             <variable name="emptyTemplatePath">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -930,7 +932,7 @@
                             </variable>
                             <variable name="gener_template">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -940,7 +942,7 @@
                             </variable>
                             <variable name="outputTemplateDir">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -950,7 +952,7 @@
                             </variable>
                             <variable name="SUBMISSION_FILE_NAME">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -960,7 +962,7 @@
                             </variable>
                             <variable name="FATCAPayLoadDirectory">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -972,7 +974,7 @@
                         <non_key_variables>
                             <variable name="fileNamePath">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -982,7 +984,7 @@
                             </variable>
                             <variable name="mtDataFileName">
                                 <data_object_value>
-                                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                    <data_source source="xml_migration_process_init" type="DataSource"
                                                  project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                     <instance>
                                         <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1002,7 +1004,7 @@
                     <composite_visibility_condition>
                         <visibility_condition>
                             <data_object_value>
-                                <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                <data_source source="xml_migration_process_init" type="DataSource"
                                              project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                 <instance>
                                     <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1015,7 +1017,7 @@
                         </visibility_condition>
                         <visibility_condition>
                             <data_object_value>
-                                <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                <data_source source="xml_migration_process_init" type="DataSource"
                                              project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                 <instance>
                                     <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1045,7 +1047,7 @@
                     <composite_visibility_condition>
                         <visibility_condition>
                             <data_object_value>
-                                <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                <data_source source="xml_migration_process_init" type="DataSource"
                                              project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                                 <instance>
                                     <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1058,7 +1060,7 @@
                         </visibility_condition>
                         <visibility_condition>
                             <data_object_value>
-                                <data_source source="migration:xml_migration_process_init" type="DataSource"
+                                <data_source source="xml_migration_process_init" type="DataSource"
                                              project="${project_XmlMgr}"
                                              branch="${branch_XmlMgr}"/>
                                 <instance>
@@ -1108,7 +1110,7 @@
                                style="flat">
                     <file_folder>
                         <data_object_value>
-                            <data_source source="migration:xml_migration_process_init" type="DataSource"
+                            <data_source source="xml_migration_process_init" type="DataSource"
                                          project="${project_XmlMgr}" branch="${branch_XmlMgr}"/>
                             <instance>
                                 <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1128,7 +1130,7 @@
         <composite_visibility_provider>
             <visibility_condition>
                 <data_object_value>
-                    <data_source source="migration:xml_migration_process_init" type="DataSource"
+                    <data_source source="xml_migration_process_init" type="DataSource"
                                  project="${project_XmlMgr}"
                                  branch="${branch_XmlMgr}"/>
                     <instance>
@@ -1140,7 +1142,7 @@
             </visibility_condition>
         </composite_visibility_provider>
         <grid id="xmlMigrationMainInfoGrid" height="75px" width="97.5%" listened_data="true">
-            <data_source source="migration:xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
+            <data_source source="xml_migration_process_init" type="DataSource" project="${project_XmlMgr}"
                          branch="${branch_XmlMgr}"/>
             <instance>
                 <instance_selector_ref reference="xml_migration_slctr"/>
@@ -1214,7 +1216,7 @@
                         </file_folder>
                         <composite_enable_condition/>
                         <data_source_update>
-                            <source_address name="migration:xml_migration_process_init" project="${project_XmlMgr}"
+                            <source_address name="xml_migration_process_init" project="${project_XmlMgr}"
                                             branch="${branch_XmlMgr}"/>
                             <fields>
                                 <field name="fileNamePath">
@@ -1226,7 +1228,7 @@
                             </fields>
                             <keys>
                                 <field name="init_key">
-                                    <field_value field="init_key_output"/>
+                                    <field_value field="init_key"/>
                                 </field>
                             </keys>
                             <instance>
@@ -1360,7 +1362,7 @@
             </visibility_condition>
         </composite_visibility_provider>
         <grid id="summary" height="130px" width="97.5%">
-            <data_source source="migration:Aggregation[sub_ree_summary_Dashboard]" type="DataSource"
+            <data_source source="Aggregation[sub_ree_summary_Dashboard]" type="DataSource"
                          project="${project_XmlMgr}"
                          branch="${branch_XmlMgr}"/>
             <instance>
