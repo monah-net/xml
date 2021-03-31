@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<h_section id="header" width="100%" style="header-section" height="50px">
+    <h_section id="menu_dd" height="100%">
+    </h_section>
+    <h_section id="client_logo" align="MIDDLE_CENTER">
+        <static_label id="logo_pic" image="logo_axiomsl.svg" style="original-size"/>
+    </h_section>
+    <h_section id="h1_title" align="MIDDLE_LEFT" width="500px">
+        <page_title id="page_title_label">
+            <data_source project="FCRS_UI" branch="current" source="UI:cab_page_setup" type="DataSource"/>
+            <unique_id name="page_id"/>
+            <title name="page_title"/>
+        </page_title>
+    </h_section>
+    <h_section id="user_info" align="MIDDLE_RIGHT" width="100%">
+        <login_label id="user_login" image="user_box.svg" icon_alignment="LEFT"/>
+        <button id="logout" image="logout.svg" icon_alignment="LEFT" text="Logout">
+            <logout_procedure/>
+            <composite_enable_condition/>
+            <composite_visibility_condition/>
+        </button>
+    </h_section>
+</h_section>
