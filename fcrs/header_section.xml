@@ -46,7 +46,7 @@
     </h_section>
     <h_section id="h1_title" align="MIDDLE_LEFT" width="500px">
         <page_title id="page_title_label">
-            <data_source project="FCRS_UI" branch="current" source="UI:cab_page_setup" type="DataSource"/>
+            <data_source project="FCRS_UI" branch="current" source="ref_data:CNFG_UI_cab_page_setup" type="DataSource"/>
             <unique_id name="page_id"/>
             <title name="page_title"/>
         </page_title>

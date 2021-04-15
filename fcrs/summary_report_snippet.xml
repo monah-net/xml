@@ -8,37 +8,47 @@
             </separate_instance_selector>
         </h_section>
         <h_section id="section_title_summary" height="50px" width="100%" align="TOP_LEFT">
-            <static_label id="summary_label" text="Summary" style="cvh1"/>
+            <v_section width="90px"/>
+            <v_section>
+                <static_label id="summary_label" text="Summary" style="cvh1"/>
+            </v_section>
         </h_section>
         <h_section>
-            <v_section width="3%" height="100%" align="TOP_CENTER"
+            <v_section width="3.5%" height="100%" align="TOP_CENTER"
                        style="button-bar-left sidebar fixed-width">
                 <h_section>
-                    <button style="tab-flat" image="analytics.svg" width="100%" tooltip="Summary report" text="Summary&#10;&#13;Report" icon_alignment="TOP">
+                    <button style="tab-flat" image="analytics.svg" width="100%" tooltip="Summary report"
+                            text="Summary&#10;&#13;Report" icon_alignment="TOP">
                         <open_page>
-                            <app_page_ref page_id="summary_report"/>
+                            <app_page_ref page_id="summary_report" app_name="fcrs" add_condition="true"/>
                         </open_page>
+                        <composite_visibility_condition/>
                     </button>
                 </h_section>
                 <h_section>
-                    <button style="outline" width="25px" image="verified.svg" tooltip="SignOff Report">
+                    <button style="tab-flat" width="100%" image="verified.svg" text="SignOff&#10;&#13;Report"
+                            icon_alignment="TOP">
                         <open_page>
                             <app_page_ref page_id="signoff_report"/>
                         </open_page>
+                        <composite_visibility_condition/>
                     </button>
                 </h_section>
                 <h_section>
-                    <button style="outline" width="25px" image="bug_report.svg" tooltip="Exception Report">
+                    <button style="tab-flat" width="100%" image="bug_report.svg" text="Exception&#10;&#13;Report"
+                            icon_alignment="TOP">
                         <open_page>
                             <app_page_ref page_id="exception_report"/>
                         </open_page>
+                        <composite_visibility_condition/>
                     </button>
                 </h_section>
                 <h_section>
-                    <button style="outline" width="25px" image="edit.svg" tooltip="Adjustments">
+                    <button style="tab-flat" width="100%" image="edit.svg" text="Adjustments" icon_alignment="TOP">
                         <open_page>
                             <app_page_ref page_id="adjustment_dashboard"/>
                         </open_page>
+                        <composite_visibility_condition/>
                     </button>
                 </h_section>
             </v_section>
