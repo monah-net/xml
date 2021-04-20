@@ -3,7 +3,7 @@
       id="signoff_report_snippet">
     <v_section id="section_grid_sub_all" width="100%">
         <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT">
-            <separate_instance_selector id="signoff_instance_selectr" width="60%" use_description_for_name="true">
+            <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
                 <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report" type="DataModel"/>
             </separate_instance_selector>
         </h_section>
@@ -16,9 +16,17 @@
                 <h_section>
                     <button style="tab-flat" image="analytics.svg" width="100%" tooltip="Summary report"
                             text="Summary&#10;&#13;Report" icon_alignment="TOP">
-                        <open_page>
-                            <app_page_ref page_id="summary_report"/>
-                        </open_page>
+                        <action_chain>
+                            <open_page>
+                                <app_page_ref page_id="summary_report" add_condition="true" app_name="fcrs"/>
+                            </open_page>
+                            <set_model_property property_path="">
+                                <value>
+                                    <
+                                </value>
+                            </set_model_property>
+                        </action_chain>
+                        <composite_enable_condition/>
                         <composite_visibility_condition/>
                     </button>
                 </h_section>
@@ -50,13 +58,13 @@
                 </h_section>
             </v_section>
             <spacer width="1%"/>
-            <v_section>
+            <v_section width="94%">
                 <h_section id="section_signoff_details_grid" height="120px" width="100%" align="TOP_LEFT">
                     <grid id="Signoff_Details" height="100px" listened_data="true">
                         <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report"
                                      type="DataModel"/>
                         <instance>
-                            <instance_selector_ref reference="signoff_instance_selectr"/>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
                         </instance>
                         <column id="Signoff_Details_1" title="Sending Company IN" display="true" sort="asc">
                             <component>
@@ -206,7 +214,7 @@
                                             <historySourceAddress project="${project}" branch="${branch}"
                                                                   name="UI:Signoff_History"/>
                                             <instance>
-                                                <instance_selector_ref reference="signoff_instance_selectr"/>
+                                                <instance_selector_ref reference="fcrs_instance_selectr"/>
                                             </instance>
                                             <signOffStatement>
                                                 <string_value
@@ -247,7 +255,7 @@
                         <data_source project="${project}" branch="${branch}" source="UI:Signoff_History"
                                      type="DataSource"/>
                         <instance>
-                            <instance_selector_ref reference="signoff_instance_selectr"/>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
                         </instance>
                         <column id="Signoff_History_1" title="Signoff Status" display="true">
                             <component>
