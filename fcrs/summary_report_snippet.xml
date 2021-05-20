@@ -1,67 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="summary_snippet">
-    <h_section>
-        <v_section width="3.5%" height="100%" align="TOP_LEFT"
+    <h_section height="100%" width="100%" align="TOP_LEFT" style="main_section">
+        <v_section width="80px" height="100%" align="TOP_LEFT"
                    style="button-bar-left sidebar fixed-width">
-            <h_section>
-                <button style="tab-flat" image="analytics.svg" width="100%" tooltip="Summary report"
-                        text="Summary&#10;&#13;Report" icon_alignment="TOP">
-                    <action_chain>
-                        <refresh_component component_id="summary_report"/>
-                    </action_chain>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </button>
-            </h_section>
-            <h_section>
-                <button style="tab-flat" width="100%" image="verified.svg" text="SignOff&#10;&#13;Report"
-                        icon_alignment="TOP">
-                        <open_page>
-                            <app_page_ref add_condition="true" app_name="fcrs" page_id="signoff_report"/>
-                        </open_page>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </button>
-            </h_section>
-            <h_section>
-                <button style="tab-flat" width="100%" image="bug_report.svg" text="Exception&#10;&#13;Report"
-                        icon_alignment="TOP">
-                    <action_chain>
-                        <open_page>
-                            <app_page_ref add_condition="true" app_name="fcrs" page_id="exception_report"/>
-                        </open_page>
-<!--                        <set_model_property property_path="exception_instance_selectr">-->
-<!--                            <value>-->
-<!--                                <model_value reference="summary_instance_selectr"/>-->
-<!--                            </value>-->
-<!--                        </set_model_property>-->
-                    </action_chain>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </button>
-            </h_section>
-            <h_section>
-                <button style="tab-flat" width="100%" image="edit.svg" text="Adjustments" icon_alignment="TOP">
-                    <action_chain>
-                        <open_page>
-                            <app_page_ref add_condition="true" app_name="fcrs" page_id="adjustment_dashboard"/>
-                        </open_page>
-                        <set_model_property property_path="adjustment_instance_selectr">
-                            <value>
-                                <model_value reference="summary_instance_selectr"/>
-                            </value>
-                        </set_model_property>
-                    </action_chain>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </button>
-            </h_section>
+            <button style="tab-flat" image="analytics.svg" width="100%"
+                    text="Summary&#10;&#13;Report" icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="summary_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="bug_report.svg" text="Exception&#10;&#13;Report"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="exception_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="verified.svg" text="SignOff&#10;&#13;Report"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="signoff_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="edit.svg" text="Adjustments"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="adjustment_dashboard"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
         </v_section>
-        <spacer width="1%"/>
-        <v_section id="section_grid_all" width="100%">
-            <h_section id="section_instance_picker_summary" height="50px" width="100%" align="TOP_LEFT">
-                <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
+        <spacer width="5px"/>
+        <v_section id="section_grid_all" width="98%" height="100%">
+            <h_section id="section_instance_picker_summary" height="50px" width="100%" align="TOP_LEFT" style="instance_selectr">
+                <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true" label_position="TOP">
                     <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report"
                                  type="DataModel"/>
                 </separate_instance_selector>
@@ -71,8 +50,8 @@
                     <static_label id="summary_label" text="Summary" style="cvh1"/>
                 </v_section>
             </h_section>
-            <v_section width="94%">
-                <h_section id="section_grid_summary" height="120px" width="100%" align="TOP_LEFT">
+            <v_section width="100%">
+                <h_section id="section_grid_summary" height="110px" width="100%" align="TOP_LEFT">
                     <grid id="Summary" listened_data="true" height="100px">
                         <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report"
                                      type="DataModel"/>
@@ -194,7 +173,6 @@
                         </column>
                     </grid>
                 </h_section>
-
                 <h_section width="100%" id="section_titles_customer">
                     <h_section id="section_label_customer" height="50px" width="100%" align="TOP_LEFT">
                         <static_label id="customer_label" text="Customer Details" style="cvh1"/>
@@ -221,7 +199,7 @@
                         <composite_enable_condition/>
                     </dropdown>
                 </h_section>
-                <h_section id="section_grid_customer" height="270px" width="100%" align="TOP_LEFT">
+                <h_section id="section_grid_customer" height="260px" width="100%" align="TOP_LEFT">
                     <grid id="Customer_Details" listened_data="true" show_rows="5" height="250px">
                         <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_customer_report"
                                      type="DataModel"/>
@@ -344,7 +322,7 @@
                         </load_all_rows_grid_button>
                     </h_section>
                 </h_section>
-                <h_section id="section_grid_account" height="170px" width="100%" align="TOP_LEFT">
+                <h_section id="section_grid_account" height="160px" width="100%" align="TOP_LEFT">
                     <grid id="Account_Details" listened_data="true" height="150px">
                         <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_account_report"
                                      type="DataModel"/>
@@ -463,7 +441,7 @@
                         </load_all_rows_grid_button>
                     </h_section>
                 </h_section>
-                <h_section id="section_grid_income" height="270px" width="100%" align="TOP_LEFT">
+                <h_section id="section_grid_income" height="260px" width="100%" align="TOP_LEFT">
                     <grid id="Income_Details" listened_data="true" height="250px">
                         <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_income_report"
                                      type="DataModel"/>

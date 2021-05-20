@@ -1,151 +1,189 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="adjustment_dashboard_snippet">
-    <v_section id="section_grid_sub_all" width="100%">
-        <h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
-            <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
-                <data_source project="FCRS_UI" branch="current" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
-                             type="DataModel"/>
-            </separate_instance_selector>
-        </h_section>
-        <h_section height="200px" align="MIDDLE_LEFT">
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Message Header" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_message_header"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
+    <h_section height="100%" width="100%">
+        <v_section width="80px" height="100%" align="TOP_LEFT"
+                   style="button-bar-left sidebar fixed-width">
+            <button style="tab-flat" image="analytics.svg" width="100%"
+                    text="Summary&#10;&#13;Report" icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="summary_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="bug_report.svg" text="Exception&#10;&#13;Report"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="exception_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="verified.svg" text="SignOff&#10;&#13;Report"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="signoff_report"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+            <button style="tab-flat" width="100%" image="edit.svg" text="Adjustments"
+                    icon_alignment="TOP">
+                <open_page>
+                    <app_page_ref add_condition="true" app_name="fcrs" page_id="adjustment_dashboard"/>
+                </open_page>
+                <composite_enable_condition/>
+                <composite_visibility_condition/>
+            </button>
+        </v_section>
+        <spacer width="1%"/>
+        <v_section id="section_grid_sub_all" width="94%">
+            <h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
+                <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
+                    <data_source project="${project}" branch="${branch}" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
+                                 type="DataModel"/>
+                </separate_instance_selector>
             </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Legal Entity" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_legal_entity"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
+            <h_section height="200px" align="MIDDLE_LEFT">
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Message Header" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_message_header"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Legal Entity" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_legal_entity"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Doc Spec" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_doc_spec"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Pool Report(only for FATCA)" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_pool_report"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
             </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Doc Spec" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_doc_spec"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
+            <h_section height="200px" align="MIDDLE_LEFT">
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Account Holder" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_holder"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Account Information" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_info"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Account Transaction" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_transaction"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="TIN" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_tin"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
+                <h_section height="100px" width="300px" align="MIDDLE_LEFT">
+                    <drilldown_button id="drilldown_button" text="Address" image="edit_box.svg">
+                        <object_type>
+                            <string_value value="Aggregation"/>
+                        </object_type>
+                        <object_address>
+                            <string_value value="FCRS_UI!current:ENRICHMENT:rpt_address"/>
+                        </object_address>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
+                    </drilldown_button>
+                </h_section>
             </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Pool Report(only for FATCA)" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_pool_report"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-        </h_section>
-        <h_section height="200px" align="MIDDLE_LEFT">
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Account Holder" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_holder"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Account Information" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_info"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Account Transaction" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_acct_transaction"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="TIN" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_tin"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-            <h_section height="100px" width="300px" align="MIDDLE_LEFT">
-                <drilldown_button id="drilldown_button" text="Address" image="edit_box.svg">
-                    <object_type>
-                        <string_value value="Aggregation"/>
-                    </object_type>
-                    <object_address>
-                        <string_value value="FCRS_UI!current:ENRICHMENT:rpt_address"/>
-                    </object_address>
-                    <instance>
-                        <instance_selector_ref reference="fcrs_instance_selectr"/>
-                    </instance>
-                    <composite_enable_condition/>
-                    <composite_visibility_condition/>
-                </drilldown_button>
-            </h_section>
-        </h_section>
-    </v_section>
+        </v_section>
+    </h_section>
 </page>
