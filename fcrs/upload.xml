@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd">
+    <upload_button id="upload_button" text="Upload template" image="upload.svg">
+        <file_folder>
+            <string_value value="FCRS_DATA_DIR"/>
+        </file_folder>
+        <composite_enable_condition/>
+        <composite_visibility_condition/>
+    </upload_button>
+</page>
