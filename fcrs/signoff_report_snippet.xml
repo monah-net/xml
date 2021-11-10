@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dashboardsConfig.xsd"
       id="signoff_report_snippet">
-    <h_section height="100%" width="100%">
+    <h_section height="100%" width="100%" style="tab-flat">
         <v_section width="80px" height="100%" align="TOP_LEFT"
                    style="button-bar-left sidebar fixed-width">
             <button style="tab-flat" image="analytics.svg" width="100%"
@@ -39,7 +39,7 @@
         </v_section>
         <spacer width="1%"/>
         <v_section id="section_grid_sub_all" width="99%" height="100%">
-            <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT" style="main-section">
+            <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
                     <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report"
                                  type="DataModel"/>
@@ -55,6 +55,9 @@
                     <instance>
                         <instance_selector_ref reference="fcrs_instance_selectr"/>
                     </instance>
+                    <selection type="SINGLE">
+                        <unique_id field="enumerator" node="root"/>
+                    </selection>
                     <column id="Signoff_Details_1" title="Sending Company IN" display="true" sort="asc">
                         <component>
                             <grid_label_component>

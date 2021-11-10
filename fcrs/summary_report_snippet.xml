@@ -40,7 +40,7 @@
       <spacer width="5px"/>
         <v_section id="section_grid_all" width="100%" height="100%" style="main-section">
             <h_section id="section_instance_picker_summary" height="50px" width="100%" align="TOP_LEFT">
-                <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
+                <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true" style="fixed-width">
                     <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report"
                                  type="DataModel"/>
                 </separate_instance_selector>
@@ -305,6 +305,125 @@
                                 </grid_label_component>
                             </component>
                         </column>
+                    </grid>
+                </h_section>
+                <h_section width="100%" id="section_titles_subowner">
+                    <h_section id="section_label_customer" height="50px" width="100%" align="TOP_LEFT">
+                        <static_label id="customer_label" text="Substantial Owner Details" style="cvh1"/>
+                    </h_section>
+                    <h_section id="section_buttons_customer_details" height="50px" width="100%" align="TOP_RIGHT">
+                        <export_grid_button grid_id="SubOwner_Details" image="download.svg">
+                            <composite_enable_condition/>
+                            <composite_visibility_condition/>
+                        </export_grid_button>
+                        <load_all_rows_grid_button grid_id="SubOwner_Details">
+                            <composite_enable_condition/>
+                            <composite_visibility_condition/>
+                        </load_all_rows_grid_button>
+                    </h_section>
+                </h_section>
+                <h_section id="section_grid_subowner" height="260px" width="100%" align="TOP_LEFT">
+                    <grid id="SubOwner_Details" listened_data="true" show_rows="5" height="250px">
+                        <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_substantial_owner_report"
+                                     type="DataModel"/>
+                        <instance>
+                            <instance_selector_ref reference="fcrs_instance_selectr"/>
+                        </instance>
+                        <filter empty_value_policy="ALL">
+                            <filter_value>
+                                <model_value reference="Customer_Details_acct_holder_id"/>
+                            </filter_value>
+                            <filter_mapping>
+                                <filter_on name="acct_holder_id" node="root"/>
+                            </filter_mapping>
+                        </filter>
+                        <column id="SubOwner_Details_1" title="Account Holder ID" display="false" sort="asc"
+                                is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="acct_holder_id" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_1_1" title="Substantial Owner ID" display="true" sort="asc"
+                                is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="sub_owner_id" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_2" title="Owner Type" display="true" sort="asc"
+                                is_filtered="true">
+                            <component>
+                                <grid_label_component>
+                                    <dynamic_caption>
+                                        <field_value field="owner_type" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_3" title="Legal Entity ID" display="true" sort="asc"
+                                is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="legal_entity_id" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_4" title="First Name" display="true" sort="asc" is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="first_name" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_5" title="Middle Name" display="true" sort="asc"
+                                is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="middle_name" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_6" title="Last Name" display="true" sort="asc" is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption>
+                                        <field_value field="last_name" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+                        <column id="SubOwner_Details_7" title="Holder DOB" display="true" sort="asc" is_filtered="true">
+                            <component>
+                                <grid_label_component alignment="LEFT">
+                                    <dynamic_caption format="dd/MMMM/yyyy">
+                                        <field_value field="dob" node="root"/>
+                                    </dynamic_caption>
+                                </grid_label_component>
+                            </component>
+                        </column>
+<!--                        <column id="SubOwner_Details_8" title="Business Name" display="true" sort="asc"-->
+<!--                                is_filtered="true">-->
+<!--                            <component>-->
+<!--                                <grid_label_component alignment="LEFT">-->
+<!--                                    <dynamic_caption>-->
+<!--                                        <field_value field="business_name" node="root"/>-->
+<!--                                    </dynamic_caption>-->
+<!--                                </grid_label_component>-->
+<!--                            </component>-->
+<!--                        </column>-->
                     </grid>
                 </h_section>
                 <h_section id="section_title_account" height="50px" width="100%" align="TOP_LEFT">
