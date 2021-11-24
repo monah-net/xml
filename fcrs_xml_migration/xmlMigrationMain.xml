@@ -283,7 +283,7 @@
                                         <model_value reference="wf_status"/>
                                         <composite_visibility_condition/>
                                     </label>
-                                    <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT" id="test_button2">
+                                    <button text="Submit" style="primary-button" width="200px" icon_alignment="LEFT">
                                         <action_chain break_on_errors="true">
                                             <run_workflow restart_all_modules="true" status_path="wf_status">
                                                 <workflow>
@@ -405,7 +405,7 @@
                                         <composite_visibility_condition/>
                                     </button>
                                     <spacer width="50px"/>
-                                    <button id="test_reload" icon_alignment="BOTTOM" text="Test Button" style="solid">
+                                    <button id="test_reload" icon_alignment="BOTTOM" text="Reload" style="solid">
                                         <run_udf udf_name="FCRS_Dash_test">
                                             <arguments>
                                                 <variable name="first_var">
@@ -413,6 +413,8 @@
                                                 </variable>
                                             </arguments>
                                         </run_udf>
+                                        <composite_enable_condition/>
+                                        <composite_visibility_condition/>
                                     </button>
                                     <spacer width="50px"/>
                                     <button text="Cancel" style="secondary-button" width="200px">
@@ -1153,18 +1155,9 @@
                         <composite_enable_condition/>
                         <composite_visibility_condition/>
                     </upload_button>
-                    <button id="test_reload" icon_alignment="BOTTOM" text="Test Button" style="solid">
-                        <run_udf udf_name="FCRS_Dash_test">
-                            <arguments>
-                                <variable name="first_var">
-                                    <string_value value="TEST"/>
-                                </variable>
-                            </arguments>
-                        </run_udf>
-                    </button>
                 </v_section>
                 <v_section>
-                    <button>
+                    <button text="Reload">
                         <run_udf udf_name="FCRS_Dash_test">
                             <arguments>
                                 <variable name="first_var">
@@ -1172,6 +1165,8 @@
                                 </variable>
                             </arguments>
                         </run_udf>
+                        <composite_enable_condition/>
+                        <composite_visibility_condition/>
                     </button>
                 </v_section>
             </h_section>

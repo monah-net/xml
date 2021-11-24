@@ -55,8 +55,14 @@
                     <instance>
                         <instance_selector_ref reference="fcrs_instance_selectr"/>
                     </instance>
-                    <selection type="SINGLE">
+                    <selection type="SINGLE" unselectable="false" select_first_row="false">
                         <unique_id field="enumerator" node="root"/>
+                        <additional_output property_path="signoff_det_unique_id">
+                            <value field="messageRefId" node="root"/>
+                        </additional_output>
+                      <additional_output property_path="signoff_status_x">
+                      <value field="signoff_status_x" node="Signoff_History"/>
+                      </additional_output>
                     </selection>
                     <column id="Signoff_Details_1" title="Sending Company IN" display="true" sort="asc">
                         <component>
@@ -247,6 +253,14 @@
                     <instance>
                         <instance_selector_ref reference="fcrs_instance_selectr"/>
                     </instance>
+                    <filter empty_value_policy="NONE">
+                        <filter_value>
+                            <model_value reference="signoff_det_unique_id"/>
+                        </filter_value>
+                        <filter_mapping>
+                            <filter_on name="unique_id"/>
+                        </filter_mapping>
+                    </filter>
                     <column id="Signoff_History_1" title="Signoff Status" display="true">
                         <component>
                             <grid_label_component>
@@ -270,6 +284,15 @@
                             <grid_label_component alignment="LEFT">
                                 <dynamic_caption format="yyyy-MM-dd">
                                     <field_value field="action_date"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                    <column id="Signoff_History_4" title="Unique ID" display="true">
+                        <component>
+                            <grid_label_component alignment="LEFT">
+                                <dynamic_caption>
+                                    <field_value field="unique_id"/>
                                 </dynamic_caption>
                             </grid_label_component>
                         </component>
