@@ -38,7 +38,7 @@
             </button>
         </v_section>
         <spacer width="1%"/>
-        <v_section id="section_grid_sub_all" width="99%" height="100%">
+        <v_section id="section_grid_sub_all" width="99%" height="100%" style="sign_off_main_section">
             <h_section id="section_instance_picker_submission" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
                     <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report"
@@ -48,8 +48,8 @@
             <h_section id="section_signoff_details_label" height="50px" align="TOP_LEFT">
                 <static_label id="signoff_details_grid_label" text="Submission Details" style="cvh1"/>
             </h_section>
-            <h_section id="section_signoff_details_grid" height="120px" width="100%" align="TOP_LEFT">
-                <grid id="Signoff_Details" height="100px" listened_data="true">
+            <h_section id="section_signoff_details_grid" height="40%" width="100%" align="TOP_LEFT">
+                <grid id="Signoff_Details" listened_data="true">
                     <data_source project="${project}" branch="${branch}" source="UI:dbd_signoff_report"
                                  type="DataModel"/>
                     <instance>
@@ -58,7 +58,7 @@
                     <selection type="SINGLE" unselectable="false" select_first_row="false">
                         <unique_id field="enumerator" node="root"/>
                         <additional_output property_path="signoff_det_unique_id">
-                            <value field="messageRefId" node="root"/>
+                            <value field="unique_signoff_id" node="root"/>
                         </additional_output>
                       <additional_output property_path="signoff_status_x">
                       <value field="signoff_status_x" node="Signoff_History"/>
@@ -96,6 +96,15 @@
                             <grid_label_component>
                                 <dynamic_caption>
                                     <field_value node="root" field="version"/>
+                                </dynamic_caption>
+                            </grid_label_component>
+                        </component>
+                    </column>
+                  <column id="Signoff_Details_4_1" title="Timestamp" display="true">
+                        <component>
+                            <grid_label_component>
+                                <dynamic_caption>
+                                    <field_value node="root" field="timestamp"/>
                                 </dynamic_caption>
                             </grid_label_component>
                         </component>
@@ -179,7 +188,7 @@
                                 <action_chain>
                                     <signoff>
                                         <unique_id>
-                                            <field_value node="root" field="messageRefId"/>
+                                            <field_value node="root" field="unique_signoff_id"/>
                                         </unique_id>
                                         <title>
                                             <field_value node="root" field="reporting_period"/>
@@ -247,8 +256,8 @@
             <h_section id="section_signoff_aud_details_label" height="50px" align="TOP_LEFT">
                 <static_label id="signoff_audit_grid_label" text="Signoff History" style="cvh1"/>
             </h_section>
-            <h_section id="section_signoff_audit_details_grid" height="270px" width="100%" align="TOP_LEFT">
-                <grid id="Signoff_History" height="250px" listened_data="true">
+            <h_section id="section_signoff_audit_details_grid" height="50%" width="100%" align="TOP_LEFT">
+                <grid id="Signoff_History" height="100%" listened_data="true">
                     <data_source project="${project}" branch="${branch}" source="UI:Signoff_History" type="DataSource"/>
                     <instance>
                         <instance_selector_ref reference="fcrs_instance_selectr"/>

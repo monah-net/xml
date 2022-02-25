@@ -41,7 +41,7 @@
         <v_section id="section_grid_sub_all" width="94%">
             <h_section id="section_instance_picker_adjustment" height="50px" width="100%" align="TOP_LEFT">
                 <separate_instance_selector id="fcrs_instance_selectr" width="60%" use_description_for_name="true">
-                    <data_source project="${project}" branch="${branch}" source="ENRICHMENT:Aggregation[rpt_legal_entity]"
+                    <data_source project="${project}" branch="${branch}" source="UI:dbd_summary_report"
                                  type="DataModel"/>
                 </separate_instance_selector>
             </h_section>
